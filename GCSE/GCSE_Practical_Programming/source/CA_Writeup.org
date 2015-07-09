@@ -1,0 +1,78 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Controlled Assessment Write Up
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* Controlled Assessment Write up
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Part 1 - Design of solution
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+1. Show an understanding of what the problem involves with reference to the user's needs.
+   - A brief write up of what the user requires.
+   - Ensure you talk about the user's requirements rather than what the program will do.
+   - Create a bulleted list of user requirements.
+2. Produce and overview plan that shows how the problem is to be solved.
+   - Use a flowchart-like diagram to show the basic inputs and outputs of the program.
+   - Provide a description of how you are going to tackle the problem (Here you can mention any data structures you might need, what functions you might need, and global variables you might need, as well as assets such as text files.)
+3. Produce pseudo code (or suitable alternative) showing the main blocks within the proposed solution.
+   - Produce a fully annotated pseudo code listing of the entire program.
+   - Be sure _not_ to use Python specific syntax
+   - Use structured English if the [[http://filestore.aqa.org.uk/subjects/AQA-GCSE-COMPSCI-W-TRB-PSEU.PDF][AQA pseudo code]] help sheet does not contain the syntax you need.
+** Part 2 - Solution development
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+1. Show evidence of an understanding of how the final solution meets the needs of the user.
+   - Refer back to your original list of user requirements.
+   - For each point, say how your program meets this need.
+2. Produce annotated code that demonstrates an understanding of the programming techniques used.
+   - Go through the original task sheet.
+   - For each task, display and explain the code that you used to complete the task
+   - Use screenshots of your program working to assist in your explanation.
+   - At the end, provide a full code listing with comments.
+** Part 3 - Programming techniques used
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+1. Show an understanding of the programming techniques used and how the different parts of the solution work together.
+   - Provide an explanation of each of the following programming techniques _you actually used_, with reference to where they have been used in your code.
+     - Global Variables, Local Variables, Lists, Dictionaries, Conditional Selection, For loops, While loops, Functions, Error Handling (Try/Except), Read/Write.
+   - Show how the program works together by using flowcharts to show the flow of data through the program.
+2. Explain/Justify the choice of programming techniques used to create a solution that has been coded efficiently.
+   - Show areas where the same function is called in different parts of the program.
+   - Show areas where lists were used to store data
+   - Show areas where data is passed between functions rather than using global variables.
+3. Show evidence for the purpose and use of data structures.
+   - Show areas where you have used lists, dictionaries, objects, files, strings
+   - Describe the purpose of each data structure.
+4. Show the techniques used (appropriate to the language used) within the code to make the solution robust.
+   - Demonstrate the techniques used to avoid errors occurring, such as a user entering nonsense or incorrect data.
+** Part 4 - Testing and evaluation
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+1. Produce a test plan that show the expected tests, test data and expected results.
+   - Create a table with the column headings above.
+   - Consider all possible data that the user could enter.
+   - Detail the expected result.
+2. Show that the planned tests have been carried out and provide a record of the actions taken.
+   - For each of the tests above, provide screen shot evidence of your program.
+   - Record if the program passed the test.
+   - Record action taken if the program failed the test.
+3. Evaluate how the final solution meets the needs of the user.
+   - For each of the needs of the user, listed in Part 1.
+     - Evaluate how well the program meets this need and suggest possible improvements.

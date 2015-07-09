@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>FruitBots</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">FruitBots</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. An introduction to FruitBots</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Save It</a></li>
+<li><a href="#sec-1-3">Code It</a></li>
+<li><a href="#sec-1-4">Run It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Moving your FruitBot</a>
+<ul>
+<li><a href="#sec-2-1">Code It</a></li>
+<li><a href="#sec-2-2">Run It</a></li>
+<li><a href="#sec-2-3">Try It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. PingPong</a>
+<ul>
+<li><a href="#sec-3-1">Code It</a></li>
+<li><a href="#sec-3-2">Learn It</a></li>
+<li><a href="#sec-3-3">Code It</a></li>
+<li><a href="#sec-3-4">Run It</a></li>
+<li><a href="#sec-3-5">Learn It</a></li>
+<li><a href="#sec-3-6">Code It</a></li>
+<li><a href="#sec-3-7">Run It</a></li>
+<li><a href="#sec-3-8">Try It</a></li>
+<li><a href="#sec-3-9">Code It</a></li>
+<li><a href="#sec-3-10">Run It</a></li>
+<li><a href="#sec-3-11">Badge It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/8CS-FruitBots">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> An introduction to FruitBots</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+FruitBots is a simple JavaScript game. You program a small bot to move around a grid and pick up fruit, before your opponent can do the same.
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+The game board for FruitBots looks like this
+<img src="img/GameBoard_1.png" alt="GameBoard_1.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 save">
+<h3 id="sec-1-2">Save It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>To start creating your own FruitBot, you're going to need the testing framework.
+</li>
+<li>Create a new directory in your home folder and call it FruitBots.
+</li>
+<li>Right click on this <a href="../testing.zip">LINK</a> and download the directory, saving it in your FruitBots directory.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 code">
+<h3 id="sec-1-3">Code It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Open up the testing directory.
+</li>
+<li>You should find a file called mybot.js
+</li>
+<li>Open mybot.js in a text editor and you should see the following code:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">function new_game(){
+}
+function make_move(){
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 run">
+<h3 id="sec-1-4">Run It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Let's run the program and see what happens.
+</li>
+<li>In the testing directory, you should see a webpage called game.html
+</li>
+<li>Open up game.html in a browser and a random board will be displayed, with two bots.
+</li>
+<li>The opponent bot has been disabled for the moment.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Moving your FruitBot</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>In this section you'll learn how to move your FruitBot
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 code">
+<h3 id="sec-2-1">Code It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>A function is a <b>named</b> block of code that performs some <b>task</b>
+</li>
+<li>In our code we have a function called <code>make_move()</code>
+</li>
+<li>This function is called every time it is your turn to move. So each time your FruitBot needs to make a move, the code inside <code>make_move()</code> is run.
+</li>
+<li>Functions can output data. We call this a <code>return</code>. If you were to tell your function to <i>return 1</i> it would output the number 1. If you told your function to <code>return fish</code> it would output the string <i>fish</i>.
+</li>
+<li>The FruitBot game only understands 6 bits of data that <code>make_move()</code> returns. The funtion can return any of the following constants
+<ul class="org-ul">
+<li>EAST (move east)
+</li>
+<li>NORTH (move north)
+</li>
+<li>WEST (move west)
+</li>
+<li>SOUTH (move south)
+</li>
+<li>TAKE (pick up a fruit if there is one on the square)
+</li>
+<li>PASS (do nothing)
+</li>
+</ul>
+</li>
+<li>Let's try something simple first of all. Let's get our FruitBot to move East.
+</li>
+<li>Edit the code in mybot.js so that it looks like this.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">function new_game(){
+}
+
+function make_move(){
+    return EAST
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 run">
+<h3 id="sec-2-2">Run It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Run game.html in a browser again, and make sure your bot is working.
+</li>
+<li>Your bot should move east, and stop when it reaches the edge of the board.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 try">
+<h3 id="sec-2-3">Try It</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>Alter your code so that your FruitBot moves South only.
+</li>
+<li>Try making your FruitBot move in the other two directions.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> PingPong</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>In this section we'll move the FruitBot left and right.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 code">
+<h3 id="sec-3-1">Code It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Before we start the next section, let's choose a default board to use for testing
+</li>
+<li>Change your mybot.js code so it looks like this:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">function new_game() {
+}
+
+function default_board_number() {
+    return 123;
+}
+
+function make_move(){
+      return EAST
+}
+</pre>
+</div>
+<ul class="org-ul">
+<li>This will make sure we are using the board <i>123</i>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 learn">
+<h3 id="sec-3-2">Learn It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>We can find the width and the height of the board using the constants <code>HEIGHT</code> and <code>WIDTH</code>
+</li>
+<li>We can find the position of your bot on the board by using <code>get_my_x()</code> and <code>get_my_y()</code>
+</li>
+<li>In FruitBots the top left square has the coordinates 0,0
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 code">
+<h3 id="sec-3-3">Code It</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>Let's use <code>console.log()</code> to find out our FruitBot's position and the size of the board. <code>console.log()</code> will output data in the browser for you.
+</li>
+<li>Change your code so that it looks like this:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">function new_game() {
+}
+
+function make_move(){
+    console.log("The board's dimensions are " + WIDTH + " X " + HEIGHT);
+    console.log("My FruitBot is at " + get_my_x() + "," + get_my_y());
+    return EAST
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3 run">
+<h3 id="sec-3-4">Run It</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Run game.html
+</li>
+<li>Open a console so you can see your console logs. If this is your first time using a console, you can find out how to open it <a href="http://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers">here</a>
+</li>
+<li>Check that the console is correctly reporting the board size and the bot position.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3 learn">
+<h3 id="sec-3-5">Learn It</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>In programming we often use the term <i>flag</i>.
+</li>
+<li>A flag is a usually a variable that describes the state of some property of the program.
+</li>
+<li>For instance we might have a <code>Logged_In</code> flag and then set it to <code>True</code> if the user has logged in and <code>False</code> if the user has not logged in.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-6" class="outline-3 code">
+<h3 id="sec-3-6">Code It</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>Let's add a flag into our script called <code>moving_east</code> and set it to <code>true</code>
+</li>
+<li>We'll add it outside of our functions, so that it is initially set only once, when the game begins.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var moving_east = true;
+
+function new_game() {
+}
+
+function make_move(){
+    console.log("The board's dimensions are " + WIDTH + " X " + HEIGHT);
+    console.log("My FruitBot is at " + get_my_x() + "," + get_my_y());
+    return EAST
+}
+</pre>
+</div>
+<ul class="org-ul">
+<li>Out flag doesn't actually do anything yet, let's change that using a conditional statement.
+</li>
+<li>You should have used conditionals before, but just to recap:
+<ul class="org-ul">
+<li>A conditional is like a branch in a program.
+</li>
+<li>If a <i>condition</i> is met then one bit of code is run, and if it is not met then another bit of code is run.
+</li>
+</ul>
+</li>
+<li>In JavaScript a conditional looks like this.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">if (condition){
+    do this
+}
+else if (condition){
+    do this
+}
+else{
+    do this
+}
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Let's use a conditional statement to make our bot choose a direction of travel.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var moving_east = true;
+
+function new_game() {
+}
+
+function make_move(){
+    console.log("The board's dimensions are " + WIDTH + " X " + HEIGHT);
+    console.log("My FruitBot is at " + get_my_x() + "," + get_my_y());
+    if(moving_east === true){
+	return EAST
+    }
+    else{
+	return WEST
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-7" class="outline-3 run">
+<h3 id="sec-3-7">Run It</h3>
+<div class="outline-text-3" id="text-3-7">
+<ul class="org-ul">
+<li>Run your code and your FruitBot should move East, as it did before.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-8" class="outline-3 try">
+<h3 id="sec-3-8">Try It</h3>
+<div class="outline-text-3" id="text-3-8">
+<ul class="org-ul">
+<li>Now set the flag to <code>false</code>, and see what happens
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-9" class="outline-3 code">
+<h3 id="sec-3-9">Code It</h3>
+<div class="outline-text-3" id="text-3-9">
+<ul class="org-ul">
+<li>We can now control if our bot moves East or West depending on the <code>moving_east</code> flag.
+</li>
+<li>Let's alter the flag depending on the position of the bot on the board.
+</li>
+<li>If the bot's <code>x</code> position is equal to <code>0</code>, then the bot is at the far left of the board and should move east.
+</li>
+<li>If the bot's <code>x</code> position is equal to the <code>WIDTH</code> of the board, then the bot is at the far right of the board and should move west.
+</li>
+<li>We'll add some comments to this code, so we can remember what it does.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var moving_east = false;
+
+function new_game() {
+}
+
+function make_move(){
+    //log the board size and position
+    console.log("The board's dimensions are " + WIDTH + " X " + HEIGHT);
+    console.log("My FruitBot is at " + get_my_x() + "," + get_my_y());
+
+    // detect if at the edge of the board
+    if(get_my_x() === 0){
+	moving_east = true;
+    }
+    if(get_my_x() === WIDTH - 1){
+	moving_east = false;
+    }
+
+    // move the bot
+    if(moving_east === true){
+	return EAST
+    }
+    else{
+	return WEST
+    }
+}
+</pre>
+</div>
+<ul class="org-ul">
+<li>Can you explain why we need to us <code>WIDTH - 1</code> instead of just <code>WIDTH</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-10" class="outline-3 run">
+<h3 id="sec-3-10">Run It</h3>
+<div class="outline-text-3" id="text-3-10">
+<ul class="org-ul">
+<li>Run your code and your FruitBot should move East, as it did before.
+</li>
+<li>Run game.html and make sure that it works.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-11" class="outline-3 badge">
+<h3 id="sec-3-11">Badge It</h3>
+<div class="outline-text-3" id="text-3-11">
+<ul class="org-ul">
+<li>To earn your first FruitBots badge you'll need to make you're fruit bot bounce.
+</li>
+<li>Create a new flag called <code>moving_north</code>
+</li>
+<li>Now alter your code so that the FruitBot bounces up and down, instead of going left and right.
+</li>
+<li>Show your teacher when you are done.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

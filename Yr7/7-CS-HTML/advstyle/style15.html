@@ -1,0 +1,86 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a class="z" href="style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+ <a class="nav" href="style14.html"><< Back</a>
+</div>
+<div id="right">
+ <a class="nav" href="style16.html">Next >></a>
+</div>
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Advanced Layout and Style</p>
+	<ol>
+	<span class="bigtext">
+<li class="step" value="1">
+Space between boxes - add space between the topbox and the container
+</li>
+<p>Let's examine the box model below: A box has top, buttom, left or right  margin.
+	By default all the four margins are zero.</p>
+<div id="cols">
+	<div id="rightcol">
+<p><img src="../images/box-model.gif" width=300 height=240><p>
+	
+</div>
+<div id="leftcol">
+
+<p class="column">
+	The model shows that the <strong> top margin</strong> is what we need to achieve the space between the topbox and the container which contains the left and right box inside it.: <br>
+	<span class="code">
+		margin-top: 10px;
+	</span>
+</p>
+
+</div>
+<p><img src="../images/we_can_do_it.jpg" width=80 height=80><p>
+<p>Can you work out independently where to put the line <span class="code">
+		margin-top: 10px;
+	</span>?</p>
+<p><button>Help Me</button><p class="img">#container {<br>
+width: 800px;<br>
+height: 800px;<br>
+margin-top: 10px;<br>
+}<p>
+
+<div id="right">
+ <a class="nav" href="style16.html">Next >></a>
+</div>
+
+
+</div>
+</body>
+
+
+</html>

@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Hexadecimal</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Hexadecimal</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Why not binary?</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Try It</a></li>
+<li><a href="#sec-1-3">Document It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Hexadecimal is easier</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+<li><a href="#sec-2-2">Try It</a></li>
+<li><a href="#sec-2-3">Learn It</a></li>
+<li><a href="#sec-2-4">Try It</a></li>
+<li><a href="#sec-2-5">Document It</a></li>
+<li><a href="#sec-2-6">Research It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Hex to binary conversion</a>
+<ul>
+<li><a href="#sec-3-1">Learn It</a></li>
+<li><a href="#sec-3-2">Try It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+<p>
+You've already learned about Binary (base2) numbers, and why Computers use them.
+Now let's look at another base - base16, called Hexadecimal
+</p>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Why not binary?</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Binary numbers are difficult for programmers to work with.
+</li>
+<li>If we're building a web-page, then chances are we're going to want to use colour.
+</li>
+<li>In general computers use the RGB colour model, where any colour we need is made up by additive mixing Red, Green and Blue.
+</li>
+<li>The value of RGB colours ranges from 0,0,0 up to 255,255,255.
+</li>
+</ul>
+<p style="background-color:#9F1CAD;color:white;text-align:center;">Here's a colour that is represented as R-159, G-028, B-173.</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Try It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Convert each of the 3 digit denary numbers to binary, as see what you get.
+</li>
+<li>Do you think that writing the binary number for the colour would be convenient.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 document">
+<h3 id="sec-1-3">Document It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Note down why it is that programmers don't like using binary in their code.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Hexadecimal is easier</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Coders use Hexadecimal as it's easy to convert it to binary, but it is more succinct.
+</li>
+<li>When counting in Hexadecimal, we use the letters A-F after reaching 9.
+</li>
+<li><code>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F</code>
+</li>
+<li>Normally we would use a table to aid in the conversion.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right">Binary</th>
+<th scope="col" class="right">Hexadecimal</th>
+<th scope="col" class="right">Decimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">0000</td>
+<td class="right">0</td>
+<td class="right">0</td>
+</tr>
+
+<tr>
+<td class="right">0001</td>
+<td class="right">1</td>
+<td class="right">1</td>
+</tr>
+
+<tr>
+<td class="right">0010</td>
+<td class="right">2</td>
+<td class="right">2</td>
+</tr>
+
+<tr>
+<td class="right">0011</td>
+<td class="right">3</td>
+<td class="right">3</td>
+</tr>
+
+<tr>
+<td class="right">0100</td>
+<td class="right">4</td>
+<td class="right">4</td>
+</tr>
+
+<tr>
+<td class="right">0101</td>
+<td class="right">5</td>
+<td class="right">5</td>
+</tr>
+
+<tr>
+<td class="right">0110</td>
+<td class="right">6</td>
+<td class="right">6</td>
+</tr>
+
+<tr>
+<td class="right">0111</td>
+<td class="right">7</td>
+<td class="right">7</td>
+</tr>
+
+<tr>
+<td class="right">1000</td>
+<td class="right">8</td>
+<td class="right">8</td>
+</tr>
+
+<tr>
+<td class="right">1001</td>
+<td class="right">9</td>
+<td class="right">9</td>
+</tr>
+
+<tr>
+<td class="right">1010</td>
+<td class="right">A</td>
+<td class="right">10</td>
+</tr>
+
+<tr>
+<td class="right">1011</td>
+<td class="right">B</td>
+<td class="right">11</td>
+</tr>
+
+<tr>
+<td class="right">1100</td>
+<td class="right">C</td>
+<td class="right">12</td>
+</tr>
+
+<tr>
+<td class="right">1101</td>
+<td class="right">D</td>
+<td class="right">13</td>
+</tr>
+
+<tr>
+<td class="right">1110</td>
+<td class="right">E</td>
+<td class="right">14</td>
+</tr>
+
+<tr>
+<td class="right">1111</td>
+<td class="right">F</td>
+<td class="right">15</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>We can take a binary number, such as 10101101.
+</li>
+<li>Split it up into nibbles - 1010 1101
+</li>
+<li>Convert each to Hex - AD
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 try">
+<h3 id="sec-2-2">Try It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Convert each of the binary numbers you worked out before, into their hex equivalents.
+</li>
+<li>Now go on line and look up the hex code you've calculated (place a # in front of the number in your search) and check it matches the colour on this web-page.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 learn">
+<h3 id="sec-2-3">Learn It</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>With experience, you'll not need a table, as you'll come to recognise the hex equivalent for each nibble.
+</li>
+<li>However, if you don't have a conversion table or can't remember the values, you can convert between binary and hex, by using denary as a middle step.
+</li>
+<li>Lets start with the binary number <code>01011101</code>
+</li>
+<li>Split it into nibbles - <code>0101 1101</code>
+</li>
+<li>Convert to denary - <code>1*1 + 0*2 + 1*4 + 0*8</code> and = <code>1*1 + 0*2 + 1*4 + 1*8</code>
+</li>
+<li>So we get - <code>5</code> and <code>13</code>
+</li>
+<li>Now convert to Hex - <code>5</code> and <code>D</code>
+</li>
+<li>So the Hex is 5D
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3 try">
+<h3 id="sec-2-4">Try It</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Convert the following binary numbers to hex and show your working. Check them by using the table.
+</li>
+<li>11110011
+</li>
+<li>00101100
+</li>
+<li>10101010
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3 document">
+<h3 id="sec-2-5">Document It</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>Make notes on binary to hex conversion, detailing how it is done.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-6" class="outline-3 research">
+<h3 id="sec-2-6">Research It</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>Go online and look up hex codes for colours.
+</li>
+<li>Make notes on how hex codes are used to represent colours in computers.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Hex to binary conversion</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Converting hex to binary is a fairly similar process. We just need to do the denary conversion in between.
+</li>
+<li>Take the number <code>9E</code>
+</li>
+<li>Split it up <code>9</code> and <code>E</code>
+</li>
+<li>Convert each to denary <code>9</code> and <code>14</code>
+</li>
+<li>Then convert each to binary <code>1*8 + 0*4 + 0*2 + 1*1</code> and <code>1*8 + 1*4 + 1*2 + 0*1</code>
+</li>
+<li>Which makes <code>1001</code> and <code>1110</code>
+</li>
+<li>Which together becomes <code>10011110</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 try">
+<h3 id="sec-3-2">Try It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Convert the following Hex values to binary and show your working. Use the table to check your answers.
+</li>
+<li>3F3F3F
+</li>
+<li>88833A
+</li>
+<li>ABCDEF
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>The Value of Variables.</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">The Value of Variables.</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Introduction</a>
+<ul>
+<li><a href="#sec-1-1">Code It</a></li>
+<li><a href="#sec-1-2">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Declaring and Assigning Variables</a>
+<ul>
+<li><a href="#sec-2-1">Code It</a></li>
+<li><a href="#sec-2-2">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Reassigning Variables</a>
+<ul>
+<li><a href="#sec-3-1">Code It</a></li>
+<li><a href="#sec-3-2">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Badge It</a>
+<ul>
+<li><a href="#sec-4-1">Task</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-WD-JS">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>You've used variables quite a lot already, but this section aims to turn you from a novice into a ninja when using variables.
+</li>
+<li>Just to recap:
+<ul class="org-ul">
+<li>Variables are used to store values.
+</li>
+<li>You can use a variable to store Numbers, Strings, Booleans and lots more.
+</li>
+<li>Variables need an identifier (a name)
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 code">
+<h3 id="sec-1-1">Code It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>We're not going to write our code in an HTML document this time. We'll use the console instead.
+</li>
+<li>Open a console, <a href="http://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers">here you can find a description of the shortcuts to open a console, if you have forgotten how.</a>
+</li>
+<li>We can write javascript code directly in the console. Try typing the following, just to test it out;
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">window.alert();
+</pre>
+</div>
+<ul class="org-ul">
+<li>Hopefully you should get an alert box popping up. Additionally the console will say the word <code>undefined</code>, don't worry about this.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Try It:</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Use the console to try a few more command. Here are some suggestions:
+<ul class="org-ul">
+<li><code>window.prompt()</code>
+</li>
+<li><code>window.confirm()</code>
+</li>
+<li>For this one you need to use access a site that uses jQuery. Go to  <a href="http://jquery.com/">http://jquery.com/</a> and type <code>$(function() {$('body').hide().fadeIn(5000);});</code> in the console. 
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Declaring and Assigning Variables</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>We've already covered variable assignment and declaration, but here we'll go into it in a little more detail.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 code">
+<h3 id="sec-2-1">Code It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Open any of the web-pages you created in the previous lessons.
+</li>
+<li>Open the console
+</li>
+<li>Type the following code
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var foo;
+foo = 'A variable called foo';
+
+var bar = 'A variable called bar';
+
+baz = 'A variable called baz';
+
+console.log(foo);
+console.log(bar);
+console.log(baz);
+</pre>
+</div>
+<ul class="org-ul">
+<li>For the variable <code>foo</code> - The variable is declared in one line and assigned a value on the next line.
+</li>
+<li>For the variable <code>bar</code> - The variable is declared and assigned on a single line.
+</li>
+<li>For the variable <code>baz</code> - The variable is not declared, but simply assigned.
+</li>
+<li>Although JavaScript will allow you to assign a variable without first declaring it using <code>var</code>, it can lead to problems in your code, and so should be avoided, so don't use the <code>baz</code> example.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 try">
+<h3 id="sec-2-2">Try It:</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Declare a variable that stores a string.
+</li>
+<li>Declare a variable that stores a number.
+</li>
+<li>Declare a variable that stores a Boolean.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Reassigning Variables</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><b>Variables</b> are <i>variable</i>
+</li>
+<li>That means we can use them to store one value and then reassign them to store a completely different value.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 code">
+<h3 id="sec-3-1">Code It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Open up your Console and try the following.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var foo;
+var bar;
+var baz;
+var qux;
+
+foo = 'I am foo';
+bar = 'I am bar';
+baz = foo;
+qux = baz;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Can you guess what the output will be when you type the following
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">console.log(foo);
+console.log(bar);
+console.log(baz);
+console.log(qux);
+</pre>
+</div>
+<ul class="org-ul">
+<li>Try it out. Were you right?
+</li>
+<li>Now let's mix things up a little. See if you can keep track of what each variable will be.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var num1 = '10'
+var num2 = 10
+var num3
+var num4
+
+num3 = Number(num1)
+num4  = num1 + num2
+num1 = num3 + num4
+</pre>
+</div>
+<ul class="org-ul">
+<li>Can you work out what all the variables will be?
+</li>
+<li>Use <code>console.log()</code> to see if you are right.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 try">
+<h3 id="sec-3-2">Try It:</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>create two variables new variables and assign them the values 10 and 20 respectively.
+</li>
+<li>Now write code that will output the following values using just those variables - the first has been done for you.
+</li>
+<li>30
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">foo = 10
+bar = 20
+console.log(foo + bar)
+</pre>
+</div>
+<ul class="org-ul">
+<li>10
+</li>
+<li>-10
+</li>
+<li>2
+</li>
+<li>0.5
+</li>
+<li>200
+</li>
+<li>12
+</li>
+<li>18
+</li>
+<li>2.5
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Badge It</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 badge">
+<h3 id="sec-4-1">Task</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+To earn your third <b>Blue JavaScript Badge</b>, complete the tasks below. Once you have finished, ask your teacher to check your code to make sure it runs correctly.
+</p>
+<ul class="org-ul">
+<li>Declare a variable called foo
+</li>
+<li>Declare a variable called bar
+</li>
+<li>Assign foo the value of 6
+</li>
+<li>Assign bar the value of 4
+</li>
+<li>Use console.log() to check the value of each variable
+</li>
+<li>Now in as few lines of code as possible, can you swap the variable values around, so that foo = 4 and bar = 6. You should be able to do it without typing any numbers.
+</li>
+<li>HINT: the only code you'll need to type will contain the names of the variable (<code>foo and bar</code>) and some operators (<code>+,-,=</code>)
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

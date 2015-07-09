@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Getting to know you</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Getting to know you</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Introduction</a>
+<ul>
+<li><a href="#sec-1-1">Python Turtle</a></li>
+<li><a href="#sec-1-2">Let's get started</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. A note on colours</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+<li><a href="#sec-2-2">Code It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Your turn</a>
+<ul>
+<li><a href="#sec-3-1">Try it</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/stsb11/turtle">Fork me on GitHub</a>
+</div>
+<center>
+<img src='img/turtle.jpg' width=33%>
+</center>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 try">
+<h3 id="sec-1-1">Python Turtle</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Python is a highly popular programming language, used by many large organisations.
+</li>
+<li>Facebook, NASA, IBM, Google and Yahoo among others all use it extensively. 
+</li>
+<li>It is considered by many to be one of the easiest languages to pick up.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Let's get started</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Load up the Python Development, called <b><b>IDLE</b></b>. 
+</li>
+<li>You'll be presented with the Python Shell window, which looks like this&#x2026;
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/shell.png" alt="shell.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>With the mouse in the shell window, type the following at the &gt;&gt;&gt; Prompt.
+</li>
+<li>Hit enter after each line.
+</li>
+<li>(<b><b>Note:</b></b> Make sure you write Screen with a capital letter!
+</li>
+</ul>
+
+<pre class="example">
+import turtle
+wn=turtle.Screen()
+wn.bgcolor("lightgreen")
+wn.title("Turtle Power")
+</pre>
+<ul class="org-ul">
+<li>A graphics window (currently empty) will appear that we can draw into.
+</li>
+<li>We've called our screen object, "wn". Every time we want Python to control somthing to do with this window, we'll need to put wn. in front of the command.
+</li>
+<li>We also changed the background colour, and put a title on the window.
+</li>
+<li>Let's add a "turtle" to the screen. We can move this arounnd the screen to draw shapes and patterns. We'll call our turtle, "Tess". 
+</li>
+</ul>
+<pre class="example">
+tess=turtle.Turtle()
+tess.color("hotpink")
+tess.pensize(5)
+tess.shape("turtle")
+</pre>
+
+<ul class="org-ul">
+<li>When we created a tess object, we then went on to set some of her properties - colour, thickness of the lines she'll draw and how she appears on the screen.
+</li>
+<li>Incidentally, a full colour list can be found <a href="http://www.tcl.tk/man/tcl8.4/TkCmd/colors.htm">here</a>.
+</li>
+<li>We could add other turtle objects too, if we wanted, and have several drawing shapes on the screen. We might have a look at that later on.
+</li>
+<li>Next, lets start to draw. Type&#x2026;
+</li>
+</ul>
+<pre class="example">
+tess.forward(100)
+tess.left(90)
+tess.forward(100)
+tess.left(90)
+tess.forward(100)
+tess.left(90)
+tess.forward(100)
+tess.left(90)
+</pre>
+
+<ul class="org-ul">
+<li>Your turtle should have traced a square shape for you.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> A note on colours</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul class="org-ul">
+<li>Although we can use colour names, we have much more control if we use numbers to describe the colours we want.
+</li>
+<li>Computers mix Red, Green and Blue to form a colour.
+</li>
+<li>Each of the three colours can have values from 0 up to 255.
+</li>
+<li>So white is 255,255,255 and black is 0,0,0.
+</li>
+<li>If we wanted pink, we'd mix red and blue together - 255,0,255 for instance.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 code">
+<h3 id="sec-2-2">Code It</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<ul class="org-ul">
+<li>First we need to set the colour mode for the program
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">wn.colormode(255)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now we can set colors using RGB values.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">tess.color(255,0,255)
+</pre>
+</div>
+<ul class="org-ul">
+<li>If you want to use different colours, have a play with the widgit below to see what they'd look like.
+</li>
+</ul>
+<object data="emb/rgb-slider.html" width="200px" height="250px"></object>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Your turn</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 code">
+<h3 id="sec-3-1">Try it</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li><b><b>Tip:</b></b> You can move the turtle back to the centre, and clear the screen at any time by using the commands&#x2026;
+</li>
+</ul>
+<pre class="example">
+tess.home()
+tess.clear()
+</pre>
+
+<ul class="org-ul">
+<li>Draw a red triangle,
+</li>
+<li>Draw a pentagon, where each side is a different colour,
+</li>
+<li>Create <b><b>second turtle</b></b> on the screen, and call it <b><b>tom</b></b>. Have this draw a black square, and the other turtle draw a green square, so that they look like this&#x2026;
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/squares.png" alt="squares.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Next, we'll look at ways of creating shapes more efficiently.
+</li>
+</ul>
+
+<p>
+<a href="./index.html">Back to homepage</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+var imageArray, progress, fillPercent;
+
+window.onload = function()
+{  
+    imageArray = document.getElementById('badges1').getElementsByTagName('img');
+    var textCount = document.getElementById('textCount');
+    textCount.innerHTML = 'Total Badges gained- = ' + imageArray.length;
+    progress = imageArray.length/6*100;
+    timer();
+};
+
+function timer()
+{
+    fillPercent = 0;
+    setInterval(function(){fillIt()},20);
+};
+
+function fillIt()
+{
+    if (fillPercent < progress)
+	{
+	    document.getElementById('progressBarFill').style.width = fillPercent+'%';
+	}
+    else
+	{
+	    fillPercent++;
+	};
+};
+
+
+
+
+
+
+
+
+
+

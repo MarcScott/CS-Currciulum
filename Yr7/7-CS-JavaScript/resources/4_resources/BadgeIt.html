@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inputs</title>
+    <script type="text/javascript">
+     function validate()
+     {
+       var  password1 = document.getElementById('password1').value;
+       var  password2 = document.getElementById('password2').value;
+       if (password1 === password2)
+       {
+	 messageOut.innerHTML = "<h1>Password accepted</h1>";
+       }
+       else
+       {
+	 messageOut.innerHTML = "<h1>Passwords do not match</h1>";
+       };
+     };
+    </script>
+  </head>
+  <body>
+    <p>Create a password <input type="password" id="password1" onchange=""></input></p>
+    <p>Retype a password <input type="password" id="password2" onchange="validate()"></input></p>
+    <div id = "messageOut"></div>
+  </body>
+</html>

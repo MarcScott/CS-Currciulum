@@ -1,0 +1,94 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: A Virtual LOLcat in Scratch
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-lolcats">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+* Badge criteria guidance
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** MarkIt
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Below guidance has been provided for the award of badges.
+| <10>       | <50>                                               | <50>                                               | <50>                                               |
+| Lesson     | Silver                                             | Gold                                               | Platinum                                           |
+| Week 1     | Student produces a basic script that animates a sprite | Student produces a script using loops *or* conditionals | Student produces a script using both loops, conditionals, variables etc |
+| Week 2     | Death script contains some basic animation         | Death script includes animation and sound effects. | Death script includes multiple costume changes or other complex animations |
+| Week 3     | Student's animation shows a basic understanding of concepts | Student's animation shows a good understanding of concepts | Student's animation shows a thorough understanding of the concepts |
+| Week 4     | One of the scripts has been completed in the time allowed | Two of the scripts have been completed in the times allowed | Three of the scripts have been completed in the time allowed |
+| Week 5     | Lists have been created and used for one of the scripts | Lists have been created and used for two of the scripts | Lists have been created and used for all of the scripts. |
+| Week 6     | Customisation of the script adds basic animation only | Customisation uses additional variables, loops and conditionals | Customisation is complex using loops, conditionals and data structures |
+|            |                                                    |                                                    |                                                    |

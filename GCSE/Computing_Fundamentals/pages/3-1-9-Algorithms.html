@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.1.9 Algorithms</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.1.9 Algorithms</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. What is an Algorithm?</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Interpreting pseudocode algorithms</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+<li><a href="#sec-2-2">Try It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Writing pseudocode algorithms</a>
+<ul>
+<li><a href="#sec-3-1">Try It</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Testing pseudocode algorithms</a>
+<ul>
+<li><a href="#sec-4-1">Learn It</a></li>
+<li><a href="#sec-4-2">Try It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> What is an Algorithm?</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Algorithms are computational solutions that always finish and return an answer.
+</li>
+<li>For example, if we had a bag filled with scrabble tiles, and we wanted to find out how many letters of each type there were:
+</li>
+</ul>
+<pre class="example">
+Set count for each letter to 0
+Until the bag is empty
+    Take out a tile
+    Look at the letter
+    Add one to that letter's count
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Interpreting pseudocode algorithms</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>We can use pseudocode to write algorithms.
+</li>
+<li>Pseudocode is useful as it can be read by any programmer, regardless of their language specialism.
+</li>
+<li>In reality there is no formal syntax for pseudocode and computer scientists will use whatever notation they feel is best understood by the reader. Exam boards however don't seem to understand this concept, and insist on a formal syntax.
+</li>
+<li>You can find AQA's pseudocode syntax <a href="http://filestore.aqa.org.uk/subjects/AQA-GCSE-COMPSCI-W-TRB-PSEU.PDF">here</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 try">
+<h3 id="sec-2-2">Try It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>For each of the pseudocode algorithms shown below, in a few sentences, explain their function.
+</li>
+</ul>
+<pre class="example">
+foo &lt;-- 100
+WHILE foo &gt; 0
+IF foo % 2 = 0 THEN
+OUTPUT foo
+foo = foo - 1
+END IF
+ENDWHILE
+</pre>
+<pre class="example">
+bar &lt;-- 1
+baz &lt;-- 0
+WHILE bar &lt; 100
+bar &lt;-- bar + baz
+baz &lt;-- bar - baz
+OUTPUT bar
+ENDWHILE
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Writing pseudocode algorithms</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 try">
+<h3 id="sec-3-1">Try It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>You also need to be able to write simple algorithms using pseudocode. Try the following algorithms taken from <a href="https://projecteuler.net/archives">Project Euler</a>
+<ol class="org-ol">
+<li>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
+</li>
+<li>Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, &#x2026; By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Testing pseudocode algorithms</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 learn">
+<h3 id="sec-4-1">Learn It</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Often, when we write an algorithm, we'll want to test that it works correctly.
+</li>
+<li>We can use trace tables to achieve this.
+</li>
+</ul>
+<pre class="example">
+X &lt;-- 1
+Y &lt;-- 2
+WHILE X &lt; 20
+    OUTPUT X
+    X &lt;-- X + Y
+    Y &lt;-- Y + 1
+ENDWHILE
+</pre>
+<ul class="org-ul">
+<li>The variable in the above pseudocode algorithm can traced using a trace table.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right">OUTPUT</th>
+<th scope="col" class="right">X</th>
+<th scope="col" class="right">Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">&#xa0;</td>
+<td class="right">1</td>
+<td class="right">2</td>
+</tr>
+
+<tr>
+<td class="right">1</td>
+<td class="right">3</td>
+<td class="right">3</td>
+</tr>
+
+<tr>
+<td class="right">3</td>
+<td class="right">6</td>
+<td class="right">4</td>
+</tr>
+
+<tr>
+<td class="right">6</td>
+<td class="right">10</td>
+<td class="right">5</td>
+</tr>
+
+<tr>
+<td class="right">10</td>
+<td class="right">15</td>
+<td class="right">6</td>
+</tr>
+
+<tr>
+<td class="right">15</td>
+<td class="right">21</td>
+<td class="right">7</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>The trace table allows us to understand what is happening to the values of variables within the algorithm.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3 try">
+<h3 id="sec-4-2">Try It</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Try drawing trace tables for the following algorithms.
+</li>
+</ul>
+<pre class="example">
+Y &lt;-- 3
+FOR X &lt;-- 1 TO 5
+Y &lt;-- Y + X
+ENDFOR
+OUTPUT Y
+</pre>
+<pre class="example">
+List &lt;-- [10,8,3,5,6,1,2]
+Total &lt;-- 0
+FOR i &lt;-- 1 TO LEN(List)
+TOTAL &lt;-- TOTAL + List[i]
+ENDFOR
+OUTPUT TOTAL
+</pre>
+<pre class="example">
+num &lt;-- 78
+answer &lt;-- ''
+WHILE num &gt; 0
+r &lt;-- num MOD 2
+num &lt;-- num / 2
+answer &lt;-- STR(r) + answer 
+ENDWHILE
+OUTPUT answer
+</pre>
+<pre class="example">
+nums = [6,2,8,1,9,2]
+n = 0
+FOR i &lt;-- 1 TO LEN(nums)
+IF nums[i] &gt; n THEN
+n = nums[i]
+ENDIF
+ENDFOR
+OUTPUT n
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

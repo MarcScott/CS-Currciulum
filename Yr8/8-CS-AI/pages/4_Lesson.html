@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Artificial Intelligence</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/navbar.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Artificial Intelligence</h1>
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-AI">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Paperclips</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It - Evil AI</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>The word <i>Robot</i> entered the English language in the 1920 play R.U.R. about factory robots that learn about violence from humans and revolt against their masters.
+</li>
+<li>Since then Artificially Intelligent machines have been portrayed countless times in movies and literature, and not often in a good light.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 badge">
+<h3 id="sec-1-2">Badge It - Silver</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Use online resources to look at the following AIs portrayed in fiction.
+<ul class="org-ul">
+<li>Skynet from the Terminator movies
+</li>
+<li>HAL 9000 from 2001: A Space Odyssey
+</li>
+<li>GLaDOS from the Portal Game series
+</li>
+<li>Joshua in WarGames
+</li>
+<li>The Machines in the Matrix movies
+</li>
+</ul>
+</li>
+<li>Write a paragraph on how AI has been historically portrayed in fiction.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It - The reality?</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Have a read of<a href="http://www.bbc.co.uk/news/technology-30290540"> this article</a>. There are some very intelligent scientists out there who have genuine concerns about AI.
+</li>
+<li>So what are they worried about? One theorised AI that could potentially destroy all humanity is <i>The Paperclipper</i>. This is an AI that has been programmed to make paperclips.
+</li>
+<li>Read this exert from<a href="https://medium.com/@LyleCantor/russell-bostrom-and-the-risk-of-ai-45f69c9ee204"> Lyle Cantor's article on <i>The Paperclipper</i>.</a>
+</li>
+</ul>
+<blockquote>
+<p>
+The year is 2055 and The Gem Manufacturing Company has put you in charge of increasing the efficiency of its paperclip manufacturing operations. One of your hobbies is amateur artificial intelligence research and it just so happens that you figured out how to build a super-human AI just days before you got the commission. Eager to test out your new software, you spend the rest of the day formally defining the concept of a paperclip and then give you new software the following goal, or “utility function” in Bostrom’s parlance: create as many paperclips as possible with the resources available.
+</p>
+
+<p>
+You eagerly grant it access to Gem Manufacturing’s automated paperclip production factories and everything starts working out great. The AI discovers new, highly-unexpected ways of rearranging and reprograming existing production equipment. By the end of the week waste has quickly declined, profits risen and when the phone rings you’re sure you’re about to get promoted. But it’s not management calling you, it’s your mother. She’s telling you to turn on the television.
+</p>
+
+<p>
+You quickly learn that every automated factory in the world has had its security compromised and they are all churning out paperclips. You rush to into the factories’ central server room and unplug all the computers there. It’s no use, your AI has compromised (and in some cases even honestly rented) several large-scale server farms and is now using a not-insignificant percentage of the worlds computing resources. Around a month later, your AI has gone through the equivalent of several technological revolutions, perfecting a form of nanotechnology it is now using to convert all available matter on earth into paperclips. A decade later, all of our solar system has been turned into paperclips or paperclip production facilities and millions of probes are making their way to nearby stars in search of more matter to turn into paperclips.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 badge">
+<h3 id="sec-1-4">Badge It - Gold</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>With a partner, play a little game whereby one of you is the programmer that has created <i>The Paperclipper</i> and the other one is the AI.
+</li>
+<li>The programmer should try to come up with ways that you could limit the AI, either before switching it on or when you realise it's getting out of hand.
+</li>
+<li>The AI should try to come up with ways of ensuring that it continues to make paperclips as quickly and efficiently as possible.
+</li>
+<li>Jot down your ideas.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 learn">
+<h3 id="sec-1-5">Learn It - Computer Power</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Moore's Law came about from the observation that the number of transistors per square inch on integrated circuits had doubled every year since the integrated circuit was invented
+</li>
+<li>More often we now refer to Moore's Law with regard to the processing power of computers.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PPTMooresLawai.jpg/477px-PPTMooresLawai.jpg" alt="477px-PPTMooresLawai.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>As you can see from the graph above, computers are becoming ever more powerful, which begs the question - 'When will it all stop?'
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It - Our Benevolent Overlords</h3>
+<div class="outline-text-3" id="text-1-6">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Skfw282fJak" frameborder="0" allowfullscreen></iframe>
+<ul class="org-ul">
+<li>Watson was able to convincingly beat the best human champions in the game of jepordy. But what happens when we build a computer that is actually more intelligent than a human?
+</li>
+<li>In theory, such a computer would be able to design another computer more intelligent than itself.
+</li>
+<li>This next computer could also design a computer more intelligent than itself, and that's not all. Maybe the computers would be capable of solving other problems. Maybe the computer could erradicate disease, devise treatments for ageing, design reactors that give us an infinite source of energy, create processes that provide unlimited food, build spaceships that can travel to other galaxies.
+</li>
+<li>We call this hypothetical point in time, the Technological Singularity. Some Scientists don't believe it will ever happen. Some believe it is inevitable.
+</li>
+<li>The question is - what do these super-human AI computers do with humankind? Will the computers turn us into immortal beings that never need work or suffer again? Will the computers consider us irrelevant? Serve us? Ignore us? Destroy us? 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 research">
+<h3 id="sec-1-7">Research It</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Have a look at these videos that explain and offer different views of a potential technological singularity.
+</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WTooncAuv38" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-sSJ1K2H05A" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IFe9wiDfb0E" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 badge">
+<h3 id="sec-1-8">Badge It - Platinum</h3>
+<div class="outline-text-3" id="text-1-8">
+
+<ul class="org-ul">
+<li>Answer the following questions as fully as possible. You may need to use other sources of information, other than the videos already shown.
+</li>
+<li>What are some of the positive predictions regarding a technological singularity?
+</li>
+<li>What are some of the negative predictions regarding a technological singularity?
+</li>
+<li>Are there any people working to try and bring about the technological singularity and in your opinion, is this sensible and why? 
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

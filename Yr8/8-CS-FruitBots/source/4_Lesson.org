@@ -1,0 +1,370 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: FruitBots
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/8CS-FruitBots">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Making our own function
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- Although only the =make_move()= function is called each turn, we can make our own functions and have them called by =make_move()=
+- We're going to have a go at making our own functions.
+- Remember, a function is a block of code that performs a task.
+ ** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We want our bot to move to every square on the board.
+- To do this, we should probably pick a starting position.
+- The /origin/ of a graph is at coordinates 0,0, so we'll start at the origin of the board - x = 0 and y = 0.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Rename your current /mybot.js/ to /Lesson3Bot.js/
+- Now create a new mybot.js file and add in the following code.
+#+BEGIN_SRC javascript
+function new_game(){
+}
+
+function default_board_number(){
+return 1;
+}
+
+function make_move(){
+}
+#+END_SRC
+- Save the file.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We've already created code to move to a specific point on the board.
+- We're going to reuse that code, but put it in a new function called =moveToTarget()=
+#+BEGIN_SRC javascript
+function new_game(){
+}
+
+function default_board_number(){
+return 1;
+}
+
+function moveToTarget(){
+}
+
+function make_move(){
+}
+#+END_SRC
+- We now have a function called =moveToTarget()=, but it doesn't do anything.
+- Let's make the function do something simple, like moving EAST as we did in the first lesson.
+#+BEGIN_SRC javascript
+  function new_game(){
+  }
+
+  function default_board_number(){
+  return 1;
+  }
+
+  function moveToTarget(){
+      return EAST
+  }
+
+  function make_move(){
+  }
+#+END_SRC
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run your code by opening /game.html/
+- Does it do anything? Does your bot move EAST?
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Remember, the only function that runs automatically when you open /game.html/ is =make_move()=.
+- To use the funtion we have made, we have to /call/ it.
+- We can do this just by writing =moveToTarget()= anywhere in our code. When we call =moveToTarget()=, whatever that function /returns/ will be used.
+#+BEGIN_SRC javascript
+  function new_game(){
+  }
+
+  function default_board_number(){
+  return 1;
+  }
+
+  function moveToTarget(){
+      return EAST
+  }
+
+  function make_move(){
+      //Call the moveToTarget() function
+      return moveToTarget()
+  }
+#+END_SRC
+- Run this and your bot should move EAST.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now we can call the =moveToTarget()= function, we can write our code in =moveToTarget()=.
+- We'll use the code we wrote in a previous lesson, to get the bot to move to a specific target.
+#+BEGIN_SRC javascript
+  function new_game(){
+  }
+
+  function default_board_number(){
+      return 1;
+  }
+
+  //Set the targets as Global Variables
+  var target_x = 0;
+  var target_y = 0;
+
+  function moveToTarget(){
+      // Get the bot's position
+      var my_x = get_my_x();
+      var my_y = get_my_y();
+
+      // Now move to the target
+      if (my_x < target_x){
+          return EAST
+      }
+      else if (my_x > target_x){
+          return WEST
+      }
+      else if (my_y < target_y){
+          return SOUTH
+      }
+      else if (my_y > target_y){
+          return NORTH
+      }
+  }
+
+  function make_move(){
+      //Call the moveToTarget() function
+      return moveToTarget()
+  }
+#+END_SRC
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run this code and your FruitBot should move towards the origin of the board.
+* Global Variable, Local Variable, Parameters and Arguments
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Look back over your code you've just written.
+- We have used two /Global Variables/
+  - =var target_x=
+  - =var target_y=
+- Remember that a global variable is declared outside of any functions and can be used by any function. =target_x= can therefore be seen by the functions =new_game()=, =moveToTarget()= and =make_move()=
+- We also have two local variables.
+  - =var my_x=
+  - =var my_y=
+- Because these variables are declared inside =moveToTarget()=, only the =moveToTarget()= function can use them.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Sometimes it is useful to use neither global or local variables.
+- Sometimes we want to pass variables into a function when we call it.
+- To do this we use parameters and arguments.
+- Let's imagine we want a function that does nothing but say somebody's name. We could write the function like this.
+#+BEGIN_SRC javascript
+  function sayName(){
+      console.log('Bob')
+  }
+ 
+ sayName()
+#+END_SRC
+- Instead of using the string Bob, we could use a local variable.
+#+BEGIN_SRC javascript
+  function sayName(){
+      var name = 'Bob'
+      console.log('name')
+  }
+
+  sayName()
+#+END_SRC
+- This code would do the same thing.
+- We could however /pass/ the variable into the function when we call it.
+#+BEGIN_SRC javascript
+  function sayName(name){
+      console.log('name')
+  }
+
+  sayName('Bob')
+#+END_SRC
+- This code does the same thing.
+- The /name/ in =function sayName(name)= is called a parameter.
+- The /'Bob'/ in the call =sayName('Bob')= is called an argument.
+- *MAKE SURE YOU UNDERSTAND ARGUMENTS AND PARAMETERS BY THE END OF THE LESSON, AND ASK FOR HELP IF YOU NEED IT*
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's change the code a little so we are using arguments and parameters.
+- We can change our function so that it has two parameters - =target_x= and =target_y=. We can then pass in whatever values we like, rather than setting them as global variables each time.
+#+BEGIN_SRC javascript
+  function new_game(){
+  }
+
+  function default_board_number(){
+      return 1;
+  }
+
+  function moveToTarget(target_x,target_y){
+      // Get the bot's position
+      var my_x = get_my_x();
+      var my_y = get_my_y();
+
+      // Now move to the target
+      if (my_x < target_x){
+          return EAST
+      }
+      else if (my_x > target_x){
+          return WEST
+      }
+      else if (my_y < target_y){
+          return SOUTH
+      }
+      else if (my_y > target_y){
+          return NORTH
+      }
+  }
+
+  function make_move(){
+      //Call the moveToTarget() function
+      return moveToTarget()
+  }
+#+END_SRC
+- That's the =moveToTarget()= function completed, but although the function has /parameters/, we're not providing /arguments/ to the function when we call it. Let's change that.
+#+BEGIN_SRC javascript
+  function new_game(){
+  }
+
+  function default_board_number(){
+      return 1;
+  }
+
+  function moveToTarget(target_x,target_y){
+      // Get the bot's position
+      var my_x = get_my_x();
+      var my_y = get_my_y();
+
+      // Now move to the target
+      if (my_x < target_x){
+          return EAST
+      }
+      else if (my_x > target_x){
+          return WEST
+      }
+      else if (my_y < target_y){
+          return SOUTH
+      }
+      else if (my_y > target_y){
+          return NORTH
+      }
+  }
+
+  function make_move(){
+      //Call the moveToTarget() function
+      return moveToTarget(0,0)
+  }
+#+END_SRC
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run your code and make sure that your FruitBot moves to the origin.
+- Try changing the arguments that you provide the =moveToTarget()= function, to move to other places on the board.
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- That's the fourth lesson finished and our FruitBot does less than it did in the previous lesson!
+- However you should have learned several important concepts in Computing.
+  - A better understanding of Functions.
+  - A better understanding of Global and Local Variables
+  - A knowledge of what is meant by Arguments and Parameters.
+- To earn your badge, you're going to need to provide an explanation of the terms /function, global variable, local variable, parameter and argument/.
+- You could write them down and show them to your teacher, or if you are reaaly confident you could just give a verbal explanation.
+- Be prepared for questions from your teacher though. If you want to earn a Platinum badge, then you'll need to provide your own coded examples.

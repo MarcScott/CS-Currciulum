@@ -1,0 +1,231 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Touring Turing
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-Turing">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Manipulating Variable Values
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Last lesson you used Python to perform some calculations.
+- Let's have a quick test to see how well you remember how to perform calculations.
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+1. What is the sum of the following numbers - 5,1,4,9,12
+2. What is the product of the following numbers - 4,1,2,8,9,12
+3. What is the remainder of dividing 12 by 5
+4. What is 12% of 32
+5. If I add 6 to 4, multiply the answer by 10 and then raise to the power of 2, what is the answer.
+** Try It
+- Using variables can help us solve more complex problems.
+- Let's try and use variables to solve some trickier problems.
+- Let's imagine you're in a maths class and you are given the following problem.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+#+begin_quote
+A chicken can lay a single egg, every day. If a chicken lives for seven years, what is the maximum number of eggs it can lay in it's lifetime?
+#+end_quote
+- We can use Python to help us work this out, using a few simple variables.
+#+begin_src python
+daysInYear = 365
+lifeTime = 7
+eggsPerDay = 1
+numberEggs = daysInYear * eggsPerDay * lifeTime 
+#+end_src
+- We started by assigning three variables to have integer values. Then we assigned a third variable (=numberEggs=) to be the result of multiplying (=*=) the previous variables together.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Let's try another one.
+#+begin_quote
+A snake can slither 20cm in 15 minutes. How many hours would it take the snake to travel 100cm
+#+end_quote
+#+begin_src python
+distance = 100
+speed = 20/15
+time = distance/speed
+#+end_src
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- These ones are even trickier.
+  1. A woodchuck can chuck 5 bits of wood in an hour. How long does it take a woodchuck to chuck 45 pieces of wood.
+  2. A peck is equal to 9 litres. If Peter picked a peck of pickled peppers and each pepper has a volume of 0.25 litres, how many pickled peppers did Peter pick.
+  3. A cannibal can nibble 9 cans in an hour. How many cans can nine cannibals nibble in ninety minutes
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We can easily assign variables to other variables.
+#+begin_src python
+foo = 10
+bar = foo
+#+end_src
+- Let's find out what =bar= is now.
+#+begin_src python
+bar
+#+end_src
+- As you probably expected, it is now 10.
+- But what happens if we change =foo=
+#+begin_src python
+foo = 5
+#+end_src
+- What's bar now?
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- To see why =bar= stays at 10, we need to think about what happens when we use code like =bar = foo=. We'll talk in terms of a /sort of/ Turing Machine.
+- We start off with an empty tape and some empty cards.
+[[file:img/tape1.jpg]]
+- When we write =foo = 10= two things happen.
+  1. The value of 10 is stored on the tape in a certain box. In this case it is box number 4.
+  2. The card is then altered so it has the variable identifier and the box it points to.
+[[file:img/tape2.jpg]]
+- When we then write =bar = foo=, a second card is then used to indicate that =bar= points to the same box number as =foo=.
+[[file:img/tape3.jpg]]
+- Lastly, when we reassign =foo= the value of 5, a second box (in this case box 8) has 5 stored in it and =foo='s card is altered to now point to the new box.
+[[file:img/tape4.jpg]]
+- We can see that bar is still pointing to the value in address 4, which is the number 10.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- For each of the problems below - you may only use the variables stated in the problem. You can't use additional variables or values.
+- The first has been done for you as an example
+*** Example
+#+begin_src python
+foo = 10
+bar = 4
+baz = 0
+#+end_src
+- make =foo=, =bar= and =baz= all equal to 6.
+/Answer/
+#+begin_src python
+baz = foo - bar
+foo = baz
+bar = baz
+#+end_src
+*** Problem 1
+#+begin_src python
+foo = 10
+bar = 4
+#+end_src
+- Make =foo= and =bar= both equal to 6.
+*** Problem 2
+#+begin_src python
+foo = 10
+bar = 15
+baz = 3
+#+end_src
+- Make =foo= and =bar= both equal to 25 and =baz= equal to 22
+*** Problem 3
+#+begin_src python
+foo = 12
+bar = 3
+#+end_src
+- Make =foo= equal to 4 and =bar= equal to 12
+*** Problem 4
+#+begin_src python
+foo = 9
+bar = 4
+#+end_src
+- Make =foo= equal to 4 and =bar= equal to 9

@@ -1,0 +1,290 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: FruitBots
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/8CS-FruitBots">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+
+* Picking up Fruit on the Way using Arrays
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- In the last lesson, we moved out FruitBot to a specific square on the board.
+- Any position on the board can be described by two numbers; an x coordinate and a y coordinate
+- The smallest x and y positions are 0, and the largest are WIDTH - 1 and HEIGHT - 1
+- The acutal FruitBots program needs to store the position of all the fruits on the board.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- One way of storing data is to use a list. In programming we often use the term /array/, but the terms /list/ and /array/ are often interchangable.
+- A Wednesday night meal could be stored as a simple array.
+#+BEGIN_EXAMPLE
+Battered Cod
+Chips
+Peas
+#+END_EXAMPLE
+- In JavaScript this array would look like this.
+#+BEGIN_SRC javascript
+wednesday = [Battered Cod, Chips, Peas]
+#+END_SRC
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Now imagine we needed to store several meals. For this we would need a 2d array. This is basically a list of lists.
+#+BEGIN_EXAMPLE
+Monday
+    Pasta
+    Bolognese
+    Parmesan
+Tuesday
+    Beef Stew
+    Mashed Potato
+    Green Beans
+Wednesday
+    Battered Cod
+    Chips
+    Peas
+#+END_EXAMPLE
+- In JavaScript we would write this as so.
+#+BEGIN_SRC javascript
+meals = [[Pasta,Bolognese,Parmesan]
+         [Beef Stew, Mashed Potato, Green Beans]
+         [Battered Code, Chips, Peas]]
+#+END_SRC
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- FruitBots uses a 2d array to store the positions of all the fruit on the board.
+- Look at the board for game 1 that we have been using.
+- If we wanted to store the positions of fruit for the first *column*, we could use an array like this - *[Cherry, Melon, Nothing, Nothing, Nothing, Nothing]*
+- The second column would need another array - *[Melon, Nothing, Nothing, Nothing, Nothing, Melon]*
+- The third column would need another array - *[Melon., Nothing, Banana, Melon, Nothing, Nothing]*
+- This would continue and we would end up with 7 arrays.
+- We can then store each of these 7 arrays in a 2d array.
+- Of course it is not very efficient to store fruit types using strings, so numbers are used instead.
+- 0 = Empty, 1 = Strawberry, 2 = Banana, 3 = Cherry, 4 = Melon
+- The entire array for the first board can therefore be described as follows.
+#+BEGIN_SRC javascript
+[[3,4,0,0,0,0] //THIS IS THE FIRST COLUMN OF THE BOARD
+ [4,0,0,0,0,4] //THIS IS THE SECOND COLUMN OF THE BOARD
+ [4,0,2,4,0,0]
+ [0,0,4,2,0,0]
+ [0,1,4,0,2,0]
+ [3,0,0,0,0,3]
+ [3,3,0,0,0,0]]
+#+END_SRC
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Write your own explanation for what we mean by the term 2d array.
+- Use a real life example that is different to the /meals/ analogy used above.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- We'll use the bot you made last lesson, for this.
+- Open up mybot.js and then /SAVE IT AS/ Lesson2bot.js
+- That's the copy saved. Now close Lesson2bot.js and reopen mybot.js
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We need to get our bot to pick up fruit as it moves about the board.
+- First we'll need to get the board's 2d array and store it.
+- Add the code to your =make_move()= function that you wrote last lesson.
+#+BEGIN_SRC javascript
+  function make_move(){
+      //get the board's 2d array
+      board = get_board()
+
+      //store the player's x and y position in variables for clearer code.
+      var my_x = get_my_x()
+      var my_y = get_my_y()
+      
+      if(my_x < target_x){
+          return EAST
+      }
+      else if(my_x > target_x){
+          return WEST
+      }
+      else if(my_y < target_y){
+          return SOUTH
+      }
+      else if(my_y > target_y){
+          return NORTH
+      }
+      else{
+          return PASS
+      }
+  }
+#+END_SRC
+- We can access the fruit at any coordinate on the board using the following syntax - =board[x][y]=
+- This will give us the /yth/ value in the /xth/ array.
+- So board[5][3] would give you the 3rd fruit in the 5th array. Or in other words the fruit at x = 5 and y = 3.
+- Therefore =board[my_x][my_y]= will give the fruit at your bot's current position.
+- If the value is greater than 0, we should =TAKE= the fruit.
+- *MAKE SURE YOU UNDERSTAND THIS. IF IT CONFUSES YOU THEN ASK A PEER OR YOUR TEACHER FOR HELP*
+#+BEGIN_SRC javascript
+  function make_move(){
+      //get the board's 2d array
+      board = get_board()
+
+      //store the player's x and y position in variables for clearer code.
+      var my_x = get_my_x()
+      var my_y = get_my_y()
+      
+      //if there's a fruit at the bot's position then TAKE it.
+      if(board[my_x][my_y] > 0){
+          return TAKE
+      }
+      
+      //no fruit so let's move the bot towards the target
+      else if(my_x < target_x){
+          return EAST
+      }
+      else if(my_x > target_x){
+          return WEST
+      }
+      else if(my_y < target_y){
+          return SOUTH
+      }
+      else if(my_y > target_y){
+          return NORTH
+      }
+      else{
+          return PASS
+      }
+  }
+#+END_SRC
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run game.html
+- Try changing your bot's target_x and target_y so that it picks up as many fruit as possible
+* Picking up all the Fruit (in theory)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Sometimes it is handy to think of algorithms to solve our problems without actually writing any code. This is just a step by step set of instructions to solve a problem, and can be written in normal English.
+- For instance, an algorithm to collect every fruit on the board could look something like this
+#+BEGIN_SRC
+REPEAT THE FOLLOWING EACH MOVE
+1. PICK A RANDOM NUMBER BETWEEN 1 and 4
+2. IF NUMBER IS 1 THEN MOVE NORTH, IF IT IS 2 THEN MOVE SOUTH, IF IT IS 3 THEN MOVE EAST, IF IT IS 4 THEN MOVE WEST.
+3. IF THERE IS A FRUIT ON THE SQUARE THEN TAKE IT
+#+END_SRC
+- You can try out this algorithm using the following code.
+#+BEGIN_SRC javascript
+function make_move() {
+   var board = get_board();
+
+   // Lovely, I've found a fruit.
+   if (board[get_my_x()][get_my_y()] > 0) {
+       return TAKE;
+   }
+   // No fruit here so let's pick a direction to go in.
+   var rand = Math.random() * 4;
+
+   if (rand < 1) return NORTH;
+   if (rand < 2) return SOUTH;
+   if (rand < 3) return EAST;
+   if (rand < 4) return WEST;
+
+   return PASS;
+}
+#+END_SRC
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Try and come up with your own algorithm to take all the fruit on the board.
+- You can work with a partner or on your own.
+- Try to think of the most efficient way of getting to every square on the board, or maybe even just the squares that have fruit on them
+- When you have finished your algorithm, show it to your teacher to get your badge.
+- If you have time, you can try and code your algorithm.
+

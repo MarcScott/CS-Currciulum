@@ -1,0 +1,184 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.12 Testing
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Application Testing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Software testing is a vital part of the Software Development Cycle.
+- We all make mistakes, and even the best programmers and designers aren't infalliable.
+- Software Testing is important because: 
+  1. it highlights the defects and errors that were made during the development phases.
+  2. it ensures a Customer can rely on the product and that they are satisfied with it.
+  3. it is very important to ensure the Quality of the product.
+  4. it ensures effective performance of software application or product.
+  5. it saves time and money, in the future, correcting errors and bug.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Have a look at this[[https://en.wikipedia.org/wiki/Software_testing#Testing_Types][ wikipedia article]] on types of testing. 
+- For each type of test, write a single sentence to describe the basic approach.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Most testing can be broken up into one of two types.
+  1. Unit testing
+  2. Modular testing
+- *Unit testing*
+  - In Unit testing, individual blocks of code are tested.
+  - These might be individual functions or classes.
+  - This type of testing is often carried out during development.
+  - The programmer would keep detailed documentation on the tests that have been carried out.
+  - Unit testing is an excellent way of ensuring small bugs and faults in the code are picked up early. It does not test integration with other parts of the program very well though.
+- *Modular Testing*
+  - Modular testing, would test some aspect of the finished software.
+  - This might be a test on the GUI, or integration with a database.
+  - These tests are normally carried out by specialist testers.
+  - The tester would keep detailed documentaion on the tests to feedback to developers.
+  - Modular testing gives reassurance that the whole application works as intended. It is however, a fairly lengthy and complicated process.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We can perform some tests without the use of a computer or any of the real code.
+- Often, when we write an algorithm, we'll want to test that it works correctly.
+- We can use trace tables to achieve this.
+#+begin_src
+X <-- 1
+Y <-- 2
+WHILE X < 20
+    OUTPUT X
+    X <-- X + Y
+    Y <-- Y + 1
+ENDWHILE
+#+end_src
+- The variable in the above pseudocode algorithm can traced using a trace table.
+| OUTPUT |  X | Y |
+|--------+----+---|
+|        |  1 | 2 |
+|      1 |  3 | 3 |
+|      3 |  6 | 4 |
+|      6 | 10 | 5 |
+|     10 | 15 | 6 |
+|     15 | 21 | 7 |
+- The trace table allows us to understand what is happening to the values of variables within the algorithm.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Try drawing trace tables for the following algorithms.
+#+begin_src
+Y <-- 3
+FOR X <-- 1 TO 5
+    Y <-- Y + X
+ENDFOR
+OUTPUT Y
+#+end_src
+#+begin_src
+List <-- [10,8,3,5,6,1,2]
+Total <-- 0
+FOR i <-- 1 TO LEN(List)
+    TOTAL <-- TOTAL + List[i]
+ENDFOR
+OUTPUT TOTAL
+#+end_src
+#+begin_src
+num <-- 78
+answer <-- ''
+WHILE num > 0
+    r <-- num MOD 2
+    num <-- num / 2
+    answer <-- STR(r) + answer 
+ENDWHILE
+OUTPUT answer
+#+end_src
+#+begin_src
+nums = [6,2,8,1,9,2]
+n = 0
+FOR i <-- 1 TO LEN(nums)
+    IF nums[i] > n
+        n = nums[i]
+    ENDIF
+ENDFOR
+OUTPUT n
+#+end_src
+

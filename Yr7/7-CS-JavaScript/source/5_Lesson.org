@@ -1,0 +1,253 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/main.css"/>
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil html-style:nil 
+
+#+TITLE: More functions and events.
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/KS3_Curriculum">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+* A Special event
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- Before we move on, we're going to look at a really useful event that is built into JavaScript.
+- The event is called =onload=
+- Code attached to this event will be run by the web browser, once _all_ the HTML has been loaded.
+- This means we can attach our JavaScript to this event, and know that the DOM has fully loaded before the JavaScript runs.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Create a new document using the following HTML
+#+BEGIN_SRC html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>onload</title>
+    <script type="text/javascript">
+     var theCountDisplay = document.getElementById('theCountDisplay');
+     theCountDisplay.innerHTML = '<h1>Working</h1>';
+    </script>
+  </head>
+  <body>
+    <div id = 'theCountDisplay'></div>
+  </body>
+</html>
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save you code. Call it something like onload.html
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Now run your code in a browser.
+- Does it work?
+- Open up a console and see if you can figure out what the problem is.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The code previously doesn't work. This is because the JavaScript runs before the DOM is loaded and so the browser has no idea what we mean by =theCountDisplay=.
+- What we need is to trigger the JavaScript code once the browser has loaded the DOM.
+- We can use the =onload= event for this.
+- Alter your code so that the JavaScript looks like the code below.
+#+BEGIN_SRC javascript
+  window.onload = function()
+  {     
+      var theCountDisplay = document.getElementById('theCountDisplay');
+      theCountDisplay.innerHTML = '<h1>Working</h1>';
+  };
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- When you run the code this time, does it work?
+- The onload event makes sure the DOM is fully loaded, so the browser recognises the =theCountDisplay= id.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Add another =div= into the =<body>= of your web-page, beneath the one already there.
+- Give the div the id =theTimerDisplay=.
+- Now add some JavaScript so that the div also displays the text =working= but within =<h2>= tags.
+- _Make sure your code works_
+ 
+* Let's mash a button
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- Another event we can use to trigger code is the =onclick= event.
+- This can be applied to (almost) any HTML element in your code.
+- In the next section, you'll apply the onclick event to a button.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Keep all the code from your original file.
+- Add a line at the top of the _body_ of your html, as follows:
+#+BEGIN_SRC html
+    <input type="button" value="Click me" id='theButton'>
+#+END_SRC 
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your file
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Open your file in a web browser and you should see the button.
+** Code It
+- Now for some JavaScript
+- Firstly you'll need to declare a variable to count the clicks. Place the following above the =window.onload= code, so that it is the first line to be read.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+#+BEGIN_SRC javascript
+  var count = 0
+#+END_SRC 
+- Next we want a little function that will display the count and make the count go up. This code should go after the =onload= event has finished.
+- Look at the line =count++;=. In JavaScript we can use this syntax to increase something by 1. It is the same as writing =count = count + 1=.
+#+BEGIN_SRC javascript
+  function addToCount()
+  {
+  theCountDisplay.innerHTML = '<h1>' + count + '</h1>';
+  count++;
+  };
+#+END_SRC
+- Now we want to run that function whenever the button is clicked. Place this code /inside/ =onload= event that is triggered by the =onload= event.
+#+BEGIN_SRC javascript
+  var theButton = document.getElementById('theButton');
+  theButton.onclick=function(){addToCount()};
+#+END_SRC
+- We've used a new event here. The event is called =onclick=.
+- =onclick= events use the following syntax.
+- =htmlElement.onclick=function(){nameOfFunctionToRun()};=
+- =onclick= events can be used with /almost/ all HTML elements, such as divs, images or links.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your file
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Open your file in a web browser and you should see the button.
+- Open your file in a web-browser.
+- Clicking the button should cause the numbers to increase.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+- At the moment =theCountDisplay= shows the text "Working" before a click is registered. Can you change this so that it displays the current count (which should be 0)
+* Making a timer
+- So to recap:
+  - You currently should have a web page that counts the number of times you click the button.
+  - You have a div called =theTimerDisplay= that at the moment only shows the text 'Working'
+  - We now need a way of counting seconds.
+- In JavaScript we can use a special instruction called setInterval.
+- =setInterval(function(){fooBar()}, 1000);=
+- This code will trigger the function =fooBar= every 1000 milliseconds, or 1 second. (Computer use milliseconds a lot).
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- First we'll need a new variable to track the seconds passed. Place this code up near where you declared and assigned =count=
+#+BEGIN_SRC javascript
+var seconds = 0;
+#+END_SRC
+- Next we'll write a function to display the number of seconds. This can be placed below your =addToCount()= function.
+#+BEGIN_SRC javascript
+function calcTime()
+{
+theTimerDisplay.innerHTML = '<h1>' + seconds + '</h1>';
+seconds++;
+};
+#+END_SRC
+- This is very similar to our previous function that displayed the =count=.
+- Now we'll need to change what the innerHTML of =theTimerDisplay=.
+- Edit the line within the =onload= function so that it looks like this.
+#+BEGIN_SRC javascript
+theTimerDisplay.innerHTML = '<h2>' + seconds + '</h2>';
+#+END_SRC
+- Lastly we'll need to call this function every 1000 milliseconds. You'll need to place this code somewhere in the =onload= part of your code.#
+#+BEGIN_SRC javascript
+setInterval(function(){calcTime()}, 1000);
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your code.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Open it up in a web browser.
+- Is it running correctly?
+- Ask you teacher for help if there is a problem.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+- At the moment the page looks a little ugly.
+- Try and add a little more html to the page.
+- Maybe you could add a heading and some simple instructions, or perhaps rearrange the elements a little. Try adding some colour.
+* Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Task
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+To earn your fourth *Blue JavaScript Badge*, complete the tasks below. Once you have finished, ask your teacher to check your code to make sure it runs correctly.
+- At the moment the game doesn't end. To earn your 5th JavaScript badge you need the game to stop after a certain time.
+- _You'll only need to edit the code in the two functions =addToCount()= and =calcTime=_
+- In the =addToCount= function, use an =if= condition so that the count is displayed and increased /only when seconds is less than or equal to 5/
+- In the =addToCount= function, use an =else= condition to display a message to the user, telling them what their final score was.
+- In the =calcTime()= function, use an =if= condition so that the the time is displayed and increase /only when seconds is less than or equal to 5/
+- In the =calcTime()= function, use an =else= condition to display a message to the user that the 'Time is up'.
+- Get your teacher to check your work once you are finished.

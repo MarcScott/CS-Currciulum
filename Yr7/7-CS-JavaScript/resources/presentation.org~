@@ -1,0 +1,9 @@
+#+REVEAL_ROOT: file:reveal.js
+#+REVEAL_THEME: sky
+#+OPTIONS: num:nil
+#+AUTHOR: Marc Scott
+#+EMAIL:
+#+TITLE: An Introduction to JavaScript
+
+* H1
+* H2

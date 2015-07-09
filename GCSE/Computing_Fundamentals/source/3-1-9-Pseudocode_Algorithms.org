@@ -1,0 +1,108 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.9 Pseudocode Algorithms
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* Pseudocode algorithms
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+#+begin_src
+x <-- 10
+y <-- 3
+x <-- x+y
+y <-- x - y
+x <-- x - y
+#+end_src
+1. What is the data type of =x=?
+2. What is the final value of =x=?
+3. What is the final value of =y=?
+
+#+begin_src
+i <-- 1
+WHILE i < 100
+i <-- i * 2
+ENDWHILE
+#+end_src
+1. What is the initial value of =i=?
+2. On which line is a loop started?
+3. What is the final value of =i=?
+4. How many times does the loop operate?
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+#+begin_src
+words <-- "I HATE PSEUDOCODE"
+newWords <-- ""
+FOR i <-- 1 TO LEN(words)
+newWords <-- words[i] + newWords
+ENDFOR
+#+end_src
+1. What is the initial value of =i=
+2. On which line does iteration begin?
+3. What data type is =newWords=?
+4. What is the final value of =i=?
+5. What is the final value of =newWords=?
+6. What function does this algorithm perform?
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+#+begin_src
+number <-- 7
+answer <-- TRUE
+FOR i <--2 TO (number - 1) 
+IF number % i = 0 THEN
+answer <-- FALSE
+ENDIF
+ENDFOR
+#+end_src
+1. What data type is =answer=?
+2. What is the initial value of =i=?
+3. What is the final value of =i=?
+4. What does the =%= do?
+5. What is the final value of =answer=?
+6. If the initial value of =number= was 8, what is the final value of =answer=?
+7. How about 7919?
+8. What function does this algorithm perform?
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+#+begin_src
+arr <-- [14,2,9,5,1,13,25]
+N <-- LEN(arr)
+swapped <-- TRUE
+hold <-- ""
+WHILE swapped = TRUE   
+swapped <-- FALSE
+FOR i <-- 2 TO N
+IF arr[i-1] > arr[i] THEN
+hold <-- arr[i]
+arr[i] <-- arr[i-1]
+arr[i-1] <-- hold
+swapped <-- TRUE
+ENDIF
+ENDFOR
+ENDWHILE
+#+end_src
+1. What is the data type of =arr=?
+2. What is the value of =N=?
+3. What is the value of hold after the =WHILE= loop has been entered the first time?
+4. What is the initial value of =i=
+5. What is the final value of =i=?
+6. What is the initial value of =hold=?
+7. What is the final value of =swapped=?
+8. What function does this algorithm perform.

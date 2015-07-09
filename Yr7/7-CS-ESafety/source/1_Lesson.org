@@ -1,0 +1,175 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: ESafety
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-ESafety">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* How much time do we spend online?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[http://farm4.static.flickr.com/3730/9423979722_3ec385c114.jpg]]
+- Children and Young adults have had access to the Internet for their entire lives.
+- They spend considerable portions of their days (and nights) viewing the Web, talking on messaging apps, and playing online games.
+- We still don't know whether this may turn out to cause have psychological or health problems in later life.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- We're going to start with a small survey, to find out how much time you spend online in comparison to your peers.
+#+begin_html
+ <form>
+First name:
+<input type="text" name="firstname">
+<br>
+Last name:
+<input type="text" name="lastname"></br>
+<input type="radio" name="sex" value="male" checked>Male
+<br>
+<input type="radio" name="sex" value="female">Female
+<br>
+House Number:
+<input type="number" name="House Number"></br>
+Postcode:
+<input type="text" name="Postcode"></br>
+DOB:
+<input type="datetime" name="DOB"></br>
+email:
+<input type="email" name="email"></br>
+mobile phone:
+<input type="text" name="mobile"></br>
+Hours spent on YouTube per Day:
+<input type="number" name="YouTube"></br>
+Hours spent on SnapChat or other Messenger per Day:
+<input type="number" name="SnapChat"></br>
+Hours spent on Online Games per Day:
+<input type="number" name="Games"></br>
+Hours spent doing Homework per Day:
+<input type="number" name="Homework"></br>
+<input type="submit" value="Share online"  onclick="return confirm('Are you sure you want to send all this very private information to a completely unknown destination and therefore potentially put yourself in danger?')">
+</form>
+#+end_html
+
+* How did you do?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[https://upload.wikimedia.org/wikipedia/commons/4/40/Child_and_Computer_08473.jpg]]
+- Did you click =Submit=? Did you read the warning message?
+- If so then you are probably not alone. We often click on buttons, fill in forms and accept terms and conditions without reading them.
+- Often we don't even think about where that information goes or what the receiver will do with it.
+- This is a prime example of unsafe behaviour. You should never share personal details online.
+- There are a few simple measures you can take to ensure you stay safe.
+- Have a watch of this video
+#+begin_html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hK5OeGeudBM" frameborder="0" allowfullscreen></iframe>
+#+end_html
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Can you come up with a list of precautions and measures you could take to stay safe online.
+- Try and come up with 5, clear and concise points.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Share your list with those sitting round you. If they have some points you haven't considered, discuss the points with them and try to come to a consensus of the five you are going to use.
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- You need to prepare a single A4 poster that could be displayed in a primary school classroom.
+- It should be appealing to 7-10 year-olds and inform them of your five points for staying safe online.
+

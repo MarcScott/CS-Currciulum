@@ -1,0 +1,117 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Linux Cheat Sheets
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* Linux Commands
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/cautionary.png]]
+** Basic Shortcuts
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Don't forget that on Unix systems ~/ means HOME
+- Clear the screen
+#+BEGIN_SRC sh
+CTRL l
+#+END_SRC
+- Re-enter last command
+#+BEGIN_SRC sh
+CURSOR UP
+#+END_SRC
+- Quit a running process
+#+BEGIN_SRC sh
+CTRL c
+#+END_SRC
+** Navigation
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- list directories and files
+#+BEGIN_SRC sh
+ls
+# to list a specific directory
+ls ~/some/directory/path
+#+END_SRC
+- list directories and files including hidden ones
+#+BEGIN_SRC sh
+ls -a
+#+END_SRC
+- change directory
+#+BEGIN_SRC sh
+cd ~/some/directory/apth
+#To go up one level
+cd ..
+#+END_SRC
+- print working directory
+#+BEGIN_SRC sh
+pwd
+#+END_SRC
+** File and Driectory manipulation
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Show the contents of a file
+#+BEGIN_SRC sh
+cat name-of-file
+#+END_SRC
+- Create a directory
+#+BEGIN_SRC sh
+mkdir name-of-directory
+#+END_SRC
+- Rename a file
+#+BEGIN_SRC sh
+mv oldname.txt newname.txt
+#+END_SRC
+- Move a file
+#+BEGIN_SRC sh
+mv myfile.txt path/to/new/location/myfile.txt
+#+END_SRC
+- Copy a file
+#+BEGIN_SRC sh
+cp myfile.txt myfile.bac
+#+END_SRC
+- Copy a directory containing files
+#+BEGIN_SRC sh
+cp -r myFullDirectory myFullDirectory.bac
+#+END_SRC
+- Remove a file
+#+BEGIN_SRC sh
+#WARNING - THIS IS A ONE WAY DEAL
+rm myfile.txt
+#+END_SRC
+- Remove an empty directory
+#+BEGIN_SRC sh
+rmdir mydirectory
+#+END_SRC
+- Remove a driectory along with everything it contains
+#+BEGIN_SRC sh
+#SERIOUSLY - MAKE SURE YOUR WANT TO DELETE THIS
+rm -r myDirectory
+#+END_SRC
+- Create a file
+#+BEGIN_SRC sh
+touch myfile.txt
+#+END_SRC
+** Install Software
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Installing binaries and applications
+#+BEGIN_SRC sh
+sudo apt-get update
+sudo apt-get install some-cool-software
+#+END_SRC
+- Installing Python libraries
+#+BEGIN_SRC sh
+pip3 install my-new-library
+#+END_SRC

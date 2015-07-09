@@ -1,0 +1,169 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.5 Scope
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* The Scope of variables, constants, functions and procedures
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The scope of a variable is the range of code that it applies to.
+- You can think of scope as applying to the visibility of a variable.
+- A variable is in scope if it can be /seen/ by a particular line of code.
+** Learn It - Block Scope
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- A variable with /block scope/ is only valid within a particular block of code such as a for loop.
+- Look at the example below.
+#+begin_src
+OUTPUT "Here are the even numbers up to 100"
+FOR i <-- 1 TO 100
+IF i MOD 2 = 0
+OUTPUT i
+ENDIF
+ENDFOR
+OUTPUT "Finished"
+#+end_src
+- The variable =i= has scope between lines 2 and 6.
+- If a programmer was to try and use the variable before line 2 or after line 6, there would be a run-time error.
+** Learn It - Function/Procedure scope
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- A variable with /function scope/ is only valid within a particular function.
+- Look at the example below.
+#+begin_src
+FUNCTION square(n)
+RETURN n * n
+ENDFUNCTION
+
+FUNCTION sumSquares(n)
+total <- 0 
+i <- 0
+WHILE i <= n:
+total <- total + square(i)
+i <- i + 1
+ENDWHILE
+RETURN total
+ENDFUNCTION
+#+end_src
+- Here we have two functions, both using a variable called n.
+- Because the two variables both have function scope, they are completely unrelated.
+- There is no risk of /name collision/ when using the identifier =n= in either of the two functions.
+- Similarly, the second function contains variable identifiers =i= and =total=. As these both have scope only within the =sumSquares= function, the identifiers can be used elsewhere in the program, with no risk of altering the expected return of the function.
+** Learn It - Module Scope
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Variables have module scope if they can be accessed by any line in a file or once a module has been imported.
+- This is tricky to show in Pseudocode, so we'll switch to Python 3.
+- Image we have a file called /foo.py/
+#+begin_src python
+  bar = 'Hello'
+
+  def outputModuleVar:
+      print(bar)
+#+end_src
+- The variable =bar= can be viewed (but not necessarily altered) by any part of the the file /foo.py/
+- We could also create a second file called /baz.py/
+#+begin_src python
+import foo
+print(foo.bar)
+#+end_src
+- Because the variable =bar= has module scope, it can be accessed by any file that imports /foo.py/
+** Learn It - Global Scope
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- A variable has /global scope/ if it can be accessed from anywhere in a project.
+- Variables with /global scope/ are usually considered bad practice in most languages, due to the increased risk of name collisions.
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+- In your chosen programming language, write a script that uses block, function and module scope for it's variables.
+- Take a screenshot of your code, and then annotate it in a graphics editor, identifying which variables have which scope.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+- In pseudocode, write two small scripts, that use block, function and module scope.
+- Give the code to a peer, and ask them to annotate and identify the scope of the variables.

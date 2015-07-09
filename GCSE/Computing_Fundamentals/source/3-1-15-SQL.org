@@ -1,0 +1,260 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.15.1 SQL
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+[[file:img/Chuck.jpg]]
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+
+* Querying a database
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- SQL (Structured Query Language) is a language for exploring databases.
+- Using SQL we can perform various operations on data in out database tables.
+- We can, for instance, DELETE, CREATE, SELECT and UPDATE tables, records and fields.
+* SQL syntax - =SELECT=
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+
+- Querying a database using SQL is the most common operation that is performed.
+- This uses the =SELECT= statement.
+- =SELECT= will retrieve data from one or more tables
+- =SELECT= has optional key words such as:
+  - =FROM= to indicate which table(s) data is to be retrieved from
+  - =WHERE= to allow selection of data using comparisons.
+  - =ORDER BY= to identify a column in the table by which to order the data, either ascending or descending.
+- The asterisk (=*=) is also important in writing SQL statements, indicating that all columns should be selected.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Let's look at out Films example again.
+| <c>                   | <c>           | <c>  | <c>                   | <c>    |
+| Film                  | Director      | Year | RTScore               | Key    |
+|-----------------------+---------------+------+-----------------------+--------|
+| The Way of the Dragon | Bruce Lee     | 1972 | 100                   | FM-001 |
+| Lone Wolf McQuade     | Steve Carver  | 1983 | 67                    | FM-002 |
+| The Delta Force       | Menahem Golan | 1986 | 20                    | FM-003 |
+| The Expendables 2     | Simon West    | 2012 | 65                    | FM-004 |
+- A valid SQL statement to return every film with a score of more than 50 would be:
+#+BEGIN_SRC sql
+  SELECT *
+         FROM Films
+         WHERE RTScore > 50
+         ORDER BY Film DESC;
+#+END_SRC
+- Another example below just returns the director and year of the film, for every film made after befor 2000:
+#+BEGIN_SRC sql
+  SELECT Director, Year
+         FROM Films
+         WHERE Year < 2000
+         ORDER BY Year ASC;
+#+END_SRC
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+- The standard operators used in SQL are shown below.
+| Operator    | Function                                  |
+|-------------+-------------------------------------------|
+| =           | Equal to                                  |
+| <>          | Not equal to                              |
+| <           | Less than                                 |
+| >           | Greater than                              |
+| <=          | Less than or equal to                     |
+| >=          | Greater than or equal to                  |
+| IS NULL     | No data (not the same as a value of zero) |
+| IS NOT NULL | Has data                                  |
+| AND         | Logical AND                               |
+| OR          | Logical OR                                |
+- Try and write SQL =SELECT= statements for the following.
+  1. List Film and Key of Films with a RTScore that are not empty
+  2. List Film and Year of Films Directed by Simon West
+  3. List Directors with an RTScore greater than 50 made before 1980
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- With relational databases, we might want to select from multiple tables
+| <c>                   | <c>           | <c>  | <c>                   | <c>    |
+| Film                  | Director      | Year | RTScore               | Key    |
+|-----------------------+---------------+------+-----------------------+--------|
+| The Way of the Dragon | Bruce Lee     | 1972 | 100                   | FM-001 |
+| Lone Wolf McQuade     | Steve Carver  | 1983 | 67                    | FM-002 |
+| The Delta Force       | Menahem Golan | 1986 | 20                    | FM-003 |
+| The Expendables 2     | Simon West    | 2012 | 65                    | FM-004 |
+
+| <c>    | <c>                 | <c>    |
+| Film   | Role                | Key    |
+|--------+---------------------+--------|
+| FM-001 | Colt                | CN-001 |
+| FM-002 | Ranger J.J. McQuade | CN-002 |
+| FM-004 | Major Scott McCoy   | CN-003 |
+| FM-003 | Booker              | CN-004 |
+
+#+BEGIN_SRC sql
+SELECT Film.Film, Filmography.Role
+      FROM Film, Filmography
+      WHERE Film.Year > 1980 AND Filmography.Role = 'Ranger J.J. McQuade'
+      ORDER BY RTScore ASC
+#+END_SRC
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+- Try and explain what this SQL statement retrieves.
+- Try and write an SQL Statement that will retrieve all the films by Director Bruce Lee where the Role is not empty made before 1975, and show name of the films in ascending order.
+* SQL syntax - =CREATE=
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- If you've mastered the =SELECT= statement then the rest is easy.
+- =CREATE= is used to create a database table.
+#+BEGIN_SRC sql
+  CREATE TABLE Films(
+         Film VARCHAR (30) NOT NULL,
+         Director CHAR (30) NULL,
+         Year INT NULL,
+         RTScore INT NULL,
+         KEY INT IDENTITY (1000,1) NOT NULL,
+         );
+#+END_SRC
+- Here' we've created the Films table.
+  - =VARCHAR= indicates a string of characters of variable length.
+  - =CHAR= indicates a string of characters with fixed length (30 in this case).
+  - In the example above, the =CHAR (30)= will not accept strings longer than 30, and will always take up 30 bytes of memory.
+  - The =VARCHAR (30)= will accept strings of /almost/ any length. If the length is less than 30, then it will take up fewer bytes of memory. If the string is longer, it will take up more memory.
+  - =INT= indicates an integer.
+  - =IDENTITY= identifies a column as holding primary keys. We can specify a starting and increment value.
+  - =NULL= means the filed can be left blank if desired.
+  - =NOT NULL= indicates a required field.
+* SQL syntax - =INSERT= , =UPDATE= and =DELETE=
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Once a table has been created, we need to fill it with data. Large tables can be loaded with data from text files, but sometimes we might want to add a bit of data ourselves, or get a script ot do it for us.
+#+BEGIN_SRC sql
+  INSERT INTO Films(Film,
+                    Director,
+                    Year,
+                    RTScore
+                    )
+          VALUES(   'The Way of the Dragon',
+                    'Bruce Lee',
+                    1972,
+                    100
+                    );
+#+END_SRC
+- Or we might just want to update some data in out table.
+#+BEGIN_SRC sql
+  UPDATE Films
+         SET Director = 'Bruce Lee'
+         WHERE Film = 'The Way of the Dragon'
+         
+#+END_SRC
+- Or we might want to remove data from our table.
+#+BEGIN_SRC sql
+  DELETE FROM Films
+  WHERE Director = 'Bruce Lee'
+#+END_SRC
+* Exam Questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Try this question from the example examination paper.
+[[file:img/8.jpg]]

@@ -1,0 +1,74 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a class="z" href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="style10.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style12.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Layout and Style</p>
+	<ol>
+	<span class="bigtext">
+
+<li class="step" value="8">
+Create the layout using box model- add the right box inside the container <strong><em>independently</em></strong>.
+</li>
+<p class="callouthead"><img src="../images/we_can_do_it.jpg" width=80 height=80>&nbsp;&nbsp;Independent Task </p>
+<ul>
+<li>We should now have a topbox, a container box and a left box that is in the container's left side.</li>
+<li>You will create the right box with a height of 800px, width of 640px, background colour of your choice.</li>
+<li>The right box must stay to the right side of the <strong><em>container</em></strong> box. </li>
+</ul> <br>
+
+<p>If you are stuck, go back to the previous pages to see how the left box is defined and styled.</p>
+
+
+<div id="left">
+<a class="nav" href="style10.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style12.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+
+
+</html>

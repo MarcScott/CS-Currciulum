@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Dominating the DOM</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Dominating the DOM</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. The DOM</a>
+<ul>
+<li><a href="#sec-1-1">Code It</a></li>
+<li><a href="#sec-1-2">Save It</a></li>
+<li><a href="#sec-1-3">Run It</a></li>
+<li><a href="#sec-1-4">Code It</a></li>
+<li><a href="#sec-1-5">Save It</a></li>
+<li><a href="#sec-1-6">Run It</a></li>
+<li><a href="#sec-1-7">Code It</a></li>
+<li><a href="#sec-1-8">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Getting User input and adding it to the DOM</a>
+<ul>
+<li><a href="#sec-2-1">Code It</a></li>
+<li><a href="#sec-2-2">Save It</a></li>
+<li><a href="#sec-2-3">Run It</a></li>
+<li><a href="#sec-2-4">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Functions&#x2026; Get ready to become a hardcore hacker.</a>
+<ul>
+<li><a href="#sec-3-1">Code It</a></li>
+<li><a href="#sec-3-2">Save It</a></li>
+<li><a href="#sec-3-3">Run It</a></li>
+<li><a href="#sec-3-4">Code It</a></li>
+<li><a href="#sec-3-5">Save It</a></li>
+<li><a href="#sec-3-6">Run It</a></li>
+<li><a href="#sec-3-7">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Using an <code>&lt;input&gt;</code> tag</a>
+<ul>
+<li><a href="#sec-4-1">Code It</a></li>
+<li><a href="#sec-4-2">Save It</a></li>
+<li><a href="#sec-4-3">Run It</a></li>
+<li><a href="#sec-4-4">Code It</a></li>
+<li><a href="#sec-4-5">Save It</a></li>
+<li><a href="#sec-4-6">Run It</a></li>
+<li><a href="#sec-4-7">Code It</a></li>
+<li><a href="#sec-4-8">Save It</a></li>
+<li><a href="#sec-4-9">Run It</a></li>
+<li><a href="#sec-4-10">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Badge It</a>
+<ul>
+<li><a href="#sec-5-1">Task</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/KS3_Curriculum">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> The DOM</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>DOM stands for Document Object Model.
+</li>
+<li>Without getting into too much detail, the DOM is the way a web browser represents all the HTML code that you write.
+</li>
+<li>We can use programming languages (in our case JavaScript) to change the DOM, and therefore change the way the HTML is displayed to the user.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 code">
+<h3 id="sec-1-1">Code It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>The best way to learn about the DOM is to go ahead and play a little. Copy and paste the boilerplate code into a text editor.
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+	&lt;title&gt;Adding text&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+	&lt;div id = "container"&gt;&lt;/div&gt;
+	&lt;h2&gt;Welcome to DOM&lt;/h2&gt;
+	&lt;script type="text/javascript"&gt;
+
+	&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>You might have noticed that this time we are placing our <code>&lt;script&gt;</code> at the end of our html (just before the <code>&lt;/body&gt;</code> tag).
+</li>
+<li>We place our script here so that the browser has had a chance to load up all the html, before the script is run.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 save">
+<h3 id="sec-1-2">Save It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Save your code somewhere sensible.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 run">
+<h3 id="sec-1-3">Run It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Open your page in a web browser, and you should see the level 2 header being displayed.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 code">
+<h3 id="sec-1-4">Code It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>We've set up a basic page, but you probably noticed that we had an empty <code>&lt;div&gt;</code> with the id of <i>container</i>. Let's add in some JavaScript and see what we can do with that div.
+</li>
+<li>Add the following JavaScript between your script tags (at the <span class="underline">end</span> of the html).
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var container = document.getElementById("container");
+container.innerHTML = "&lt;h1&gt;Hi there user&lt;/h1&gt;";
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 save">
+<h3 id="sec-1-5">Save It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Save your code.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 run">
+<h3 id="sec-1-6">Run It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>Refresh your web browser.
+</li>
+<li>Hopefully you'll see the "Hi there user" text being displayed.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 code">
+<h3 id="sec-1-7">Code It</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Let's add a little more text to our page using javascript.
+</li>
+<li>Add a new div, <span class="underline">beneath</span> the <code>&lt;h2&gt;Welcome to the DOM&lt;/h2&gt;</code>, line. Give the div the id "container2"
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;div id = "container2"&gt;&lt;/div&gt;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now we'll add some extra JavaScript to place some content into our new div.
+</li>
+<li>Add in two additional lines of code into your script. The first should declare and assign a variable <code>container2</code> to the <code>container2</code> div. The next should add some innerHTML to the <code>container2</code>.
+</li>
+<li>There's code below if you get stuck.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var container2 = document.getElementById("container2");
+container2.innerHTML = "&lt;h3&gt;Type whatever you like here&lt;/h3&gt;";
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 try">
+<h3 id="sec-1-8">Try It:</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>Now it's your turn to play around
+</li>
+<li>Add at least two more divs to your HTML file, each with their own unique id.
+</li>
+<li>Then add JavaScript to add content to your new divs.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Getting User input and adding it to the DOM</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 code">
+<h3 id="sec-2-1">Code It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>We're going to let the user help build the website in the next section.
+</li>
+<li>Let's start with a little boilerplate
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+	&lt;title&gt;I/O&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+	&lt;div id='displayUserName'&gt;&lt;/div&gt;
+	&lt;script&gt;
+
+	&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+<ul class="org-ul">
+<li>We have a single empty div with the id of <code>displayUserName</code>
+</li>
+<li>Now we need three lines of JavaScript.
+</li>
+<li>First we need to get some user input and store it using a variable.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var userName = window.prompt("Hi there user, what's your name?");
+</pre>
+</div>
+<ul class="org-ul">
+<li>Next we need to get the div and store that as a variable.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var displayUserName = document.getElementById('displayUserName');
+</pre>
+</div>
+<ul class="org-ul">
+<li>Lastly we need to <i>concatenate</i> the <code>userName</code> to some HTML and add it into the div.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">displayUserName.innerHTML = "&lt;h1&gt;" + userName + "'s Amazing Website&lt;/h1&gt;";
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 save">
+<h3 id="sec-2-2">Save It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Save your code in a sensible place with a sensible name
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 run">
+<h3 id="sec-2-3">Run It</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>View your code in a browser. It should look something like this&#x2026;
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/DOM2.png" alt="DOM2.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3 try">
+<h3 id="sec-2-4">Try It:</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Now it's your turn. Add more window.prompt() lines of code to extract more information from the user.
+</li>
+<li>Find out their age and address.
+</li>
+<li>Use the data you receive from the prompts to write more information to new divs.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Functions&#x2026; Get ready to become a hardcore hacker.</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Mastering functions will take you from being a n00b to being a ninja when it comes to programming.
+</li>
+<li>Functions are bits of code that we can reuse throughout our program.
+</li>
+<li>As an analogy - imagine I asked you to tie your shoelaces up. You already have the instructions stored in your head, so I don't have to tell you exactly what to do. I can just say <code>tieUpShoeLace</code> and you'll now what to do.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 code">
+<h3 id="sec-3-1">Code It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>We're going to go back to using <code>script</code> tags in the head of out document again.
+</li>
+<li>Create a new html page using the following boiler plate.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+	&lt;title&gt;Functions&lt;/title&gt;
+	&lt;script type="text/javascript"&gt;
+
+	&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+	&lt;div id = "outputBox"&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now lets write a simple line of JavaScript, similar to the ones we wrote before.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var outputBox = document.getElementById('outputBox');
+outputBox.innerHTML = "&lt;h1&gt;Your function worked!!!!&lt;/h1&gt;";
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 save">
+<h3 id="sec-3-2">Save It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Save your code.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 run">
+<h3 id="sec-3-3">Run It</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>Can you guess why the code won't work yet?
+</li>
+<li>Run it in a web browser, and try and figure out what's wrong.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3 code">
+<h3 id="sec-3-4">Code It</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Hopefully you've figured out that the JavaScript is read by the web browser before the HTML.
+</li>
+<li>This means that the web browser doesn't yet know what the <code>outputBox</code> id is, when you use it in your JavaScript.
+</li>
+<li>Using a function is going to help us fix this a little.
+</li>
+<li>Let's modify our code a little.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">function runMe()
+{
+  var outputBox = document.getElementById('outputBox');
+  outputBox.innerHTML = "&lt;h1&gt;Your function worked!!!!&lt;/h1&gt;";
+};
+</pre>
+</div>
+<ul class="org-ul">
+<li>We now have a function called <code>runMe()</code>
+</li>
+<li>The code that belongs to the function goes inside curly brackets <code>{}</code> just like it did for conditionals (<code>if,else if,else</code>)
+</li>
+<li>When we <i>call</i> the function, the code will run.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3 save">
+<h3 id="sec-3-5">Save It</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>Save your work
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-6" class="outline-3 run">
+<h3 id="sec-3-6">Run It</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>Run the code in your web browser.
+</li>
+<li>Nothing happens, right?
+</li>
+<li>Now open up the console (F12 if using I.E) and type the following&#x2026; <code>runMe()</code>
+</li>
+<li>Does anything happen.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-7" class="outline-3 try">
+<h3 id="sec-3-7">Try It:</h3>
+<div class="outline-text-3" id="text-3-7">
+<ul class="org-ul">
+<li>Now it's your turn.
+</li>
+<li>Underneath your runMe() function, write a new one.
+</li>
+<li>Make sure you give your function a sensible name, and don't forget to add the <code>()</code> after the function name and the <code>{}</code> to contain your code.
+</li>
+<li>Make your function output something like - <code>The second Function works also</code>
+</li>
+<li>Once you've written your function, open up the console and run it.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Using an <code>&lt;input&gt;</code> tag</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><code>&lt;input&gt;</code> tags allow you to get data from the user of your page.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 code">
+<h3 id="sec-4-1">Code It</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Use the following boilerplate to start you off.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+	&lt;title&gt;Inputs&lt;/title&gt;
+	&lt;script type="text/javascript"&gt;
+
+	&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+	&lt;input type="text" id="userNameIn"&gt;&lt;/input&gt;
+	&lt;div id = "userNameOut"&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3 save">
+<h3 id="sec-4-2">Save It</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Save your web-page
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3 run">
+<h3 id="sec-4-3">Run It</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Open your page in a browser and you should see the input box.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-4" class="outline-3 code">
+<h3 id="sec-4-4">Code It</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>We can use the <code>document.getElementById()</code> method to find out what the user types into the input box.
+</li>
+<li>We can then output this to the div below it.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">function outputName()
+{
+    var userName = document.getElementById('userNameIn').value;
+    userNameOut.innerHTML = "&lt;h1&gt;Hi there " + userName + "&lt;/h1&gt;"
+}
+</pre>
+</div>
+<ul class="org-ul">
+<li>The function name is outputName()
+</li>
+<li>The first thing the function does is get the value from the userNameIn input box and stores it as the variable <code>userName</code>
+</li>
+<li>The next thing the function does is to write HTML into the <code>userNameOut</code> div, using the <code>userName</code> variable.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-5" class="outline-3 save">
+<h3 id="sec-4-5">Save It</h3>
+<div class="outline-text-3" id="text-4-5">
+<ul class="org-ul">
+<li>Save your web-page
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-6" class="outline-3 run">
+<h3 id="sec-4-6">Run It</h3>
+<div class="outline-text-3" id="text-4-6">
+<ul class="org-ul">
+<li>Open your page in a browser.
+</li>
+<li>Type your name into the input box.
+</li>
+<li>Nothing happens yet, because we still need to call the function.
+</li>
+<li>Open the console and type <code>outputName()</code> to call the function you wrote.
+</li>
+<li>You should see a message on the web-page
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-7" class="outline-3 code">
+<h3 id="sec-4-7">Code It</h3>
+<div class="outline-text-3" id="text-4-7">
+<ul class="org-ul">
+<li>While the program works at the moment, it would be silly to expect everyone to open a console and call functions to use a web-page.
+</li>
+<li>Luckily we can call functions within the HTML using <code>events</code>
+</li>
+<li>Events can be button pushes, or mouse movement, or really anything a user does to interact with a web-page.
+</li>
+<li>We're going to use the <code>onchange</code> event. This works by registering when an HTML elements has changed.
+</li>
+<li>Find this line in your HTML file.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;input type="text" id="userNameIn"&gt;&lt;/input&gt;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now we're going to make one small change
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;input type="text" id="userNameIn" onchange="outputName()"&gt;&lt;/input&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-8" class="outline-3 save">
+<h3 id="sec-4-8">Save It</h3>
+<div class="outline-text-3" id="text-4-8">
+<ul class="org-ul">
+<li>Save your work
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-9" class="outline-3 run">
+<h3 id="sec-4-9">Run It</h3>
+<div class="outline-text-3" id="text-4-9">
+<ul class="org-ul">
+<li>Now open your web-page and fill your name into the box
+</li>
+<li>When you click outside of the box, the browser should detect a change to the <code>&lt;input&gt;</code> box and run the function.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-10" class="outline-3 try">
+<h3 id="sec-4-10">Try It:</h3>
+<div class="outline-text-3" id="text-4-10">
+<ul class="org-ul">
+<li>Now add a second input box to your HTML. Don't forget to give in a different id.
+</li>
+<li>Make this second input box for getting the user's age. You can use &lt;p&gt; tags before the input box to label them.
+</li>
+<li>Write a new function that calculates what year the user will be 100 (you did this in lesson 1) and output the result to another div.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2 activity">
+<h2 id="sec-5"><span class="section-number-2">5</span> Badge It</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-sec-5-1" class="outline-3 badge">
+<h3 id="sec-5-1">Task</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+To earn your fourth <b>Blue JavaScript Badge</b>, complete the tasks below. Once you have finished, ask your teacher to check your code to make sure it runs correctly.
+</p>
+<ul class="org-ul">
+<li>Input boxes can have numerous different types. One type is the password type.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;input type="password" id="" onchange=""&gt;&lt;/input&gt;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Create a new web-page and call it password verification.
+</li>
+<li>Create two input boxes, both accepting passwords, and give them different id's.
+</li>
+<li>Create a function, that can be called when the browser detects a change in the second <code>input</code> box.
+</li>
+<li>The function should get the values of both input boxes and store them as separate variables.
+</li>
+<li>Then the function should use a conditional statement (<code>if, else</code>) to see if the passwords are the same.
+</li>
+<li>If the passwords match, then use a <code>window.alert()</code> or output to a div to notify the user that the password has been accepted.
+</li>
+<li>If they don not match then the user should be prompted to type their passwords again.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

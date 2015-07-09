@@ -1,0 +1,183 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.8 Secondary Storage
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Secondary Storage
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Unlike RAM, secondary storage is a more permanent way of storing data.
+- Secondary storage can be internal - such as a computer hard drive, or external - such as a memory stick.
+- Internal storage is used to store a computer's operating system, software and user files.
+- External storage is used for backing up data, transferring files, transporting files or as an extension to internal storage.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There are three classes of secondary storage - Magnetic, Optical and Solid-State.
+- Secondary storage sizes are measured in bytes.
+| Bytes                             | Name  | Abbreviation |
+|                                   |       |              |
+|-----------------------------------+-------+--------------|
+| 1,000                             | Kilo  | 1kB          |
+| 1,000,000                         | Mega  | 1MB          |
+| 1,000,000,000                     | Giga  | 1GB          |
+| 1,000,000,000,000                 | Tera  | 1TB          |
+| 1,000,000,000,000,000             | Peta  | 1PB          |
+| 1,000,000,000,000,000,000         | Exa   | 1EB          |
+| 1,000,000,000,000,000,000,000     | Zetta | 1ZB          |
+| 1,000,000,000,000,000,000,000,000 | Yota  | 1YB          |
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+*** Magnetic Storage
+- A disk that contains iron particles.
+- Particles can be arranged in one of two directions - representing 1 or 0
+- The drive contains a /head/ that can read the direction of the particles and change the direction of the particles using an electromagnetic field.
+- The disk is spun rapidly, and the head moves back and forth, reading different parts of the disk.
+*** Optical Storage
+- A disc that contains dents (pits) and flat spots (lands)
+- A laser shone on the disc will not be reflected it if hits a pit. This represents a 0.
+- The laser will reflect when it hits a land. This represents a 1.
+- The disc is spun rapidly and the laser guided over different parts of the disc.
+*** Solid State Storage
+- These disks contain billions of transistors arranged to make memory cells.
+- The cells can be set to allow current to flow (1) or not to flow (0)
+- By detecting if current is flowing or not flowing through a particular cell, the 1 or 0 can be read. 
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Arrange the following advantages and disadvantages into the tables below.
+*** Advantages
+- Fairly quick
+- Easy to carry around
+- Extremely fast read and write speeds
+- Easy to use
+- Large capacity
+- Easily replaced or upgraded
+- Can be used in many types of devices (not just computers)
+- Long lasting (if cared for)
+- No mechanical requirements
+- Silent when used
+- Very cheap per MB of data
+- Light weight and small
+- Use very little power
+- Very cheap, and disposable
+- Very durable even if dropped or knocked around
+*** Disadvantages
+- Contains moving parts that will eventually fail
+- Limited storage capacity
+- Can be noisy
+- Easily broken if not protected
+- Use a large amount of power
+- Have read/write limits - a few 100000 times before cells become corrupt
+- Require special drives to read
+- Very expensive per MB of data
+- Can be easily damaged if dropped or knocked around
+- Fairly expensive per GB although price is rapidly dropping
+- Easily damaged by scratching, heat and light
+- Write speeds are slow, compared to read speeds.
+
+| Magnetic Advantages | Magnetic Disadvantages | Optical Advantages | Optical Disadvantages | Solid State Advantages | Solid State Disadvantages |
+|---------------------+------------------------+--------------------+-----------------------+------------------------+---------------------------|
+|                     |                        |                    |                       |                        |                           |
+|                     |                        |                    |                       |                        |                           |
+|                     |                        |                    |                       |                        |                           |
+|                     |                        |                    |                       |                        |                           |
+|                     |                        |                    |                       |                        |                           |
+|                     |                        |                    |                       |                        |                           |
+|                     |                        |                    |                       |                        |                           | 
+  
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Magnetic Storage is used in Hard Drives and tape drives. Tape drives are often used for backing up large volumes of data.
+- Optical Storage is used in CDs, DVDs and Blu-Ray.
+- Solid State is used in Hard Drives, Memory Sticks and Flash memory cards.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+*** Answer the following questions:
+1. Explain how data can be read or written with a magnetic disk. (5 marks)
+2. Explain why digital video cameras are now more likely to use solid state storage rather than magnetic tape storage. (4 marks)
+3. Discuss three advantages and/or disadvantages of using cloud storage over a memory stick to transfer files between computers. (6 marks)

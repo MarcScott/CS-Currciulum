@@ -1,0 +1,321 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
+
+#+TITLE: Text Based Games
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-TextGames">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* NIM
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Nim was one of the earliest Computer Games ever created.
+- In fact, a special computer called the [[http://en.wikipedia.org/wiki/Nimrod_%2528computing%2529][NIMROD]] was created for the sole purpose of playing the game.
+- There are numerous variants of the game, so we'll start off with one of the simplest - [[http://en.wikipedia.org/wiki/Nim#The_100_game][The 100 game]]
+- Have a read of the rules, so you understand the game
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's start with some basics. Create a new Python file called The-100-Game.py
+- If we're going to have a two player game, we'd best let our players state their names and save these values using variables.
+#+begin_src python
+  playerOne = input('What is the name of Player One? ')
+  playerTwo = input('What is the name of Player Two? ')
+#+end_src
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run your code (=Ctrl+s= then =F5=)
+- Once you've typed in some test names, make sure it's all working fine by getting the =interpreter= to print the names.
+#+begin_src python
+  print(playerOne)
+  print(playerTwo)
+#+end_src
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now let's give the players some instructions.
+#+begin_src python
+  print('Welcome to The 100 Game.')
+  print('You will each take turns to choose a number between 1 and 10.')
+  print('The first person to reach 100 is the winner')
+#+end_src
+- It would be nice if we could personalise this output a little, by using the players names.
+- In python, you can =string formatting syntax= to print variable values within your strings.
+- Try replacing the first =print= line with the following
+#+begin_src python
+  print('Welcome to The 100 Game %s and %s'%(playerOne,playerTwo))
+#+end_src
+- The =%s= within the print statements are placeholders, where the variable values will be placed. The =s= indicates that the value will be a =string=.
+- At the end of the print statement (but inside the brackets), we place the variable names, whose values we want in the string.
+- Notice that the variable names have brackets around them as well - in Python, when we place items in brackets like this, it is called a tuple.
+- e.g =(1,2,3,4)= or =('abc','def','ghi')= or =(foo,bar,baz)=
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Try and add another =print= statement using string formatting that tells playerOne that they will go first and that playerTwo will go second.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- For the game to work, we're going to need to keep asking each player for a number, and keep track of the total, until it reaches 100, at which point the game should end.
+- This looks like a job for a =while loop=
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Save your original =The-100-Game.py= file.
+- Create a new file called =whileLoops.py=
+- A =while= loop will keep running until a given condition is met.
+- The basic structure is...
+#+begin_src python
+  while something:
+      do something
+#+end_src
+** Badge It - Gold (Part I)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Try each of the following while loops - *One at a time*
+- Write down what each of the loops does using comments in the code..
+#+begin_src python
+  ##This loop ....
+  while True:
+      print('Computer Science is the best')
+#+end_src
+#+begin_src python
+  ##This loop ....
+  foo = 0
+  while foo < 10:
+      print(foo)
+      foo += 1
+#+end_src
+#+begin_src python
+  ##This loop ....
+  answer = 'yes'
+  while answer == 'yes':
+      answer = input('Shall I continue? ')
+  print('I have stopped')
+#+end_src
+#+begin_src python
+  ##This loop ....
+  answer = 'yes'
+  while answer != 'no':
+      answer = input('Shall I continue? ')
+  print('I have stopped')
+#+end_src
+#+begin_src python
+  ##This loop ....
+  x = 1
+  while x < 1000:
+      print(x)
+      x += x
+#+end_src
+#+begin_src python
+  ##This loop ....
+  x = 0
+  y = 1
+  while x < 100:
+      x = x + y
+      y = x - y
+      print(x)
+#+end_src
+** Badge It - Gold (Part II)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Create a while loop that asks for user input and then prints out that user input until the user types exit.
+- Create a while loop that prints out all the [[http://www.mathsisfun.com/algebra/triangular-numbers.html][triangle numbers]] up to 100
+- Create a while loop that asks the user to enter a number, and tells them to keep guessing until they choose the number 7.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Open up your The-100-Game.py file again.
+- Our =while= loop will need to keep going until the players have a number totaling 100, so we'll need a variable to store the total number in.
+#+begin_src python
+  total = 0
+  while total < 100:
+#+end_src
+- Let's start off simply and just ask for a number between 1 and 10, within the loop, and then add the answer onto total.
+#+begin_src python
+  total = 0
+  while total < 100:
+      answer = input('Give me a number between 1 and 10')
+      total = total + answer
+#+end_src
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run your code and note any errors you get.
+- What do you think the problems might be?
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- You assigned the variable =total= a value of =0=
+- Then, within your =while= loop, you're trying to add on the user input.
+- Let's see what the problem might be.
+- Type this into your interpreter.
+#+begin_src python
+  total = 0
+  type(total)
+#+end_src
+- Now try this
+#+being_src python
+answer = input('Give me a number')
+#+end_src
+- Now give the interpreter a number, and then type:
+#+begin_src python
+type(answer)
+#+end_src
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- =input()= always returns a string.
+- Even when a number is typed in, it is interpreted as a string.
+- You can't add strings to integers (in Python), so we need to convert the string into an integer before we add it on.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+#+begin_src python
+    total = 0
+    while total < 100:
+        answer = input('Give me a number between 1 and 10')
+        answer = int(answer)
+        total = total + answer
+#+end_src
+- While this code works well, and is easy to understand, it can easily be condensed.
+#+begin_src python
+    total = 0
+    while total < 100:
+        total += int( input('Give me a number between 1 and 10'))
+#+end_src
+- If you completely understand the second version, then use it. Otherwise, stick with the first.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run your game.
+- It should allow you to type in numbers, and then stop when the total reaches 100, but there's very little feedback from the computer.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Add in a print statement so that you can see what the total is each time.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- To get your platinum badge, you're going to need to give a little more feedback to the user.
+- You'll need to use all the following lines of code, and put them in the correct place (and order) in your script, to get it working
+#+begin_src python
+playerOneTurn=True
+print('%s WINS'%(playerTwo))
+print('%s WINS'%(playerOne))
+print('%s - pick a number from one to ten'%(playerTwo))    
+print('%s - pick a number from one to ten'%(playerOne))
+if playerOneTurn == True:
+if playerOneTurn == False:
+else:
+else:
+playerOneTurn = not playerOneTurn
+#+end_src
+- The game should keep track of who is the current player, prompt each player by name to make their turn, and congratulate the winner of the game at the end.

@@ -1,0 +1,324 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
+
+#+TITLE: Text Based Games
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-TextGames">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Interactive Fiction
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Interactive fiction games are a genre of computer games first pioneered in the 1970s.
+- The first games were simple text-adventures, and as computing power grew, so did the games.
+- Interactive fiction games have evolved into the modern MMORPGs such as World of Warcraft that are popular amongst today's generation of gamers.
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+- In order to create your text adventure, it is important to plan your game well.
+- In this project, you'll be making your own game, based on the examples provided.
+- The first thing you'll need to do is draw a simple map.
+- Here's an example map containing 3 rooms and some items.
+[[file:img/map.jpg]]
+- Feel free to make your map a little more complicated if you like. This is just to show you the mechanics of how the game will work.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We're going to use a lot of =functions= in this game, so we had better remind ourselves of what functions are and how they work
+- A =function= is a block of code that performs a task.
+- Here's a really simple function.
+#+begin_src python
+  def HelloWorld():
+      print('HelloWorld!')
+#+end_src
+- If you write this code into a script, the =HelloWorld!= isn't printed straight away. This is because you need to call the function.
+- You can call a function by typing it's name into the script, or into your interpreter.
+#+begin_src python
+HelloWorld()
+#+end_src
+- A function can have =arguments= passed into it. To do this, when we declare a function we give it =parameters=.
+#+begin_src python
+  def multiplyTwo(x,y): #the x and y are parameters
+      print(x*y)
+
+  multiplyTwo(4,10) #the 4 and 10 are arguments
+#+end_src
+- A function can be used to =return= a result
+#+begin_src python
+  def multiplyTwo(num1,num2):
+      return num1*num2
+
+  answer = multiplyTwo(3,9)
+  print(answer)
+#+end_src
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Use each of the functions below to answer the questions that accompany them.
+*** Function 1
+#+begin_src python
+  def foo(x,y):
+      return x//y
+#+end_src
+- What does this function do?
+- Write a function call that returns the number 10
+*** Function 2
+#+begin_src python
+  def bar(x,y):
+      x,y = str(x),str(y)
+      return x + y
+#+end_src
+- What does this function do?
+- Write a function call that returns '15'
+- Write a function call that returns 'goodbye'
+*** Function 3
+#+begin_src python
+  def baz(x):
+      if type(x) == int:
+          for i in range(x):
+              print(i)
+      else:
+          for i in x:
+              print(i)
+#+end_src
+- What does this function do?
+- Write a function call that returns the following
+#+begin_src python
+1
+2
+3
+4
+5
+#+end_src
+- Write a function call that returns the following
+#+begin_src python
+1
+5
+1
+5
+5
+1
+#+end_src
+Function 4
+#+begin_src python
+  def qux(x):
+      if x == 0:
+          return x
+      else:
+          print(x)
+          qux(x-1)
+#+end_src
+- What does this function do?
+- In your own words, try and describe how it achieves this.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Each room in our game is going to be represented by a function.
+- When the player enter the room, the function is called.
+- Below are the three basic functions for the map used above. Feel free to write your own descriptions.
+#+begin_src python
+def corridor():
+    print('You are in a long corridor')
+    print('There are exits to the North and West')
+
+def room1():
+    print('You are in a small broom cupboard. The air smells musty and it is very dark')
+    print('There are exits to the South')
+
+def room2():
+    print('You are in a very dark room. You can not see anything. You know there is an exit to the East though')
+#+end_src
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+- You can test your code by running it, and then calling the functions from the interpreter.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now we have the rooms set up, we need to be able to move from room to room.
+- To do this efficiently, we need someway of representing our map, so that the program can understand which rooms are connected to which.
+- A simple way to manage this would be to use a =dictionary=. The =key= would be the room you are in, and the =value= would be a =list= of the available rooms.
+- Our map would then look something like this.
+#+begin_src python
+map = {'corridor':['room1','room2'],'room1':['corridor'],'room2':['corridor']
+#+end_src
+- The problem with this, is that the program has no idea which direction each room is in.
+- This can be solved using empty entries in our lists. If we imagine that the zeroth element of the list is always the room to the North, the first is the room to the East, the second is the room to the South and the third is the room to the West, we can code that there is no room, just by using an empty string =''=
+#+begin_src python
+map = {'corridor':['room1','','','room2'],'room1':['','','corridor',''],'room2':['','corridor','','']}
+#+end_src
+- Use your map to build your own dictionary to act as a map for the program
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now comes the tricky part.
+- We need to build a function to navigate around the map we've just created.
+- Lets start by declaring the function.
+#+begin_src python
+def Moving(location):
+    rooms = map[location]
+#+end_src
+- The function takes a single =argument= which is =location=. In this case it could be ='corridor'=
+- It then sets the value of a variable =rooms= to be the list of rooms available from the =map= =dictionary=
+- We'd best now add in a list of all available directions, *into the function*
+#+begin_src python
+    directions = ['North','East','South','West']
+#+end_src
+- This next line is very complicated, so don't worry if you don't understand it.
+#+begin_src python
+    availableDirections = [directions[i] for i,j in enumerate(rooms) if rooms[i] != '']
+#+end_src
+- It basically creates a new list of the available directions to the player, by comparing the list of all =directions= to the list of =rooms= and discarding any that are empty strings.
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Inside the function add 4 lines of code. They should each do the following.
+  1. Set a variable called =direction= to be the user =input= when prompted 'Which direction would you like to go in'
+  2. Create a =while= loop that will run while the =direction= is not in the list =availableDirections=
+  3. =print= that the player can't go that way (inside the while loop)
+  4. Ask the player for the direction they would like to go again (inside the while loop)
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- To finish off this part of the game, we need the =Moving= function to be able to call the room functions when the player has chosen the direction.
+- Again, this is a little complicated, so don't worry if you don't understand it perfectly.
+- At the bottom of your program, we'll create a new dictionary. This will link =room= to functions.
+#+begin_src python
+commands = {'room1':room1,'room2':room2,'corridor':corridor}
+#+end_src
+- This allows the room to be looked up and the appropriate function call to be applied.
+- Lastly we'll need to go back inside your =Moving= function and add a =return=. The return will call the function appropriate for which ever room the player is moving to.
+- It should look something like this, with the commented section containing your Gold Badge code.
+#+begin_src python
+def Moving(location):
+    rooms = map[location]
+    directions = ['North','East','South','West']
+    availableDirections = [directions[i] for i,j in enumerate(rooms) if rooms[i] != '']
+    ### YOUR CODE HERE
+    ### YOUR CODE HERE
+    ### YOUR CODE HERE
+    ### YOUR CODE HERE
+    return rooms[directions.index(direction)]
+#+end_src
+- Now you need to place a correct function call into each of the room functions.
+- So for instance, the corridor function would look like this.
+#+begin_src python
+def corridor():
+    print('You are in a long corridor')
+    print('There are exits to the North and West')
+    command[Moving('corridor')]()
+#+end_src
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Run your code.
+- Use a function call to enter your first room in the interpreter.
+#+begin_src python
+corridor()
+#+end_src
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- It would be nice if their were more directions available, up and down for instance.
+- Alter your map to include some ladders or stairs and then adapt your code to take into account the new directions.

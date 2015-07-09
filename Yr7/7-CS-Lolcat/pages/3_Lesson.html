@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>A Virtual LOLcat in Scratch</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">A Virtual LOLcat in Scratch</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Using functions</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Code It</a></li>
+<li><a href="#sec-1-3">Run It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Using variables</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+<li><a href="#sec-2-2">Code It</a></li>
+<li><a href="#sec-2-3">Try It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Using loops</a>
+<ul>
+<li><a href="#sec-3-1">Learn It</a></li>
+<li><a href="#sec-3-2">Code It</a></li>
+<li><a href="#sec-3-3">Run It</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Explaining it all</a>
+<ul>
+<li><a href="#sec-4-1">Badge It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-lolcats">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Using functions</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Open up the <code>Virtual_LOL_Cat</code> script you were working on last lesson.
+</li>
+<li>Functions are really important in coding.
+</li>
+<li><b>A funtion is a <i>named</i> part of a program that performs some <i>specific task</i></b>
+</li>
+<li>In Scratch, <i>Functions</i> are called <i>Blocks</i>.
+</li>
+<li>Imagine I wanted you to make me a cheese sandwich. I could give you a set of instructions such as:
+<ol class="org-ol">
+<li>Take two pieces of bread.
+</li>
+<li>Apply butter to one side of each piece
+</li>
+<li>Place a slice of cheese on the butter side of one piece of bread.
+</li>
+<li>Place the other slice of bread, butter-side down onto the cheese.
+</li>
+</ol>
+</li>
+<li>However, it's much easier to just say "Make me a cheese sandwich" as you probably already have the instructions stored in your memory. You have a <i>named</i> instruction for performing the <i>sandwich making task</i> 
+</li>
+<li>Functions allow us to write some code, and then run that code just by calling the name of the function.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 code">
+<h3 id="sec-1-2">Code It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Killing the pet is something we might want to do quite a lot. So it would make sense to create a Function for killing the pet, that we can use over and over again.
+</li>
+<li>First we'll need to disconnect the code to kill the pet, from the <code>when space key pressed</code> event.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Function_1.png" alt="Function_1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Next we'll create a new function.
+<ol class="org-ol">
+<li>Click on <code>More Blocks</code>
+</li>
+<li>Click on <code>Make a Block</code>
+</li>
+<li>Call it <code>KillPet</code>
+</li>
+<li>Click on <code>OK</code>
+</li>
+</ol>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Function_2.png" alt="Function_2.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>A new <code>define KillPet</code> block should have been created. This is your <i>named</i> function that you can attach your code to.
+</li>
+<li>Now we'll use the function
+<ol class="org-ol">
+<li>Attach your code to kill the pet to the new <code>define KillPet</code> block.
+</li>
+<li>From <code>More Blocks</code> drag your <code>KillPet block</code> onto the Scripts Area
+</li>
+<li>Attach the <code>KillPet</code> block to the <code>when space key pressed</code> event
+</li>
+</ol>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Function_3.png" alt="Function_3.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 run">
+<h3 id="sec-1-3">Run It</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<ul class="org-ul">
+<li>Test your code to make sure it works like it did before. The pet should die when the space key is pressed.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Using variables</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Variables are another important concept in programming.
+</li>
+<li>A variable is made up of two things:
+<ol class="org-ol">
+<li>Some data that is stored (like numbers or letters)
+</li>
+<li>A name that links to that data.
+</li>
+</ol>
+</li>
+<li>You have variables stored in your memory, even though you might not have realised it.
+</li>
+<li>If I ask you what your name is, you can tell me. Your <code>name</code> is a variable.
+</li>
+<li>If I ask you what your age is, you can tell me. Your <code>age</code> is a variable.
+</li>
+<li>A key thing to remember about variables, is that they can change. You could legally change your name to "Ima Coder", and your age increments by 1 every time you have a birthday.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 code">
+<h3 id="sec-2-2">Code It</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<div class="figure">
+<p><img src="img/Cookie_Cat.jpg" alt="Cookie_Cat.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We're going to use a variable to represent how hungry our pet is.
+</li>
+<li>The variable will have a <i>name</i> - <code>PetHunger</code>
+</li>
+<li>The variable will store some data - 0 to represent no hunger, upto 100 to represent starving.
+<ol class="org-ol">
+<li>Click on the Data palate
+</li>
+<li>Click on <code>Make a variable</code>
+</li>
+<li>Call it <code>PetHunger</code>
+</li>
+<li>Click <code>OK</code>
+</li>
+</ol>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Variable_1.png" alt="Variable_1.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>To finish off this section, you'll need to create a new script to handle the PetHunger.
+</li>
+<li>Add a <b>new</b> <code>when greenflag clicked</code> event.
+</li>
+<li>Attach a <code>set PetHunger to 0</code> block beneath it. We'll add more to this part in the next lesson.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 try">
+<h3 id="sec-2-3">Try It</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<ul class="org-ul">
+<li>We're going to need some more variables for our virtual pet, so we might as well create them now.
+</li>
+<li>Create variables to for <code>PetTiredness</code>, <code>PetThirst</code> and <code>PetHappiness</code>.
+</li>
+<li>Each variable needs it's own <code>when green flag clicked</code> event.
+</li>
+<li><code>PetTiredness</code> should start at 0. <code>PetThirst</code> should also start at 0. <code>PetHappiness</code> should start at 100.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Using loops</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Loops are the third fundamental concept in porgramming to learn today.
+</li>
+<li>A loop causes instructions to be repeated over and over again.
+</li>
+<li>There are basically two types of loop
+<ul class="org-ul">
+<li>Loops that repeat a set number of times
+</li>
+<li>Loops that repeat until a condition is met.
+</li>
+</ul>
+</li>
+<li>Imagine someone was giving directions. They might say something like;
+</li>
+</ul>
+<blockquote>At the next four roundabouts take the second exit to go straight on.</blockquote>
+<ul class="org-ul">
+<li>This is a loop that repeats four times. You take the second exit at each roundabout exactly 4 times.
+</li>
+<li>They might have said this instead though;
+</li>
+</ul>
+<blockquote>Keep taking the second exit at the roundabouts, until you go under the blue bridge.</blockquote>
+<ul class="org-ul">
+<li>This loop repeats an unknown number of times, until the you go under the bridge.
+</li>
+<li>In Scratch these types of loop are called the <code>repeat</code> and the <code>repeat until</code> loops.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 code">
+<h3 id="sec-3-2">Code It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>We're going to use a <code>repeat until</code> to make our pet get hungry.
+</li>
+<li>In Scratch you <i>nest</i> the code you want to repeat, insite the loop block.
+</li>
+<li>Here's the complete script code. You build it from the script you already have to set the Pet's Hunger to 0
+</li>
+</ul>
+<pre class="example">
+when green flag clicked
+set PetHunger to 0
+repeat until PetHunger = 100
+    change PetHunger by 1
+    wait 0.1 secs
+KillPet
+</pre>
+<ul class="org-ul">
+<li>This code can be tricky to assemble, so if you want to see an image of the completed script, <a href="Example_1.html">then click here</a>, but have a go at doing it yourself first.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 run">
+<h3 id="sec-3-3">Run It</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>Run your script to make sure that it works.
+</li>
+<li>You should see the PetHunger variable increase on the stage.
+</li>
+<li>When it reaches 100, the pet should die.
+</li>
+<li>If it doesn't work then go back over the instructions, then ask a friend and finally ask your teacher for help.
+</li>
+<li>For testing purposes, we've used a wait period of 0.1 secomds. But this isn't really practical for the real Virtual Pet. Change the wait time to something longer. You can choose any value you like.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Explaining it all</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3 badge">
+<h3 id="sec-4-1">Badge It</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>To get your badge for this section, you're going to need to create a new Scratch file.
+</li>
+<li>Create an animation where a character explains the concepts of Functions, Variables and Loops to someone who has never heard of the terms. Try to come up with your own examples.
+</li>
+<li>How clear the explanation is will determine whether you are awarded a Silver, Gold or Platinum badge.
+</li>
+<li>You will have only <span class="underline">one</span> lesson to work on this, so don't make it too complicated.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

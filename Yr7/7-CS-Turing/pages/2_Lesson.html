@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Touring Turing</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/navbar.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Touring Turing</h1>
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-Turing">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Manipulating Variable Values</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Last lesson you used Python to perform some calculations.
+</li>
+<li>Let's have a quick test to see how well you remember how to perform calculations.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 badge">
+<h3 id="sec-1-2">Badge It - Silver</h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li>What is the sum of the following numbers - 5,1,4,9,12
+</li>
+<li>What is the product of the following numbers - 4,1,2,8,9,12
+</li>
+<li>What is the remainder of dividing 12 by 5
+</li>
+<li>What is 12% of 32
+</li>
+<li>If I add 6 to 4, multiply the answer by 10 and then raise to the power of 2, what is the answer.
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 try">
+<h3 id="sec-1-3">Try It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Using variables can help us solve more complex problems.
+</li>
+<li>Let's try and use variables to solve some trickier problems.
+</li>
+<li>Let's imagine you're in a maths class and you are given the following problem.
+</li>
+</ul>
+<blockquote>
+<p>
+A chicken can lay a single egg, every day. If a chicken lives for seven years, what is the maximum number of eggs it can lay in it's lifetime?
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>We can use Python to help us work this out, using a few simple variables.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">daysInYear</span> = 365
+<span style="color: #6c71c4;">lifeTime</span> = 7
+<span style="color: #6c71c4;">eggsPerDay</span> = 1
+<span style="color: #6c71c4;">numberEggs</span> = daysInYear * eggsPerDay * lifeTime
+</pre>
+</div>
+<ul class="org-ul">
+<li>We started by assigning three variables to have integer values. Then we assigned a third variable (<code>numberEggs</code>) to be the result of multiplying (<code>*</code>) the previous variables together.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 try">
+<h3 id="sec-1-4">Try It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Let's try another one.
+</li>
+</ul>
+<blockquote>
+<p>
+A snake can slither 20cm in 15 minutes. How many hours would it take the snake to travel 100cm
+</p>
+</blockquote>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">distance</span> = 100
+<span style="color: #6c71c4;">speed</span> = 20/15
+<span style="color: #6c71c4;">time</span> = distance/speed
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 badge">
+<h3 id="sec-1-5">Badge It - Gold</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>These ones are even trickier.
+<ol class="org-ol">
+<li>A woodchuck can chuck 5 bits of wood in an hour. How long does it take a woodchuck to chuck 45 pieces of wood.
+</li>
+<li>A peck is equal to 9 litres. If Peter picked a peck of pickled peppers and each pepper has a volume of 0.25 litres, how many pickled peppers did Peter pick.
+</li>
+<li>A cannibal can nibble 9 cans in an hour. How many cans can nine cannibals nibble in ninety minutes
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>We can easily assign variables to other variables.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = 10
+<span style="color: #6c71c4;">bar</span> = foo
+</pre>
+</div>
+<ul class="org-ul">
+<li>Let's find out what <code>bar</code> is now.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">bar
+</pre>
+</div>
+<ul class="org-ul">
+<li>As you probably expected, it is now 10.
+</li>
+<li>But what happens if we change <code>foo</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = 5
+</pre>
+</div>
+<ul class="org-ul">
+<li>What's bar now?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 learn">
+<h3 id="sec-1-7">Learn It</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>To see why <code>bar</code> stays at 10, we need to think about what happens when we use code like <code>bar = foo</code>. We'll talk in terms of a <i>sort of</i> Turing Machine.
+</li>
+<li>We start off with an empty tape and some empty cards.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/tape1.jpg" alt="tape1.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>When we write <code>foo = 10</code> two things happen.
+<ol class="org-ol">
+<li>The value of 10 is stored on the tape in a certain box. In this case it is box number 4.
+</li>
+<li>The card is then altered so it has the variable identifier and the box it points to.
+</li>
+</ol>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/tape2.jpg" alt="tape2.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>When we then write <code>bar = foo</code>, a second card is then used to indicate that <code>bar</code> points to the same box number as <code>foo</code>.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/tape3.jpg" alt="tape3.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Lastly, when we reassign <code>foo</code> the value of 5, a second box (in this case box 8) has 5 stored in it and <code>foo</code>'s card is altered to now point to the new box.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/tape4.jpg" alt="tape4.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We can see that bar is still pointing to the value in address 4, which is the number 10.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 badge">
+<h3 id="sec-1-8">Badge It - Platinum</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>For each of the problems below - you may only use the variables stated in the problem. You can't use additional variables or values.
+</li>
+<li>The first has been done for you as an example
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-1-8-1" class="outline-4">
+<h4 id="sec-1-8-1">Example</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = 10
+<span style="color: #6c71c4;">bar</span> = 4
+<span style="color: #6c71c4;">baz</span> = 0
+</pre>
+</div>
+<ul class="org-ul">
+<li>make <code>foo</code>, <code>bar</code> and <code>baz</code> all equal to 6.
+</li>
+</ul>
+<p>
+<i>Answer</i>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">baz</span> = foo - bar
+<span style="color: #6c71c4;">foo</span> = baz
+<span style="color: #6c71c4;">bar</span> = baz
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-8-2" class="outline-4">
+<h4 id="sec-1-8-2">Problem 1</h4>
+<div class="outline-text-4" id="text-1-8-2">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = 10
+<span style="color: #6c71c4;">bar</span> = 4
+</pre>
+</div>
+<ul class="org-ul">
+<li>Make <code>foo</code> and <code>bar</code> both equal to 6.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-8-3" class="outline-4">
+<h4 id="sec-1-8-3">Problem 2</h4>
+<div class="outline-text-4" id="text-1-8-3">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = 10
+<span style="color: #6c71c4;">bar</span> = 15
+<span style="color: #6c71c4;">baz</span> = 3
+</pre>
+</div>
+<ul class="org-ul">
+<li>Make <code>foo</code> and <code>bar</code> both equal to 25 and <code>baz</code> equal to 22
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-8-4" class="outline-4">
+<h4 id="sec-1-8-4">Problem 3</h4>
+<div class="outline-text-4" id="text-1-8-4">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = 12
+<span style="color: #6c71c4;">bar</span> = 3
+</pre>
+</div>
+<ul class="org-ul">
+<li>Make <code>foo</code> equal to 4 and <code>bar</code> equal to 12
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-8-5" class="outline-4">
+<h4 id="sec-1-8-5">Problem 4</h4>
+<div class="outline-text-4" id="text-1-8-5">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = 9
+<span style="color: #6c71c4;">bar</span> = 4
+</pre>
+</div>
+<ul class="org-ul">
+<li>Make <code>foo</code> equal to 4 and <code>bar</code> equal to 9
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

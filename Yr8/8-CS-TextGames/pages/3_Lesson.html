@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Text Based Games</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/navbar.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Text Based Games</h1>
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-TextGames">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Rock, Paper, Scissors</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Rock, Paper, Scissors is a simple enough game to create in Python, although it's a little difficult to tell if the computer is cheating or not, as the player always goes first.
+</li>
+<li>In the real game, each player (on the count of three) calls out either Rock, Paper or Scissors (with the appropriate hand gesture).
+</li>
+<li>The rules are:
+<ol class="org-ol">
+<li>Rock crushes Scissors.
+</li>
+<li>Scissors cuts Paper
+</li>
+<li>Paper wraps Rock
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>We're going to need to use a couple of data structures to accomplish this game.
+</li>
+<li>The first are lists.
+</li>
+<li>In Python a list is an ordered collection of elements. They can be integers, floats, strings, variables or even other lists.
+</li>
+<li>We create a list, by giving it a name and then placing our elements inside of square brackets <code>[ ]</code> with commas separating each element.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 code">
+<h3 id="sec-1-3">Code It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Let's create a list and see what we can do with it.
+</li>
+<li>Write the following into your <code>INTERPRETER</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">people</span> = [<span style="color: #2aa198;">'Niall'</span>,<span style="color: #2aa198;">'Zayn'</span>,<span style="color: #2aa198;">'Liam'</span>,<span style="color: #2aa198;">'Harry'</span>,<span style="color: #2aa198;">'Louis'</span>]
+</pre>
+</div>
+<ul class="org-ul">
+<li>We can access any element of the list, using it's index.
+</li>
+<li>Try typing the following.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">people[0]
+people[3]
+people[-1]
+people[5]
+</pre>
+</div>
+<ul class="org-ul">
+<li>Pay careful attention to the error you received in the last example. This is one you're sure to meet again, and means you've tried to access an element that is beyond the range of the list.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>If we want the computer to pick a random name from our group of people, we're going to need an additional library.
+</li>
+<li>The random module allows us to use random number generators.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 code">
+<h3 id="sec-1-5">Code It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Type the following into your <code>INTERPRETER</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">import</span> random
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now try typing the following (you might have to put them in more than once, to see what is happening)
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">random.random()
+random.randrange(0,10)
+random.randrange(0,1)
+random.randrange(0,2)
+random.randrange(0,10,2)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 code">
+<h3 id="sec-1-6">Code It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>So using what we have now learned, we could write some code to choose a random person from our list.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">people</span> = [<span style="color: #2aa198;">'Niall'</span>,<span style="color: #2aa198;">'Zayn'</span>,<span style="color: #2aa198;">'Liam'</span>,<span style="color: #2aa198;">'Harry'</span>,<span style="color: #2aa198;">'Louis'</span>]
+<span style="color: #6c71c4;">randomNumber</span> = random.randrange(0,5)
+<span style="color: #6c71c4;">randomPerson</span> = people[randomNumber]
+<span style="color: #859900;">print</span>(randomPerson)
+</pre>
+</div>
+<ul class="org-ul">
+<li>We could condense this down a little though.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">people</span> = [<span style="color: #2aa198;">'Niall'</span>,<span style="color: #2aa198;">'Zayn'</span>,<span style="color: #2aa198;">'Liam'</span>,<span style="color: #2aa198;">'Harry'</span>,<span style="color: #2aa198;">'Louis'</span>]
+<span style="color: #6c71c4;">randomPerson</span> = people[random.randrange(0,5)]
+<span style="color: #859900;">print</span>(randomPerson)
+</pre>
+</div>
+<ul class="org-ul">
+<li>And there's an even easier way of choosing a random element from a list, if you'd like to go and try and discover it on the web.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 badge">
+<h3 id="sec-1-7">Badge It - Silver</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Using what you have learned so far.
+<ol class="org-ol">
+<li>Create a list called <code>choices</code> that contains the words - rock, paper and scissors.
+</li>
+<li>Set a variable called <code>computerChoice</code> that gets set to a random element from the list.
+</li>
+<li>Set a variable called <code>playerChoice</code> that lets the user choose from rock, paper or scissors, by asking for some <code>input</code>
+</li>
+<li>Print out the computer and player's choice on a single line (remember string formatting from last lesson (%s))
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 learn">
+<h3 id="sec-1-8">Learn It</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>Next we need a way for the computer to understand the rules of Rock, Paper, Scissors.
+</li>
+<li>For this we'll need a knew data structure called a dictionary.
+</li>
+<li>A dictionary is a collection of <code>key</code> and <code>value</code> pairs.
+</li>
+<li>Dictionaries are surrounded by curly brackets <code>{ }</code>
+</li>
+<li>The easiest way for you to understand dictionaries, is to create one.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-9" class="outline-3 code">
+<h3 id="sec-1-9">Code It</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>Let's use the people from the last section and try to classify them.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">people</span> = {<span style="color: #2aa198;">'Harry'</span>:<span style="color: #2aa198;">'Cute'</span>,<span style="color: #2aa198;">'Zayne'</span>:<span style="color: #2aa198;">'Mysterious'</span>,<span style="color: #2aa198;">'Liam'</span>:<span style="color: #2aa198;">'Sensible'</span>,<span style="color: #2aa198;">'Harry'</span>:<span style="color: #2aa198;">'Charming'</span>,<span style="color: #2aa198;">'Louis'</span>:<span style="color: #2aa198;">'Funny'</span>}
+</pre>
+</div>
+<ul class="org-ul">
+<li>Each of the names in the dictionary is known as a <code>key</code>, while each of the descriptions are known as <code>values</code>.
+</li>
+<li>We can query the dictionary and get returned the value of any given key.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">people[<span style="color: #2aa198;">'Liam'</span>]
+people[<span style="color: #2aa198;">'Louis'</span>]
+people[<span style="color: #2aa198;">'Zayne'</span>]==<span style="color: #2aa198;">'Mysterious'</span>
+people[<span style="color: #2aa198;">'Harry'</span>]==<span style="color: #2aa198;">'Funny'</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-10" class="outline-3 code">
+<h3 id="sec-1-10">Code It</h3>
+<div class="outline-text-3" id="text-1-10">
+<ul class="org-ul">
+<li>We can now use the dictionary to create a little guessing game.
+</li>
+<li>Copy and paste the code below into a new file and then run it.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">import</span> random
+<span style="color: #6c71c4;">people</span> = [<span style="color: #2aa198;">'Niall'</span>,<span style="color: #2aa198;">'Zayn'</span>,<span style="color: #2aa198;">'Liam'</span>,<span style="color: #2aa198;">'Harry'</span>,<span style="color: #2aa198;">'Louis'</span>]
+<span style="color: #6c71c4;">descriptions</span> = {<span style="color: #2aa198;">'Harry'</span>:<span style="color: #2aa198;">'Cute'</span>,<span style="color: #2aa198;">'Zayn'</span>:<span style="color: #2aa198;">'Mysterious'</span>,<span style="color: #2aa198;">'Liam'</span>:<span style="color: #2aa198;">'Sensible'</span>,<span style="color: #2aa198;">'Niall'</span>:<span style="color: #2aa198;">'Charming'</span>,<span style="color: #2aa198;">'Louis'</span>:<span style="color: #2aa198;">'Funny'</span>}
+<span style="color: #6c71c4;">person</span> = random.choice(people)
+<span style="color: #6c71c4;">guess</span> = <span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'Guess what %s is described as '</span>%(person))
+<span style="color: #859900;">if</span> descriptions[person] == guess:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You are correct'</span>)
+<span style="color: #859900;">else</span>:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You are wrong'</span>)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Once you've played a couple of times, make sure you have a good look at the code and that you understand what is going on.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-11" class="outline-3 code">
+<h3 id="sec-1-11">Code It</h3>
+<div class="outline-text-3" id="text-1-11">
+<ul class="org-ul">
+<li>Let's use a dictionary to build up the rules of Rock, Paper, Scissors.
+</li>
+<li>Create a dictionary where the <code>keys</code> are 'rock', 'paper' and 'scissors', and the values are the item that each one beats.
+</li>
+<li>For instance:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #2aa198;">'rock'</span>:<span style="color: #2aa198;">'scissors'</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-12" class="outline-3 badge">
+<h3 id="sec-1-12">Badge It - Gold</h3>
+<div class="outline-text-3" id="text-1-12">
+<ul class="org-ul">
+<li>We can now add a few more lines to the code, to decide who wins.
+</li>
+<li>You should know enough about conditional selection to do this yourself (<code>if</code>, <code>elif</code> and <code>else</code>)
+<ol class="org-ol">
+<li><code>if</code> the <code>playerChoice</code> and <code>computerChoice</code> are equal, then the program should <code>print</code> 'Draw'
+</li>
+<li><code>if</code> the <code>playerChoice</code> is looked up in the dictionary, and its <code>value</code> is equal to the <code>computerChoice</code>, then the program should <code>print</code> 'You win'
+</li>
+<li>Otherwise the program should <code>print</code> 'I win'
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-13" class="outline-3 code">
+<h3 id="sec-1-13">Code It</h3>
+<div class="outline-text-3" id="text-1-13">
+<ul class="org-ul">
+<li>Dictionaries can contain more than just strings.
+</li>
+<li>Here we have a dictionary that contains lists.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">compounds</span> = {<span style="color: #2aa198;">'Water'</span>:[<span style="color: #2aa198;">'H'</span>,<span style="color: #2aa198;">'O'</span>],<span style="color: #2aa198;">'Carbon dioxide'</span>:[<span style="color: #2aa198;">'C'</span>,<span style="color: #2aa198;">'O'</span>],<span style="color: #2aa198;">'Ammonia'</span>:[<span style="color: #2aa198;">'N'</span>,<span style="color: #2aa198;">'H'</span>],<span style="color: #2aa198;">'Salt'</span>:[<span style="color: #2aa198;">'Na'</span>,<span style="color: #2aa198;">'Cl'</span>]}
+</pre>
+</div>
+<ul class="org-ul">
+<li>We can use this to query which elements are in any given compound.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">compounds[<span style="color: #2aa198;">'Water'</span>]
+<span style="color: #2aa198;">'C'</span> <span style="color: #859900;">in</span> compounds[<span style="color: #2aa198;">'Carbon dioxide'</span>]
+<span style="color: #2aa198;">'Na'</span> <span style="color: #859900;">in</span> compounds[<span style="color: #2aa198;">'Ammonia'</span>]
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-14" class="outline-3 badge">
+<h3 id="sec-1-14">Badge It - Platinum</h3>
+<div class="outline-text-3" id="text-1-14">
+<ul class="org-ul">
+<li>Watch this video carefully.
+</li>
+<li>It might be useful to have a pen and paper ready - to write down the rules
+</li>
+</ul>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/Kov2G0GouBw" frameborder="0" allowfullscreen></iframe>
+<ul class="org-ul">
+<li>Using what you know about dictionaries of lists, alter your code so that you can play Rock, Paper, Scissors, Lizard, Spock with the computer.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

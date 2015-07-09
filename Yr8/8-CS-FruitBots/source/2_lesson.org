@@ -1,0 +1,189 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: FruitBots
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/8CS-FruitBots">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Moving your bot to any square
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- It would be helpful if we could move out FruitBot to a specific square on the board.
+- Any position on the board can be described by two numbers; an x coordinate and a y coordinate
+- The smallest x and y positions are 0, and the largest are WIDTH - 1 and HEIGHT - 1
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Let's imagine out bot is at the coordinates x = 4 and y = 3.
+- Now let's imagine we want out bot to move to x = 6 and y = 1.
+- Which two directions do we need the bot to move in?
+- How about if you needed the bot to go to x = 8 and y = 5?
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Write down how you can *calculate* whether the bot needs to move EAST or WEST and NORTH or SOUTH.
+- Show your explanation to your teacher.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Rename your old bot from the previous lesson to /Lesson1Bot.js/
+- Now create a new file called /mybot.js/
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Add this code to mybot.js. This time we're going to specify that we want to use board 1 to test our scripts.
+#+BEGIN_SRC javascript
+function new_game() {
+}
+
+function default_board_number(){
+    return 1;
+}
+
+function make_move(){
+
+}
+#+END_SRC
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We'll start by setting a position for our FruitBot to go to.
+- To do this we'll create two new variables. =target_x= and =target_y=.
+- Because these variables are declared outside of any functions, we call them /global variables/, meaning any function in our program can use them.
+#+BEGIN_SRC javascript
+var target_x = 6;
+var target_y = 1;
+
+function new_game() {
+}
+
+function default_board_number(){
+    return 1;
+}
+
+function make_move(){
+
+}
+#+END_SRC
+- Now we need to edit the =make_move()= function. Make sure you're editing the correct function when we do this.
+- First we'll create variables for the bot's current position - =my_x= and =my_y=.
+- Because these variables are declared inside the function, they are called /local variables/. Only the =make_move()= function can use them.
+
+#+BEGIN_SRC javascript
+  function make_move(){
+      //store the player's x and y position in variables for clearer code.
+      var my_x = get_my_x()
+      var my_y = get_my_y()
+  }
+#+END_SRC
+
+- Now, if =my_x= is less than the =target_x= we need the bot to move EAST.
+- If =my_x= is greater than the =target_x= we need the bot to move WEST.
+- We use =<= for less than and =>= for greater than.
+
+#+BEGIN_SRC javascript
+  function make_move(){
+      //store the player's x and y position in variables for clearer code.
+      var my_x = get_my_x()
+      var my_y = get_my_y()
+
+      if(my_x < target_x){
+          return EAST
+      }
+      else if(my_x > target_x){
+          return WEST
+      }
+  }
+#+END_SRC
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run game.html and make sure your FruitBot is moving to the correct x position.
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- With two more =else if= conditions we can make out FruitBot move towards the y target. Have a go adding these and see if your FruitBot works.
+- Try changing the =target_x= and =target_y= variables to make your FruitBot move to different fruits on the board.
+- Add a final =else{return PASS}= condition to the end of the function, so that the FruitBot does nothing when it reaches it's target x and y.

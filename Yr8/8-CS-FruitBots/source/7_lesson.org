@@ -1,0 +1,260 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: FruitBots
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/8CS-FruitBots">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Taking fruit like a ninja
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- In a previous lesson, you learned how to write a function that had two /parameters/ - target_x and target_y.
+- When coordinates were provided as /arguments/ to this function, the FruitBot moved to that target.
+- We're going to use that function in this lesson.
+- The algorithm we'll write today is going to do the following:
+  1. Pick a target fruit.
+  2. Find that fruit on the game board
+  3. Move to that fruit
+  4. Take that fruit.
+* Working with 1d arrays and loops
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Our first job is to find a fruit on the board.
+- Let's start by using a blank slate.
+- Take you mybot.js from last lesson and save it as snakeBot.js
+- Now save it again as mybot.js and delete all the code.
+- Copy and paste the following into your script into your mybot.js file.
+#+BEGIN_SRC javascript
+function new_game(){
+
+}
+
+function make_move(){
+
+}
+#+END_SRC
+- We'll also need to disable the opponent bot.
+- Go to =assets/js/simplebot.js=
+- Remove the =//= comments on the line that says =return PASS=
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- If you remember back to lesson 3, we learned that the position of fruits on the board are stored in a 2d array.
+- Let's have a look at another example of this as a reminder, although you can skip it if you remember exactly how the fruit are stored.
+- Here's an example board - number 664694, if you want to generate it yourself using game.html
+[[file:img/board664694.png]]
+- Each column of the board is represented by an array. So in this example, the first column is =[nothing, nothing, nothing, banana, melon]= and the last column is =[cherry, nothing, melon, nothing, orange]=
+- We store the fruits as integers (whole numbers). So the above arrays become =[0,0,0,2,4]= and the last is =[3,0,4,0,5]=
+- We can then store each of the arrays, in another array, called a 2d array.
+#+BEGIN_SRC javascript
+board = 
+[[0,0,0,2,4]
+ [4,0,0,0,3]
+ [0,5,0,5,3]
+ [0,0,0,0,0]
+ [0,0,4,3,5]
+ [4,5,5,0,1]
+ [5,0,0,0,0]
+ [0,0,4,2,0]
+ [5,2,5,4,3]
+ [3,0,4,0,5]]
+#+END_SRC
+- Now we have an easy way of identifying what fruit is positioned at any coordinate we choose.
+- For instance at x = 5 and y = 2 we can look at the 2nd fruit in the 5th array. (REMEMBER TO START COUNTING FROM ZERO THOUGH)
+- In this example we get the number 5, which is an orange.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Use the 2d array to find the fruit at:
+  1. 7,2
+  2. 5,1
+  3. 0,0
+  4. 9,4
+- Check your answers by using the image of the board.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Now try and write down the coordiantes of all the oranges on the board.
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Now write down how you managed the last task.
+- You need to describe the /algorithm/ that you used. For instance, did you start searching from the top left, bottom right, the middle?
+- How do you think a computer program would do it.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- To find an orange on the board we need to /iterate/ through the 2d array.
+- Iteration means repeating something with the aim of achieving some sort of goal.
+- We're going to /iterate/ through the 2d array until we find an orange.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's start by writing some JavaScript in the console, to explore iteration a little.
+- In JavaScript we iterate over an array using something called a =for= loop.
+- Open your console and let's make a 1d array.
+#+BEGIN_SRC javascript
+sevenSeas = ['Arctic', 'North Atlantic', 'South Atlantic', 'North Pacific', 'South Pacific', 'Indian', 'Southern']
+#+END_SRC
+- You can have a look at any of the elements of the array by using it's index. Type the following into your console.
+#+BEGIN_SRC javascript
+console.log(sevenSeas[0])
+#+END_SRC
+- and the following:
+#+BEGIN_SRC javascript
+console.log(sevenSeas[1])
+#+END_SRC
+- If we wanted all the /Seas/ to be output to the console, we could keep incrementing the index until we reach 6, or we could use a for loop.
+- Try the following:
+#+BEGIN_SRC javascript
+  for (i = 0; i < 7; i++){console.log(sevenSeas[i])}
+#+END_SRC
+- We wrote that all on one line, because we were using the console. In our scripts in our texteditors, we would be more likely to write it so that it was a little more clear.
+#+BEGIN_SRC javascript
+  for (i = 0; i < 7; i++){
+      console.log(sevenSeas[i])
+  }
+#+END_SRC
+- So what is this script doing?
+  - the =for= starts a loop.
+  - in brackets after the for, comes the conditions for /termination/ (ending) of the loop.
+    - =i = 0= - a variable called i is set to 0 (this variable is temporary and can only be seen by the =for= loop).
+    - =i < 7= - the loop will continue while =i= is less than 7.
+    - =i++= each time around the loop i is incrmented upwards by 1 (i++)
+  - we then =console.log= the /ith/ element of the array.
+- So i starts at 0 and continues going up until it reaches 6, and each time the /ith/ element of the list is output to the console.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Try making your own list of things and iterating over them with a for loop.
+
+* Let's find an orange
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- We're going to start our script to find an orange now.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+- Let's create a new function. We'll call it find_orange.
+#+BEGIN_SRC javascript
+function new_game(){
+
+}
+
+function make_move(){
+
+}
+
+//A new function to find an orange
+function find_orange(){
+
+}
+#+END_SRC
+- Let's start by just iterating over the 2d array that holds the board.
+- We'll need to get the board first.
+#+BEGIN_SRC javascript
+function new_game(){
+
+}
+
+function make_move(){
+
+}
+
+//A new function to find an orange
+function find_orange(){
+board = get_board()
+}
+#+END_SRC
+- Now we have the board, let's make a for loop and have a look at the output.
+- We have a small problem to overcome first. When do we terminate the loop? It depends on the /length/ of the array.

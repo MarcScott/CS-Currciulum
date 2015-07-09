@@ -1,0 +1,506 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
+
+#+TITLE: Text Based Games
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-TextGames">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Hangman
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- In this lesson you're going to create a version of hangman, that you can play against the computer.
+- Let's have a little look at the logic of the game.
+  1. The word should be displayed with =_= in place of each letter.
+  2. The player should guess a letter.
+  3. If the letter is in a list of all letters, the letter should be removed from the list.
+  4. If the letter is in the word, then the =_= should be replaced with the letter, and we should store how many correct letters the player has guessed (This takes into account repeats).
+  5. If the letter is not in the word, then the gallows can begin to be drawn.
+  6. The player should be asked for another letter.
+  7. The game ends when the player has made correct guesses that equal the length of the word, or the last stage of the gallows has been drawn.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The first step will be fairly simple.
+- We need to use ASCII characters to create the graphic that is displayed on the screen.
+- We'll assign variables to have the values of the graphic.
+- The first couple have been done for you in the code below.
+- In python we use ='''= to print multi-line strings.
+#+begin_src python
+stage0=''
+stage1 = '''
+_______________'''
+stage2 = '''
+|
+|
+|
+|
+|
+|
+|\______________'''
+stage3 = '''
+__________
+|/
+|
+|
+|
+|
+|
+|\______________'''
+#+end_src
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Use ASCII to create the rest of the stages. The number of stages you have is obviously up to you.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now that you have all the stages of the hangman graphic, we need a way of easily printing out a specific stage as the game progresses.
+- Probably the best way of doing this is to use a list.
+  #+begin_src python
+stage = [stage0,stage1,stage2,stage3,stage4,stage5,stage6,stage7,stage8]
+  #+end_src
+- obviously this will need altering depending on the number of stages you have in your game.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Let's try printing out some stages from your game.
+- Save you file as =Hangman.py= and then run it.
+- Switch over to the =interpreter= and then try accessing various stages of your graphic in the following way.
+#+begin_src python
+print(stage[4])
+#+end_src
+- Remember, lists are indexed from 0.
+- Make sure that each of your stages print out correctly.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's add in a couple of variables that will probably be important.
+- We'll want to store which stage of the gallows the player has currently reached.
+- We'll also want to know how many correct letters the player has guessed.
+#+begin_src python
+stageindex = 0
+correctLetters = 0
+#+end_src
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We'll want to a way of storing the guesses the player has made, and ensuring that only letters are accepted.
+- The easiest way to do this is with a data structure that stores all the letters of the alphabet.
+- Let's start with a simple string.
+#+begin_src python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+#+end_src
+- The problem with a string is that it's not easy to remove elements from it.
+- It would be much easier to have all the letters in a list, but that would mean a lot more typing.
+- It would be better if we could use a little loop, to create a list for us.
+#+begin_src python
+  alphalist = []
+  for letter in alphabet:
+      alphalist.append(letter)
+#+end_src
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The code above is a perfectly sensible way of creating a list of all the letters in the alphabet, but it is a little verbose.
+- Luckily there is an easier way of creating lists in Python called =List Comprehensions=.
+- In the next exercise, you're going to use list comprehensions to create some lists.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The easiest way of learning about list comprehensions is to write some.
+#+begin_src python
+numbersto10 = [number for number in range(10)]
+#+end_src
+- We start by naming our list.
+- In the square brackets is the list comprehension.
+- This one says.
+  - Fill the list with =number=
+  - Where =number= is each element of =range(10)=
+- Let's have a look at another one.
+#+begin_src python
+foo = 'Hello World!'
+bar = [character for character in foo]
+#+end_src
+- Here we create a list containing all the characters that are in foo.
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Create a new file called ListComps.py
+- Work out what each of these list comprehensions achieves. Don't worry if you don't understand them all fully. The first few should be okay, but the later ones are just to show you how powerful list comprehensions can be.
+#+begin_src python
+List1 = [i for i in range(20,10,-1)]
+#+end_src
+#+begin_src python
+List2 = [j**2 for j in range(10)]
+#+end_src
+#+begin_src python
+List3 = [k for k in range(100) if k % 2 == 0]
+#+end_src
+#+begin_src python
+List4 = [l.lower() for l in 'ABCDEFG']
+#+end_src
+#+begin_src python
+List5 = ['_' for m in 'Hello World!']
+#+end_src
+#+begin_src python
+List6 = [n for n in 'The Quick Brown Fox' if n.upper() == n and n != ' ']
+#+end_src
+#+begin_src python
+List7 = [word[0] for word in 'my race should continue on to the island 
+shore to help ease boring eye strain tonight'.split()]
+#+end_src
+#+begin_src python
+List8 = [[row[i] for row in [[1,2,3],[4,5,6],[7,8,9]]]for i in range(3)]
+#+end_src
+** Badge It - Gold  (Part I)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Use list comprehensions to create the following lists.
+  1. [-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0]
+  2. A list of all consonants in the sentence 'The quick brown fox jumped over the lazy dog'
+  3. A list of all square numbers formed by squaring the numbers from 1 to 1000.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's switch back to our =hangman.py= file now and create our list of letters in the alphabet now.
+#+begin_src python
+alphabet = 'qwertyuiopasdfghjklzxcvbnm'
+alphalist = [letter for letter in alphabet]
+#+end_src
+- We'll also need a list of words that the user is going to have to guess letters for.
+#+begin_src python
+words = ['computer','science','internet','www','onedirection']
+#+end_src
+- Feel free to add your own words.
+- Next we'll want to get the computer to choose a word at random from the list. You've used the random module before.
+- Add the line
+#+begin_src python
+import random
+#+end_src
+- to the very top of your python file.
+- then after the =words= list we can add the line
+#+begin_src python
+word = random.choice(words)
+#+end_src
+- This will pick a random word from the words list for use with the game.
+- Last of all, before we start on the actual game logic, we'll set a variable to state that the game is running.
+#+begin_src python
+gameOn = True
+#+end_src
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Because the hangman game is a little more complicated than before, we're going to break it up into functions.
+- Functions are blocks of code that perform a ... function.
+- In Python we create a function using the keyword =def=
+#+begin_src python
+def foo():
+    some code...
+#+end_src
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's start by creating a function to print out the word that the user is guessing. If a letter has been guessed, then it should be displayed, otherwise we should display an =_=.
+- We'll start by giving the function a name.
+#+begin_src python
+def displayWord():
+#+end_src
+- Code inside a function, needs to be indented.
+- Let's print an empty line to start with.
+#+begin_src python
+  def displayWord():
+      print('')
+#+end_src
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Now you need to create the rest of the code in the function.
+- Have a go and get your teacher to check if you're not sure.
+- Here is the logic.
+  1. Declare a variable called =display= and assign it the value of an empty string =''=
+  2. For every letter in the word.
+  3. If the letter is not in the alphalist (which currently contains all the letters not guessed) then add the letter to display along with a space (=' '=)
+  4. Else display ='_ '=
+  5. Print the display variable.
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+- Let's try testing the code.
+- Run your program and then switch into the interpreter.
+- Let's cheat a little and set word to a known value.
+#+begin_src python
+word = 'hello'
+#+end_src
+- Now let's run the function
+#+begin_src language
+displayWord()
+#+end_src
+- You should see 5 =_= characters printed.
+- We can remove some letters from the =alphalist= to simulate guesses.
+#+begin_src python
+alphalist.remove('l')
+displayWord()
+#+end_src
+- You should see =_ _ l l _= printed.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The next function is easy.
+- We need to print out the current stage.
+#+begin_src python
+  def displayStage():
+      print(stages[stageindex])
+#+end_src
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The next function is a little more tricky.
+- We'll need to do a little experimentation to work out how to complete it.
+- Create a new file called =global.py=
+- Add in this code
+#+begin_src python
+foo = 1
+
+def myfunc():
+    bar = 2
+    print(foo)
+    print(bar)
+    bar +=1
+    foo +=1
+    
+#+end_src
+- Save the file and run it.
+- Now switch to the interpreter and try and run the function.
+#+begin_src python
+  foo = 'I am foo'
+
+  def bar():
+      baz = 'I am baz'
+      print(baz)
+#+end_src
+- Save and tun the code, then in the interpreter type
+#+begin_src python
+print(foo)
+bar()
+#+end_src
+- You should see the two lines printed.
+- Let's alter the function to print both =foo= and =baz=
+#+begin_src python
+    foo = 'I am foo'
+
+    def bar():
+        baz = 'I am baz'
+        print(foo)
+        print(baz)
+#+end_src
+- Again switch to your interpreter and type
+#+begin_src python
+bar()
+#+end_src
+- And again both lines should be printed.
+- Now let's try altering the variables =baz= and =foo=
+- Try this first.
+#+begin_src python
+  foo = 'I am foo'
+
+  def bar():
+      baz = 'I am baz'
+      baz += ', nice to meet you'
+      print(foo)
+      print(baz)
+#+end_src
+- Save, run and call the function from the interpreter again.
+- Let's try the same change to foo.
+#+begin_src python
+  foo = 'I am foo'
+
+  def bar():
+      baz = 'I am baz'
+      baz += ', nice to meet you'
+      foo += ', nice to meet you'
+      print(foo)
+      print(baz)
+#+end_src
+- Now we get an error. Why?
+- Variables that are declared inside a function and those declared outside a function are different.
+- We call variables that are declared in the main body of code =Global Variables= and those declared within function are =Local Variables=
+- While a function has no problems reading a global variable, it can't alter them. Additionally a function can't even read variables that are local to other functions.
+- To allow our function to alter the global variable, we must tell it that the variable foo is global.
+#+begin_src python
+  foo = 'I am foo'
+
+  def bar():
+      global foo
+      baz = 'I am baz'
+      baz += ', nice to meet you'
+      foo += ', nice to meet you'
+      print(foo)
+      print(baz)
+#+end_src
+- Try this code out and everything should be awesome.
+- NOTE - as you get better at programming, you should try and avoid using global variables as much as possible, as they can lead to unexpected bugs in your code, where multiple functions are relying on or changing their values.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Let's go back to our hangman.py file.
+- The next function is going to allow the player to make a guess of a letter.
+- It will then increase the =stageindex= if they get it wrong and remove the letter from the alphalist.
+- It will increase the =correctGuesses= if they get it right and remove the letter from the alphalist.
+- Because we're altering the =stageindex= and =correctGuesses= variables, we'll need to use the =global= keyword.
+** Badge It - Gold (Part II)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+-Create a function called =Guess=
+#+begin_src python
+def Guess():
+#+end_src
+- Within the function:
+  1. use the =global= keyword to make the =stageindex= and =correctGuesses= variables available to the function.
+  2. Set a variable called =guess= to be the input from a player's guess.
+  3. Use conditional selection =if,elif,else= to:
+     1. Print that the character can't be found if the =guess= is =not in= the =alphalist=
+     2. Otherwise, if the =guess= is =not in= the =word=, then increase =stageindex= by one and remove the =guess= from the alphalist.
+     3. Otherwise, remove the =guess= from the =alphalist= and =for= each letter in the word, if the letter is equal to the guess, increase =correctLetters= by 1.
+- Note - to remove an item from a list you can use code like this.
+#+begin_src python
+myList.remove(element)
+#+end_src
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- One more function for you to write now.
+- We need to check if the game has ended or not.
+- So we're going to need access to the =global= =gameOn= variable.
+- The basic concept will be:
+  1. If the length of the word being guessed is equal to the value of =correctLetters= then we can print out the current stage, and a message that the player has won, and finally change the =gameOn= variable to False.
+  2. If the =stageIndex= is equal to 8 (or whatever the final stage you have_, then we should print out the current stage, send a message that the player has lost, and then set =gameOn= to false.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- For your final badge, try and write a function called =checkEnd():= that checks if the game has ended or not.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- At the very end of your game, you'll need a little bit of code to get the game running.
+#+begin_src python
+while gameOn == True:
+    displayWord()
+    displayStage()
+    Guess()
+    checkEnd()
+#+end_src
+- Try running your game and see whether it is all working correctly.

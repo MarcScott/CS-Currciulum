@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.1.15.1 SQL</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.1.15.1 SQL</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Querying a database</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. SQL syntax - <code>SELECT</code></a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+<li><a href="#sec-2-2">Learn It</a></li>
+<li><a href="#sec-2-3">Try It</a></li>
+<li><a href="#sec-2-4">Learn It</a></li>
+<li><a href="#sec-2-5">Try It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. SQL syntax - <code>CREATE</code></a>
+<ul>
+<li><a href="#sec-3-1">Learn It</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. SQL syntax - <code>INSERT</code> , <code>UPDATE</code> and <code>DELETE</code></a>
+<ul>
+<li><a href="#sec-4-1">Learn It</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Exam Questions</a>
+<ul>
+<li><a href="#sec-5-1">Try It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+
+<div class="figure">
+<p><img src="img/Chuck.jpg" alt="Chuck.jpg" />
+</p>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Querying a database</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>SQL (Structured Query Language) is a language for exploring databases.
+</li>
+<li>Using SQL we can perform various operations on data in out database tables.
+</li>
+<li>We can, for instance, DELETE, CREATE, SELECT and UPDATE tables, records and fields.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> SQL syntax - <code>SELECT</code></h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+<ul class="org-ul">
+<li>Querying a database using SQL is the most common operation that is performed.
+</li>
+<li>This uses the <code>SELECT</code> statement.
+</li>
+<li><code>SELECT</code> will retrieve data from one or more tables
+</li>
+<li><code>SELECT</code> has optional key words such as:
+<ul class="org-ul">
+<li><code>FROM</code> to indicate which table(s) data is to be retrieved from
+</li>
+<li><code>WHERE</code> to allow selection of data using comparisons.
+</li>
+<li><code>ORDER BY</code> to identify a column in the table by which to order the data, either ascending or descending.
+</li>
+</ul>
+</li>
+<li>The asterisk (<code>*</code>) is also important in writing SQL statements, indicating that all columns should be selected.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 learn">
+<h3 id="sec-2-2">Learn It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Let's look at out Films example again.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="center">Film</th>
+<th scope="col" class="center">Director</th>
+<th scope="col" class="center">Year</th>
+<th scope="col" class="center">RTScore</th>
+<th scope="col" class="center">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="center">The Way of the Dragon</td>
+<td class="center">Bruce Lee</td>
+<td class="center">1972</td>
+<td class="center">100</td>
+<td class="center">FM-001</td>
+</tr>
+
+<tr>
+<td class="center">Lone Wolf McQuade</td>
+<td class="center">Steve Carver</td>
+<td class="center">1983</td>
+<td class="center">67</td>
+<td class="center">FM-002</td>
+</tr>
+
+<tr>
+<td class="center">The Delta Force</td>
+<td class="center">Menahem Golan</td>
+<td class="center">1986</td>
+<td class="center">20</td>
+<td class="center">FM-003</td>
+</tr>
+
+<tr>
+<td class="center">The Expendables 2</td>
+<td class="center">Simon West</td>
+<td class="center">2012</td>
+<td class="center">65</td>
+<td class="center">FM-004</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>A valid SQL statement to return every film with a score of more than 50 would be:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">SELECT</span> *
+       <span style="color: #859900; font-weight: bold;">FROM</span> Films
+       <span style="color: #859900; font-weight: bold;">WHERE</span> RTScore &gt; 50
+       <span style="color: #859900; font-weight: bold;">ORDER</span> <span style="color: #859900; font-weight: bold;">BY</span> Film <span style="color: #859900; font-weight: bold;">DESC</span>;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Another example below just returns the director and year of the film, for every film made after befor 2000:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">SELECT</span> Director, <span style="color: #859900; font-weight: bold;">Year</span>
+       <span style="color: #859900; font-weight: bold;">FROM</span> Films
+       <span style="color: #859900; font-weight: bold;">WHERE</span> <span style="color: #859900; font-weight: bold;">Year</span> &lt; 2000
+       <span style="color: #859900; font-weight: bold;">ORDER</span> <span style="color: #859900; font-weight: bold;">BY</span> <span style="color: #859900; font-weight: bold;">Year</span> <span style="color: #859900; font-weight: bold;">ASC</span>;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 try">
+<h3 id="sec-2-3">Try It</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<ul class="org-ul">
+<li>The standard operators used in SQL are shown below.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Operator</th>
+<th scope="col" class="left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">=</td>
+<td class="left">Equal to</td>
+</tr>
+
+<tr>
+<td class="left">&lt;&gt;</td>
+<td class="left">Not equal to</td>
+</tr>
+
+<tr>
+<td class="left">&lt;</td>
+<td class="left">Less than</td>
+</tr>
+
+<tr>
+<td class="left">&gt;</td>
+<td class="left">Greater than</td>
+</tr>
+
+<tr>
+<td class="left">&lt;=</td>
+<td class="left">Less than or equal to</td>
+</tr>
+
+<tr>
+<td class="left">&gt;=</td>
+<td class="left">Greater than or equal to</td>
+</tr>
+
+<tr>
+<td class="left">IS NULL</td>
+<td class="left">No data (not the same as a value of zero)</td>
+</tr>
+
+<tr>
+<td class="left">IS NOT NULL</td>
+<td class="left">Has data</td>
+</tr>
+
+<tr>
+<td class="left">AND</td>
+<td class="left">Logical AND</td>
+</tr>
+
+<tr>
+<td class="left">OR</td>
+<td class="left">Logical OR</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>Try and write SQL <code>SELECT</code> statements for the following.
+<ol class="org-ol">
+<li>List Film and Key of Films with a RTScore that are not empty
+</li>
+<li>List Film and Year of Films Directed by Simon West
+</li>
+<li>List Directors with an RTScore greater than 50 made before 1980
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3 learn">
+<h3 id="sec-2-4">Learn It</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>With relational databases, we might want to select from multiple tables
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="center">Film</th>
+<th scope="col" class="center">Director</th>
+<th scope="col" class="center">Year</th>
+<th scope="col" class="center">RTScore</th>
+<th scope="col" class="center">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="center">The Way of the Dragon</td>
+<td class="center">Bruce Lee</td>
+<td class="center">1972</td>
+<td class="center">100</td>
+<td class="center">FM-001</td>
+</tr>
+
+<tr>
+<td class="center">Lone Wolf McQuade</td>
+<td class="center">Steve Carver</td>
+<td class="center">1983</td>
+<td class="center">67</td>
+<td class="center">FM-002</td>
+</tr>
+
+<tr>
+<td class="center">The Delta Force</td>
+<td class="center">Menahem Golan</td>
+<td class="center">1986</td>
+<td class="center">20</td>
+<td class="center">FM-003</td>
+</tr>
+
+<tr>
+<td class="center">The Expendables 2</td>
+<td class="center">Simon West</td>
+<td class="center">2012</td>
+<td class="center">65</td>
+<td class="center">FM-004</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="center">Film</th>
+<th scope="col" class="center">Role</th>
+<th scope="col" class="center">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="center">FM-001</td>
+<td class="center">Colt</td>
+<td class="center">CN-001</td>
+</tr>
+
+<tr>
+<td class="center">FM-002</td>
+<td class="center">Ranger J.J. McQuade</td>
+<td class="center">CN-002</td>
+</tr>
+
+<tr>
+<td class="center">FM-004</td>
+<td class="center">Major Scott McCoy</td>
+<td class="center">CN-003</td>
+</tr>
+
+<tr>
+<td class="center">FM-003</td>
+<td class="center">Booker</td>
+<td class="center">CN-004</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">SELECT</span> Film.Film, Filmography.<span style="color: #859900; font-weight: bold;">Role</span>
+      <span style="color: #859900; font-weight: bold;">FROM</span> Film, Filmography
+      <span style="color: #859900; font-weight: bold;">WHERE</span> Film.<span style="color: #859900; font-weight: bold;">Year</span> &gt; 1980 <span style="color: #859900; font-weight: bold;">AND</span> Filmography.<span style="color: #859900; font-weight: bold;">Role</span> = <span style="color: #2aa198;">'Ranger J.J. McQuade'</span>
+      <span style="color: #859900; font-weight: bold;">ORDER</span> <span style="color: #859900; font-weight: bold;">BY</span> RTScore <span style="color: #859900; font-weight: bold;">ASC</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3 try">
+<h3 id="sec-2-5">Try It</h3>
+<div class="outline-text-3" id="text-2-5">
+
+<ul class="org-ul">
+<li>Try and explain what this SQL statement retrieves.
+</li>
+<li>Try and write an SQL Statement that will retrieve all the films by Director Bruce Lee where the Role is not empty made before 1975, and show name of the films in ascending order.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> SQL syntax - <code>CREATE</code></h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>If you've mastered the <code>SELECT</code> statement then the rest is easy.
+</li>
+<li><code>CREATE</code> is used to create a database table.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> <span style="color: #268bd2;">Films</span>(
+       Film <span style="color: #b58900;">VARCHAR</span> (30) <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+       Director <span style="color: #b58900;">CHAR</span> (30) <span style="color: #859900; font-weight: bold;">NULL</span>,
+       <span style="color: #859900; font-weight: bold;">Year</span> <span style="color: #b58900;">INT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+       RTScore <span style="color: #b58900;">INT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+       <span style="color: #859900; font-weight: bold;">KEY</span> <span style="color: #b58900;">INT</span> <span style="color: #859900; font-weight: bold;">IDENTITY</span> (1000,1) <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+       );
+</pre>
+</div>
+<ul class="org-ul">
+<li>Here' we've created the Films table.
+<ul class="org-ul">
+<li><code>VARCHAR</code> indicates a string of characters of variable length.
+</li>
+<li><code>CHAR</code> indicates a string of characters with fixed length (30 in this case).
+</li>
+<li>In the example above, the <code>CHAR (30)</code> will not accept strings longer than 30, and will always take up 30 bytes of memory.
+</li>
+<li>The <code>VARCHAR (30)</code> will accept strings of <i>almost</i> any length. If the length is less than 30, then it will take up fewer bytes of memory. If the string is longer, it will take up more memory.
+</li>
+<li><code>INT</code> indicates an integer.
+</li>
+<li><code>IDENTITY</code> identifies a column as holding primary keys. We can specify a starting and increment value.
+</li>
+<li><code>NULL</code> means the filed can be left blank if desired.
+</li>
+<li><code>NOT NULL</code> indicates a required field.
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> SQL syntax - <code>INSERT</code> , <code>UPDATE</code> and <code>DELETE</code></h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 learn">
+<h3 id="sec-4-1">Learn It</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Once a table has been created, we need to fill it with data. Large tables can be loaded with data from text files, but sometimes we might want to add a bit of data ourselves, or get a script ot do it for us.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">INSERT</span> <span style="color: #859900; font-weight: bold;">INTO</span> Films(Film,
+                  Director,
+                  <span style="color: #859900; font-weight: bold;">Year</span>,
+                  RTScore
+                  )
+        <span style="color: #859900; font-weight: bold;">VALUES</span>(   <span style="color: #2aa198;">'The Way of the Dragon'</span>,
+                  <span style="color: #2aa198;">'Bruce Lee'</span>,
+                  1972,
+                  100
+                  );
+</pre>
+</div>
+<ul class="org-ul">
+<li>Or we might just want to update some data in out table.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">UPDATE</span> Films
+       <span style="color: #859900; font-weight: bold;">SET</span> Director = <span style="color: #2aa198;">'Bruce Lee'</span>
+       <span style="color: #859900; font-weight: bold;">WHERE</span> Film = <span style="color: #2aa198;">'The Way of the Dragon'</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Or we might want to remove data from our table.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">DELETE</span> <span style="color: #859900; font-weight: bold;">FROM</span> Films
+<span style="color: #859900; font-weight: bold;">WHERE</span> Director = <span style="color: #2aa198;">'Bruce Lee'</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2 activity">
+<h2 id="sec-5"><span class="section-number-2">5</span> Exam Questions</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-sec-5-1" class="outline-3 try">
+<h3 id="sec-5-1">Try It</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Try this question from the example examination paper.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/8.jpg" alt="8.jpg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

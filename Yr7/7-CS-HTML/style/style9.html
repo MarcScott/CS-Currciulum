@@ -1,0 +1,98 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a class="z" href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="style8.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style10.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Layout and Style</p>
+	<ol>
+	<span class="bigtext">
+
+<li class="step" value="6">
+Create the layout using box model- create a container box.
+</li>
+<p>Let's <button>check our design sketch</button> to see what we should do next. Click the green button again to hide the sketch and read on.</p>
+<p class="img"><img src="../images/sketch.png"></p>
+
+<p>Since we have two boxes split the space below the topbox, it makes sense to make a big box to hold both those two boxes. Also, it will make it easier for us to adjust the relative positions of those two boxes if we put them inside one big container. In fact, we will call this big box <strong><em>container</em></strong> . This <strong><em>container</em></strong> will be big enough to hold the two boxes, but it will have the same width as the topbox based on our design.</p>
+<p><img src="../images/sketch2.png" width=400 height=240></p>
+<p>You should now know how and where to add the lines of code to create a box. </p>
+
+<table border=1 width=400>
+<tr><td>
+<span class="code">
+&lt;div id="container"&gt; <br>
+&lt;/div&gt;  <br>
+</span>
+</td></tr>
+</table>
+<p>You should now also know how and where to add style attributes to a box. </p>
+<table border=1 width=400>
+<tr><td>
+<span class="code">
+#container { <br>
+width: 800px;    <br>
+height: 800px;   <br>
+}<br>
+</span>
+</td></tr>
+</table><br>
+<strong>Progress Review:</strong><br>
+<p>
+Let's exam what we have in our <strong><em>index.html</em></strong> file. Try to indent your lines of code to help you identify pairs of starting and closing tags and the structure of your box layout.</p>
+
+<img src="../images/container-1.png" width=660 height=460>
+<p>Save your <strong><em>index.html</strong></em> file and open it with a browser or refresh your browser if you have it open already to see the effects.</p>
+
+
+<div id="left">
+<a class="nav" href="style8.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style10.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+
+
+</html>

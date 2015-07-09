@@ -1,0 +1,89 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a href="../style/style.html">Layout and Style</a></li>
+<li><a class="z" href="elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="right">
+ <a class="nav" href="elem2.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Add an image</p>
+	<ul>
+	<span class="bigtext">
+Let's <button>check our design</button> to see where to add images of my dog Jack on my homepage - the <strong><em>index.html</strong></em>. There are two images, one is on the topbox, the other inside the rightbox. 
+<p class="img"><img src="../images/sketch.png"></p>
+<br>Let's add the image to the rightbox first since it is easier - it is just before the paragraph.  It will be more involved to add an image to the topbox as it is side by side with the heading.
+<p>To add an image, we need to:</p>
+<ol>
+	<li class="insteptext">create a folder <strong><em>images</strong></em> in the same folder you have saved your <strong><em>index.html</strong></em> file to hold all the images will be used in your web pages together.
+		<p><img src="../images/folder-3.png" width=400 height=120></p></li>
+<li class="insteptext">use the tag <strong><em>img</strong></em>. This tag does not need a closing <strong><em>&lt;/img&gt;</strong></em>. </li>
+<li class="insteptext">the tag <strong><em>img</strong></em> needs an attribute tag <strong><em>src</strong></em> to specify the image location and the image name.</li>
+<li class="insteptext">the image name must be complete, which means the file extension such as .jpg, .gif, or .png etc must be included. </li>
+</ol>
+Here is a line of code for adding an image. <strong><em>src</strong></em> is an attribute that gives the location and name of the image file, which is in a folder called <strong><em>images</strong></em>.
+<table border=1 width=400 align=center>
+<tr><td>
+<span class="code">
+&lt;img src="images/jack-right.jpg"&gt; <br>
+</span>
+</td></tr>
+</table>
+
+If we don't specify the width and height we like the image to be displayed in a browser, the browser will display the image using its original size which may be too large. To do so, we need to add two more attributes to the <strong><em>img</strong></em> tag, the <strong><em>width</strong></em> and the <strong><em>height</strong></em> attributes like so: (you may need to experiment with the width and height to get the right image size for your own page.)
+<table border=1 align=center>
+<tr><td>
+<span class="code">
+&lt;img src="images/jack-right.jpg" width=600 height=180&gt; <br>
+</span>
+</td></tr>
+</table>
+You should now have the body section of your <strong><em>index.html</strong></em> file similiar to this:
+<p><img src="../images/html-body-3.png" width=500 height=220></p>
+The homepage now looks like this in a browser:
+<p><img src="../images/page-6.png" width=500 height=400></p>
+</ul>
+</span>
+<div id="left">
+<a class="nav" href="../nav/nav-quiz.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="elem2.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+</html>

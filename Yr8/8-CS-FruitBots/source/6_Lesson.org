@@ -1,0 +1,188 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: FruitBots
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/8CS-FruitBots">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Playing against an opponent
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- So we've got some code that will let us pick up all the fruit on the board.
+- Let's see how we do against a simpleBot that has been writen to compete against us.
+- Go into the testing directory, then into a directory called assets, then into a directory called js.
+- In there you should find a bot called simplebot.js. This is your opponent.
+#+BEGIN_EXAMPLE
+assets/js/simplebot.js
+#+END_EXAMPLE
+- Open simplebot.js in a text editor.
+- At the top of simplebot.js is some code that looks like this.
+#+BEGIN_SRC javascript
+var SimpleBot = {
+    makeMove: function() {
+       // to disable to opponent, uncomment the next line
+       return PASS;
+#+END_SRC
+- Comment out the =return PASS;= so it looks like this.
+#+BEGIN_SRC javascript
+var SimpleBot = {
+    makeMove: function() {
+       // to disable to opponent, uncomment the next line
+       // return PASS;
+#+END_SRC
+- Save the file.
+- Now you have a bot to play against.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Try running your bot from last lesson against the simpleBot.js
+- How did you do?
+- Change the default game board and see how you do on different boards.
+* The FruitBot rules
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The rules of FruitBots are very simple.
+- The bot that collects the most fruit, in the most categories wins.
+- So if you collect more oranges than the other bot, you win in the category of oranges.
+- You need to win more categories than the other bot to win the game.
+* What's your tactic?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+- Look at the gameboard below.
+[[file:img/board656950.png]]
+- With a partner copy the board to a bit of paper or a mini-whiteboard. Use letters to symbolise the fruit and your bots.
+- Now play a game of FruitBots with each other.
+- Remember you can only move one square at a time.
+- Taking a fruit takes up your turn.
+- If you both take a fruit in the same turn, then you each get half of that fruit.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+- After you've played a game or two of FruitBots, see if you can formalise the rules that you used in your attempt to win.
+- Did you go after specific fruit at specific times?
+- Did you keep track of the fruits left on the board?
+- Did you try to take fruit you knew your opponenet needed?
+- Did you stay close to your opponenent or try and keep distant from them?
+- You rules might look something like this:
+#+BEGIN_EXAMPLE
+Pick a fruit.
+Repeat the following until I have all the fruit of that category
+Move towards that fruit
+Take it when on the square
+Find the closest fruit of the same category.
+Once all the fruit have been grabbed of that category, go back to the start.
+#+END_EXAMPLE
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+- To earn your badge for this lesson, you need to try and formalise your ideas in pseudocode.
+- It doesn't really matter on the syntax of your pseudocode, but try and come up with an algorithm that could be translated into JavaScript.
+- The above example has been shown in pseudocode below
+#+BEGIN_EXAMPLE
+target <-- random number between 1 and 5
+
+repeat until target is not on board
+    target_x <-- target index in 1st board array
+    target_y <-- target index in 2nd board array
+    IF target_x < bot_x
+        return WEST
+    IF target_x > bot_X
+        return EAST
+    IF target_y < bot_y
+        return NORTH
+    IF target_y > bot_y
+        return SOUTH
+    IF target_x = bot_X AND target_y = bot_y
+        return TAKE
+#+END_EXAMPLE

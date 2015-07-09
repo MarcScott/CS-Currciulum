@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>onload</title>
+    <script type="text/javascript">
+     var count = 0;
+     var seconds = 0;
+     window.onload = function()
+     { 
+       setInterval(function(){calcTime()}, 1000);
+       var theCountDisplay = document.getElementById('theCountDisplay');
+       theCountDisplay.innerHTML = '<h1>'+count+'</h1>';
+       var theTimerDisplay = document.getElementById('theTimerDisplay');
+       theTimerDisplay.innerHTML = '<h2>Working</h2>';
+       theTimerDisplay.innerHTML = '<h2>' + seconds + '</h2>';
+       theButton.onclick=function(){addToCount()};
+     };
+
+     function addToCount()
+     {
+       theCountDisplay.innerHTML = '<h1>' + count + '</h1>';
+       count++;
+     };
+     
+     function calcTime()
+     {
+       theTimerDisplay.innerHTML = '<h1>' + seconds + '</h1>';
+       seconds++;
+     };
+    </script>
+  </head>
+  <body>
+    <input type="button" value="Click me" id='theButton'>
+    <div id = 'theCountDisplay'></div>
+    <div id = 'theTimerDisplay'></div>
+  </body>
+</html>

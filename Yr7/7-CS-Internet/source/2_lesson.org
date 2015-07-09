@@ -1,0 +1,155 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: Domain Names, IP Addresses and DNS
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+** Badge It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+* URLs and Domain Names
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+Look at your browser's address bar. What ever is written there is the
+URL of the page you are on.
+What ever is written there /after/ the =http://www= but /before/ the first =/= is the domain name of the site you are on.
+You'll be very familiar with some domain names like;
+#+BEGIN_EXAMPLE
+    google.com
+    facebook.com
+    yahoo.com
+    youtube.com
+    wikipedia.org               
+#+END_EXAMPLE
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- There are lots of /Top Level Domains/ available to website owners.
+- =.com=, =.org=, and =.co.uk= are just some of a few.
+- Gather a list of 10 other Top Level Domains that are available.
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Explain what a Top Level Domain is and give some examples for your notes.
+* IP addresses
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Domain names are a little like addresses. For instance, the Prime Minister lives at:
+#+BEGIN_EXAMPLE
+    10 Downing Street
+    London,
+    SW1A 2AA                            
+#+END_EXAMPLE
+[[https://upload.wikimedia.org/wikipedia/commons/f/f5/2010_Official_Downing_Street_pic.jpg]]
+- This is nice and easy for humans to say and remember. 
+- Another way of saying where the Prime Minister lives would be to use Longitude and Latitude.
+#+BEGIN_EXAMPLE
+    51° 30′ 12.23″ N, 0° 7′ 39.5″ W
+#+END_EXAMPLE
+- This is tricky for a human to remember but great for a computer. 
+- Try copying and pasting it into [[http://maps.google.com][Google Maps]] and see what happens
+----
+- Domain names are like address, they are designed for humans to read and remember. In reality a computer's address (that allows other computers on a network or the internet to find it), is made up of numbers.
+- Computer use =IP addresses= to send messages to each other.
+- Your Computer's current IP address should be shown below
+#+BEGIN_HTML
+<div style="text-align:center;margin:0 auto;">
+</br>                   
+<script language="JavaScript">
+VIH_BackColor = "#525252";
+VIH_ForeColor = "#F0F0F0";
+VIH_FontPix = "30";
+VIH_DisplayFormat = "The IP address is of your current location is:</br> %%IP%%";
+VIH_DisplayOnPage = "yes";
+</script>
+<script language="JavaScript" src="http://scripts.hashemian.com/js/visitorIPHOST.js.php"></script>
+</br>
+</div>
+#+END_HTML
+- We need domain names because *IP addresses are too difficult for humans to remember.*
+- Imagine typing in this every time you needed to go to a certain web address.
+#+BEGIN_EXAMPLE
+    http://74.125.239.116
+#+END_EXAMPLE
+- Try these as well and write down the corresponding domains:
+#+BEGIN_EXAMPLE
+    1. http://212.58.246.90
+    2. http://77.91.251.10
+    3. http://72.21.210.29
+#+END_EXAMPLE
+** Present It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: present
+:END:
+- Answer the following questions in your notes.
+  - What is a domain name?
+  - What is an IP address?
+  - Why do humans not use IP addresses?
+* The DNS
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Below are three videos, each explaining DNS in a little more detail. You can watch just the first, or all three, but make sure you understand what DNS is.
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2ZUxoi7YNgs" frameborder="0" allowfullscreen></iframe>
+<iframe class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/z8ryt1i6yf?canonicalUrl=http%3A%2F%2Fdyn.com%2Fblog%2Fdynedu-video-dns-explained%2F&canonicalTitle=%23DynEdu%20Video%3A%20DNS%20Explained%20%7C%20Dyn%20Blog" allowtransparency="true" frameborder="0" scrolling="no" width="480" height="498"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/72snZctFFtA" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+** Badge It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Imagine you had to explain DNS to somebody who had no idea what it was.
+- Using whatever software you like (or even pen and paper if you prefer), create a product that you could use to help explain DNS to someone. You could create a poster, a presentation, a report. It's really up to you.
+- You'll be awarded a bronze, silver or gold badge, depending on your teacher's assessment of your understanding of DNS.
+
+

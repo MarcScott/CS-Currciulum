@@ -1,0 +1,191 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: How a Network works
+#+AUTHOR: Marc Scott
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+#+END_HTML
+The internet is a very large network, but at the end of the day it is still just a network of computers.
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* What is a Computer Network?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+When ever we connect two or more computers together, so that they can communicate with each other, we have a Computer Network.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There are many different types of network, with names like /mesh/,/bus/ and /ring/.
+[[http://upload.wikimedia.org/wikipedia/commons/9/96/NetworkTopologies.png]]
+- Most networks you will have used will have been /star/ networks.
+- Star networks are named because of the shape they have in diagrams.
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/StarNetwork.svg/1200px-StarNetwork.svg.png]]
+- Even though in reality they look more like this:
+[[http://upload.wikimedia.org/wikipedia/commons/a/a5/Contemporary_Computer_Lab.jpg]]
+- With the cables tucked away out of sight and leading back to the central hub.
+[[http://upload.wikimedia.org/wikipedia/commons/e/e9/Switch-and-nest.jpg]]
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- The video below will give you an overview of how a Network works.
+#+BEGIN_HTML
+<iframe width="420" height="315" src="https://www.youtube.com/embed/EWTJKcg7Pj8" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Having watched the video, try and produce a summary of it for your notes.
+* Packets and Routers
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The image below shows the devices that might make up a home network
+- Download the image (right click on it), and then open it up in a graphics package such as Paint or Photoshop.
+[[file:img/Network_components.jpg]]
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Now label the devices using the list below.
+  - Desktop Computer
+  - Smartphone
+  - Router
+  - Media Player
+  - Games Console.
+  - Notebook
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We can connect up devices on a network using cable called /Patch cables/. You've probably got one coming out of the back of the computer you are using right now.
+- Patch cables are plugged into /Ethernet Ports/ on devices.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- On your diagram, draw on wires that link the the Ethernet ports on the Desktop Computer, Media Player and Games Console to the Router
+[[file:img/Ethernet_ports.jpg]]
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Some devices connect wirelessly.
+- /WiFi/ stands for Wireless Fidelity.
+- /WiFi/ uses radio waves to allow devices to communicate with each other.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- On your diagram, add in something to indicate that the Router is able to connect to the Smartphone and Notebook using /WiFi/.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Devices can connect with each other using a few other methods. Use the Web to try and answer the following questions:
+  - What is /Bluetooth/?
+  - What is the range of /Bluetooth/ communications
+  - What are Fibre Optic cables?
+  - What does 4G mean?
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Your diagram should probably look something like this now.
+[[file:img/Home_network.jpg]]
+- Let's imagine that the Desktop Computer is going to send an image file to the Media Player.
+- The image is called tree.jpg and has a size of 1.5MB (That's 1.5 Million bytes)
+[[file:img/tree.jpg]]
+- 1.5 Million bytes is too large to send in one go, so the Desktop Computer needs to break up the file into small chunks called /packets/
+- Each packet has an average size of about 1.5KB (That's 1500 bytes)
+- The Desktop Computer breaks up the image into packets, and adds some extra data onto the packet as well
+[[file:img/packet.jpg]]
+- Each packet is then sent to the Router.
+- When the Router receives a packet, it looks at the receiver's IP Address, and then sends the packet onto the correct device on the network.
+- The receiving device (in this case the Media Player) receives all these packets, and uses the packet number to assemble them all in the correct order.
+- Sometimes a packet get's lost or destroyed on the way. The receiving device will know that a packet is missing, and can use the sender's IP address to ask for the packet to be sent again.
+
+* A Presentation on Networks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Imagine you had to try and explain how an image is sent over a network, from one device to another.
+- Create a presentation (using any software you like), and the image you drew earlier of a network, to explain how a file is sent over a network.
+- Your teacher will award you a silver, gold or platinum badge, depending on the clarity of your presentation.

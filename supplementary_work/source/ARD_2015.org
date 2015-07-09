@@ -1,0 +1,163 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
+#+TITLE: ARD 2015
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class="github-fork-ribbon-wrapper left">
+        <div class="github-fork-ribbon">
+            <a href="https://github.com/MarcScott/Supplementary Work">Fork me on GitHub</a>
+        </div>
+</div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="ARD_2015.html">ARD 2015</a></li>
+    </ul>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* ARD Work - 2015
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Year 7 - Systems & Control
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Using Bourne To Invent - [[https://www.bournetoinvent.com/projects/7-SC-Mechanisms/pages/3_Lesson.html][Motors]] - complete all the badge tasks.
+- If you have already completed the Motors lesson, then make sure you have completed the [[https://www.bournetoinvent.com/projects/7-SC-Mechanisms/pages/2_Lesson.html][Silver task on Pulleys]] (note - this page needs viewing in Firefox).
+- If you have completed this already, then use online resources to research and write about the use of linear cams in pin and tumbler locks.
+** Year 7 - Computing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- You've been using html and css to build your own web-pages.
+- You can also use html and css to create logos and graphics for your web-page, but it's a little tricky to do without some help.
+- Go to [[http://html-generator.weebly.com/css-shape-generator.html#007BFFy1z-76z-27z17z0][This html generator site]]
+- Use the simple tools to create a graphic for your web-page.
+- You can then copy and paste the generated html into a page of your own.
+** Year 8 - Computing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- You have been learning to program text-based games this term.
+- In one of the next lessons, you are going to create a text-based adventure game.
+- The player of the game will be able to move North, South, East and West, pick up items and fight the bad guys.
+- Sketch out a map of the environment for your game. It could be a haunted castle for instance, or the inside of a human body. Use your imagination.
+- Label items that can be picked up by the player, and annotate to include where and how those items can be used.
+- Label opponents that can be thwarted by the player.
+- Your map must include a minimum of 8 different areas.
+** Year 9 - Systems & Control
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Later this term you will be experimenting with different mechanisms.
+- Electric motors are often used to drive various mechanical mechanisms.
+- Use [[https://www.bournetoinvent.com/projects/7-SC-Mechanisms/pages/3_Lesson.html][this resource on Bourne To Invent]] and complete all the badge tasks.
+** Year 9 - Additional ICT
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Colbie Caillat recently took a stand against Photoshop in her new music video, "Try." She and several other women go from all-made-up to completely natural to make their point clear.
+- Write minimum of half a page arguing for or against Photoshop in the media, backing your arguments up using factual statements from news items.
+- Take a look at the [[https://www.youtube.com/watch?v%3DiYhCn0jf46U][Dove evolution]] time lapse you tube video, to see how Photoshop is being used.
+- Look also at the[[https://www.bbc.co.uk/news/business-23714699][ BBC news website]] for Photoshop items.
+** Year 10 - Systems & Control
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Continue to write the first up your proposal for your CA project.
+- Project options are located in: G:\Systems and Control\Year 10-11 GCSE S&C\Year 10\.
+- Mr. Brown can be emailed with any specific queries.
+** Year 10 - Computing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Continue with your Controlled Assessment write up.
+- If you can not access the console for your VM, then you can continue the write-up with any document editing software and use your repo on Github for guidance.
+** Year 11 - Computing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Continue working on your Controlled Assessment write-up
+- This is due in on Monday morning.
+** Year 12 - Systems & Control
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Continue with your coursework write-up
+** Year 12 - Computing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+** Year 13 - Systems & Control
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Continue with your coursework write-up

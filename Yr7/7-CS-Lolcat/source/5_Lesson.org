@@ -1,0 +1,244 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: A Virtual LOLcat in Scratch
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-lolcats">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Customising your Virtual Pet
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+At the moment your Virtual Pet is probably a little dull.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- You're going to need to experiment a little now.
+- Try changing the starting values of the variables and the time it takes for the variables to change.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run your code and see whether the values you have chosen seem sensible
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Have a friend try your Virtual Pet and give you some feedback.
+- Have them email you their feedback.
+- Write down the changes you will make in response to their feedback.
+* Getting the Pet to talk with an Infinite loop and Conditionals
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Cheezburger.jpg]]
+- At the moment a user of the Virtual Pet only knows when the pet is hungry by watching the variable value change.
+- From a User Experience (UX) point of view, this isn't great, so let's make the pet speak to us and tell us when it is hungry.
+- We'll start off with a simple interaction, and then make it more 
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Sometimes in our programmes we want an infinite loop.
+- An infinite loop is one that goes on forever (or until the program is quit).
+- We can do this by using a =forever= loop in Scratch.
+- The code in a =forever= loop will run until the program ends.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- Conditional statements are very important in programming.
+- Conditional statements are like branches in the program. If a condition is true then one branch is taken, and if the condition is false another branch is taken.
+- For instance, if you want to go to the shops then you might use the following conditional statement to make a decision on how to get there.
+#+BEGIN_EXAMPLE
+if the distance to the shops is less than a mile then
+    walk
+else
+    take the bus
+#+END_EXAMPLE
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+- We'll need a whole new script for this part, so create a new script on the Pet Sprite.
+- Use the following code, and pay attention to the indentation, as this will help you with the nesting of the blocks.
+#+BEGIN_EXAMPLE
+when green flag clicked
+forever
+    if PetHunger > 80 then
+        say "I CAN HAZ CHEEZBURGER?" for 2 secs
+#+END_EXAMPLE
+- If you struggle with the code, you can look at an example by [[file:Example_2.html][clicking here]], but have a go on your own first.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+- Run your code and make sure the Pet speaks when it get's too hungry and needs feeding.
+* Adding some more things to say
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Confused_Cat.jpg]]
+- At the moment all the Pet says is "I CAN HAZ CHEEZBURGER?"
+- Let's give it a few more things to say, and then choose what is spoken.
+- To do this we'll need to use a list.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- A list is a /data structure/.
+- Data structures are a way of storing lots of data.
+- You probably use lists all the time. Your planner probably contains lists of homeworks you have to do each day.
+- We're going to create a list and fill it with items that the Pet can say.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+1. Click on the =Data= Palatte
+2. Click on =Make a List=
+3. Call the list =HungryTalk=
+4. Click =OK=
+[[file:img/HungryTalk.png]]
+You should now see a list on the Stage.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+1. Click on the =+= symbol
+2. You can now add things for the Pet to say when it is hungry
+3. Add at least five things for the Pet to say, to tell the user that it is hungry.
+4. If you want to use LOLSPEAK, then[[http://speaklolcat.com][ this website might help you translate.]]
+* Choosing from the list randomly
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- We want to use a random number generator to choose what the Pet is going to say.
+- Randomness and computers don't really work. Computers are really just a bunch of tiny switches and a data store, and making switches turn off and on randomly is something that is really tricky.
+- We tend to call random numbers generated by a computer *pseudo-random*. This means /pretend/ random. The numbers might appear to be random to humans, but in reality they have been chosen by the computer based on some form of input (often using the inbuilt clock that all computers have).
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+- We're now going to change our script a little to use a random number to speak from the list.
+- Change this script;
+#+BEGIN_EXAMPLE
+when green flag clicked
+forever
+    if PetHunger > 80 then
+        say "I CAN HAZ CHEEZBURGER?" for 2 secs
+#+END_EXAMPLE
+-So it looks like this
+#+BEGIN_EXAMPLE
+when green flag clicked
+forever
+    if PetHunger > 80 then
+        say (item (pick random 1 to (length of HungryTalk)) of HungryTalk) for 2 secs
+#+END_EXAMPLE
+- I've used brackets to indicate the nesting of blocks, but if you get stuck then you can see an [[file:Example_3.html][example here]].
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+
+- Run your code and make sure that it works; picking a random element from your list each time.
+* Doing it again and again and again
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- To earn your next badge you need to set it all up for Tiredness, Happiness and Thirst.
+- Make sure that you create lists for each of the different variables, so the pet can tell the user what is wrong.
+- Make sure you have at least five elements in each list.
+- You'll receive a Silver, Gold or Platinum badge, depending on how many of the scripts you manage to set up.
+- Take a screenshot of your scripts when you have completed them.

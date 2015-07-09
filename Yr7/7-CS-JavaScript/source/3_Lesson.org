@@ -1,0 +1,176 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/main.css"/>
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil html-style:nil 
+#+TITLE: The Value of Variables.
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-WD-JS">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+* Introduction
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- You've used variables quite a lot already, but this section aims to turn you from a novice into a ninja when using variables.
+- Just to recap:
+  - Variables are used to store values.
+  - You can use a variable to store Numbers, Strings, Booleans and lots more.
+  - Variables need an identifier (a name)
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We're not going to write our code in an HTML document this time. We'll use the console instead.
+- Open a console, [[http://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers][here you can find a description of the shortcuts to open a console, if you have forgotten how.]]
+- We can write javascript code directly in the console. Try typing the following, just to test it out;
+#+BEGIN_SRC javascript
+  window.alert();
+#+END_SRC
+- Hopefully you should get an alert box popping up. Additionally the console will say the word =undefined=, don't worry about this.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Use the console to try a few more command. Here are some suggestions:
+  - =window.prompt()=
+  - =window.confirm()=
+  - For this one you need to use access a site that uses jQuery. Go to  [[http://jquery.com]] and type =$(function() {$('body').hide().fadeIn(5000);});= in the console. 
+* Declaring and Assigning Variables
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- We've already covered variable assignment and declaration, but here we'll go into it in a little more detail.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Open any of the web-pages you created in the previous lessons.
+- Open the console
+- Type the following code
+#+BEGIN_SRC javascript
+  var foo;
+  foo = 'A variable called foo';
+  
+  var bar = 'A variable called bar';
+  
+  baz = 'A variable called baz';
+  
+  console.log(foo);
+  console.log(bar);
+  console.log(baz);
+#+END_SRC
+- For the variable =foo= - The variable is declared in one line and assigned a value on the next line.
+- For the variable =bar= - The variable is declared and assigned on a single line.
+- For the variable =baz= - The variable is not declared, but simply assigned.
+- Although JavaScript will allow you to assign a variable without first declaring it using =var=, it can lead to problems in your code, and so should be avoided, so don't use the =baz= example.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Declare a variable that stores a string.
+- Declare a variable that stores a number.
+- Declare a variable that stores a Boolean.
+* Reassigning Variables
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- *Variables* are /variable/
+- That means we can use them to store one value and then reassign them to store a completely different value.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Open up your Console and try the following.
+#+BEGIN_SRC javascript
+  var foo;
+  var bar;
+  var baz;
+  var qux;
+  
+  foo = 'I am foo';
+  bar = 'I am bar';
+  baz = foo;
+  qux = baz;
+#+END_SRC
+- Can you guess what the output will be when you type the following
+#+BEGIN_SRC javascript
+  console.log(foo);
+  console.log(bar);
+  console.log(baz);
+  console.log(qux);
+#+END_SRC
+- Try it out. Were you right?
+- Now let's mix things up a little. See if you can keep track of what each variable will be.
+#+BEGIN_SRC javascript
+var num1 = '10'
+var num2 = 10
+var num3
+var num4
+
+num3 = Number(num1)
+num4  = num1 + num2
+num1 = num3 + num4 
+#+END_SRC
+- Can you work out what all the variables will be?
+- Use =console.log()= to see if you are right.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- create two variables new variables and assign them the values 10 and 20 respectively.
+- Now write code that will output the following values using just those variables - the first has been done for you.
+- 30
+#+BEGIN_SRC javascript
+foo = 10
+bar = 20
+console.log(foo + bar)
+#+END_SRC
+- 10
+- -10
+- 2
+- 0.5
+- 200
+- 12
+- 18
+- 2.5
+* Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Task
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+To earn your third *Blue JavaScript Badge*, complete the tasks below. Once you have finished, ask your teacher to check your code to make sure it runs correctly.
+- Declare a variable called foo
+- Declare a variable called bar
+- Assign foo the value of 6
+- Assign bar the value of 4
+- Use console.log() to check the value of each variable
+- Now in as few lines of code as possible, can you swap the variable values around, so that foo = 4 and bar = 6. You should be able to do it without typing any numbers.
+- HINT: the only code you'll need to type will contain the names of the variable (=foo and bar=) and some operators (=+,-,==)
+  

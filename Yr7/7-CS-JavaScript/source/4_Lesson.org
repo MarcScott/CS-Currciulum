@@ -1,0 +1,377 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/main.css"/>
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil html-style:nil 
+
+#+TITLE: Dominating the DOM
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/KS3_Curriculum">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+* The DOM
+- DOM stands for Document Object Model.
+- Without getting into too much detail, the DOM is the way a web browser represents all the HTML code that you write.
+- We can use programming languages (in our case JavaScript) to change the DOM, and therefore change the way the HTML is displayed to the user.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The best way to learn about the DOM is to go ahead and play a little. Copy and paste the boilerplate code into a text editor.
+
+#+BEGIN_SRC html
+  <!DOCTYPE html>
+  <html>
+      <head>
+          <title>Adding text</title>
+      </head>
+      <body>
+          <div id = "container"></div>
+          <h2>Welcome to DOM</h2>
+          <script type="text/javascript">
+  
+          </script>
+      </body>
+  </html>
+#+END_SRC
+
+- You might have noticed that this time we are placing our =<script>= at the end of our html (just before the =</body>= tag).
+- We place our script here so that the browser has had a chance to load up all the html, before the script is run.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your code somewhere sensible.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Open your page in a web browser, and you should see the level 2 header being displayed.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We've set up a basic page, but you probably noticed that we had an empty =<div>= with the id of /container/. Let's add in some JavaScript and see what we can do with that div.
+- Add the following JavaScript between your script tags (at the _end_ of the html).
+#+BEGIN_SRC javascript
+  var container = document.getElementById("container");
+  container.innerHTML = "<h1>Hi there user</h1>";
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your code.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Refresh your web browser.
+- Hopefully you'll see the "Hi there user" text being displayed.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's add a little more text to our page using javascript.
+- Add a new div, _beneath_ the =<h2>Welcome to the DOM</h2>=, line. Give the div the id "container2"
+#+BEGIN_SRC html
+  <div id = "container2"></div>
+#+END_SRC
+- Now we'll add some extra JavaScript to place some content into our new div.
+- Add in two additional lines of code into your script. The first should declare and assign a variable =container2= to the =container2= div. The next should add some innerHTML to the =container2=.
+- There's code below if you get stuck.
+#+BEGIN_SRC javascript
+  var container2 = document.getElementById("container2");
+  container2.innerHTML = "<h3>Type whatever you like here</h3>";
+#+END_SRC
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Now it's your turn to play around
+- Add at least two more divs to your HTML file, each with their own unique id.
+- Then add JavaScript to add content to your new divs.
+* Getting User input and adding it to the DOM
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We're going to let the user help build the website in the next section.
+- Let's start with a little boilerplate
+#+BEGIN_SRC html
+  <!DOCTYPE html>
+  <html>
+      <head>
+          <title>I/O</title>
+      </head>
+      <body>
+          <div id='displayUserName'></div>
+          <script>
+  
+          </script>
+      </body>
+  </html>
+#+END_SRC
+- We have a single empty div with the id of =displayUserName=
+- Now we need three lines of JavaScript.
+- First we need to get some user input and store it using a variable.
+#+BEGIN_SRC javascript
+  var userName = window.prompt("Hi there user, what's your name?");
+#+END_SRC
+- Next we need to get the div and store that as a variable.
+#+BEGIN_SRC javascript
+  var displayUserName = document.getElementById('displayUserName');
+#+END_SRC
+- Lastly we need to /concatenate/ the =userName= to some HTML and add it into the div.
+#+BEGIN_SRC javascript
+displayUserName.innerHTML = "<h1>" + userName + "'s Amazing Website</h1>";
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your code in a sensible place with a sensible name
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- View your code in a browser. It should look something like this...
+[[file:img/DOM2.png]]
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Now it's your turn. Add more window.prompt() lines of code to extract more information from the user.
+- Find out their age and address.
+- Use the data you receive from the prompts to write more information to new divs.
+* Functions... Get ready to become a hardcore hacker.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- Mastering functions will take you from being a n00b to being a ninja when it comes to programming.
+- Functions are bits of code that we can reuse throughout our program.
+- As an analogy - imagine I asked you to tie your shoelaces up. You already have the instructions stored in your head, so I don't have to tell you exactly what to do. I can just say =tieUpShoeLace= and you'll now what to do.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We're going to go back to using =script= tags in the head of out document again.
+- Create a new html page using the following boiler plate.
+#+BEGIN_SRC html
+  <!DOCTYPE html>
+  <html>
+      <head>
+          <title>Functions</title>
+          <script type="text/javascript">
+  
+          </script>
+      </head>
+      <body>
+          <div id = "outputBox"></div>
+      </body>
+  </html>
+#+END_SRC
+- Now lets write a simple line of JavaScript, similar to the ones we wrote before.
+#+BEGIN_SRC javascript
+  var outputBox = document.getElementById('outputBox');
+  outputBox.innerHTML = "<h1>Your function worked!!!!</h1>";
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your code.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Can you guess why the code won't work yet?
+- Run it in a web browser, and try and figure out what's wrong.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Hopefully you've figured out that the JavaScript is read by the web browser before the HTML.
+- This means that the web browser doesn't yet know what the =outputBox= id is, when you use it in your JavaScript.
+- Using a function is going to help us fix this a little.
+- Let's modify our code a little.
+#+BEGIN_SRC javascript
+function runMe()
+{
+  var outputBox = document.getElementById('outputBox');
+  outputBox.innerHTML = "<h1>Your function worked!!!!</h1>";
+};
+#+END_SRC
+- We now have a function called =runMe()=
+- The code that belongs to the function goes inside curly brackets ={}= just like it did for conditionals (=if,else if,else=)
+- When we /call/ the function, the code will run.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your work
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run the code in your web browser.
+- Nothing happens, right?
+- Now open up the console (F12 if using I.E) and type the following... =runMe()=
+- Does anything happen.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Now it's your turn.
+- Underneath your runMe() function, write a new one.
+- Make sure you give your function a sensible name, and don't forget to add the =()= after the function name and the ={}= to contain your code.
+- Make your function output something like - =The second Function works also=
+- Once you've written your function, open up the console and run it.
+* Using an =<input>= tag
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- =<input>= tags allow you to get data from the user of your page.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Use the following boilerplate to start you off.
+#+BEGIN_SRC html
+  <!DOCTYPE html>
+  <html>
+      <head>
+          <title>Inputs</title>
+          <script type="text/javascript">
+              
+          </script>
+      </head>
+      <body>
+          <input type="text" id="userNameIn"></input>
+          <div id = "userNameOut"></div>
+      </body>
+  </html>
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your web-page
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Open your page in a browser and you should see the input box.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We can use the =document.getElementById()= method to find out what the user types into the input box.
+- We can then output this to the div below it.
+#+BEGIN_SRC javascript
+  function outputName()
+  {
+      var userName = document.getElementById('userNameIn').value;
+      userNameOut.innerHTML = "<h1>Hi there " + userName + "</h1>"
+  }     
+#+END_SRC
+- The function name is outputName()
+- The first thing the function does is get the value from the userNameIn input box and stores it as the variable =userName=
+- The next thing the function does is to write HTML into the =userNameOut= div, using the =userName= variable.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your web-page
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Open your page in a browser.
+- Type your name into the input box.
+- Nothing happens yet, because we still need to call the function.
+- Open the console and type =outputName()= to call the function you wrote.
+- You should see a message on the web-page
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- While the program works at the moment, it would be silly to expect everyone to open a console and call functions to use a web-page.
+- Luckily we can call functions within the HTML using =events=
+- Events can be button pushes, or mouse movement, or really anything a user does to interact with a web-page.
+- We're going to use the =onchange= event. This works by registering when an HTML elements has changed.
+- Find this line in your HTML file.
+#+BEGIN_SRC html
+  <input type="text" id="userNameIn"></input>
+#+END_SRC
+- Now we're going to make one small change
+#+BEGIN_SRC html
+  <input type="text" id="userNameIn" onchange="outputName()"></input>
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your work
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Now open your web-page and fill your name into the box
+- When you click outside of the box, the browser should detect a change to the =<input>= box and run the function.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Now add a second input box to your HTML. Don't forget to give in a different id.
+- Make this second input box for getting the user's age. You can use <p> tags before the input box to label them.
+- Write a new function that calculates what year the user will be 100 (you did this in lesson 1) and output the result to another div.
+* Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Task
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+To earn your fourth *Blue JavaScript Badge*, complete the tasks below. Once you have finished, ask your teacher to check your code to make sure it runs correctly.
+- Input boxes can have numerous different types. One type is the password type.
+#+BEGIN_SRC html
+<input type="password" id="" onchange=""></input>
+#+END_SRC
+- Create a new web-page and call it password verification.
+- Create two input boxes, both accepting passwords, and give them different id's.
+- Create a function, that can be called when the browser detects a change in the second =input= box.
+- The function should get the values of both input boxes and store them as separate variables.
+- Then the function should use a conditional statement (=if, else=) to see if the passwords are the same.
+- If the passwords match, then use a =window.alert()= or output to a div to notify the user that the password has been accepted.
+- If they don not match then the user should be prompted to type their passwords again.

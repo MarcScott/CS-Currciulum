@@ -1,0 +1,117 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a href="../style/style.html">Layout and Style</a></li>
+<li><a class="z" href="elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="elem2.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="elem4.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Create a List - description list</p>
+	<ul>
+	<span class="bigtext">
+A description list is a list of terms or names, with a description of each term or name. This can also be used to define our list of hyperlinks.
+<ol>
+	<li class="bigtext">The &lt;dl&gt;tag defines a description list.</li>
+
+	<li class="bigtext">The &lt;dl&gt; tag is used together with &lt;dt&gt; (defines a term) and &lt;dd&gt; (describes a term):
+		<table border=1 width=600 align=center>
+		<tr><td>
+		<span class="code">
+			A description list code <br>
+		&lt;dl&gt; <br>
+		&nbsp;&lt;dt&gt; Milk&nbsp;&lt;/dt&gt; <br>
+		&nbsp;&lt;dd&gt; a white liquid&lt;dd&gt; <br>
+		&nbsp;&lt;dt&gt; Butter&nbsp;&lt;/dt&gt; <br>
+		&nbsp;&lt;dd&gt; a diary product&lt;dd&gt; <br>
+		&lt;/dl&gt; 
+		</span>
+		</td>
+	<td>
+		
+			 What you see in a browser<br>
+		<dl> 
+		 <dt> Milk </dt> 
+		 <dd> a white liquid<dd> 
+		  <dt> Butter </dt> 
+ 		<dd> a diary product<dd> 
+		</dl>
+		</td></tr>
+		</table>
+	</li>
+<li  class="bigtext">As you see we can use a description list to organise items into categories. We can modify the above code to include more descriptions for each item:</li>
+<table border=1 width=600 align=center>
+		<tr><td>
+		<span class="code">
+			A description list code <br>
+		&lt;dl&gt; <br>
+		&nbsp;&lt;dt&gt; Milk&nbsp;&lt;/dt&gt; <br>
+		&nbsp;&lt;dd&gt; a white liquid&lt;dd&gt; <br>
+		&nbsp;&lt;dt&gt; Butter&nbsp;&lt;/dt&gt; <br>
+		&nbsp;&lt;dd&gt; a diary product&lt;dd&gt; <br>
+		&nbsp;&lt;dd&gt; used for cooking&lt;dd&gt; <br>
+		&nbsp;&lt;dd&gt; produced by churning milk&lt;dd&gt; <br>
+		&lt;/dl&gt; 
+		</span>
+		</td>
+	<td>
+		
+		 What you see in a browser<br>
+		<dl> 
+		 <dt> Milk </dt> 
+		 <dd> a white liquid<dd> 
+		  <dt> Butter </dt> 
+ 		<dd> a diary product<dd> 
+ 			 <dd> used for cooking<dd> 
+ <dd> produced by churning milk<dd> 
+		</dl>
+		</td></tr>
+		</table>
+	</li>
+	In the next section, we are going to create a list of hyperlinks using a description list in the leftbox.<br>
+<div id="left">
+<a class="nav" href="elem2.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="elem4.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+</html>

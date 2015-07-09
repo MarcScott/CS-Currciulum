@@ -1,0 +1,244 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
+
+#+TITLE: Text Based Games
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-TextGames">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Adventure Game Part II
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- An integral part of most adventure games is the ability to interact with your environment.
+- You'll notice that on the original map, there were some objects drawn.
+[[file:img/map.jpg]]
+- We're going to need a couple of new functions so that we can view and interact with these objects
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's start by creating a data structure to hold the items that are in each room.
+- Again, you can adapt this to suit your own game.
+#+begin_src python
+roomItems = {'corridor':[],'room1':['torch'],'room2':['knife','pen']}
+#+end_src
+- You'll notice that even if the room is empty, we still link it to a list, that is also empty.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now we'll create a function to show the Items.
+#+begin_src python
+  def showItems(location):
+      items = roomItems[location]
+#+end_src
+- The single line of code in the function looks up the room it the dictionary we've created and stores the contents of the room in a new list called =items=
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Now we want to print the contents of the room so the player knows what's visible.
+- Remember, you can find the length of the items list by using =len(items)=
+- Use conditional selection =if=, =elif=, =else= statements so that:
+  1. If the length of item is 0
+     - print out that there are no items in the room
+  2. If the length of the list is 1
+     - print out that there is the item in the room using string formatting.
+  3. If the length of the list is 2
+     - print out that there are two items in the room using string formatting.
+  4. Else
+     - Leave this option blank for now. We'll code that in the next section
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The code for handling multiple items in the room in a grammatically correct way is a little tricky.
+- We want the print statement to read something like
+#+begin_src python
+'You see a knife, a pen and a torch here'
+#+end_src
+- The code below can be inserted into your =else= statement from above.
+#+begin_src python
+          print('You see a ',end=' ')
+          for i, item in enumerate(items):
+              if i == len(items) -1:
+                  print('and a '+item)
+              else:
+                  print(item + ',',end=' ')
+#+end_src
+- It =iterates= over the list of items, adding a comma after each item is printed.
+- If the item is the final item though, it adds an ='and'= instead.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now call the =showItems()= function in each of your room functions.
+- Make sure to pass it the room's name as a string.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run your game and have a play around.
+- Make sure that all the items are being displayed correctly.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The chances are we're going to want the player to be able to do more than just move around.
+- We might want the player to be able to:
+  1. Take an item
+  2. Use an item
+  3. Move
+  4. Fight
+  5. Look around
+  6. Anything else you can think of. 
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's make a new function to handle player actions.
+#+begin_src python
+def action(location):
+    print('What would you like to do')
+    print('1. Take an item')
+    print('2. Use an item')
+    print('3. Leave')
+    print('4. Interact')
+    print('5. Look again')
+    choice = input()
+    if choice == '1':
+        takeItems(location)
+    elif choice == '2':
+        useItem(location)
+    elif choice == '3':
+        commands[Moving(location)]()
+    elif choice == '4':
+        fight(location)
+    elif choice == '5':
+        command[location]()
+    else:
+        print('You can not do that')
+        commands[location]()
+#+end_src
+- Feel free to add your own choices as well.
+- Add the =action()= function call into each of your room functions, in place of the =Moving()= function call.
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Let's try and implement the =takeItems(location)= function.
+- You'll need to declare a list, near the top of your code, to act as the players inventory.
+#+begin_src python
+playerItems = []
+#+end_src
+- Now use the algorithm below, to create the function
+#+begin_src python
+def takeItems(location):
+#+end_src
+- Follow the following algorithm to code the function.
+  1. Set a new variable called =items= to be the contents of the room
+  2. If the length of the =items= list is 0, then print that the room is empty, and call the action(location) function.
+  3. Ask the player which item they want to take.
+  4. If the item they want to take is not in the list, then keep asking the player what item they want to take.
+  5. If the item is in the list then remove it from the roomItems dictionary.
+     - n.b you can use =.remove()= to remove items from lists.
+  6. Add the item to a global list that represents the players inventory.
+  7. Tell the player they have taken the item.
+  8. Run the action(location) function again.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- The rest is up to you now.
+- You can create any functions you like, to perform various actions.
+- You could create a function for using items, fighting, running away. The choices are up to you.

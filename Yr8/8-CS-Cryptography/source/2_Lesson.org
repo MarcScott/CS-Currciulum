@@ -1,0 +1,346 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
+
+#+TITLE: Cryptography
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-Cryptography">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Coding the Caesar Cipher
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- Now you know all about the Caesar Cipher, we're going to try and implement it in Python.
+- We'll start off with some Python basics.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Find the installed version of IDLE on your computer.
+- IDLE is the Interactive Development Environment (IDE) that comes with Python.
+- IDLE is basically a =text editor= and an =interpreter= (a program that can run python scripts)
+- The first window that opens up is the interpreter.
+[[file:img/IDLE1.png]]
+- If we just want to write some code, and don't care about saving it, then we can write directly into the IDLE interpreter.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The Caesar Cipher is a substitution cipher, meaning that one character in the alphabet is exchanged for another character.
+- In Python, characters are called =Strings=.
+- Strings can be letters, combinations of letters, symbols and even numbers.
+- So that Python can tell the difference between, for instance, the number 123 and the string 123, we always surround strings with single or double quotes.
+#+BEGIN_SRC python
+    #These are all strings
+    "ABC"
+    'ABC'
+    '123'
+    '+=.A2'
+    'The quick brown fox jumped over the lazy dog'
+#+END_SRC
+- We can display strings using the inbuilt =print()= function
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Have a go at writing the lines of code that are written below into your interpreter.
+#+BEGIN_SRC python
+  print(Hello World!)
+  print('Hello World!')
+  print(123)
+  print('123')
+  print(5+5)
+  print('5+5')
+  print('5'+'5')
+  print(A+B)
+  print('A+B')
+  print('A'+'B')
+#+END_SRC
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Which line(s) of code produce errors and why?
+- Which line(s) of code perform arithmetic?
+- Look up the term =concatenation=. What does it mean?
+- Which lines of code perform concatenation?
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Now you know what strings are, we need a way of storing them.
+- We can use a variable to store our strings.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- In IDLE, select File>New.
+- This gives you a text editor to write your scripts in.
+- Save your file straight away and call it CC-encrypt.py
+- The .py is important.
+- Let's declare our first variable
+#+BEGIN_SRC python
+  trueAlphabet = 'abcdefghijklmnopqrstuvwxyz'
+#+END_SRC
+- Save your file again.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Once you've declared your variable, press the =F5= key on your keyboard to run your script.
+- Now switch back to the interpreter and try the following.
+#+BEGIN_SRC python
+  print(trueAlphabet)
+#+END_SRC
+- Your string should then be printed.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Go back to your script and declare a new variable called =shiftedAlphabet=
+- Set it to a shifted Alphabet, as used in the Caesar Cipher. =ghijklmnopqrstuvwxyzabcdef= for instance.
+- We'll also need a plaintext message to encrypt. Let's keep it simple for now and use a single word. Declare a variable called =plainText= and set it to the string 'hello' (all lowercase)
+- Lastly we'll need an empty string for our ciphertext.
+#+BEGIN_SRC python
+  cipherText=""
+#+END_SRC
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Our algorithm for the Caesar Cipher will look something like this. (Note - this is structured English and not Python. Don't try to run it.)
+- Remember =index= is just a computer science term for position
+#+BEGIN_SRC
+1. Look at the first character in the plainText.
+2. Find out the character's index in the trueAlphabet.
+3. Find the corresponding character at the same index in shiftedAlphabet.
+4. Add the corresponding character to the end of the cipherText string.
+6. Repeat steps 1 through 4 for the next character in plainText until you reach the end.
+#+END_SRC
+- In the next section we'll look at how to code these individual parts.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's figure out how to write this in Python.
+- The next section will take you through the individual elements of the algorithm
+* For loops
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The first and fifth lines of the algorithm are where we'll start.
+#+BEGIN_SRC
+1. Look at the first character in the plainText.
+...
+6. Repeat steps 1 through 4 for the next character in plainText until you reach the end.
+#+END_SRC
+- We're going to need a loop for this, and the best type of loop to use here is a =for= loop.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- You should still have your interpreter open. If you don't then go back to your script and hit =F5= again.
+- Let's have a look at the structure of a python for loop.
+- Try the following line of code.
+#+BEGIN_SRC python
+  for i in 'Hello World!':
+      print(i)
+#+END_SRC
+- In structured English this code would be the equivalent of saying
+#+BEGIN_SRC
+1. For the next character in the string Hello World
+2. Assign the variable i to that character
+3. Print out the value of i
+4. Repeat steps 1 to 3 until we get to the end of the string.
+#+END_SRC
+- We often use the variable =i= in for loops, but it doesn't make for the most readable code. Let's use a different variable name to make our code more legible.
+#+BEGIN_SRC python
+  for letter in 'Hello World!':
+      print(letter)
+#+END_SRC
+- This is called =iteration=, we're iterating over the string 'Hello World'
+- Python is sensitive to white space. The tab before the print line is important. 
+- Anything that is 'tabbed' beneath the for loop is part of the loop. If we remove the tab we'll get different results.
+- We can also iterate over variables.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Go back to your script. Let's add a =for= loop in and see how important the tabs are.
+#+BEGIN_SRC python
+  trueAlphabet = 'abcdefghijklmnopqrstuvwxyz'
+  shiftedAlphabet = 'defghijklmnoqprstuvwxyzabc'
+  plainText = 'hello'
+  cipherText = ''
+
+  for letter in trueAlphabet:
+      print(letter)
+#+END_SRC
+- run this code to see what happens.
+- Now let's make a little change so we can see how important the tabs are.
+#+BEGIN_SRC python
+  for letter in plainText:
+      print('Give me an:')
+      print(letter)
+  print('What do we have?')
+  print(plainText)
+#+END_SRC
+- Run your code.
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- With reference to the code you've written, explain in your own words when and why some of the commands are repeated within the for loop and others are only run once.
+* Indices
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- So we now have a method of iterating over every character in the plaintext.
+- Now we have to tackle this part of the algorithm
+#+BEGIN_SRC
+2. Find out the character's index in the trueAlphabet.
+#+END_SRC
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Finding the index of an item is extremely easy in Python.
+- We just need to use the built-in method =index()=
+- Try this in your interpreter
+#+BEGIN_SRC python
+trueAlphabet.index('a')
+trueAlphabet.index('f')
+#+END_SRC
+- Let's use that in our for loop.
+#+BEGIN_SRC python
+  for letter in plainText:
+      position = trueAlphabet.index(letter)
+      print(position)
+#+END_SRC
+- Now we know the position each letter in the plaintext holds in the true alphabet, we can get the letter from the equivalent shifted alphabet.
+#+BEGIN_SRC python
+  for letter in plainText:
+      position = trueAlphabet.index(letter)
+      shiftedLetter = shiftedAlphabet[position]
+#+END_SRC
+- Then we can add that shifted letter to the end of the cipher text.
+#+BEGIN_SRC python
+  for letter in plainText:
+      position = trueAlphabet.index(letter)
+      shiftedLetter = shiftedAlphabet[position]
+      cipherText = cipherText + shiftedLetter
+  print(cipherText)
+#+END_SRC
+- The last line (outside the for loop) will print out the complete cipher text.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run the code and look at the output.
+- Has it worked?
+- What happens if you try to make the plaintext two words like 'Hello World"?
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Now that you've made some code to encrypt using the Caesar Cipher, we'll need some code to decrypt as well.
+- Create a new Python File called CC-Decrypt.py
+- Now create the code that can decrypt the plaintext generated by your first program.

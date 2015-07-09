@@ -1,0 +1,160 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Funky Functions
+#+AUTHOR: Stephen Brown
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/stsb11/turtle">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Func-y Town
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+When developer write code, sometimes their programs need to repeat the same chunks of code over and over again. Programming languages help developers with this by allowing the use of **Functions**. 
+- The definition we use is, "A Function is a piece of code which performs a task, and returns a value". 
+- Let's look at an example.
+** Learn it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- I'd like to draw this pattern...
+[[./img/pattern1.png]]
+- In order to do this, I need to start by drawing a square...
+[[./img/pattern1a.png]]
+- Then rotating the turtle 45 degrees
+[[./img/pattern1b.png]]
+- draw another square...
+[[./img/pattern1c.png]]
+- Turn another 45 degrees
+[[./img/pattern1d.png]]
+- and again...
+[[./img/pattern1e.png]]
+
+- And so on. If you think about it, what I'm essentially doing is saying
+#+BEGIN_EXAMPLE
+Repeat the following 8 times:
+    DRAW A SQUARE
+    ROTATE THE TURTLE 45 degrees
+#+END_EXAMPLE
+
+- We can teach the computer how to draw squares (or anything else for that matter) by writing a function which contains the steps needed to perform that task.
+- We're going to start by creating a function called drawsquare().
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+- Start a new Python program, and save it straight away. Call it "**Pattern.py**".
+- Start with the usual code to set Python up for drawing graphics...
+
+#+BEGIN_EXAMPLE
+import turtle
+
+def drawsquare(): # This is a function called drawsquare
+    for myMoves in range(4):
+        tess.forward(100)
+        tess.left(360/4)
+        
+wn = turtle.Screen()
+wn.bgcolor("white") 
+wn.title("Func-y Town")
+
+tess = turtle.Turtle()
+tess.color("hotpink")
+        
+for myMoves in range(8):
+    drawsquare()
+    tess.left(45)
+        
+wn.mainloop()
+#+END_EXAMPLE
+
+- When you run this, it'll draw the pattern for you. 
+- The def drawsquare(): line and the 3 lines that come after it are where we have declared (created) our function. We've said to Python that any time in the future when we write **drawsquare()**, we want a square drawing. 
+- Change the 8 in the line: **for myMoves in range(8)** to something else.
+- Change the 45 in **tess.left(45)** to something else. 
+- Manipulate the code to draw this shape?
+[[./img/pattern2.png]]
+
+- Create a second function, which draws a triangle when it is called (used).
+- Add one line of code to your program to produce this shape:
+[[./img/pattern2a.png]]
+- Write a program to make the shape below. It is made from 20 squares.
+    - What angle will you need in between squares? 
+    - A pattern with 4 squares would need 90 degrees between each one.
+    - A pattern with 8 squares would need 45 degrees between each.
+    - A pattern with 180 squares would need 2 degrees between each. 
+    - Is there a relationship between the two numbers?
+[[./img/pattern3.png]]
+
+[[./index.html][Back to homepage]]

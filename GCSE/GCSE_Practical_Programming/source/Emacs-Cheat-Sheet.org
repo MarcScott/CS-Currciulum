@@ -1,0 +1,160 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Emacs Cheat Sheat
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* Emacs
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/real_programmers.png]]
+- *C- means hold down the Control key - Ctrl on a keyboard*
+- *M- means hold down the Meta key - often Alt or Esc on a keyboard*
+- *C-g can be used to quit a command you accidently started*
+** File handling
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Open or create (if it doesn't exits) a file
+  - File (once opened) are loaded into a /buffer/, so we'll talk about buffers from here on in.
+#+BEGIN_SRC
+C-x C-f
+#+END_SRC
+- Kill a buffer
+#+BEGIN_SRC
+C-x k
+#+END_SRC
+- Switch to another open buffer
+#+BEGIN_SRC
+C-x b
+#Note this gives you the option of entering any open buffer.
+#Hitting return will open the last previous buffer you had open
+#Alternatively you can type the name of a buffer (Tab for autocompletion remember)
+#+END_SRC
+- Quit emacs
+#+BEGIN_SRC
+C-x C-x
+#+END_SRC
+** Navigation
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+You *can* use the cursor keys to navigate forwards, backwards, up and down if you like.
+Emacs geeks will frown upon it and shout at you about the home-row, but it's up to you really.
+- Move forward and  backward one character
+#+BEGIN_SRC
+C-f
+C-b
+#+END_SRC
+- Move to the next or previous line
+#+BEGIN_SRC
+C-n
+C-p
+#+END_SRC
+- Move to the beginning and end of a line
+#+BEGIN_SRC
+C-a
+C-e
+#+END_SRC
+- Move forward and backwards one word
+#+BEGIN_SRC
+M-f
+M-b
+#+END_SRC
+- Move up and down the page
+#+BEGIN_SRC
+C-v
+M-v
+#+END_SRC
+- Go to a specific line
+#+BEGIN_SRC
+M-g g
+## Only useful if you can see line numbers though
+M-x linum-mode
+#+END_SRC
+- Go to beginning and end of buffer
+#+BEGIN_SRC
+M-<
+M->
+#+END_SRC
+- Go to a specific word
+#+BEGIN_SRC
+#For a word after your cursor
+C-s 
+#For a word before your cursor
+C-r
+#+END_SRC
+** Kill and Yank
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Set a mark for beginning of selection
+#+BEGIN_SRC
+C-spc
+#+END_SRC
+- Kill a line
+#+BEGIN_SRC
+C-k
+#+END_SRC
+- Kill a selected region and place in kill ring
+#+BEGIN_SRC
+C-w
+#+END_SRC
+- Copy a selected region into kill ring
+#+BEGIN_SRC
+M-w
+#+END_SRC
+- Yank from the kill ring
+#+BEGIN_SRC
+C-y
+#+END_SRC
+** UI Stuff
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:      
+- Split window vertically
+#+BEGIN_SRC
+C-x 3
+#+END_SRC
+- Split window horizontally
+#+BEGIN_SRC
+C-x 2
+#+END_SRC
+- Delete current window
+#+BEGIN_SRC
+C-x 0
+#+END_SRC
+- Make current window the only window
+#+BEGIN_SRC
+C-x 1
+#+END_SRC
+- Switch between windows
+#+BEGIN_SRC
+C-x o
+#+END_SRC
+** Python Stuff
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Setup to use Python3 over Python2
+  - You need to edit (or create) a .emacs file in your home directory
+  - Add this line
+  #+BEGIN_SRC lisp
+  (setq python-shell-interpreter "python3")
+  #+END_SRC
+  - When you restart emacs you'll be using Python3
+- Open an interpreter in another window
+#+BEGIN_SRC
+C-c C-p
+#+END_SRC
+- Execute the current Python Script
+#+BEGIN_SRC
+C-c C-c
+#+END_SRC

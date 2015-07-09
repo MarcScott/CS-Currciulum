@@ -1,0 +1,138 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.9-Algorithms Practice
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Try These
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Try It - Easy
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+Write an algorithm using pseudocode or a flowchart that will calculate the amount of fuel a plane needs to make a complete journey. The algorithm must:
+- Ask the user how many miles the journey will be.
+- Ensure the answer is greater than 0
+- Multiply the distance to be travelled by 20, to find the minimum number of litres required.
+- Add 20% to the volume to handle holding patterns while waiting to land and detours.
+- Report the volume required back to the user.
+** Try It - Medium
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+Write an algorithm using pseudocode or a flowchart that will calculate if a person has a healthy weight. The algorithm must:
+- Ask the user for their mass in kilograms.
+- Ask the user for their height in metres.
+- Ensure that both values are above 0
+- Divide the mass by the height squared.
+- If the BMI is between 18.5 and 25, it should report that they are of a healthy weight, otherwise it should report that they are underweight (lower) or overweight higher)
+** Try It - Hard
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+Write an algorithm using pseudocode or a flowchart that will calculate the resistance of a resistor. The algorithm must:
+- Ask the user for the colours of the first three bands on the resistor.
+- If they don't enter a black, brown ,red, orange, yellow, green, blue, violet, grey or white it should ask them to enter a colour again.
+- The first band should indicate the first digit of the resistance, with black being 0 up to white being 9.
+- The second band should indicate the second digit of the resistance, with black being 0 up to white being 9.
+- The third band should indicate the number of 0s to be added to the end of the first two digits, with black being 0 up to 9 being white.
+- The resistance should be reported back to the user.
+** Try It - Very Hard
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+Write an algorithm using pseudocode or a flowchart that will correctly identify a hydrocarbon:
+- Ask the user how many carbons are in the hydrocarbon and only accept numbers between 1 and 8
+- Ask the user how many hydrogens are in the hydrocarbon and only accept numbers between the number of carbons x 2, the (number of carbons * 2) + 2 or the (number of carbons x 2) -2.
+- The number of carbons indicates the prefix of the hydrocarbon name, according to the following table.
+| Carbons | Prefix |
+|---------+--------|
+|       1 | Meth   |
+|       2 | Eth    |
+|       3 | Prop   |
+|       4 | But    |
+|       5 | Pent   |
+|       6 | Hex    |
+|       7 | Hept   |
+|       8 | Oct    |
+- The suffix is decided by the ratio of carbon to hydrogen.
+| Ratio         | Suffix  |
+|---------------+---------|
+| C_{n}H_{2n+2} | ane     |
+| C_{n}H_{2n}   | ene     |
+| C_{n}H_{2n-2} | yne     |
+- So C_{3}H_{8} would be Propane, C_{3}H_{6} would be Propene and C_{3}H_{4} would be Propyne
+- The name of the hydrocarbon should be reported back to the user.
+

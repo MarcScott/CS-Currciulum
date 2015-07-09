@@ -1,0 +1,224 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: A Virtual LOLcat in Scratch
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-lolcats">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Using functions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Open up the =Virtual_LOL_Cat= script you were working on last lesson.
+- Functions are really important in coding.
+- *A funtion is a /named/ part of a program that performs some /specific task/*
+- In Scratch, /Functions/ are called /Blocks/.
+- Imagine I wanted you to make me a cheese sandwich. I could give you a set of instructions such as:
+  1. Take two pieces of bread.
+  2. Apply butter to one side of each piece
+  3. Place a slice of cheese on the butter side of one piece of bread.
+  4. Place the other slice of bread, butter-side down onto the cheese.
+- However, it's much easier to just say "Make me a cheese sandwich" as you probably already have the instructions stored in your memory. You have a /named/ instruction for performing the /sandwich making task/ 
+- Functions allow us to write some code, and then run that code just by calling the name of the function.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Killing the pet is something we might want to do quite a lot. So it would make sense to create a Function for killing the pet, that we can use over and over again.
+- First we'll need to disconnect the code to kill the pet, from the =when space key pressed= event.
+[[file:img/Function_1.png]]
+- Next we'll create a new function.
+  1. Click on =More Blocks=
+  2. Click on =Make a Block=
+  3. Call it =KillPet=
+  4. Click on =OK=
+[[file:img/Function_2.png]]
+- A new =define KillPet= block should have been created. This is your /named/ function that you can attach your code to.
+- Now we'll use the function
+  1. Attach your code to kill the pet to the new =define KillPet= block.
+  2. From =More Blocks= drag your =KillPet block= onto the Scripts Area
+  3. Attach the =KillPet= block to the =when space key pressed= event
+[[file:img/Function_3.png]]
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+- Test your code to make sure it works like it did before. The pet should die when the space key is pressed.
+* Using variables
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Variables are another important concept in programming.
+- A variable is made up of two things:
+  1. Some data that is stored (like numbers or letters)
+  2. A name that links to that data.
+- You have variables stored in your memory, even though you might not have realised it.
+- If I ask you what your name is, you can tell me. Your =name= is a variable.
+- If I ask you what your age is, you can tell me. Your =age= is a variable.
+- A key thing to remember about variables, is that they can change. You could legally change your name to "Ima Coder", and your age increments by 1 every time you have a birthday.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+[[file:img/Cookie_Cat.jpg]]
+- We're going to use a variable to represent how hungry our pet is.
+- The variable will have a /name/ - =PetHunger=
+- The variable will store some data - 0 to represent no hunger, upto 100 to represent starving.
+  1. Click on the Data palate
+  2. Click on =Make a variable=
+  3. Call it =PetHunger=
+  4. Click =OK=
+[[file:img/Variable_1.png]]
+- To finish off this section, you'll need to create a new script to handle the PetHunger.
+- Add a *new* =when greenflag clicked= event.
+- Attach a =set PetHunger to 0= block beneath it. We'll add more to this part in the next lesson.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+- We're going to need some more variables for our virtual pet, so we might as well create them now.
+- Create variables to for =PetTiredness=, =PetThirst= and =PetHappiness=.
+- Each variable needs it's own =when green flag clicked= event.
+- =PetTiredness= should start at 0. =PetThirst= should also start at 0. =PetHappiness= should start at 100.
+* Using loops
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Loops are the third fundamental concept in porgramming to learn today.
+- A loop causes instructions to be repeated over and over again.
+- There are basically two types of loop
+  - Loops that repeat a set number of times
+  - Loops that repeat until a condition is met.
+- Imagine someone was giving directions. They might say something like;
+#+BEGIN_HTML
+<blockquote>At the next four roundabouts take the second exit to go straight on.</blockquote>
+#+END_HTML
+- This is a loop that repeats four times. You take the second exit at each roundabout exactly 4 times.
+- They might have said this instead though;
+#+BEGIN_HTML
+<blockquote>Keep taking the second exit at the roundabouts, until you go under the blue bridge.</blockquote>
+#+END_HTML
+- This loop repeats an unknown number of times, until the you go under the bridge.
+- In Scratch these types of loop are called the =repeat= and the =repeat until= loops.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We're going to use a =repeat until= to make our pet get hungry.
+- In Scratch you /nest/ the code you want to repeat, insite the loop block.
+- Here's the complete script code. You build it from the script you already have to set the Pet's Hunger to 0
+#+BEGIN_EXAMPLE
+when green flag clicked
+set PetHunger to 0
+repeat until PetHunger = 100
+    change PetHunger by 1
+    wait 0.1 secs
+KillPet
+#+END_EXAMPLE
+- This code can be tricky to assemble, so if you want to see an image of the completed script, [[file:Example_1.html][then click here]], but have a go at doing it yourself first.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run your script to make sure that it works.
+- You should see the PetHunger variable increase on the stage.
+- When it reaches 100, the pet should die.
+- If it doesn't work then go back over the instructions, then ask a friend and finally ask your teacher for help.
+- For testing purposes, we've used a wait period of 0.1 secomds. But this isn't really practical for the real Virtual Pet. Change the wait time to something longer. You can choose any value you like.
+* Explaining it all
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- To get your badge for this section, you're going to need to create a new Scratch file.
+- Create an animation where a character explains the concepts of Functions, Variables and Loops to someone who has never heard of the terms. Try to come up with your own examples.
+- How clear the explanation is will determine whether you are awarded a Silver, Gold or Platinum badge.
+- You will have only _one_ lesson to work on this, so don't make it too complicated.

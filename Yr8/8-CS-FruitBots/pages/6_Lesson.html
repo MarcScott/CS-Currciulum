@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>FruitBots</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">FruitBots</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Playing against an opponent</a>
+<ul>
+<li><a href="#sec-1-1">Code It</a></li>
+<li><a href="#sec-1-2">Run It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. The FruitBot rules</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. What's your tactic?</a>
+<ul>
+<li><a href="#sec-3-1">Try It</a></li>
+<li><a href="#sec-3-2">Code It</a></li>
+<li><a href="#sec-3-3">Badge It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/8CS-FruitBots">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Playing against an opponent</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 code">
+<h3 id="sec-1-1">Code It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>So we've got some code that will let us pick up all the fruit on the board.
+</li>
+<li>Let's see how we do against a simpleBot that has been writen to compete against us.
+</li>
+<li>Go into the testing directory, then into a directory called assets, then into a directory called js.
+</li>
+<li>In there you should find a bot called simplebot.js. This is your opponent.
+</li>
+</ul>
+<pre class="example">
+assets/js/simplebot.js
+</pre>
+<ul class="org-ul">
+<li>Open simplebot.js in a text editor.
+</li>
+<li>At the top of simplebot.js is some code that looks like this.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var SimpleBot = {
+    makeMove: function() {
+       // to disable to opponent, uncomment the next line
+       return PASS;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Comment out the <code>return PASS;</code> so it looks like this.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var SimpleBot = {
+    makeMove: function() {
+       // to disable to opponent, uncomment the next line
+       // return PASS;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Save the file.
+</li>
+<li>Now you have a bot to play against.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 run">
+<h3 id="sec-1-2">Run It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Try running your bot from last lesson against the simpleBot.js
+</li>
+<li>How did you do?
+</li>
+<li>Change the default game board and see how you do on different boards.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> The FruitBot rules</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>The rules of FruitBots are very simple.
+</li>
+<li>The bot that collects the most fruit, in the most categories wins.
+</li>
+<li>So if you collect more oranges than the other bot, you win in the category of oranges.
+</li>
+<li>You need to win more categories than the other bot to win the game.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> What's your tactic?</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 try">
+<h3 id="sec-3-1">Try It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Look at the gameboard below.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/board656950.png" alt="board656950.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>With a partner copy the board to a bit of paper or a mini-whiteboard. Use letters to symbolise the fruit and your bots.
+</li>
+<li>Now play a game of FruitBots with each other.
+</li>
+<li>Remember you can only move one square at a time.
+</li>
+<li>Taking a fruit takes up your turn.
+</li>
+<li>If you both take a fruit in the same turn, then you each get half of that fruit.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 code">
+<h3 id="sec-3-2">Code It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>After you've played a game or two of FruitBots, see if you can formalise the rules that you used in your attempt to win.
+</li>
+<li>Did you go after specific fruit at specific times?
+</li>
+<li>Did you keep track of the fruits left on the board?
+</li>
+<li>Did you try to take fruit you knew your opponenet needed?
+</li>
+<li>Did you stay close to your opponenent or try and keep distant from them?
+</li>
+<li>You rules might look something like this:
+</li>
+</ul>
+<pre class="example">
+Pick a fruit.
+Repeat the following until I have all the fruit of that category
+Move towards that fruit
+Take it when on the square
+Find the closest fruit of the same category.
+Once all the fruit have been grabbed of that category, go back to the start.
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 badge">
+<h3 id="sec-3-3">Badge It</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>To earn your badge for this lesson, you need to try and formalise your ideas in pseudocode.
+</li>
+<li>It doesn't really matter on the syntax of your pseudocode, but try and come up with an algorithm that could be translated into JavaScript.
+</li>
+<li>The above example has been shown in pseudocode below
+</li>
+</ul>
+<pre class="example">
+target &lt;-- random number between 1 and 5
+
+repeat until target is not on board
+    target_x &lt;-- target index in 1st board array
+    target_y &lt;-- target index in 2nd board array
+    IF target_x &lt; bot_x
+        return WEST
+    IF target_x &gt; bot_X
+        return EAST
+    IF target_y &lt; bot_y
+        return NORTH
+    IF target_y &gt; bot_y
+        return SOUTH
+    IF target_x = bot_X AND target_y = bot_y
+        return TAKE
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

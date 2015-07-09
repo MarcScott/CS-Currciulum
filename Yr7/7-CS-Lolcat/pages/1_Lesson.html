@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>A Virtual LOLcat in Scratch</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">A Virtual LOLcat in Scratch</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. An introduction to Scratch</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Code It</a></li>
+<li><a href="#sec-1-3">Run It</a></li>
+<li><a href="#sec-1-4">Badge It - Silver</a></li>
+<li><a href="#sec-1-5">Code It</a></li>
+<li><a href="#sec-1-6">Run It</a></li>
+<li><a href="#sec-1-7">Badge It - Gold</a></li>
+<li><a href="#sec-1-8">Badge It - Platinum</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-lolcats">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> An introduction to Scratch</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<img src="img/GUI.png" alt="GUI.png" />
+Scratch is a programming language that can be used to make small programs and games. Above is the Graphical User Interface (GUI) for Scratch. A GUI is how the a user interacts with software.
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>The Scratch GUI is split into 4 sections
+</li>
+<li>These are listed below
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/KEY.png" alt="KEY.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The key areas are:
+<ol class="org-ol">
+<li>The Blocks Palette
+</li>
+<li>The Scripts Area
+</li>
+<li>The Stage
+</li>
+<li>The Sprite List
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 code">
+<h3 id="sec-1-2">Code It</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+If you've used Scratch before and already have an account, then you can skip this section.
+</p>
+<ul class="org-ul">
+<li>Goto <a href="http://scratch.mit.edu">THIS LINK to the Scratch website</a>
+</li>
+<li>Click on the <code>Join Scratch</code> button in the menu bar.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/join.png" alt="join.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Fill in the details required. Be sure to pick a username and password you will remember.
+</li>
+<li>You might need to use your teacher's email address when you register.
+</li>
+<li>Once you are logged in, click on the <code>Create</code> button in the menu bar.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/create.png" alt="create.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Now we can name our file. Call it <code>Practice Scripts</code>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/title.png" alt="title.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Scratch works by dragging blocks of code from the blocks palate into the script area. These blocks then can be stacked to create scripts.
+</li>
+<li>Let's make a simple Script. From the Blocks Palate, choose <code>Events</code>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Scripts_menu.png" alt="Scripts_menu.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Now, click and drag the following block on to the Scripts Area.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Green_flag.png" alt="Green_flag.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Next choose the <code>Looks</code> scripts from the menu.
+</li>
+<li>Click and drag the <code>say Hello! for 2 secs</code> block and snap it to the <code>When flag clicked</code> block.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Hello.png" alt="Hello.png" /> 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 run">
+<h3 id="sec-1-3">Run It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>To run our Scratch script, you just need to click on the <code>Green Flag</code> in the Stage area.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Hello2.png" alt="Hello2.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 badge">
+<h3 id="sec-1-4">Badge It - Silver</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Try changing what the cat says and how long it says it for.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/Happeh.png" alt="Happeh.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 code">
+<h3 id="sec-1-5">Code It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Now let's try something a little more complicated.
+</li>
+<li>Delete your current script by picking it up and dragging it back to the Blocks Pallette.
+</li>
+<li>We're going to make the cat grow. You'll need to search through the Blocks Pallette to find the appropriate blocks, and build the script as it's shown below.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/GROWIN.png" alt="GROWIN.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 run">
+<h3 id="sec-1-6">Run It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>Click on the <code>Green Flag</code> in the Stage area.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 badge">
+<h3 id="sec-1-7">Badge It - Gold</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Try to change the script so that after the cat has grown, it says "IM SHRINKIN" and then returns to it's regular size.
+</li>
+<li>HINT: You can use negative numbers in Scratch.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 badge">
+<h3 id="sec-1-8">Badge It - Platinum</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>Try an experiment with getting the cat to move around.
+</li>
+<li>To get your platinum badge you need to make the cat move around in a large circle.
+</li>
+<li>You'll probably want to look into using a loop to achieve this.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

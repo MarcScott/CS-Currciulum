@@ -1,0 +1,138 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.13 Networking
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Networking
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Internet_map_1024.jpg/600px-Internet_map_1024.jpg]]
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- When two or more computers are connected together through a =communication medium=, allowing them to exchange data and share =resources=, we have a computer network.
+- Often a computer network conforms to the =server= / =client= model.
+- Let's define some of those terms:
+  - =Communication Media= refers to the connection between computers. This could be standard copper cable (normally Cat5 or 6), Fibre Optic cable or Wireless Radio.
+  - =Resources= are devices such as printers or storage devices, that computers on the network have shared access to.
+  - =Servers= are just another computer. They may sometimes be very high-powered if the service they are providing is computationally hard (such as serving millions of web-pages or performing advanced modelling) or they can be tiny devices such as a Raspberry Pi (serving media over a home network).
+  - =Clients= are computers that use the services provided by the server.
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+Use each of the keywords shown below to write sentences describing the advantages and disadvantages of networking computers
+- Advantages of Networks.
+  1. Files
+  2. Communication
+  3. Resources
+  4. Distance
+  5. Software, server
+  6. Security
+  7. Licensing, money
+  8. Backups
+- Disadvantages of Networks
+  1. Malware
+  2. Single point of failure
+  3. Infrastructure cost
+  4. Administrative cost
+  5. Hackers
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There are many different ways of configuring a computer network. The three main =topologies= are
+  - Bus
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/BusNetwork.svg/527px-BusNetwork.svg.png]]
+  - Ring
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/RingNetwork.svg/527px-RingNetwork.svg.png]]
+  - Star
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/StarNetwork.svg/527px-StarNetwork.svg.png]]
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- For each type of network topology, write a short sentence describing the layout of the clients/servers.
+- Find out a few of the advantages and disadvantages of each type of topology.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- When computers communicate with each other, they must be able to understand each other.
+- For this reason, specific rules have been developed for how computers should communicate in different circumstances.
+- These rules are called protocols, and different protocols are used in different situations.
+- You'll learn more about this when we talk about the =client-server= model

@@ -1,0 +1,179 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Better Functions
+#+AUTHOR: Stephen Brown
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/stsb11/turtle">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* More on Functions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- We previously created functions, which performed very specific tasks. Developer often try to make their functions as useful as possible by allowing them to take in different values, and give information back to the part of the program that called them. We'll have a look at this now.
+
+** Parameters 101
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- When we wrote our square function, the code looked like this...
+
+#+BEGIN_EXAMPLE
+def drawsquare():
+    for x in range(4):
+        tess.forward(100)
+        tess.left(4)
+#+END_EXAMPLE
+- What if we wanted to be able to choose the size of our square?
+- In a moment, we'll change the square function to...
+#+BEGIN_EXAMPLE
+def drawsquare(sideLength):
+    for x in range(4):
+        tess.forward(sideLength)
+        tess.left(4)
+#+END_EXAMPLE
+- By adding sideLength to the first line, we told the function that when it runs, the function will be provided with a number, which the function will be able to refer to as sideLength. 
+- Create a new Python program file, and call it "**more-functions.py**".
+- Copy and paste this code...
+#+BEGIN_EXAMPLE
+import turtle
+
+def drawsquare(sideLength,newColour):
+    tess.color(newColour)
+    for x in range(4):
+        tess.forward(sideLength)
+        tess.left(90)
+        
+wn = turtle.Screen()
+wn.bgcolor("white") 
+wn.title("Func-y Town")
+
+tess = turtle.Turtle()
+
+growingSide=50 # The length of the sides we want to use.
+
+for myMoves in range(10):
+    drawsquare(growingSide,"red")  # Draw the square at its new size.
+    tess.left(36)
+    growingSide=growingSide+10 # Increase the value of growingSide by 10.
+
+wn.mainloop()
+#+END_EXAMPLE
+- You'll notice now that rather than using drawsquare(), we added the size we wanted inside the brackets instead, as well as the colour we'd like the square to be. This can give us the ability to create more intricate patterns, and eventually to start mixing up the colours.
+
+* Code it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Experiment 1: Double the starting size of the pattern, then put it back.
+- Experiment 2: Double the speed at which each subsequent square grows, then put it back.
+- Experiment 3: If you've not done so before, write a function at the top of your code to draw a triangle, and another to draw a pentagon. Make them use at least one parameter to control the length of the sides. 
+- Exeriment 4: Look carefully at the functions for triangles, squares and pentagon. What's the same? What's different? Write a function called "polygon", into which you can pass a side length and number of sides, which then draws any polygon of any size for you. **Tip:** You might need to look over some of your earlier code to work out how to do the angles!. 
+- Experiment 5: Replace the **for** lines of code at the bottom of your this...
+
+#+BEGIN_EXAMPLE
+for myMoves in ["red","hotpink","blue","green","black","yellow","purple","orange","lightgreen","lightblue"]:
+    drawsquare(growingSide,myMoves)  # Draw the square at its new size.
+    tess.left(36)
+    growingSide=growingSide+10 # Increase the value of growingSide by 10.
+#+END_EXAMPLE
+- Explain to the person next to you how you think the colours keep changing.
+- Experiment 6: Write code to produce the most attractive pattern you can. Perhaps it uses a series of increaseingly sized shapes, different colours, or something like that?
+
+
+* Just for fun...
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Finally, if you've done everything else, try putting this into a new program, called "tipsy.py".
+
+#+BEGIN_EXAMPLE
+import turtle
+import random
+        
+wn = turtle.Screen()
+wn.bgcolor("white") 
+wn.title("Func-y Town")
+
+tess = turtle.Turtle()
+tess.color("blue")
+tess.speed(0)
+
+while True:
+    tess.fd(15)
+    tess.lt(random.randint(0,180))
+    tess.rt(random.randint(0,180))
+#+END_EXAMPLE
+
+- Can you explain what you think it does?
+
+[[./index.html][Back to homepage]]

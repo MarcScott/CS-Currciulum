@@ -1,0 +1,180 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
+
+#+TITLE: Cryptography
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-Cryptography">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Why is Cryptography important?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+[[https://commons.wikimedia.org/wiki/Category:Cryptography#mediaviewer/File:Encrypt.jpg]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Cryptography is not just for spies and secret agents. We all use cryptography, every day.
+- There are lots of apps and websites that use cryptography to communicate between clients and servers.
+- Public Key Cryptography is very complicated, but here is a quick outline of how it works.
+  1. If you are on an https:// website or you see the little green padlock in your URL bar, you are communicating with a website using a type of public key cryptography called SSL/TLS
+  2. When you connect to the website server, the server sends you it's public key.
+  3. Your client machine then generates a random number to use as a /session key/. This will be used by both server and client to communicate.
+  4. The server doesn't know the /session key/ yet, so it is encrypted with the public key and sent to the server.
+  5. The server decrypts the /session key/ with it's private key.As only the server has the private key, only it can decrypt the session key.
+  6. Now only the client and server have the unique session key. They can use this to encrypt data and send it between them, knowing only the client and server can decrypt the messages
+- SSL/TLS is incredibly important. It's used on all the major social networks, lots of email services and also when we conduct financial transactions online.
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Draw a diagram to show how SSL/TLS encryption works, using the characters Alice, Bob and Eve.
+- Here's an example of the type of diagram, although this is just for basic encryption.
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Asymmetric_cryptography_-_step_2.svg/640px-Asymmetric_cryptography_-_step_2.svg.png]]
+* The encryption debate
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The very latest encryption algorithms are very hard to break.
+- For instance, there is a type of cryptographic algorithm called /AES/. Let's have a look at how hard /AES/ would be to crack.
+- If you assume:
+  1. Every person on the planet owns 10 computers.
+  2. There are 7 billion people on the planet.
+  3. Each of these computers can test 1 billion key combinations per second.
+  4. On average, you can crack the key after testing 50% of the possibilities.
+- Then the earth's population can crack one encryption key in 77,000,000,000,000,000,000,000,000 years!
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- What this means, is that it is very easy for people to communicate with each other, using encrypted messages that are basically impossible for anyone else to read (so long as you use strong passwords).
+- Who might want to communicate using such strong encryption?
+  1. Members of the armed forces wishing to make sure the enemy can't read their messages.
+  2. Journalists wishing to communicate with their sources in secret.
+  3. Whistle blowers wishing to leak sensitive information about illegal activities or corruption.
+  4. People living in countries with oppressive governments or rulers, known for abusing civil and human rights.
+  5. Criminals wishing to hide their activities from law enforcement agencies.
+  6. Terrorists wishing to hide their activities from security agencies.
+  7. People who are worried they might become a victim of cyber crime, if certain communications are read.
+- There are many applications, that are freely available,that allow for ordinary people to communicate using strong encryption.
+- Here are three examples with links to their Wikipedia page:
+  1. [[http://en.wikipedia.org/wiki/Cryptocat][Cryptocat]]
+  2. [[http://en.wikipedia.org/wiki/Silent_Circle_%28software%29][Silent Circle]]
+  3. [[http://en.wikipedia.org/wiki/TextSecure][TextSecure]]
+- And here is a score card produced by [[https://www.eff.org/][The EFF]] rating the featured messaging apps, with regards to privacy.
+[[file:img/scorecard.png]]
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Look at the [[https://www.eff.org/secure-messaging-scorecard][original EFF score card]] by clicking on the link.
+- List all the apps that you use.
+- Next to each app, write down the number of ticks that each app gets.
+- Count up all the ticks, and divide by the number of apps you use.
+- What is the average privacy score for the apps you use?
+- Write a brief paragraph evaluating how private you think your messages are.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- David Cameron uses a Blackberry phone.
+[[file:img/cameron.jpeg]]
+- On the 12th of January, 2015, in the wake of the attack on the offices of [[http://en.wikipedia.org/wiki/Charlie_Hebdo][Charlie Hebdo]] in Paris, the British Prime Minister, David Cameron, said the following.
+#+BEGIN_QUOTE
+Are we going to allow a means of communications which it simply isn’t possible to read?
+My answer to that question is: No, we must not.
+#+END_QUOTE
+1. Write a brief description of what you think he means by 'allow a means of communications which it simply isn't possible to read'
+2. Do you agree with David Cameron, that it should be possible for the security services to read all communications, if they have a legal warrant to do so?
+3. Write a couple of paragraphs detailing why you agree or disagree with Cameron's statement.
+

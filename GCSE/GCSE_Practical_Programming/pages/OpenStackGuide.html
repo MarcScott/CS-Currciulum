@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Emacs Cheat Sheat</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Emacs Cheat Sheat</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Using OpenStack</a>
+<ul>
+<li><a href="#sec-1-1">Step 1 - Create and Instance</a></li>
+<li><a href="#sec-1-2">Step 2 - Setup using the Cloud-Console</a></li>
+<li><a href="#sec-1-3">Step 2 - Settin up your account</a></li>
+<li><a href="#sec-1-4">Step 2 - Setting up your software</a></li>
+<li><a href="#sec-1-5">Step 2 - Mounting Windows folders</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Using OpenStack</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 try">
+<h3 id="sec-1-1">Step 1 - Create and Instance</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Go to <a href="http://cloud.bourne-grammar.lincs.sch.uk/horizon/">http://cloud.bourne-grammar.lincs.sch.uk/horizon/</a>
+</li>
+<li>Log in using your school credentials.
+</li>
+<li>On the left hand side of the screen you should see a menu where you can access your instances.
+<img src="img/instance.png" alt="instance.png" />
+</li>
+<li>Click on the button to launch a new instance
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/launch.png" alt="launch.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Use the form to setup your instance settings. Give your instance a sensible name of your own though.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/instanceSettings.png" alt="instanceSettings.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Click on the Post-Creation tab
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/createScript.png" alt="createScript.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Copy and paste the following code into Customization-Script box.
+</li>
+</ul>
+<pre class="example">
+#cloud-config
+password: mysecret
+chpasswd: { expire: False }
+ssh_pwauth: True
+</pre>
+<ul class="org-ul">
+<li>Then click the Launch button
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Step 2 - Setup using the Cloud-Console</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<ul class="org-ul">
+<li>After a minute or two your instance will be ready to use
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/creating.png" alt="creating.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Click on the blue hyperlink to view your instance.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/details.png" alt="details.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>From here you can access your instance via the terminal.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/terminal.png" alt="terminal.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>If you can't seem to type in the terminal, click on the grey area of the screen.
+</li>
+<li>Your username will be <code>ubuntu</code> and your password will be <code>mysecret</code>
+</li>
+</ul>
+<p>
+<img src="img/login.png" alt="login.png" />
+<img src="img/loggedin.png" alt="loggedin.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 try">
+<h3 id="sec-1-3">Step 2 - Settin up your account</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<ul class="org-ul">
+<li>You probably don't want the username <code>ubuntu</code> so let's add a new user account.
+</li>
+<li>Replace newUser with the username you want to use
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo adduser newUser
+</pre>
+</div>
+<ul class="org-ul">
+<li>You'll be prompted to give the user a UNIX password and enter some information.
+</li>
+<li>Next you'll want the new user to have sudo privaledges
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo adduser newUser sudo
+</pre>
+</div>
+<ul class="org-ul">
+<li>We can now switch to that user
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">exit
+</pre>
+</div>
+<ul class="org-ul">
+<li>Let's delete the old user now, to lock down our instance a little.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo userdel -r ubuntu
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 try">
+<h3 id="sec-1-4">Step 2 - Setting up your software</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+<ul class="org-ul">
+<li>First update and upgrade your instance
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo apt-get update
+sudo apt-get upgrade
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now we'll need a few packages. Emacs for writing text, cifs-utils for mounting windows drives and git for version control.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo apt-get install emacs24 cifs-utils git
+</pre>
+</div>
+<ul class="org-ul">
+<li>This one might take some time.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 try">
+<h3 id="sec-1-5">Step 2 - Mounting Windows folders</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+<ul class="org-ul">
+<li>You'll want to mount your Windows Home Folder securely.
+</li>
+<li>First we'll need to create a mount point
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo mkdir /media/windows
+</pre>
+</div>
+<ul class="org-ul">
+<li>First let's create a file to save your username and password.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">emacs ~/.smbcredentials
+</pre>
+</div>
+<ul class="org-ul">
+<li>This file will need two lines where myUserName and myPassword are your passwords to the <b>Windows Network</b>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">username=myUserName
+password=myPassword
+</pre>
+</div>
+<ul class="org-ul">
+<li>Save the file (<code>C-x C-s</code>) and quit Emacs (<code>C-x X-c</code>)
+</li>
+<li>Next we'll need to change the permissions on the file we've just created, so only you can see it.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">chmod 600 ~/.smbcredentials
+</pre>
+</div>
+<ul class="org-ul">
+<li>And next we'll need to edit a file called /etc/fstab so it knows where the <b>Windows Share</b> is
+</li>
+<li>Open it in emacs
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo emacs /etc/fstab
+</pre>
+</div>
+<ul class="org-ul">
+<li>Add this line to the bottom of the file
+</li>
+<li>Note the difference between your Linux and Windows username. Also note that you need a $ at the end of your Windows username.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">//brgras005/WindowsUserName$ /media/windows cifs credentials=/home/LinuxUserName/.smbcredentials,iocharset=utf8,sec=ntlm 0 0
+</pre>
+</div>
+<ul class="org-ul">
+<li>Let's make a symlink to the /media/window folder
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">ln -s /media/windows ~/windows
+</pre>
+</div>
+<ul class="org-ul">
+<li>And now mount the drive
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo mount -a
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

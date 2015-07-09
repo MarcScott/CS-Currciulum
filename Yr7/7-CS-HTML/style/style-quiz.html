@@ -1,0 +1,130 @@
+<html>
+<head>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script type = "text/javascript">
+
+
+var allQuestions = [{
+    question: "Which one of the following about box model is false?",
+    choices: ["Every HTML element can be treated as a box.", "You must put everything in a defined box.", "The margin of a box is a transparent area around the border of the box."],
+    correctAnswer: 1
+}, {
+    question: "To define a box in a HTML file, which tag is used?",
+    choices: ["&lt;id&gt;and &lt;/id&gt;", "&lt;dev&gt;and &lt;/dev&gt;", "&lt;div&gt;and &lt;/div&gt;"],
+    correctAnswer: 2
+}, {
+    question: "The attribute <strong><em>id</em></strong> is used to...",
+    choices: ["give a name to a box", "give the box its style", "link the box to its location"],
+    correctAnswer: 0
+}, {
+    question: "If we want to put two boxes side by side in a bigbox, we need to use which styling attribute for the two boxes? ",
+    choices: ["name them leftbox and rightbox", "<strong><em>float: leftbox; </strong></em>for one and <strong><em>float: rightbox;</strong></em> for the other", "<strong><em>float: left; </em></strong>for one and <strong><em>float: right;</em></strong> for the other"],
+    correctAnswer: 2
+}, {
+    question: 'Take look at the following code, which correctly define a box?',
+    choices: ['&lt;div&gt; id="contentarea"&gt;&lt;/div&gt;', '&lt;div id="contentarea"&gt;&lt;/div&gt;', '&lt;div&gt;&lt;id="contentarea"&gt;&lt;/div&gt;'],
+    correctAnswer: 1
+}, {
+    question: 'Sam uses the following code to add style attributes to a box he defined as "bigbox". What is wrong with his code?<br><span class="code"><p class="steptext">bigbox {<br>background-colour: red;<br>width: 600px;<br>height: 700px;<br>}</p></span>',
+    choices: ['He should put background-colour as the last line.', 'He missed the hash tag and the colour should be color.', 'He should use semi-colon at th end of the bigbox.'],
+    correctAnswer: 1
+}];
+
+//
+
+var questionCount = 0;
+var score = 0;
+
+// Set header and answer choices dynamically
+
+
+function setHeader(questionNum) {
+    var questionHeaderEl = document.getElementById("questionHeader");
+    questionHeaderEl.innerHTML = questionNum+1 + "." + allQuestions[questionNum].question + '<br>';
+}
+
+function setAnswer(idEl, questionNum, choiceNum) {
+    var choiceEl = document.getElementById(idEl);
+    choiceEl.innerHTML = '<span class="callouttext">' + allQuestions[questionNum].choices[choiceNum] + '</span>';
+}
+
+function showQuestion() {
+    setHeader(questionCount);
+    setAnswer("answ1", questionCount, 0);
+    setAnswer("answ2", questionCount, 1);
+    setAnswer("answ3", questionCount, 2);
+}
+
+function updateScore() {
+    var rightAnswer = allQuestions[questionCount].correctAnswer;
+    var chosenAnswer = document.getElementById("choice" + (rightAnswer + 1));
+    if (chosenAnswer.checked) {
+        score++;
+    }
+}
+
+function showScore() {
+    if (questionCount >= allQuestions.length) {
+        document.body.innerHTML = '<html><head><link rel="stylesheet" href="../CSS/style.css" type="text/css"><title>Learn to Create Web pages - BGS KS3 Computing</title><author>Mrs.Ellis</author></head><body><div id="container"><div id="h3bar"><h1>Learn to create your own webpages</h1></div><div id="topnav"><ul id="navbar"><li><a href="../index.html">HTML Basics</a></li><li><a href="../nav/navigation.html">Navigation Among Pages</a></li><li><a class="z" href="style.html">Layout and Style</a></li><li><a href="../elements/elem.html">Images and More</a></li><li><a href="../advstyle/style14.html">Advanced Layout</a></li></ul></div><div id="left"><a class="nav" href="style-quiz.html"><< Restart Quiz</a></div><div id="clear"></div><div id="contentarea"><p class="callouttext">' + " Your score is " + score + " out of " + questionCount + '</p><p><a class="nav" href="style-quiz.html">Retake</a></p><p><a class="nav" href="../split.html">I am ready! Take me to the next section. </a><p></div></div></body></html>';
+    }
+}
+
+function nextQuestion() {
+    updateScore();
+    questionCount++;
+    showScore();
+    showQuestion();
+}
+
+// add event listener
+
+var nextButton = document.getElementById("next");
+nextButton.addEventListener("click", nextQuestion, false);
+
+// play!
+//showQuestion();
+</script>
+
+</head>
+<body onload="showQuestion()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a class="z" href="style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="style-quiz.html"><< Restart Quiz</a> 
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+<h3 id="questionHeader"></h3>
+
+<input type="radio" name="choice" value="0" id="choice1" class="insteptext">
+<label id="answ1"></label>
+<br>
+<input type="radio" name="choice" value="1" id="choice2" class="insteptext">
+<label id="answ2"></label>
+<br>
+<input type="radio" name="choice" value="2" id="choice3" class="insteptext">
+<label id="answ3"></label>
+<br><br><br>
+<button id="next" onclick="nextQuestion()">Next Question</button>
+
+</div>
+</div>
+</body>
+</html>

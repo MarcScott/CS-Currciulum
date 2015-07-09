@@ -1,0 +1,212 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+BEGIN_COMMENT
+#+STYLE: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+END_COMMENT
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Getting to know you
+#+AUTHOR: Stephen Brown
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/stsb11/turtle">Fork me on GitHub</a>
+</div>
+<center>
+<img src='img/turtle.jpg' width=33%>
+</center>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+e* Introduction
+[[file:img/pic.jpg]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: intro
+:END:
+** What are PIC chips?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+Peripheral Interface Controllers are small silicon chips which can be programmed to perform useful tasks.
+In school, we tend to use Genie branded chips, like the C08 model you will use in this project. Others (e.g. PICAXE) are available.
+PIC chips allow you connect different inputs (e.g. switches) and outputs (e.g. LEDs, motors and speakers), and to control them using flowcharts.
+Chips such as these can be found everywhere in consumer electronic products, from toasters to cars. 
+
+While they might not look like much, there is more computational power in a single PIC chip used in school than there was in the space shuttle that went to the moon in the 60's!
+** When would I use a PIC chip?
+Imagine you wanted to make a flashing bike light; using an LED and a switch alone, you'd need to manually push and release the button to get the flashing effect. A PIC chip could be programmed to turn the LED off and on once a second.
+In a board game, you might want to have an electronic dice to roll numbers from 1 to 6 for you. 
+In a car, a circuit is needed to ensure that the airbags only deploy when there is a sudden change in speed, AND the passenger is wearing their seatbelt, AND the front or rear bumper has been struck. PIC chips can carry out their instructions very quickly, performing around 1000 instructions per second - as such, they can react far more quickly than a person can. 
+* Introduction
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Python Turtle
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Python is a highly popular programming language, used by many large organisations.
+- Facebook, NASA, IBM, Google and Yahoo among others all use it extensively. 
+- It is considered by many to be one of the easiest languages to pick up.
+
+** Let's get started
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Load up the Python Development, called **IDLE**. 
+- You'll be presented with the Python Shell window, which looks like this...
+[[./img/shell.png]]
+- With the mouse in the shell window, type the following at the >>> Prompt.
+- Hit enter after each line.
+- (**Note:** Make sure you write Screen with a capital letter!
+
+#+BEGIN_EXAMPLE
+import turtle
+wn=turtle.Screen()
+wn.bgcolor("lightgreen")
+wn.title("Turtle Power")
+#+END_EXAMPLE
+- A graphics window (currently empty) will appear that we can draw into.
+- We've called our screen object, "wn". Every time we want Python to control somthing to do with this window, we'll need to put wn. in front of the command.
+- We also changed the background colour, and put a title on the window.
+- Let's add a "turtle" to the screen. We can move this arounnd the screen to draw shapes and patterns. We'll call our turtle, "Tess". 
+#+BEGIN_EXAMPLE
+tess=turtle.Turtle()
+tess.color("hotpink")
+tess.pensize(5)
+tess.shape("turtle")
+#+END_EXAMPLE
+
+- When we created a tess object, we then went on to set some of her properties - colour, thickness of the lines she'll draw and how she appears on the screen.
+- Incidentally, a full colour list can be found [[http://www.tcl.tk/man/tcl8.4/TkCmd/colors.htm][here]].
+- We could add other turtle objects too, if we wanted, and have several drawing shapes on the screen. We might have a look at that later on.
+- Next, lets start to draw. Type...
+#+BEGIN_EXAMPLE
+tess.forward(100)
+tess.left(90)
+tess.forward(100)
+tess.left(90)
+tess.forward(100)
+tess.left(90)
+tess.forward(100)
+tess.left(90)
+#+END_EXAMPLE
+
+- Your turtle should have traced a square shape for you.
+* A note on colours
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- Although we can use colour names, we have much more control if we use numbers to describe the colours we want.
+- Computers mix Red, Green and Blue to form a colour.
+- Each of the three colours can have values from 0 up to 255.
+- So white is 255,255,255 and black is 0,0,0.
+- If we wanted pink, we'd mix red and blue together - 255,0,255 for instance.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+- First we need to set the colour mode for the program
+#+BEGIN_SRC python
+wn.colormode(255)
+#+END_SRC
+- Now we can set colors using RGB values.
+#+BEGIN_SRC python
+tess.color(255,0,255)
+#+END_SRC
+- If you want to use different colours, have a play with the widgit below to see what they'd look like.
+#+BEGIN_HTML
+<object data="emb/rgb-slider.html" width="200px" height="250px"></object>
+#+END_HTML
+* Your turn
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Try it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- **Tip:** You can move the turtle back to the centre, and clear the screen at any time by using the commands...
+#+BEGIN_EXAMPLE
+tess.home()
+tess.clear()
+#+END_EXAMPLE
+
+- Draw a red triangle,
+- Draw a pentagon, where each side is a different colour,
+- Create **second turtle** on the screen, and call it **tom**. Have this draw a black square, and the other turtle draw a green square, so that they look like this...
+[[./img/squares.png]]
+
+- Next, we'll look at ways of creating shapes more efficiently.
+
+[[./index.html][Back to homepage]]

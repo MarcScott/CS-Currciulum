@@ -1,0 +1,89 @@
+<html>
+<head>
+	<script src="jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("img").toggle();
+  });
+});
+
+function hideImage() {
+     $("img").hide();
+}
+</script>
+</head>
+<body>
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a class="z" href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="style4.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style6.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Layout and Style</p>
+	<ol>
+	<span class="bigtext">
+
+<li class="step" value="3">
+Create the layout using box model- style the top box.
+</li>
+<p>We have our top box defined in the <strong><em>index.html</em></strong> file.  But if you open the <strong><em>index.html</em></strong> file with a browser, it will not show up.  The reason is we have not defined the size and colour of the box yet. </p><p>To do this, we need another new tag &lt;style&gt; plus some attributes to tell browsers the size and colour of our topbox.  Since &lt;style&gt; is not the actual content on the page's body, we need to add this style information within the &lt;head&gt; tags like so:</p>
+
+<table border=1 width=700>
+<tr><td>
+<span class="code">&lt;html&gt;<br>&lt;head&gt;<br>
+&lt;title&gt;My Dog Jack&lt;/title&gt;<br>
+
+&lt;style&gt; <br>
+#topbox { <br>
+width: 800px;    to define the top box as 800 pixels wide.<br>
+height: 100px;   to define the top box as 100 pixels high.<br>
+background-color: blue;   to define the top box with blue solid colour fill.<br>
+}<br>
+&lt;/style&gt; <br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&lt;div id="topbox"&gt;<br>&lt;/div&gt;<br>
+	&lt;p&gt;My dog Jack is a minature schnauzer. He is 8 months old.&lt;/p&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</span>
+</td></tr>
+</table>
+
+	
+<div id="left">
+<a class="nav" href="style4.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style6.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+
+
+</html>

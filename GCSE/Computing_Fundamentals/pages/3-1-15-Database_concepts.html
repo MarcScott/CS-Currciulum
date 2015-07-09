@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.1.15 Database concepts</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.1.15 Database concepts</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. What is a Database</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Learn It</a></li>
+<li><a href="#sec-1-3">Document It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Flat File and Relational Databases</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+<li><a href="#sec-2-2">Research It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+
+<div class="figure">
+<p><img src="img/Chuck.jpg" alt="Chuck.jpg" />
+</p>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> What is a Database</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<ul class="org-ul">
+<li>A database is a method of storing data.
+</li>
+<li>The advantage of a database over another data structure (such as a csv text file) is that the data is quick and easy to sort and search.
+</li>
+<li>There are many different types of database software that each have their own advantages and disadvantages.
+</li>
+<li>Databases store data in tables.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Let's take some simple data and see how it would be organised in a database table.
+</li>
+</ul>
+<p>
+The Way of the Dragon, Colt
+Lone Wolf McQuade, Ranger J.J. McQuade
+The Delta Force, Major Scott McCoy
+The Expendables 2, Booker
+</p>
+<ul class="org-ul">
+<li>First we'll put it in a <code>Table</code> - <i>A two dimensional structure used to store data</i>
+</li>
+<li>Each 'cell' in the database table is called a <code>Field</code>
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="center" />
+
+<col  class="center" />
+</colgroup>
+<tbody>
+<tr>
+<td class="center">The Way of the Dragon</td>
+<td class="center">Colt</td>
+</tr>
+
+<tr>
+<td class="center">Lone Wolf McQuade</td>
+<td class="center">Ranger J.J. McQuade</td>
+</tr>
+
+<tr>
+<td class="center">The Delta Force</td>
+<td class="center">Major Scott McCoy</td>
+</tr>
+
+<tr>
+<td class="center">The Expendables 2</td>
+<td class="center">Booker</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Although <a href="http://dba.stackexchange.com/questions/31805/what-is-the-difference-between-a-record-and-a-row-in-sql-server">there is some debate</a> on the issue, each row of the table tends to be called a <code>Record</code>
+</li>
+<li>The table needs a name, so we'll call this one CN-FILMOGRAPHY
+</li>
+<li>Each <code>Column</code> of the table needs a title.
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="center" />
+
+<col  class="center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="center">Film</th>
+<th scope="col" class="center">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="center">The Way of the Dragon</td>
+<td class="center">Colt</td>
+</tr>
+
+<tr>
+<td class="center">Lone Wolf McQuade</td>
+<td class="center">Ranger J.J. McQuade</td>
+</tr>
+
+<tr>
+<td class="center">The Delta Force</td>
+<td class="center">Major Scott McCoy</td>
+</tr>
+
+<tr>
+<td class="center">The Expendables 2</td>
+<td class="center">Booker</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>To prevent replication of data, make searching easier and to build relationships between tables, each <code>record</code> in our table needs a unique identifier. This is called a <code>Primary Key</code>.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="center">Film</th>
+<th scope="col" class="center">Role</th>
+<th scope="col" class="center">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="center">The Way of the Dragon</td>
+<td class="center">Colt</td>
+<td class="center">CN-001</td>
+</tr>
+
+<tr>
+<td class="center">Lone Wolf McQuade</td>
+<td class="center">Ranger J.J. McQuade</td>
+<td class="center">CN-002</td>
+</tr>
+
+<tr>
+<td class="center">The Delta Force</td>
+<td class="center">Major Scott McCoy</td>
+<td class="center">CN-003</td>
+</tr>
+
+<tr>
+<td class="center">The Expendables 2</td>
+<td class="center">Booker</td>
+<td class="center">CN-004</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>A <code>Primary Key</code> <span class="underline">must</span> be unique for each <code>record</code>. No two records can share a <code>Primary Key</code>.
+</li>
+<li>Normally we'd get the software to generate the <code>primary key</code> for us. We could have used the <i>Film</i> as the <code>primary key</code> but it's possible for . <a href="http://www.andsoitbeginsfilms.com/2013/07/top-15-movies-with-same-title.html">two different films to have the same title</a>. It's certainly possible for Chuck Norris to have made more than one film in a year, and he's played the same role in numerous films as well. So the <code>primary key</code> is better off being assigned by software to ensure it is unique.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 document">
+<h3 id="sec-1-3">Document It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>For your notes - write down definitions for the following terms
+<ol class="org-ol">
+<li>Table
+</li>
+<li>Field
+</li>
+<li>Record
+</li>
+<li>Primary key
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Flat File and Relational Databases</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>We can keep adding data into our table and it would end up being quite large
+</li>
+<li>This is called a <code>Flat File Database</code>
+</li>
+<li>Suppose we want more information though. Suppose we want to store data about other aspects of Chuck Norris' films.
+</li>
+<li>Let's create a new table called FILMS
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="center">Film</th>
+<th scope="col" class="center">Director</th>
+<th scope="col" class="center">Year</th>
+<th scope="col" class="center">Rotten-Tomatoes-Score</th>
+<th scope="col" class="center">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="center">The Way of the Dragon</td>
+<td class="center">Bruce Lee</td>
+<td class="center">1972</td>
+<td class="center">100</td>
+<td class="center">FM-001</td>
+</tr>
+
+<tr>
+<td class="center">Lone Wolf McQuade</td>
+<td class="center">Steve Carver</td>
+<td class="center">1983</td>
+<td class="center">67</td>
+<td class="center">FM-002</td>
+</tr>
+
+<tr>
+<td class="center">The Delta Force</td>
+<td class="center">Menahem Golan</td>
+<td class="center">1986</td>
+<td class="center">20</td>
+<td class="center">FM-003</td>
+</tr>
+
+<tr>
+<td class="center">The Expendables 2</td>
+<td class="center">Simon West</td>
+<td class="center">2012</td>
+<td class="center">65</td>
+<td class="center">FM-004</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>This table has a primary key as well.
+</li>
+<li>Now that we have our two table, we might want to <code>Query</code> the data. A <code>query</code> is basically a question that you ask, getting data from the table back as an answer.
+</li>
+<li>You might want to know "In which year did Chuck Norris play the character Colt?" for instance.
+</li>
+<li>To answer this question, the tables need to be linked. The simplest way to do this is by using the <code>Primary Key</code> from the FILMS table as a <code>Foreign Key</code> in the CN-FILMOGRAPHY table.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="center" />
+
+<col  class="center" />
+
+<col  class="center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="center">Film</th>
+<th scope="col" class="center">Role</th>
+<th scope="col" class="center">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="center">FM-001</td>
+<td class="center">Colt</td>
+<td class="center">CN-001</td>
+</tr>
+
+<tr>
+<td class="center">FM-002</td>
+<td class="center">Ranger J.J. McQuade</td>
+<td class="center">CN-002</td>
+</tr>
+
+<tr>
+<td class="center">FM-004</td>
+<td class="center">Major Scott McCoy</td>
+<td class="center">CN-003</td>
+</tr>
+
+<tr>
+<td class="center">FM-003</td>
+<td class="center">Booker</td>
+<td class="center">CN-004</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>Now when we want to ask "In which year did Chuck Norris play the character Colt?", our database software can look up Colt from the CN-FILMOGRAPHY table in the <code>column</code> Role, find the Film <code>foreign key</code> in the <code>column</code> film and then use this to find the Year from the FILMS <code>table</code>.
+</li>
+<li>We now have a <code>Relational Database</code> as the two tables are linked.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3 research">
+<h3 id="sec-2-2">Research It</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<ul class="org-ul">
+<li>You're going to need to know about <code>indexing</code> in databases.
+</li>
+<li>Use online resources to look up what a Database <code>index</code> is and make notes.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

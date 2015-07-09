@@ -1,0 +1,81 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Data Representation Questions
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* Past Papers
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** OCR Past Papers filtered for AQA spec
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Kindly created by Nicola Mounsey and available on the CAS website [[http://community.computingatschool.org.uk/resources/2244][here]]
+- [[file:doc/papers2014.pdf][Download the PDF Here]]
+* Data Representation, exam style questions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Binary to Denary Conversions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+1. State the denary representation of the binary number =10100101= (1)
+2. State the denary representation of the binary number =00101111= (1)
+3. State the denary representation of the binary number =11100011= (1)
+4. State the denary representation of the binary number =11110001= (1)
+5. State the denary representation of the binary number =10101101= (1)
+** Denary to Binary Conversions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+1. State the binary representation of the denary number =42= (1)
+2. State the binary representation of the denary number =97= (1)
+3. State the binary representation of the denary number =128= (1)
+4. State the binary representation of the denary number =200= (1)
+5. State the binary representation of the denary number =247= (1)
+** Hexadecimal to Denary Conversions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+1. State the denary representation of the hexadecimal number =42= (2)
+2. State the denary representation of the hexadecimal number =A9= (2)
+3. State the denary representation of the hexadecimal number =8F= (2)
+4. State the denary representation of the hexadecimal number =AF= (2)
+5. State the denary representation of the hexadecimal number =CC= (2)
+** Denary to Hexadecimal Conversions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+1. State the hex representation of the denary number =42= (2)
+2. State the hex representation of the denary number =97= (2)
+3. State the hex representation of the denary number =122= (2)
+4. State the hex representation of the denary number =201= (2)
+5. State the hex representation of the denary number =248= (2)
+** Binary and character encoding
+1. Give one reason why we use binary to represent data in computers (1)
+2. Give one reason why programmers often use hexadecimal, instead of binary, to represent numbers. (1)
+3. The UTF-8 character encoding scheme can use up to 6 bytes to encode each character. How many bits is this? (1)
+4. What is the total number of characters that could be encoded under the UTF-8 standard? (1)
+5. Give one advantage and one disadvantage the UTF-8 character encoding scheme has over the ASCII character encoding scheme. (2)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+** Sound and image representation
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+1. Describe how a 1 minute analogue recording of a musician playing an instrument, could be represented in binary. (3)
+2. Describe how a full colour document could be represented in binary when it is scanned. (3)
+3. What is meant by the term compression? (1)
+4. What is the difference between lossy and lossless compression? (2)
+5. Give one advantage and one disadvantage of lossy compression formats. (2)

@@ -1,0 +1,41 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Git Cheat Sheet
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* Git
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/git_commit.png]]
+** The basics
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Cloning an online git repository
+#+BEGIN_SRC
+git clone https://the.url.of.the.repository.git
+#+END_SRC
+- Adding files
+#+BEGIN_SRC
+git add --all
+#+END_SRC
+- Stashing a commit
+#+BEGIN_SRC
+git commit -m 'A sensible message indicating what you have changed'
+#+END_SRC
+- Push your master branch to it's origin (usually GitHub)
+#+BEGIN_SRC
+git push origin master
+#+END_SRC
+- Pull down changes from your repo's origin (if made from another machine for instance)
+#+BEGIN_SRC
+git pull
+#+END_SRC

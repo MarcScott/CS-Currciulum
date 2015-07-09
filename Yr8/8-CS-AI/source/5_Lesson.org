@@ -1,0 +1,187 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Artificial Intelligence
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-AI">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* The Ethics of AI
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Isac Asimov was a prolific writer of science fiction stories.
+[[http://upload.wikimedia.org/wikipedia/en/8/8e/I_Robot_-_Runaround.jpg]]
+- One of the themes that frequently occurred in his novels and short stories was the interaction between humans and robots.
+- One of the central plot devices used in many of his stories were /The Three Laws of Robotics/ which are:
+  1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.
+  2. A robot must obey the orders given it by human beings, except where such orders would conflict with the First Law.
+  3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Use this [[http://en.wikipedia.org/wiki/Trolley_problem][Wikipedia article]] to learn about an ethical dilemma called /The Trolley Problem/.
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Google, Tesla and many other car manufacturers are currently working on self-driving cars.
+- These cars will be controlled by AI programs.
+- Now image this situation.
+#+begin_quote
+You car is driving at a moderate speed down a road. It turns a corner and there are five pedestrians standing in the road. Even if the car were to apply it's brakes, it would still hit them, so the only way to avoid killing the pedestrians is to mount the pavement. Unfortunately there is a single pedestrian standing on the pavement, who will be killed if the car chooses to swerve.
+#+end_quote
+- Should the car continue in a straight line and kill 5 people, or should it make a decision to intentionally kill a single individual?
+- Write down what you think the car should do and why?
+- If it was later discovered that the car should have been driving more slowly, who is to blame? Is it the fault of the owner of the car, the manufacturer of the car, the programmer of the car, or the program?
+- Should computers be programmed to always serve /humanity/ and therefore choose options that lead to the /greatest good/?
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Have a [[http://topekasnews.com/asimo-robot-kills-two-scientists-japan-escapes-laboratory/][read of this article]].
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- It is, of course, a fake news article, but could articles such as this be common place one day?
+- Consider the following facts:
+  - The first actual recorded death attributed to a robot occurred in 1979, although the robot in question was not Artificially Intelligent.
+[[file:img/sgr-a1.gif]]
+  - Sentry guns like this one (deployed along the border of the Korean demilitarised zone) are capable of autonomously killing humans.
+[[file:img/predator-firing-missile4.jpg]]
+  - Drones like this one are remotely controlled by human pilots, and are currently in heavy use in Iraq, Pakistan and Yemen. They could easily be controlled by an AI.
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+- Discuss in pairs, what you think about the ethics of allowing computers to take a human life.
+- Should we be deploying more autonomous killer robots in the battlefield so that our soldiers are not put in harm's way?
+- Should the option to take a human life only ever be decided by another human?
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- In thirty years time, military robots capable of autonomously killing humans could be common.
+- Imagine you are the Prime Minister of the day.
+- Would you order the army to purchase such robots, in the interests of defencing the country, or do you think that taking a human life is a decision that only another human should make.
+- Justify your opinion as well as you can.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Prior to 1835, there was no law in the United Kingdom that prevented cruelty to animals.
+- In the 1500s you would have been laughed at if you were to suggest that animals had rights and shouldn't be treated cruelly.
+- Sports such as Cock Fighting, Bare Bating or [[http://en.wikipedia.org/wiki/Fox_tossing][Fox tossing]] have been common throughout European history and it is only relatively recently that we have decided that an animal's welfare needs to be protected by law.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Ethicists are today thinking about /Robot Rights/ in much the same way as people once thought about animal rights.
+- As AI become more and more sophisticated, and able to imitate humans with greater and greater degrees of accuracy, do we have to start thinking about robot rights?
+#+begin_html
+ <video width="480" height="270" controls>
+  <source src="img/kara.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
+#+end_html
+- Have a read of this short story about[[https://sites.google.com/site/asenselessconversation/][ /The Turing Test/.]]
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Does a truly intelligent AI (as demonstrated in the works of fiction above) have rights?
+- [[http://en.wikipedia.org/wiki/European_Convention_on_Human_Rights][The European Convention on Human Rights]], lays down several articles, detailing the rights of all people.
+- For each of the Articles listed below, state whether you think that in the future, these rights should be extended to intelligent AIs
+- Articles - 2, 3, 4, 5, 6, 9, 14

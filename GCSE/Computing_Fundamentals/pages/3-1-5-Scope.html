@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.1.5 Scope</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.1.5 Scope</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. The Scope of variables, constants, functions and procedures</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Learn It - Block Scope</a></li>
+<li><a href="#sec-1-3">Learn It - Function/Procedure scope</a></li>
+<li><a href="#sec-1-4">Learn It - Module Scope</a></li>
+<li><a href="#sec-1-5">Learn It - Global Scope</a></li>
+<li><a href="#sec-1-6">Document It</a></li>
+<li><a href="#sec-1-7">Try It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> The Scope of variables, constants, functions and procedures</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>The scope of a variable is the range of code that it applies to.
+</li>
+<li>You can think of scope as applying to the visibility of a variable.
+</li>
+<li>A variable is in scope if it can be <i>seen</i> by a particular line of code.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It - Block Scope</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>A variable with <i>block scope</i> is only valid within a particular block of code such as a for loop.
+</li>
+<li>Look at the example below.
+</li>
+</ul>
+<pre class="example">
+OUTPUT "Here are the even numbers up to 100"
+FOR i &lt;-- 1 TO 100
+IF i MOD 2 = 0
+OUTPUT i
+ENDIF
+ENDFOR
+OUTPUT "Finished"
+</pre>
+<ul class="org-ul">
+<li>The variable <code>i</code> has scope between lines 2 and 6.
+</li>
+<li>If a programmer was to try and use the variable before line 2 or after line 6, there would be a run-time error.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It - Function/Procedure scope</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>A variable with <i>function scope</i> is only valid within a particular function.
+</li>
+<li>Look at the example below.
+</li>
+</ul>
+<pre class="example">
+FUNCTION square(n)
+RETURN n * n
+ENDFUNCTION
+
+FUNCTION sumSquares(n)
+total &lt;- 0 
+i &lt;- 0
+WHILE i &lt;= n:
+total &lt;- total + square(i)
+i &lt;- i + 1
+ENDWHILE
+RETURN total
+ENDFUNCTION
+</pre>
+<ul class="org-ul">
+<li>Here we have two functions, both using a variable called n.
+</li>
+<li>Because the two variables both have function scope, they are completely unrelated.
+</li>
+<li>There is no risk of <i>name collision</i> when using the identifier <code>n</code> in either of the two functions.
+</li>
+<li>Similarly, the second function contains variable identifiers <code>i</code> and <code>total</code>. As these both have scope only within the <code>sumSquares</code> function, the identifiers can be used elsewhere in the program, with no risk of altering the expected return of the function.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It - Module Scope</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Variables have module scope if they can be accessed by any line in a file or once a module has been imported.
+</li>
+<li>This is tricky to show in Pseudocode, so we'll switch to Python 3.
+</li>
+<li>Image we have a file called <i>foo.py</i>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">bar</span> = <span style="color: #2aa198;">'Hello'</span>
+
+<span style="color: #859900;">def</span> <span style="color: #b58900;">outputModuleVar</span>:
+    <span style="color: #859900;">print</span>(bar)
+</pre>
+</div>
+<ul class="org-ul">
+<li>The variable <code>bar</code> can be viewed (but not necessarily altered) by any part of the the file <i>foo.py</i>
+</li>
+<li>We could also create a second file called <i>baz.py</i>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">import</span> foo
+<span style="color: #859900;">print</span>(foo.bar)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Because the variable <code>bar</code> has module scope, it can be accessed by any file that imports <i>foo.py</i>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 learn">
+<h3 id="sec-1-5">Learn It - Global Scope</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>A variable has <i>global scope</i> if it can be accessed from anywhere in a project.
+</li>
+<li>Variables with <i>global scope</i> are usually considered bad practice in most languages, due to the increased risk of name collisions.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 document">
+<h3 id="sec-1-6">Document It</h3>
+<div class="outline-text-3" id="text-1-6">
+
+<ul class="org-ul">
+<li>In your chosen programming language, write a script that uses block, function and module scope for it's variables.
+</li>
+<li>Take a screenshot of your code, and then annotate it in a graphics editor, identifying which variables have which scope.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 try">
+<h3 id="sec-1-7">Try It</h3>
+<div class="outline-text-3" id="text-1-7">
+
+<ul class="org-ul">
+<li>In pseudocode, write two small scripts, that use block, function and module scope.
+</li>
+<li>Give the code to a peer, and ask them to annotate and identify the scope of the variables.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

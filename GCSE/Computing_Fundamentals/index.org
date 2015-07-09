@@ -1,0 +1,89 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="pages/css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil 
+#+TITLE: AQA GCSE Computer Science
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* [[http://filestore.aqa.org.uk/subjects/AQA-GCSE-COMPSCI-W-SP.PDF][AQA GCSE CS Specification]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-5-Scope.html][3.1.5 Scope]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-8-3.html][3.1.8.3 The CPU]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-8-4.html][3.1.8.4 Memory]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-8-SecondaryStorage.html][3.1.8.4 Secondary Storage]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-9-Algorithms.html][3.1.9 Algorithms]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-9-Pseudocode_Algorithms.html][3.1.9 Pseudocode Algorithms]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-9-Algorithms-Practice.html][3.1.9 Pseudocode Algorithms Practice]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3.1.10-Hex.html][3.1.10 Hexadecimal]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-10-RepresentingImages.html][3-1-10 Images]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3.1.10-Sound.html][3.1.10 Sound]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-10-Questions.html][3.1.10 Questions]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-11-Software-development-life-cycle.html][3.1.11 The Software Development Life Cycle]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-11-1-Prototyping.html][3.1.11.1 Prototyping]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-12-Testing.html][3.1.12 Testing]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-13-Networking.html][3.1.13 Networking]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3-1-15-Database_concepts.html][3.1.15 Database concepts]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+
+* [[file:pages/3-1-15-SQL.html][3.1.15 SQL]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/Exam_Practice.html][Exam Practice]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:

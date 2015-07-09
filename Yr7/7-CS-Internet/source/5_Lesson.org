@@ -1,0 +1,206 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: Modeling a Network in Scratch
+#+AUTHOR: Marc Scott
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Getting started
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Go to the [[http://scratch.mit.edu][Scratch website]] and create a new project
+- Call the project "Virtual Network"
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We're going to need three sprites to start with.
+  - A computer
+  - A router
+  - A packet
+- Here's the ones I used but feel free to select,import or draw your own.
+[[file:img/Computer.png]]
+[[file:img/Router.png]]
+- We'll name the sprite for the computer with an IP address.
+- On most /home/ networks the IP address will fall into the range of 192.168.1.1 up to 192.168.1.254. We'll give our computer the first IP address, so call it =192.168.1.1=
+- We'll name the Router =router= and the Packet =packet=.
+- Here's a screen-shot of my sprites so far.
+[[file:img/Model_Net_1.png]]
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+- Next we'll need three variable, to represent the data the packet is going to contain.
+- Create a variable called source.
+- Create a variable called destination.
+- Create a variable called data
+[[file:img/Model_Net_2.png]]
+* Scripting the Computer
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Click on the Computer Sprite so that you can add scripts to it.
+- The Script we need is very simple.
+- When the sprite is clicked, the variable =source= needs to be set to the name of the sprite (in this case 192.168.1.1), and a message needs to be broadcast called =Create Packet=)
+#+BEGIN_EXAMPLE
+When this sprite clicked
+Set source to 192.168.1.1
+Broadcast Create Packet
+#+END_EXAMPLE
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- We'll need more than one Computer on our network.
+- Duplicate the computer a few times (5 should be enough computers, but you can have more or less if you like)
+- Rename each one so that it has a unique IP.
+- Alter the script of each one so that it set's the variable =source= to the IP of the computer.
+* Scripting the Packet
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The packet script is a little more complicated.
+- The first thing we want to happen, is for the packet to appear on the computer that has been clicked.
+[[file:img/Model_Net_3.png]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Next the packet needs to be provided with some information. The variable =source= already contains the sender's IP, but the packet needs to know where it is going and what data it should carry.
+[[file:img/Model_Net_4.png]]
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Now get the packet to ask for a message and save the user's input in the variable =data=
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- For the next part we'll need a loop.
+- We'll use a =Repeat until= loop to get the packet to move towards the router, until it touches it.
+[[file:img/Model_Net_5.png]]
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Once the packet has reached the router, it'll need to move off towards the computer that is currently stored in the variable =destination=
+- Try to use another =Repeat until= loop to do this.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Finally when the packet arrives at it's destination, it can say the message that is stored in =data= for a couple of seconds and then the script can stop.
+[[file:img/Model_Net_6.png]]
+
+* Checking it works
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run your script. It should operate like the video below.
+#+BEGIN_HTML
+<video controls>
+  <source src="img/Model_Net.m4v" type="video/mp4">
+  Your browser does not support the video file
+</video>
+#+END_HTML
+* Extension Activities
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Alter your network model so that it includes a DNS look-up.
+- The sending computer should ask for a name to send to the packet to.
+- The IP address should then be searched for from a couple of lists.
+- The packet can then be sent to the looked up IP address.
+

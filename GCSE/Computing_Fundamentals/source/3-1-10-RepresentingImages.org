@@ -1,0 +1,132 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.10 Representing Images
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+
+* Representing Images
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- When an image is displayed on a computer monitor, pixels (which are the smallest addressable point on a display) are illuminated in different colours.
+[[http://upload.wikimedia.org/wikipedia/commons/2/2b/Pixel-example.png]]  
+- In a standard bitmap image file (.bmp), each of these pixels is represented by three 8 bit binary numbers.
+- The first binary number represents the amount of red, the second the amount of green and the third the amount of blue.
+- So this colour =here= is:
+  - 1101 0101 Red (213)
+  - 1111 1111 Green (255)
+  - 1100 0000 Blue (192)
+- Strings of binary numbers are difficult to read however, so we use hex instead.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Convert each of the binary integers above into hexadecimal notation.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Bitmap images are made up of two parts.
+- The first part is the header. This contains information such as the size of the image and the type of file.
+- The second part is the image data itself.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Download this file to your computer -[[file:img/small.bmp][ small.bmp]]
+- View it in an image viewer. You'll need to zoom in as it's a very small image.
+- Now visit this site -[[http://hexed.it/][ online hex editor]]
+- Now Open the bitmap file in the site.
+- The first few hex codes are just the header file.
+- Look for the codes =04 00 04 00=. This is identifying the image as a 4 x 4 pixel file.
+- The long sting of =FF= codes is where each pixel colour is identified.
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+- Try and edit the hex to produce an alternate pattern of red, blue and green pixels.
+- Export the image and open it in your viewer.
+- What other patterns can you make?
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The bitmap image format is a simple one.
+- There is very little =metadata= in the file - that is data that isn't coding pixel colours.
+- Other image formats such as jpg, png, gif will contain far more meta data, such as dates, authors, even the type of camera that the image was taken with.
+- Bitmap images are also uncompressed. This means every pixel is individually coded.
+- In other image formats, compression means that groups of similar pixels can be encoded, which reduces the size of the image file.

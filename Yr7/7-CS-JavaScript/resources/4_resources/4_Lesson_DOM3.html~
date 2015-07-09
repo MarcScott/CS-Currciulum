@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inputs</title>
+    <script type="text/javascript">
+     function outputName()
+     {
+       var userName = document.getElementById('userNameIn');
+       userNameOut.innerHTML = "<h1>Hi there " + user + "</h1>"
+     }     
+    </script>
+  </head>
+  <body>
+    <input type="text" id="userNameIn"></input>
+    <div id = "userNameOut"></div>
+  </body>
+</html>

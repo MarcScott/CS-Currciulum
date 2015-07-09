@@ -1,0 +1,97 @@
+<html>
+<head>
+	<script src="jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("img").toggle();
+  });
+});
+
+function hideImage() {
+     $("img").hide();
+}
+</script>
+</head>
+<body>
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a class="z" href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="style6.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style8.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Layout and Style</p>
+	<ol>
+	<span class="bigtext">
+
+<li class="step" value="4">
+Create the layout using box model- add text to the box.
+</li>
+
+<p>We have now a blank box with solid colour.  Let's add some text to the box as the heading to our home page.  We are going to use a new tag, heading tag to do this. But, before we start, can you work out where we should place this heading text in the following lines? </p>
+<table border=1 width=700>
+<tr><td>
+<span class="code">Only partial code from index.html shown.<br>
+&lt;body&gt;<br>
+&lt;div id="topbox"&gt;<br>&lt;/div&gt;<br>
+	&lt;p&gt;My dog Jack is a minature schnauzer. He is 8 months old.&lt;/p&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</span>
+</td></tr>
+</table>
+
+<p>Since we want the heading to be inside the box, we need to put it in between the &lt;div&gt; tags.  There are six different heading tags you can use, from &lt;h1&gt;, &lt;h2&gt; to &lt;h6&gt;.  Each with different font size with &lt;h1&gt; the biggest and &lt;h6&gt; the smallest.</p>
+<p>You might have guessed correctly, we need to add the heading like so (I used h2 here):</p>
+<table border=1 width=700>
+<tr><td>
+<span class="code">Only partial code from index.html shown.<br>
+&lt;body&gt;<br>
+&lt;div id="topbox"&gt;<br>
+&lt;h2&gt;My Dog Jack&lt;/h2&gt;<br>
+&lt;/div&gt;<br>
+	&lt;p&gt;My dog Jack is a minature schnauzer. He is 8 months old.&lt;/p&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</span>
+</td></tr>
+</table>
+<p>After you added the heading to your index.html file, save your <strong><em>index.html</strong></em> file and open it with a browser or refresh your browser if you have it open already to see the effects.</p>.  You should see something similar to this:
+<p class="img"><img src="../images/topbox-page-2.png" width=718 height=360>
+
+
+<div id="left">
+<a class="nav" href="style6.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style8.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+
+
+</html>

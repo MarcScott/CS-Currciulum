@@ -1,0 +1,98 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a class="z" href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="style7.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style9.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Layout and Style</p>
+	<ol>
+	<span class="bigtext">
+
+<li class="step" value="5">
+Create the layout using box model- add style to the heading.
+</li>
+<p>Our topbox now contains the heading. The heading text has the default colour black. We need to change the text location and colour to make the topbox of our home page look nicer.</p>
+<p>To style the heading text, we need to add some <strong><em>style attributes</strong></em> to the heading tag. In this case the <em>h2</em> tag.</p>
+
+
+<p>To style the <em>h2</em> heading, the following lines of code need to be added: </p>
+<table border=1 width=700>
+<tr><td>
+<span class="code">
+h2 { <br>
+color: yellow;    <br>
+text-align: center;   <br>
+}<br>
+</span>
+</td></tr>
+</table>
+<strong>Notes:</strong><br>
+<ol>
+	<li>Two attributes used to define the style of <em>h2</em></li>
+	<li>The attribute <strong><em>color</em></strong> is spelled the American way.</li> 
+	<li><strong><em>color: yellow; </em></strong> is the syntax for defining the heading text color as yellow.</li>
+	<li><strong><em>text-align: center; </em></strong> is the syntax for defining where the heading text should be placed inside the topbox.</li>
+	<li>You can also use <strong><em>text-align: right; </em></strong> if you want the heading text to be placed on the righthand side part of the topbox.</li>
+</ol>
+<img src="../images/we_can_do_it.jpg" width=80 height=80>Add the above lines of code inside your <strong><em>index.html</em></strong> file. Try to work out where to add those lines independently first. Only if you are stuck, click this <button class="help">Button</button>.
+<p class="img"><img src="../images/topbox-style-3.png" width=400 height=300></p>
+<p>Save your <strong><em>index.html</strong></em> file and open it with a browser or refresh your browser if you have it open already to see the effects.</p> If you don't get the result right, here are some tips for debugging:
+<ul>
+<li>check there are no spelling mistakes for attribute names and attribute values.</li>
+<li>Check American spelling is used for the word color</li>
+<li>check no missing : , ; , or {,  or  }.</li>
+</ul>
+</p>
+<img src="../images/topbox-page-3.png" width=718 height=360>
+
+<div id="left">
+<a class="nav" href="style7.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style9.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+
+
+</html>

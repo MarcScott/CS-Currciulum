@@ -1,0 +1,19 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/scott/8-CS-TextGames/source/1_Lesson.org
+
+
+* Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:ARCHIVE_TIME: 2015-02-12 Thu 12:22
+:ARCHIVE_FILE: ~/8-CS-TextGames/source/1_Lesson.org
+:ARCHIVE_OLPATH: Why text games?
+:ARCHIVE_CATEGORY: 1_Lesson
+:END:
+- Can you make any other changes to the game?
+- Maybe you could make a second board appear when all the monsters are killed
+- Perhaps you could add in a sword that the player can get to help increase the damage she does to the monsters
+- Use your imagination and have a go - if you break the code too much, just download another copy
+- Take screenshots of any functions you changed and use comments to explain what you have done.

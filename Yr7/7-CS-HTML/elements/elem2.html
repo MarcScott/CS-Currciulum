@@ -1,0 +1,112 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a href="../style/style.html">Layout and Style</a></li>
+<li><a class="z" href="elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="elem.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="elem3.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Create a List - ordered and unordered lists</p>
+	<ul>
+	<span class="bigtext">
+Let's <button>check our design</button> again to see what is inside the leftbox.
+In the leftbox, there are just a list of hyperlinks to other pages or web sites.  One of the important features of webpages is to have links to allow users to navigate your site or to go to other sites.</p><p class="img"><img src="../images/sketch.png"></p>
+The list of hyperlinks looks like bulletin points. HTML has tags to create a list that are similar to bulletin points.  There are two basic kind of list - ordered list and unordered list:
+<ol>
+	<li class="step"><u>Ordered list</u>: defined using tag <strong><em>&lt;ol&gt;</strong></em> and <strong><em>&lt;/ol&gt;</strong></em>. The list has a number, a Roman numeral or a letter to indicate each item's order. Each item in the list is defined using the tag <strong><em>&lt;li&gt;</strong></em> and <strong><em>&lt;/li&gt;</strong></em>. The following example shows how to define an ordered list:
+		<table border=1 width=600 align=center>
+		<tr><td>
+		<span class="code">
+			An ordered list code <br>
+		&lt;ol&gt; <br>
+		&nbsp;&lt;li&gt; Milk
+		&nbsp;&lt;/li&gt; <br>
+		&nbsp;&lt;li&gt; Butter
+		&nbsp;&lt;/li&gt; <br>
+		&lt;/ol&gt; <br>
+		</span>
+		</td>
+	<td>
+		
+			 What you see in a browser<br>
+		<ol>
+		<li class="insteptext"> Milk</li>
+		<li class="insteptext">Butter</li> 
+		</ol>
+	
+		</td></tr>
+		</table>
+	</li>
+<li class="step"><u>Unordered list</u>: defined using tag <strong><em>&lt;ul&gt;</strong></em> and <strong><em>&lt;/ul&gt;</strong></em>. The list has a number, a Roman numeral or a letter to indicate each item's order. Each item in the list is defined using the tag <strong><em>&lt;li&gt;</strong></em> and <strong><em>&lt;/li&gt;</strong></em>. The following example shows how to define an unordered list:
+		<table border=1 width=600 align=center>
+		<tr><td>
+		<span class="code">
+			An unordered list code <br>
+		&lt;ul&gt; <br>
+		&nbsp;&lt;li&gt; Milk
+		&nbsp;&lt;/li&gt; <br>
+		&nbsp;&lt;li&gt; Butter
+		&nbsp;&lt;/li&gt; <br>
+		&lt;/ul&gt; <br>
+		</span>
+		</td>
+	<td>
+		
+			 What you see in a browser<br>
+		<ul>
+		<li class="steptext">Milk</li>
+		<li class="steptext">Butter</li> 
+		</ul>
+	
+		</td></tr>
+		</table>
+	</li>
+
+
+<div id="left">
+<a class="nav" href="elem.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="elem3.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Touring Turing
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-Turing">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Turing Complete
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- By combining while loops and conditional selection we can become /Turing Complete/.
+- That means we can write programs that can solve any problem a /Turing Machine/ can solve.
+- As /Turing Machines/ can solve any computable problem, that means we'll be able to write programs that can solve any computable problem.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Before we get started on learning about mixing conditional selection and loops, we need to look at an important aspect of programming that you may find useful.
+- Sometimes when we are writing scripts, we want to prevent lines from being executed, but we don't want to delete them.
+- Other times we want to add in little explanations into our code, so that someone reading it can understand what is going on.
+- For both of these things, we use =comments=
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- A =commented= line in Python starts with a hash - =#=
+- Copy and paste this code into a new script.
+#+begin_src python
+  x = 10
+  x = 20
+  while x > 0:
+      print(x)
+      x = x - 1
+#+end_src
+- Run the code and see what happens.
+- Now we're going to edit the code a little.
+#+begin_src python
+  x = 10
+  #x = 20
+  while x > 0:
+      print(x)
+      x = x - 1
+#+end_src
+- Run the code again.
+- You'll notice that the line with a =#= symbol in it did not get executed, so x was never reassigned to the value =20=
+- We can also do this:
+#+begin_src python
+  x = 10 #Assign x to the value 10
+  #x = 20
+  while x > 0: #Loop until x reaches 0
+      print(x)
+      x = x - 1 #Subtract 1 from x.
+#+end_src
+- You'll notice that this code runs without any problems, but the comments provide helpful information to anyone who is reading your code.
+#+begin_src python
+  #x = 10 #Assign x to the value 10
+  #x = 20
+  while x > 0: #Loop until x reaches 0
+      print(x)
+      x = x - 1 #Subtract 1 from x.
+#+end_src
+- Here we've gone a little too far with our comments.
+- As the lines that assign a value to =x= have both been commented out, it's as if they're not there at all, and so the =while= loop doesn't make any sense.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- To get used to combining loops and conditional selection, let's make another simple guessing game.
+- Here's the code
+#+begin_src python
+  number = 7
+  guess = None
+  while guess != number:
+      guess = int(input('What number am I thinking of? '))
+      if guess > number:
+          print('Too high')
+      elif guess < number:
+          print('Too low')
+      else:
+          print('Well done')
+#+end_src
+- Create a new script and call it =guessAnumber.py=
+- Copy and paste the code in above.
+- Run the code and make sure you are familiar with how it works.
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Add comments to the end of each line of code that explains the purpose of the line.
+- For instance:
+#+begin_src python
+number = 7 #Assign the value 7 to the variable number
+#+end_src
+* Solving Computable problems
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- A /Turing Machine/ can solve any problem that is computable.
+- Up to now, your scripts have been fairly simple, and not accomplished any real useful work.
+- Let's try and make something useful
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Finding square roots of a number are pretty hard.
+- There are some special formulas you can use to calculate a square root, but we're going to harness the power and speed of a computer in our algorithm.
+- Let's say we wanted to find the square root of =16129=
+- What we need to know is which number, when multiplied by itself, equals =16129=
+#+begin_src python
+sqrRt * sqrRt == 16129
+#+end_src
+- Because computers can run calculations pretty fast, we can test every number below =16129=, multiply it by it by itself and then see if it equals =16129=
+#+begin_src python
+>>> 16128 * 16128 == 16129
+False
+>>> 16127 * 16127 == 16129
+False
+>>> 16126 * 16126 == 16129
+False
+#+end_src
+- We can keep doing this until we get the answer True
+- Let's see if we can code this in Python
+#+begin_src python
+  number = 16129
+  test =  16128
+  stop = False
+  while stop == False:
+      if test * test == number:
+          print(test)
+          stop = True
+      else:
+          test = test - 1
+#+end_src
+
+#+RESULTS:
+- Run the program and see what happens.
+- Try it with a few other numbers.
+- What happens when you use the number =152399025=?
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Alter the script above so that instead of =hard coding= the number, it asks the user for a number (Don't forget to type cast)
+- Make sure the variable =test= is assigned to one less than the number to be tested.
+- When the program prints out the answer (if it finds one) it should say something like - =The square-root is ....=
+* Solving extra tricky problems
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We all have problems, and we're all very busy.
+- Computers can perform calculations so quickly, that they can solve problems billions of times faster than a human ever could. So even if we have problems to solve that would take us too much time, we can get a computer to do it for us.
+- The problem has to be a =computable= one though.
+- Too often people believe that computers can solve any problem...
+[[http://imgs.xkcd.com/comics/tasks.png]]
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- You've already encountered an infinite loop.
+- Here's another one you can try if you've forgotten what an infinite loop is.
+#+begin_src python
+  x = True
+  while x == True:
+      print('Does this program halt?')
+      print('\n'*3)
+#+end_src
+- Infinite loops are a problem in designing programs. Have you ever had an application that just freezes until you are forced to kill it?
+
+[[https://cdn2.scratch.mit.edu/get_image/user/4491013_60x60.png]]
+
+[[https://upload.wikimedia.org/wikipedia/en/3/3d/WaitCursor-300p.gif]]
+
+- Wouldn't it be nice if we could have some way of detecting if a program would enter an infinite loop?
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Imagine we create a program that we'll call A.
+- Could a program exist that can read the code of A and determine if A contains an infinite loop?
+- This problem is known as =The Halting Problem=.
+- Is it possible to design a program that can detect if another program will /halt/ or just go into an /infinite loop/?
+- There are lots of resources online about =The Halting Problem=.
+- You might like to have a read of[[http://www.lel.ed.ac.uk/~gpullum/loopsnoop.html][ /Scooping The Loop Snooper/]]
+- Or have a look at the video below.
+#+begin_html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/92WHN-pAFCs" frameborder="0" allowfullscreen></iframe>
+#+end_html
+- Or try an find your own explanations online.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Try and write your own explanation for Alan Turing's proof that /The Halting Problem/ is undecidable.
+- Be sure to write this in your own words - *Don't copy and paste answers*
+

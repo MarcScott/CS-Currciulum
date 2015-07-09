@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Sonic Pi</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/navbar.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Sonic Pi</h1>
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-SonicPi">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+    </ul>
+  </div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Samples and Loops</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>As well as playing single notes, we can also play pre-recorded sounds using Sonic Pi.
+</li>
+<li>These are called <code>samples</code> and there are plenty to choose from.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 code">
+<h3 id="sec-1-2">Code It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Let's play a sample.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">sample :drum_snare_hard
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>The sample function takes the name of the sample as an argument, but it can take other argument as well.
+</li>
+<li>We can change the length of time it plays for using <code>rate</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">sample :drum_snare_hard, rate: 0.5
+</pre>
+</div>
+<ul class="org-ul">
+<li>This doubles the time the sample plays for.
+</li>
+<li>We can also change the volume of the sample.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">sample :drum_snare_hard, rate: 0.5, amp: 3
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 try">
+<h3 id="sec-1-4">Try It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Play around with <code>rate</code> and <code>amp</code>
+</li>
+<li>Can you make a sound like thunder?
+</li>
+<li>Can you make a sound like a gentle tap on a window?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 try">
+<h3 id="sec-1-5">Try It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Have a play around with some other samples.
+</li>
+<li>When you start typing <code>sample :</code> into the workspace you'll be presented with all the sample available.
+</li>
+<li>Have a go at these:
+<ul class="org-ul">
+<li>sample :ambi_choir
+</li>
+<li>sample :ambi_glass_hum
+</li>
+<li>sample :guit_e_fifths
+</li>
+</ul>
+</li>
+<li>Change the <code>amp</code> and <code>rate</code> of the samples you choose to see how they are altered.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>In music, drumming tends to be fairly repetitive.
+</li>
+<li>We'll rarely want to play just a single drum beat. More likely, we'll want to play the beat 50 times or more.
+</li>
+<li>We could do this by simply repeating the same function calls, over and over again.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">sample :drum_snare_hard
+sleep 0.5
+sample :drum_snare_hard
+sleep 0.5
+sample :drum_snare_hard
+sleep 0.5
+sample :drum_snare_hard
+</pre>
+</div>
+<ul class="org-ul">
+<li>But as you've learned previously, when coding, if we want to do something multiple times, it's easiest to use a loop.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 code">
+<h3 id="sec-1-7">Code It</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Try the following.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">4.times do
+    sample :drum_snare_hard
+    sleep 0.5
+end
+</pre>
+</div>
+<ul class="org-ul">
+<li>The indentation is optional, but helps you see which elements of the code are within the loop.
+</li>
+<li>Play this and see what happens.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 try">
+<h3 id="sec-1-8">Try It</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>Now try playing with the <code>amp</code> and <code>rate</code> of the sample along with the length of <code>sleep</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-9" class="outline-3 learn">
+<h3 id="sec-1-9">Learn It</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>We can also nest loops within loops.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">4.times do
+    sample :drum_snare_hard, rate: 0.5, amp: 2
+    3.times do
+        sample :drum_snare_hard, rate: 1.5
+    end
+end
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-10" class="outline-3 badge">
+<h3 id="sec-1-10">Badge It</h3>
+<div class="outline-text-3" id="text-1-10">
+<ul class="org-ul">
+<li>Create a cool bass line using samples and loops.
+</li>
+<li>Make sure you're experimenting with different samples and their <code>rate</code> and <code>amp</code> arguments.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

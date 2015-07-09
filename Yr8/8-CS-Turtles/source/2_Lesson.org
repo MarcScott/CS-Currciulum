@@ -1,0 +1,178 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Loopy Patterns
+#+AUTHOR: Stephen Brown
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/stsb11/turtle">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Shell Shock
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+In the last lesson, you typed commands straight into the Python Shell to create patterns. This is enormously repetitive - it'd be much more convenient if we could instead store sets of instructions as a small program, which we can use to draw with.
+** Try it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+- In the Python Shell window, click "File -> New", and an empty window will appear. 
+- In here, copy and paste the following text:
+
+#+BEGIN_EXAMPLE
+import turtle
+
+wn = turtle.Screen()     # Set up the window and its attributes
+wn.bgcolor("white")      # Choose our background colour. US spelling.
+wn.title("Turtle Power") # Window title
+
+tess = turtle.Turtle()   # Create tess and set some attributes
+tess.color("green")
+tess.pensize(5)
+
+for myMoves in range(4): # Repeat the indended instructions 4 times.
+    tess.forward(100)
+    tess.left(360/4)     # 360 divided by 4 sides is 90...
+
+wn.mainloop()            # Wait until the window is closed.
+#+END_EXAMPLE
+
+- **Tip:** Python is fussy about indentation. The two lines after the "for" command both need to be tabbed into the page. This lets Python know what instructions it is repeating, and which it isn't. 
+- Click File -> Save As, and save this file on your H: Drive, as "**shapes.py**". 
+- **Tip:** If you call this "turtle.py", your code won't work!
+- Run your program by hitting the F5 key on the keyboard, or by choosing Run -> Run Module from the menu at the top of the window. 
+
+** Explain it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- What shape was drawn? 
+- We only wrote two movement instructions. Why did the computer draw the full shape?
+- Can you modify the code to draw a triangle?
+- Or a pentagon?
+- What if we changed the "range" number to 360, the forward to 2 and the left to 1?
+
+** Learn it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We could add a little more code to create a program to show custom graphics, by asking the user what they wanted to see.
+- Add the following line above your code, so it appears above the "for" line:
+
+#+BEGIN_EXAMPLE
+howbig=int(input("What size lines would you like? "))
+
+for myMoves in range(3):
+        tess.forward(howbig)
+        tess.left(360/3)    # 360 divided by 3 is 120. 
+#+END_EXAMPLE
+
+- Run your program by hitting F5. 
+- This time, the shell asks the user what size sides they'd like (and stores the answer in a variable called howbig), so we can customise the side of our shape. 
+
+** Try it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Write code to ask what pen thickness (pensize) the user would like, and set the line to that thickness too.
+- Change the code to also ask how many sides the shape should have, and to draw the appropriate shape automatically.
+
+** Learn it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- It might be a nice bonus if the program could identify what some of the shapes are, by using something called  **conditionals**. In Python, we express these using **IF** statements.
+
+- In our current code, add this above your **for** line.
+
+#+BEGIN_EXAMPLE
+shape_name="shape with many sides"
+
+if numsides==3:
+    shape_name="triangle"
+if numsides==4:
+    shape_name="square"
+
+print("That's a " + shape_name + ".")
+#+END_EXAMPLE
+
+- We start by creating a variable which I called shapename. In it, I stored the words "shape with many sides". 
+- My plan is to write the words "That's a **XYZ** ." on the shell screen before I draw the shape. If I haven't entered the name for a 200 sided shape (for example), then at least the user will be told that they've drawn a shape with many sides. 
+- I then use a series of **IF** statements to try and change the value of shapename to the correct name for the shape. 
+
+** Try it
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Add all the shape names for up to 10 sides.
+
+
+[[./index.html][Back to homepage]]

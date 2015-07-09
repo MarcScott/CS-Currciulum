@@ -1,0 +1,183 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: How A Computer Works
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-Computers">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+* Transistors
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Transistors can come in many shapes and sizes.
+[[https://upload.wikimedia.org/wikipedia/commons/0/0e/Transistors-white.jpg]]
+- They all have something in common - three pins.
+- The transistors we find in computer chips and memory are much smaller - 22nm to be exact which is 0.000000022m
+[[file:img/22nm.jpg]]
+- The circuit diagram for a transistor is shown below, with the three pins labeled =B= for Base, =C= for Collector and =E= for Emitter.
+#+BEGIN_HTML
+<object data="js/transistor.html" width='200px' height='200px'></object>
+#+END_HTML
+- As mentioned in the previous lesson, a transistor can act like a switch. When there is current entering the Base(=B=) of the transistor, current is allowed to flow through the Collector(=C=) to the Emitter(=E=).
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Have a play with the transistor below so you understand how applying a voltage to the base of a transistor is equivalent to turning on a switch.
+#+BEGIN_HTML
+<object data="js/transistor2.html" width='200px' height='200px'></object>
+#+END_HTML
+* Assessment
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- In your own words write up a description of how a transistor can act as a switch. Make sure you are using the words /Collector/, /Base/, and /Emitter/.
+
+* NAND Gates
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We can combine transistors to make some pretty useful things. One combination of transistors is known as a NAND gate.
+- A NAND gate is made from two transistors combined as shown below.
+#+BEGIN_HTML
+<object data="js/TranNANDstatic.html" width='300px' height='320px'></object>
+#+END_HTML
+- The basic concept of this arrangement, is that if current *can't* flow through the collector and base of *both* resistors to /Earth/, then instead it will flow through the /OUT/
+- If both transistors allow current through their /Collector/ and /Emitter/, then no current will flow through /OUT/
+- Have a play with the arrangement below and make sure you understand how the NAND gate works.
+#+BEGIN_HTML
+<object data="js/TranNAND.html" width='300px' height='320px'></object>
+#+END_HTML
+* Assessment
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Below is a table showing the states that A and B can have, with a column left blank for the OUT (which has been labeled Q). This is called a *Truth Table*.
+| A | B | Q |
+|---+---+---|
+| 0 | 0 |   |
+| 1 | 0 |   |
+| 0 | 1 |   |
+| 1 | 1 |   | 
+- Copy the table and complete the column labeled Q. (An input or output is /ON/ (=1=), if it current is flowing through it (red)
+- Now copy and fill in the missing spaces in the description below.
+#+BEGIN_QUOTE
+_NAND GATES_
+
+NAND gates have two inputs (A and B) and an output (___). When A and B are both ____, then Q is ____. If either A or B are ____ then Q is ____. If A and B are both ____ then Q is ____.
+#+END_QUOTE 
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- There is another arrangement of transistors that can produce a table as shown below.
+| A | B | Q |
+|---+---+---|
+| 0 | 0 | 0 |
+| 1 | 0 | 1 |
+| 0 | 1 | 1 |
+| 1 | 1 | 1 | 
+- Using any graphics package on your computer, try to draw the arrangement of transistors that would produce a table like this.
+

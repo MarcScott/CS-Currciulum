@@ -1,0 +1,136 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Hexadecimal
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+#+END_HTML
+You've already learned about Binary (base2) numbers, and why Computers use them.
+Now let's look at another base - base16, called Hexadecimal
+* Why not binary?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Binary numbers are difficult for programmers to work with.
+- If we're building a web-page, then chances are we're going to want to use colour.
+- In general computers use the RGB colour model, where any colour we need is made up by additive mixing Red, Green and Blue.
+- The value of RGB colours ranges from 0,0,0 up to 255,255,255.
+#+BEGIN_HTML
+<p style="background-color:#9F1CAD;color:white;text-align:center;">Here's a colour that is represented as R-159, G-028, B-173.</p>
+#+END_HTML
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Convert each of the 3 digit denary numbers to binary, as see what you get.
+- Do you think that writing the binary number for the colour would be convenient.
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Note down why it is that programmers don't like using binary in their code.
+* Hexadecimal is easier
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Coders use Hexadecimal as it's easy to convert it to binary, but it is more succinct.
+- When counting in Hexadecimal, we use the letters A-F after reaching 9.
+- =0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F=
+- Normally we would use a table to aid in the conversion.
+| Binary | Hexadecimal | Decimal |
+|--------+-------------+---------|
+|   0000 |           0 |       0 |
+|   0001 |           1 |       1 |
+|   0010 |           2 |       2 |
+|   0011 |           3 |       3 |
+|   0100 |           4 |       4 |
+|   0101 |           5 |       5 |
+|   0110 |           6 |       6 |
+|   0111 |           7 |       7 |
+|   1000 |           8 |       8 |
+|   1001 |           9 |       9 |
+|   1010 |           A |      10 |
+|   1011 |           B |      11 |
+|   1100 |           C |      12 |
+|   1101 |           D |      13 |
+|   1110 |           E |      14 |
+|   1111 |           F |      15 |
+- We can take a binary number, such as 10101101.
+- Split it up into nibbles - 1010 1101
+- Convert each to Hex - AD
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Convert each of the binary numbers you worked out before, into their hex equivalents.
+- Now go on line and look up the hex code you've calculated (place a # in front of the number in your search) and check it matches the colour on this web-page.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- With experience, you'll not need a table, as you'll come to recognise the hex equivalent for each nibble.
+- However, if you don't have a conversion table or can't remember the values, you can convert between binary and hex, by using denary as a middle step.
+- Lets start with the binary number =01011101=
+- Split it into nibbles - =0101 1101=
+- Convert to denary - =1*1 + 0*2 + 1*4 + 0*8= and = =1*1 + 0*2 + 1*4 + 1*8=
+- So we get - =5= and =13=
+- Now convert to Hex - =5= and =D=
+- So the Hex is 5D
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Convert the following binary numbers to hex and show your working. Check them by using the table.
+- 11110011
+- 00101100
+- 10101010
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Make notes on binary to hex conversion, detailing how it is done.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Go online and look up hex codes for colours.
+- Make notes on how hex codes are used to represent colours in computers.
+* Hex to binary conversion
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- Converting hex to binary is a fairly similar process. We just need to do the denary conversion in between.
+- Take the number =9E=
+- Split it up =9= and =E=
+- Convert each to denary =9= and =14=
+- Then convert each to binary =1*8 + 0*4 + 0*2 + 1*1= and =1*8 + 1*4 + 1*2 + 0*1=
+- Which makes =1001= and =1110=
+- Which together becomes =10011110=
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+- Convert the following Hex values to binary and show your working. Use the table to check your answers.
+- 3F3F3F
+- 88833A
+- ABCDEF

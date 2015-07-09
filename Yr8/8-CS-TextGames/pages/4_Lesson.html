@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Text Based Games</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/navbar.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Text Based Games</h1>
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-TextGames">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Hangman</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<ul class="org-ul">
+<li>In this lesson you're going to create a version of hangman, that you can play against the computer.
+</li>
+<li>Let's have a little look at the logic of the game.
+<ol class="org-ol">
+<li>The word should be displayed with <code>_</code> in place of each letter.
+</li>
+<li>The player should guess a letter.
+</li>
+<li>If the letter is in a list of all letters, the letter should be removed from the list.
+</li>
+<li>If the letter is in the word, then the <code>_</code> should be replaced with the letter, and we should store how many correct guesses the player has had.
+</li>
+<li>If the letter is not in the word, then the gallows can begin to be drawn.
+</li>
+<li>The player should be asked for another letter.
+</li>
+<li>The game ends when the player has made correct guesses that equal the length of the word, or the last stage of the gallows has been drawn.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 code">
+<h3 id="sec-1-2">Code It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>The first step will be fairly simple.
+</li>
+<li>We need to use ASCII characters to create the graphic that is displayed on the screen.
+</li>
+<li>We'll assign variables to have the values of the graphic.
+</li>
+<li>The first couple have been done for you in the code below.
+</li>
+<li>In python we use ='''= to print multi-line strings.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">stage0</span>=<span style="color: #2aa198;">''</span>
+<span style="color: #6c71c4;">stage1</span> = <span style="color: #2aa198;">'''</span>
+<span style="color: #2aa198;">_______________'''</span>
+<span style="color: #6c71c4;">stage2</span> = <span style="color: #2aa198;">'''</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|\______________'''</span>
+<span style="color: #6c71c4;">stage3</span> = <span style="color: #2aa198;">'''</span>
+<span style="color: #2aa198;">__________</span>
+<span style="color: #2aa198;">|/</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|</span>
+<span style="color: #2aa198;">|\______________'''</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 try">
+<h3 id="sec-1-3">Try It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Use ASCII to create the rest of the stages. The number of stages you have is obviously up to you.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 code">
+<h3 id="sec-1-4">Code It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Now that you have all the stages of the hangman graphic, we need a way of easily printing out a specific stage as the game progresses.
+</li>
+<li>Probably the best way of doing this is to use a list.
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">stage</span> = [stage0,stage1,stage2,stage3,stage4,stage5,stage6,stage7,stage8]
+</pre>
+</div>
+</li>
+<li>obviously this will need altering depending on the number of stages you have in your game.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 try">
+<h3 id="sec-1-5">Try It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Let's try printing out some stages from your game.
+</li>
+<li>Save you file as <code>Hangman.py</code> and then run it.
+</li>
+<li>Switch over to the <code>interpreter</code> and then try accessing various stages of your graphic in the following way.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">print</span>(stage[4])
+</pre>
+</div>
+<ul class="org-ul">
+<li>Remember, lists are indexed from 0.
+</li>
+<li>Make sure that each of your stages print out correctly.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 code">
+<h3 id="sec-1-6">Code It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>Let's add in a couple of variables that will probably be important.
+</li>
+<li>We'll want to store which stage of the gallows the player has currently reached.
+</li>
+<li>We'll also want to know how many correct guesses the player has made.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">stageindex</span> = 0
+<span style="color: #6c71c4;">correctGuesses</span> = 0
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 code">
+<h3 id="sec-1-7">Code It</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>We'll want to a way of storing the guesses the player has made, and ensuring that only letters are accepted.
+</li>
+<li>The easiest way to do this is with a data structure that stores all the letters of the alphabet.
+</li>
+<li>Let's start with a simple string.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">alphabet</span> = <span style="color: #2aa198;">'abcdefghijklmnopqrstuvwxyz'</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>The problem with a string is that it's not easy to remove elements from it.
+</li>
+<li>It would be much easier to have all the letters in a list, but that would mean a lot more typing.
+</li>
+<li>It would be better if we could use a little loop, to create a list for us.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">alphalist</span> = []
+<span style="color: #859900;">for</span> letter <span style="color: #859900;">in</span> alphabet:
+    alphalist.append(letter)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 learn">
+<h3 id="sec-1-8">Learn It</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>The code above is a perfectly sensible way of creating a list of all the letters in the alphabet, but it is a little verbose.
+</li>
+<li>Luckily there is an easier way of creating lists in Python called <code>List Comprehensions</code>.
+</li>
+<li>In the next exercise, you're going to use list comprehensions to create some lists.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-9" class="outline-3 code">
+<h3 id="sec-1-9">Code It</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>The easiest way of learning about list comprehensions is to write some.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">numbersto10</span> = [number <span style="color: #859900;">for</span> number <span style="color: #859900;">in</span> <span style="color: #6c71c4;">range</span>(10)]
+</pre>
+</div>
+<ul class="org-ul">
+<li>We start by naming our list.
+</li>
+<li>In the square brackets is the list comprehension.
+</li>
+<li>This one says.
+<ul class="org-ul">
+<li>Fill the list with <code>number</code>
+</li>
+<li>Where <code>number</code> is each element of <code>range(10)</code>
+</li>
+</ul>
+</li>
+<li>Let's have a look at another one.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = <span style="color: #2aa198;">'Hello World!'</span>
+<span style="color: #6c71c4;">bar</span> = [character <span style="color: #859900;">for</span> character <span style="color: #859900;">in</span> foo]
+</pre>
+</div>
+<ul class="org-ul">
+<li>Here we create a list containing all the characters that are in foo.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-10" class="outline-3 badge">
+<h3 id="sec-1-10">Badge It - Silver</h3>
+<div class="outline-text-3" id="text-1-10">
+<ul class="org-ul">
+<li>Create a new file called ListComps.py
+</li>
+<li>Work out what each of these list comprehensions achieves. Don't worry if you don't understand them all fully. The first few should be okay, but the later ones are just to show you how powerful list comprehensions can be.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">List1</span> = [i <span style="color: #859900;">for</span> i <span style="color: #859900;">in</span> <span style="color: #6c71c4;">range</span>(20,10,-1)]
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">List2</span> = [j**2 <span style="color: #859900;">for</span> j <span style="color: #859900;">in</span> <span style="color: #6c71c4;">range</span>(10)]
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">List3</span> = [k <span style="color: #859900;">for</span> k <span style="color: #859900;">in</span> <span style="color: #6c71c4;">range</span>(100) <span style="color: #859900;">if</span> k % 2 == 0]
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">List4</span> = [l.lower() <span style="color: #859900;">for</span> l <span style="color: #859900;">in</span> <span style="color: #2aa198;">'ABCDEFG'</span>]
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">List5</span> = [<span style="color: #2aa198;">'_'</span> <span style="color: #859900;">for</span> m <span style="color: #859900;">in</span> <span style="color: #2aa198;">'Hello World!'</span>]
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">List6</span> = [n <span style="color: #859900;">for</span> n <span style="color: #859900;">in</span> <span style="color: #2aa198;">'The Quick Brown Fox'</span> <span style="color: #859900;">if</span> n.upper() == n <span style="color: #859900;">and</span> n != <span style="color: #2aa198;">' '</span>]
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">List7</span> = [word[0] <span style="color: #859900;">for</span> word <span style="color: #859900;">in</span> <span style="color: #2aa198;">'my race should continue on to the island </span>
+<span style="color: #2aa198;">shore to help ease boring eye strain tonight'</span>.split()]
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">List8</span> = [[row[i] <span style="color: #859900;">for</span> row <span style="color: #859900;">in</span> [[1,2,3],[4,5,6],[7,8,9]]]<span style="color: #859900;">for</span> i <span style="color: #859900;">in</span> <span style="color: #6c71c4;">range</span>(3)]
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-11" class="outline-3 badge">
+<h3 id="sec-1-11">Badge It - Gold  (Part I)</h3>
+<div class="outline-text-3" id="text-1-11">
+<ul class="org-ul">
+<li>Use list comprehensions to create the following lists.
+<ol class="org-ol">
+<li>[-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0]
+</li>
+<li>A list of all consonants in the sentence 'The quick brown fox jumped over the lazy dog'
+</li>
+<li>A list of all square numbers formed by squaring the numbers from 1 to 1000.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-12" class="outline-3 code">
+<h3 id="sec-1-12">Code It</h3>
+<div class="outline-text-3" id="text-1-12">
+<ul class="org-ul">
+<li>Let's switch back to our <code>hangman.py</code> file now and create our list of letters in the alphabet now.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">alphabet</span> = <span style="color: #2aa198;">'qwertyuiopasdfghjklzxcvbnm'</span>
+<span style="color: #6c71c4;">alphalist</span> = [letter <span style="color: #859900;">for</span> letter <span style="color: #859900;">in</span> alphabet]
+</pre>
+</div>
+<ul class="org-ul">
+<li>We'll also need a list of words that the user is going to have to guess letters for.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">words</span> = [<span style="color: #2aa198;">'computer'</span>,<span style="color: #2aa198;">'science'</span>,<span style="color: #2aa198;">'internet'</span>,<span style="color: #2aa198;">'www'</span>,<span style="color: #2aa198;">'onedirection'</span>]
+</pre>
+</div>
+<ul class="org-ul">
+<li>Feel free to add your own words.
+</li>
+<li>Next we'll want to get the computer to choose a word at random from the list. You've used the random module before.
+</li>
+<li>Add the line
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">import</span> random
+</pre>
+</div>
+<ul class="org-ul">
+<li>to the very top of your python file.
+</li>
+<li>then after the <code>words</code> list we can add the line
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">word</span> = random.choice(words)
+</pre>
+</div>
+<ul class="org-ul">
+<li>This will pick a random word from the words list for use with the game.
+</li>
+<li>Last of all, before we start on the actual game logic, we'll set a variable to state that the game is running.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">gameOn</span> = <span style="color: #268bd2;">True</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-13" class="outline-3 learn">
+<h3 id="sec-1-13">Learn It</h3>
+<div class="outline-text-3" id="text-1-13">
+<ul class="org-ul">
+<li>Because the hangman game is a little more complicated than before, we're going to break it up into functions.
+</li>
+<li>Functions are blocks of code that perform a &#x2026; function.
+</li>
+<li>In Python we create a function using the keyword <code>def</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">def</span> <span style="color: #b58900;">foo</span>():
+    some code...
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-14" class="outline-3 code">
+<h3 id="sec-1-14">Code It</h3>
+<div class="outline-text-3" id="text-1-14">
+<ul class="org-ul">
+<li>Let's start by creating a function to print out the word that the user is guessing. If a letter has been guessed, then it should be displayed, otherwise we should display an <code>_</code>.
+</li>
+<li>We'll start by giving the function a name.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">def</span> <span style="color: #b58900;">displayWord</span>():
+</pre>
+</div>
+<ul class="org-ul">
+<li>Code inside a function, needs to be indented.
+</li>
+<li>Let's print an empty line to start with.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">def</span> <span style="color: #b58900;">displayWord</span>():
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">''</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-15" class="outline-3 try">
+<h3 id="sec-1-15">Try It</h3>
+<div class="outline-text-3" id="text-1-15">
+<ul class="org-ul">
+<li>Now you need to create the rest of the code in the function.
+</li>
+<li>Have a go and get your teacher to check if you're not sure.
+</li>
+<li>Here is the logic.
+<ol class="org-ol">
+<li>Declare a variable called <code>display</code> and assign it the value of an empty string =''=
+</li>
+<li>For every letter in the word.
+</li>
+<li>If the letter is not in the alphalist (which currently contains all the letters not guessed) then add the letter to display along with a space (=' '=)
+</li>
+<li>Else display ='_ '=
+</li>
+<li>Print the display variable.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-16" class="outline-3 test">
+<h3 id="sec-1-16">Test It</h3>
+<div class="outline-text-3" id="text-1-16">
+<ul class="org-ul">
+<li>Let's try testing the code.
+</li>
+<li>Run your program and then switch into the interpreter.
+</li>
+<li>Let's cheat a little and set word to a known value.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">word</span> = <span style="color: #2aa198;">'hello'</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now let's run the function
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-language">displayWord()
+</pre>
+</div>
+<ul class="org-ul">
+<li>You should see 5 <code>_</code> characters printed.
+</li>
+<li>We can remove some letters from the <code>alphalist</code> to simulate guesses.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">alphalist.remove(<span style="color: #2aa198;">'l'</span>)
+displayWord()
+</pre>
+</div>
+<ul class="org-ul">
+<li>You should see <code>_ _ l l _</code> printed.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-17" class="outline-3 code">
+<h3 id="sec-1-17">Code It</h3>
+<div class="outline-text-3" id="text-1-17">
+<ul class="org-ul">
+<li>The next function is easy.
+</li>
+<li>We need to print out the current stage.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">def</span> <span style="color: #b58900;">displayStage</span>():
+    <span style="color: #859900;">print</span>(stages[stageindex])
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-18" class="outline-3 code">
+<h3 id="sec-1-18">Code It</h3>
+<div class="outline-text-3" id="text-1-18">
+<ul class="org-ul">
+<li>The next function is a little more tricky.
+</li>
+<li>We'll need to do a little experimentation to work out how to complete it.
+</li>
+<li>Create a new file called <code>global.py</code>
+</li>
+<li>Add in this code
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = 1
+
+<span style="color: #859900;">def</span> <span style="color: #b58900;">myfunc</span>():
+    <span style="color: #6c71c4;">bar</span> = 2
+    <span style="color: #859900;">print</span>(foo)
+    <span style="color: #859900;">print</span>(bar)
+    <span style="color: #6c71c4;">bar</span> +=1
+    <span style="color: #6c71c4;">foo</span> +=1
+</pre>
+</div>
+<ul class="org-ul">
+<li>Save the file and run it.
+</li>
+<li>Now switch to the interpreter and try and run the function.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = <span style="color: #2aa198;">'I am foo'</span>
+
+<span style="color: #859900;">def</span> <span style="color: #b58900;">bar</span>():
+    <span style="color: #6c71c4;">baz</span> = <span style="color: #2aa198;">'I am baz'</span>
+    <span style="color: #859900;">print</span>(baz)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Save and tun the code, then in the interpreter type
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">print</span>(foo)
+bar()
+</pre>
+</div>
+<ul class="org-ul">
+<li>You should see the two lines printed.
+</li>
+<li>Let's alter the function to print both <code>foo</code> and <code>baz</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = <span style="color: #2aa198;">'I am foo'</span>
+
+<span style="color: #859900;">def</span> <span style="color: #b58900;">bar</span>():
+    <span style="color: #6c71c4;">baz</span> = <span style="color: #2aa198;">'I am baz'</span>
+    <span style="color: #859900;">print</span>(foo)
+    <span style="color: #859900;">print</span>(baz)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Again switch to your interpreter and type
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">bar()
+</pre>
+</div>
+<ul class="org-ul">
+<li>And again both lines should be printed.
+</li>
+<li>Now let's try altering the variables <code>baz</code> and <code>foo</code>
+</li>
+<li>Try this first.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = <span style="color: #2aa198;">'I am foo'</span>
+
+<span style="color: #859900;">def</span> <span style="color: #b58900;">bar</span>():
+    <span style="color: #6c71c4;">baz</span> = <span style="color: #2aa198;">'I am baz'</span>
+    <span style="color: #6c71c4;">baz</span> += <span style="color: #2aa198;">', nice to meet you'</span>
+    <span style="color: #859900;">print</span>(foo)
+    <span style="color: #859900;">print</span>(baz)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Save, run and call the function from the interpreter again.
+</li>
+<li>Let's try the same change to foo.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = <span style="color: #2aa198;">'I am foo'</span>
+
+<span style="color: #859900;">def</span> <span style="color: #b58900;">bar</span>():
+    <span style="color: #6c71c4;">baz</span> = <span style="color: #2aa198;">'I am baz'</span>
+    <span style="color: #6c71c4;">baz</span> += <span style="color: #2aa198;">', nice to meet you'</span>
+    <span style="color: #6c71c4;">foo</span> += <span style="color: #2aa198;">', nice to meet you'</span>
+    <span style="color: #859900;">print</span>(foo)
+    <span style="color: #859900;">print</span>(baz)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now we get an error. Why?
+</li>
+<li>Variables that are declared inside a function and those declared outside a function are different.
+</li>
+<li>We call variables that are declared in the main body of code <code>Global Variables</code> and those declared within function are <code>Local Variables</code>
+</li>
+<li>While a function has no problems reading a global variable, it can't alter them. Additionally a function can't even read variables that are local to other functions.
+</li>
+<li>To allow our function to alter the global variable, we must tell it that the variable foo is global.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">foo</span> = <span style="color: #2aa198;">'I am foo'</span>
+
+<span style="color: #859900;">def</span> <span style="color: #b58900;">bar</span>():
+    <span style="color: #859900;">global</span> foo
+    <span style="color: #6c71c4;">baz</span> = <span style="color: #2aa198;">'I am baz'</span>
+    <span style="color: #6c71c4;">baz</span> += <span style="color: #2aa198;">', nice to meet you'</span>
+    <span style="color: #6c71c4;">foo</span> += <span style="color: #2aa198;">', nice to meet you'</span>
+    <span style="color: #859900;">print</span>(foo)
+    <span style="color: #859900;">print</span>(baz)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Try this code out and everything should be awesome.
+</li>
+<li>NOTE - as you get better at programming, you should try and avoid using global variables as much as possible, as they can lead to unexpected bugs in your code, where multiple functions are relying on or changing their values.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-19" class="outline-3 learn">
+<h3 id="sec-1-19">Learn It</h3>
+<div class="outline-text-3" id="text-1-19">
+<ul class="org-ul">
+<li>Let's go back to our hangman.py file.
+</li>
+<li>The next function is going to allow the player to make a guess of a letter.
+</li>
+<li>It will then increase the <code>stageindex</code> if they get it wrong and remove the letter from the alphalist.
+</li>
+<li>It will increase the <code>correctGuesses</code> if they get it right and remove the letter from the alphalist.
+</li>
+<li>Because we're altering the <code>stageindex</code> and <code>correctGuesses</code> variables, we'll need to use the <code>global</code> keyword.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-20" class="outline-3 badge">
+<h3 id="sec-1-20">Badge It - Gold (Part II)</h3>
+<div class="outline-text-3" id="text-1-20">
+<p>
+-Create a function called <code>Guess</code>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">def</span> <span style="color: #b58900;">Guess</span>():
+</pre>
+</div>
+<ul class="org-ul">
+<li>Within the function:
+<ol class="org-ol">
+<li>use the <code>global</code> keyword to make the <code>stageindex</code> and <code>correctGuesses</code> variables available to the function.
+</li>
+<li>Set a variable called <code>guess</code> to be the input from a player's guess.
+</li>
+<li>Use conditional selection <code>if,elif,else</code> to:
+<ol class="org-ol">
+<li>Print that the character can't be found if the <code>guess</code> is <code>not in</code> the <code>alphalist</code>
+</li>
+<li>Otherwise, if the <code>guess</code> is <code>not in</code> the <code>word</code>, then increase <code>stageindex</code> by one and remove the <code>guess</code> from the alphalist.
+</li>
+<li>Otherwise, remove the <code>guess</code> from the <code>alphalist</code> and increase the <code>correctGuesses</code> by 1.
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Note - to remove an item from a list you can use code like this.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">myList.remove(element)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-21" class="outline-3 learn">
+<h3 id="sec-1-21">Learn It</h3>
+<div class="outline-text-3" id="text-1-21">
+<ul class="org-ul">
+<li>One more function for you to write now.
+</li>
+<li>We need to check if the game has ended or not.
+</li>
+<li>So we're going to need access to the <code>global</code> <code>gameOn</code> variable.
+</li>
+<li>The basic concept will be:
+<ol class="org-ol">
+<li>If the length of the word being guessed is equal to the value of <code>correctGuesses</code> then we can print out the current stage, and a message that the player has won, and finally change the <code>gameOn</code> variable to False.
+</li>
+<li>If the <code>stageIndex</code> is equal to 8 (or whatever the final stage you have_, then we should print out the current stage, send a message that the player has lost, and then set <code>gameOn</code> to false.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-22" class="outline-3 badge">
+<h3 id="sec-1-22">Badge It - Platinum</h3>
+<div class="outline-text-3" id="text-1-22">
+<ul class="org-ul">
+<li>For your final badge, try and write a function called <code>checkEnd():</code> that checks if the game has ended or not.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-23" class="outline-3 try">
+<h3 id="sec-1-23">Try It</h3>
+<div class="outline-text-3" id="text-1-23">
+<ul class="org-ul">
+<li>At the very end of your game, you'll need a little bit of code to get the game running.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">while</span> gameOn == <span style="color: #268bd2;">True</span>:
+    displayWord()
+    displayStage()
+    Guess()
+    checkEnd()
+</pre>
+</div>
+<ul class="org-ul">
+<li>Try running your game and see whether it is all working correctly.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

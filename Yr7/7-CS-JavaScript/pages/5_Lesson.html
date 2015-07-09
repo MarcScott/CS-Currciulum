@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>More functions and events.</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">More functions and events.</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. A Special event</a>
+<ul>
+<li><a href="#sec-1-1">Code It</a></li>
+<li><a href="#sec-1-2">Save It</a></li>
+<li><a href="#sec-1-3">Run It</a></li>
+<li><a href="#sec-1-4">Code It</a></li>
+<li><a href="#sec-1-5">Save It</a></li>
+<li><a href="#sec-1-6">Run It</a></li>
+<li><a href="#sec-1-7">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Let's mash a button</a>
+<ul>
+<li><a href="#sec-2-1">Code It</a></li>
+<li><a href="#sec-2-2">Save It</a></li>
+<li><a href="#sec-2-3">Run It</a></li>
+<li><a href="#sec-2-4">Code It</a></li>
+<li><a href="#sec-2-5">Save It</a></li>
+<li><a href="#sec-2-6">Run It</a></li>
+<li><a href="#sec-2-7">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Making a timer</a>
+<ul>
+<li><a href="#sec-3-1">Code It</a></li>
+<li><a href="#sec-3-2">Save It</a></li>
+<li><a href="#sec-3-3">Run It</a></li>
+<li><a href="#sec-3-4">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Badge It</a>
+<ul>
+<li><a href="#sec-4-1">Task</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/KS3_Curriculum">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> A Special event</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Before we move on, we're going to look at a really useful event that is built into JavaScript.
+</li>
+<li>The event is called <code>onload</code>
+</li>
+<li>Code attached to this event will be run by the web browser, once <span class="underline">all</span> the HTML has been loaded.
+</li>
+<li>This means we can attach our JavaScript to this event, and know that the DOM has fully loaded before the JavaScript runs.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 code">
+<h3 id="sec-1-1">Code It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Create a new document using the following HTML
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;onload&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+     var theCountDisplay = document.getElementById('theCountDisplay');
+     theCountDisplay.innerHTML = '&lt;h1&gt;Working&lt;/h1&gt;';
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id = 'theCountDisplay'&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 save">
+<h3 id="sec-1-2">Save It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Save you code. Call it something like onload.html
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 run">
+<h3 id="sec-1-3">Run It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Now run your code in a browser.
+</li>
+<li>Does it work?
+</li>
+<li>Open up a console and see if you can figure out what the problem is.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 code">
+<h3 id="sec-1-4">Code It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>The code previously doesn't work. This is because the JavaScript runs before the DOM is loaded and so the browser has no idea what we mean by <code>theCountDisplay</code>.
+</li>
+<li>What we need is to trigger the JavaScript code once the browser has loaded the DOM.
+</li>
+<li>We can use the <code>onload</code> event for this.
+</li>
+<li>Alter your code so that the JavaScript looks like the code below.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">window.onload = function()
+{     
+    var theCountDisplay = document.getElementById('theCountDisplay');
+    theCountDisplay.innerHTML = '&lt;h1&gt;Working&lt;/h1&gt;';
+};
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 save">
+<h3 id="sec-1-5">Save It</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 run">
+<h3 id="sec-1-6">Run It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>When you run the code this time, does it work?
+</li>
+<li>The onload event makes sure the DOM is fully loaded, so the browser recognises the <code>theCountDisplay</code> id.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 try">
+<h3 id="sec-1-7">Try It:</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Add another <code>div</code> into the <code>&lt;body&gt;</code> of your web-page, beneath the one already there.
+</li>
+<li>Give the div the id <code>theTimerDisplay</code>.
+</li>
+<li>Now add some JavaScript so that the div also displays the text <code>working</code> but within <code>&lt;h2&gt;</code> tags.
+</li>
+<li><span class="underline">Make sure your code works</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Let's mash a button</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Another event we can use to trigger code is the <code>onclick</code> event.
+</li>
+<li>This can be applied to (almost) any HTML element in your code.
+</li>
+<li>In the next section, you'll apply the onclick event to a button.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 code">
+<h3 id="sec-2-1">Code It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Keep all the code from your original file.
+</li>
+<li>Add a line at the top of the <span class="underline">body</span> of your html, as follows:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;input type="button" value="Click me" id='theButton'&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 save">
+<h3 id="sec-2-2">Save It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Save your file
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 run">
+<h3 id="sec-2-3">Run It</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>Open your file in a web browser and you should see the button.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3 code">
+<h3 id="sec-2-4">Code It</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Now for some JavaScript
+</li>
+<li>Firstly you'll need to declare a variable to count the clicks. Place the following above the <code>window.onload</code> code, so that it is the first line to be read.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var count = 0
+</pre>
+</div>
+<ul class="org-ul">
+<li>Next we want a little function that will display the count and make the count go up. This code should go after the <code>onload</code> event has finished.
+</li>
+<li>Look at the line <code>count++;</code>. In JavaScript we can use this syntax to increase something by 1. It is the same as writing <code>count = count + 1</code>.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">function addToCount()
+{
+theCountDisplay.innerHTML = '&lt;h1&gt;' + count + '&lt;/h1&gt;';
+count++;
+};
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now we want to run that function whenever the button is clicked. Place this code <i>inside</i> <code>onload</code> event that is triggered by the <code>onload</code> event.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var theButton = document.getElementById('theButton');
+theButton.onclick=function(){addToCount()};
+</pre>
+</div>
+<ul class="org-ul">
+<li>We've used a new event here. The event is called <code>onclick</code>.
+</li>
+<li><code>onclick</code> events use the following syntax.
+</li>
+<li><code>htmlElement.onclick=function(){nameOfFunctionToRun()};</code>
+</li>
+<li><code>onclick</code> events can be used with <i>almost</i> all HTML elements, such as divs, images or links.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3 save">
+<h3 id="sec-2-5">Save It</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>Save your file
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-6" class="outline-3 run">
+<h3 id="sec-2-6">Run It</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>Open your file in a web browser and you should see the button.
+</li>
+<li>Open your file in a web-browser.
+</li>
+<li>Clicking the button should cause the numbers to increase.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-7" class="outline-3 try">
+<h3 id="sec-2-7">Try It:</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li>At the moment <code>theCountDisplay</code> shows the text "Working" before a click is registered. Can you change this so that it displays the current count (which should be 0)
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Making a timer</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>So to recap:
+<ul class="org-ul">
+<li>You currently should have a web page that counts the number of times you click the button.
+</li>
+<li>You have a div called <code>theTimerDisplay</code> that at the moment only shows the text 'Working'
+</li>
+<li>We now need a way of counting seconds.
+</li>
+</ul>
+</li>
+<li>In JavaScript we can use a special instruction called setInterval.
+</li>
+<li><code>setInterval(function(){fooBar()}, 1000);</code>
+</li>
+<li>This code will trigger the function <code>fooBar</code> every 1000 milliseconds, or 1 second. (Computer use milliseconds a lot).
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 code">
+<h3 id="sec-3-1">Code It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>First we'll need a new variable to track the seconds passed. Place this code up near where you declared and assigned <code>count</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var seconds = 0;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Next we'll write a function to display the number of seconds. This can be placed below your <code>addToCount()</code> function.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">function calcTime()
+{
+theTimerDisplay.innerHTML = '&lt;h1&gt;' + seconds + '&lt;/h1&gt;';
+seconds++;
+};
+</pre>
+</div>
+<ul class="org-ul">
+<li>This is very similar to our previous function that displayed the <code>count</code>.
+</li>
+<li>Now we'll need to change what the innerHTML of <code>theTimerDisplay</code>.
+</li>
+<li>Edit the line within the <code>onload</code> function so that it looks like this.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">theTimerDisplay.innerHTML = '&lt;h2&gt;' + seconds + '&lt;/h2&gt;';
+</pre>
+</div>
+<ul class="org-ul">
+<li>Lastly we'll need to call this function every 1000 milliseconds. You'll need to place this code somewhere in the <code>onload</code> part of your code.#
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">setInterval(function(){calcTime()}, 1000);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 save">
+<h3 id="sec-3-2">Save It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Save your code.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 run">
+<h3 id="sec-3-3">Run It</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>Open it up in a web browser.
+</li>
+<li>Is it running correctly?
+</li>
+<li>Ask you teacher for help if there is a problem.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3 try">
+<h3 id="sec-3-4">Try It:</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>At the moment the page looks a little ugly.
+</li>
+<li>Try and add a little more html to the page.
+</li>
+<li>Maybe you could add a heading and some simple instructions, or perhaps rearrange the elements a little. Try adding some colour.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Badge It</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 badge">
+<h3 id="sec-4-1">Task</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+To earn your fourth <b>Blue JavaScript Badge</b>, complete the tasks below. Once you have finished, ask your teacher to check your code to make sure it runs correctly.
+</p>
+<ul class="org-ul">
+<li>At the moment the game doesn't end. To earn your 5th JavaScript badge you need the game to stop after a certain time.
+</li>
+<li><span class="underline">You'll only need to edit the code in the two functions <code>addToCount()</code> and <code>calcTime</code></span>
+</li>
+<li>In the <code>addToCount</code> function, use an <code>if</code> condition so that the count is displayed and increased <i>only when seconds is less than or equal to 5</i>
+</li>
+<li>In the <code>addToCount</code> function, use an <code>else</code> condition to display a message to the user, telling them what their final score was.
+</li>
+<li>In the <code>calcTime()</code> function, use an <code>if</code> condition so that the the time is displayed and increase <i>only when seconds is less than or equal to 5</i>
+</li>
+<li>In the <code>calcTime()</code> function, use an <code>else</code> condition to display a message to the user that the 'Time is up'.
+</li>
+<li>Get your teacher to check your work once you are finished.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

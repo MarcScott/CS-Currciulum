@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>A Virtual LOLcat in Scratch</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">A Virtual LOLcat in Scratch</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Virtual Pets</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Research It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Killing our pet</a>
+<ul>
+<li><a href="#sec-2-1">Research It</a></li>
+<li><a href="#sec-2-2">Code It</a></li>
+<li><a href="#sec-2-3">Code It</a></li>
+<li><a href="#sec-2-4">Badge It - Silver</a></li>
+<li><a href="#sec-2-5">Run It</a></li>
+<li><a href="#sec-2-6">Try It</a></li>
+<li><a href="#sec-2-7">Run It</a></li>
+<li><a href="#sec-2-8">Badge It - Gold</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-lolcats">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Virtual Pets</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<div class="figure">
+<p><img src="img/Tamagotchi.jpg" alt="Tamagotchi.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Virtual pets were very common and popular a few years ago.
+</li>
+<li>Pets such as the <a href="http:http://en.wikipedia.org/wiki/Tamagotchi">Tamagotchi</a> were tiny computers with software on them that simulated a pet.
+</li>
+<li>The owner of the pet had to feed it and pet it otherwise the pet would die.
+</li>
+<li>You're going to be making your own virtual pet in Scratch.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 research">
+<h3 id="sec-1-2">Research It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Use the web to find out some of the features that were common to most virtual pet games. A list has been started for you below:
+<ul class="org-ul">
+<li>Feeding
+</li>
+<li>Petting
+</li>
+<li>Scolding
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Killing our pet</h2>
+<div class="outline-text-2" id="text-2">
+
+<div class="figure">
+<p><img src="img/Dead_cat.jpg" alt="Dead_cat.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Create a new Scratch project called <code>Virtual_LOL_Cat</code>
+</li>
+<li>No matter how good a gamer you are, your character always dies in the end. So that's the first thing we'll be setting up.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 research">
+<h3 id="sec-2-1">Research It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>We'll need a couple of images to begin with.
+<ul class="org-ul">
+<li>One to represent the living pet.
+</li>
+<li>One to represent the dead pet.
+</li>
+</ul>
+</li>
+<li>Here are the ones I'll be using, but you can make your own or go online and find ones that appeal to you.
+</li>
+</ul>
+<p>
+<img src="img/Pet.svg" alt="Pet.svg" />
+<img src="img/DeadPet.svg" alt="DeadPet.svg" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 code">
+<h3 id="sec-2-2">Code It</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Our first script is going to kill the pet, whenever the space bar is pressed. Killing the pet will actually just be a case of changing the sprite's costume.
+</p>
+<ol class="org-ol">
+<li>Click on the Sprite1 costume.
+</li>
+<li>Click on the Costumes tab
+</li>
+<li>Delete the costumes you don't need.
+</li>
+<li>Use the Upload button to add in the costumes for both you alive and dead pet.
+</li>
+</ol>
+
+<div class="figure">
+<p><img src="img/Costume_1.png" alt="Costume_1.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 code">
+<h3 id="sec-2-3">Code It</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Now we just need to make sure everything has a sensible name
+</p>
+<ol class="org-ol">
+<li>Name <b>both</b> costumes
+</li>
+<li>Name your Sprite
+</li>
+</ol>
+
+<div class="figure">
+<p><img src="img/Costume_2.png" alt="Costume_2.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3 badge">
+<h3 id="sec-2-4">Badge It - Silver</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>We now need to write a little script to kill the pet.
+</li>
+<li>Look at the code below and see if you can assemble the script.
+</li>
+</ul>
+<pre class="example">
+when space key is pressed
+say "You let me die!!!"
+switch to DeadPet
+wait 2 secs
+stop all
+</pre>
+<ul class="org-ul">
+<li>Take a screenshot of your script when you have completed it.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3 run">
+<h3 id="sec-2-5">Run It</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>Run your script.
+</li>
+<li>When you hit the space key, the pet should die.
+</li>
+<li>The problem is that the pet stays dead.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-6" class="outline-3 try">
+<h3 id="sec-2-6">Try It</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>We need a way of resetting the script.
+</li>
+<li>Try to code the following.
+</li>
+</ul>
+<pre class="example">
+When 'Green Flag' clicked
+Switch to Costume "AlivePet"
+Goto position x:0 y:-125
+</pre>
+<ul class="org-ul">
+<li>You might need to adjust the <code>y:</code> coordinate, depending on the size of the sprite you are using.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-7" class="outline-3 run">
+<h3 id="sec-2-7">Run It</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li>Test your script to make sure it runs.
+</li>
+<li>Your pet should die when the space key is pressed, and then reset when you click the green flag
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-8" class="outline-3 badge">
+<h3 id="sec-2-8">Badge It - Gold</h3>
+<div class="outline-text-3" id="text-2-8">
+<ul class="org-ul">
+<li>The current pet death is a little undramatic.
+</li>
+<li>Add a little bit of animation into it, so that the pet falls over when it dies.
+</li>
+<li>Add a sound effect when the pet dies
+</li>
+<li>Change the pet's costume when it dies, so that it looks like a dead pet.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

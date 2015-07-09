@@ -1,0 +1,40 @@
+var progress;
+var fillPercent;
+var images;
+var JSCountBox;
+var calcProgress;
+
+window.onload = function()
+{  
+    JSCountBox = document.getElementById('textCount');
+    calcProgress = document.getElementById('calcProgress');
+    images = document.getElementById('badges1').getElementsByTagName('img');
+    JSCountBox.innerHTML = 'Total Badges gained = ' + images.length;
+    calcProgress.onclick=function(){calculate()}; 
+};
+
+function fillProgressBar()
+{
+    document.getElementById('progressBarFill').style.width = fillPercent+'%';
+};
+
+function calculate()
+{
+    fillPercent = 0
+    progress = images.length/12*100;
+    setInterval(function()
+		{
+		    fillPercent++; 
+		    if (fillPercent < progress)
+		    {
+			fillProgressBar(); 
+		    } 
+		}
+		,20);
+}
+
+
+
+
+
+

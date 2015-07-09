@@ -1,0 +1,361 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/main.css"/>
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil html-style:nil 
+
+#+TITLE: Creating a page for your badges.
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/KS3_Curriculum">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+* Introduction
+- We're now going to use everything you've learned so far to create a special page for your JavaScript badges.
+- So you're focusing on the HTML and CSS, they have been provided for you.
+- Download the HTML by [[file:~/Curriculum/7-WD-JS/resources/6_resources/Badges.html][/Right Clicking Here/]] and choosing to download the file.
+- Download the CSS by [[file:~/Curriculum/7-WD-JS/resources/6_resources/css/badges.css][/Right Clicking Here/]]  and choosing to download the file.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- The first thing to do is to create a directory structure to store your work.
+- Make a directory called =Badge-Page=
+- /Inside/ the =Badge-Page= directory, create one directory called =css=, another called =js= and one more called =badges=.
+- Place the Badges.html into the main directory.
+- Place the badges.css into the css directory.
+- Place the badges you have been awarded so far into the badges directory.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Open up Badges.html in a text editor.
+- Have a good luck through the html.
+- You'll notice that there is no css there at all, instead there is this line.
+#+BEGIN_SRC html
+    <link type="text/css" rel="stylesheet" href="css/badges.css">
+#+END_SRC
+- This line tells the web browser that all the css can be found on a separate file.
+- The file is called =badges.css= and is located in the =css= directory.
+- This is a much neater way of creating web pages. First it tidies up your html and secondly it makes sure that lots of different pages can all access the same css file.
+- Let's do the same for out JavaScript, and put it all in a separate file.
+- Add this line to your html, jest below the link to the css.
+#+BEGIN_SRC html
+        <script language="javascript" type="text/javascript" src="js/badges.js"></script>
+#+END_SRC
+- This tells the browser that all the JavaScript can be found in the =js= directory and is called =badges.js=
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save the file.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run the file in the browser.
+- Nothing much should be displayed at the moment, so let's fix that.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- At the moment there is a div in your HTML with the id =badges1=
+- Inside this div are some =<img>= tags that don't really link to anything at the moment.
+- Change the =<img>= tags so that they point to the badges you have earned while learning JavaScript. You should have 5 in total by now.
+- Make sure the page looks okay in a browser.
+* Creating a badges.js file
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- Open up your web pages in a browser and then open the developers console.
+- You should see an error message, along the lines that the javascript file can't be found.
+- Let's fix that now.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- In your text editor save a blank file as =badges.js= in the =js= directory you created earlier.
+- We'll test that it's all working correctly with a quick =console.log()=
+#+BEGIN_SRC javascript
+console.log('JavaScript loaded successfully')
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save the .js file
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Refresh your browser and make sure that the console.log is being displayed.
+* Using Arrays
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- The first thing we're going to want to do is to display the number of badges your have obtained.
+- To do this you're going to need to know about /arrays/
+- An array is an arrangement of items. Just think about a shopping list.
+[[file:img/shopping.png]]
+- In JavaScript we'd represent the shopping list like this:
+#+BEGIN_SRC javascript
+shoppingList = ['Milk','Eggs','Bread','Rice','MacBook Pro']
+#+END_SRC
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's create an Array and see what we can do with it.
+- Delete the =console.log()= from your .js file
+- Now lest create a new array
+#+BEGIN_SRC javascript
+var listOfCats = ['Dave','Dee','Dozy','Beaky','Mick','Tich']
+#+END_SRC
+- You can find out what is at any position in an Array quite easily. Write this line below it.
+#+BEGIN_SRC javascript
+console.log(listOfCats[3])
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save the .js file.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Refresh your browser. (Don't forget to look at the console)
+- Which cat is printed out in the console?
+- Is that the one you expected?
+- In JavaScript the first element of an array is indexed - 0. We often call it the zeroth (0th) element. So when counting positions, you /must/ start counting from 0.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Make sure you can console.log() all the cat names, using the array
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now you have created and accessed an array, one thing that is really useful for a program to know, is the length of the array.
+- This is actually really easy to do.
+#+BEGIN_SRC javascript
+console.log(listOfCats.length)
+#+END_SRC
+- Add this line to your code, and you should see the number 6 printed out in the console, when you save the code and refresh the page.
+* Counting the badges
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- We're now going to use an array to count the badges on your web-page.
+- Before we start, let's have a quick look at the html of the web page again.
+#+BEGIN_SRC html
+  <div id = "badges1">
+      <h3>JavaScript Badges</h3>
+      <img src="badges/placeholder.png">
+      <img src="badges/placeholder.png">
+      <img src="badges/placeholder.png">
+      <img src="badges/placeholder.png">
+      <img src="badges/placeholder.png">
+  </div>
+  <input type="button" value="Calculate Progress" id='calcProgress'>
+  <div id="progressSection">
+      <div id="textCount"></div>
+#+END_SRC
+- The three key areas we need to focus on are the =<div id = "badges1">=, the =<img>= tags used to reference the images and lastly the =<div id = "textCount">=. 
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Delete everything from your .js file.
+- Declare a variable called =imageArray= on the first line.
+- Next we'll need a function that is called when the window loads.
+#+BEGIN_SRC javascript
+window.onload = function()
+{
+
+};
+#+END_SRC
+- For now, all your code goes between the ={}=
+- To assign the images to the variable you created, add this line of code.
+#+BEGIN_SRC javascript
+imageArray = document.getElementById('badges1').getElementsByTagName('img');
+#+END_SRC
+- This code first accesses the =badges1= div and then gets _all_ the elements what use the =img= tag.
+- Let's check this works by adding a =console.log(imageArray);=
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your .js file
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Open the Badges.html file in a browser and check the console. You'll see different things depending on which browser you're using, but you should see an array being displayed.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We're now going to use the =textCount= div to display the number of badges (which is the length of the array.)
+- Let's grab the =textCount= div. Put this code between the ={}=.
+#+BEGIN_SRC javascript
+var textCount = document.getElementById('textCount');
+#+END_SRC
+- Now we can edit the innerHTML of the =textCount= div
+#+BEGIN_SRC javascript
+textCount.innerHTML = imageArray.length;
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your .js file
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Open the Badges.html file in a browser and check that the number of badges is being displayed.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+- Having the number on it's own doesn't give our user much information.
+- Use /concatenation/ (joining) to add some text to the innerHTML of the =textCount=. Something along the lines of "Total Badges Gained", should do the trick.
+* Filling the progress bar
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- Having a numerical indicator of progress is great, but a progress bar would be better.
+- In the .html file there are the following lines of code.
+#+BEGIN_SRC html
+  <div id="progressBar">
+      <div id="progressBarFill"></div>
+#+END_SRC
+- =progressBar= is a container div and =progressBarFill= is a div inside it that has been coloured white, using css. 
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's have a play with the =progressBarFill=, put this inside your =onload = function{}= code
+#+BEGIN_SRC javascript
+document.getElementById('progressBarFill').style.width = '25%';
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save the .js file
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Open the Badges.html in a browser.
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Play around with different percentages for the progress bar.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now we want the bar to actually represent the progress you've made.
+- Add a new variable declaration to your first line, so it reads as follows.
+#+BEGIN_SRC javascript
+var imageArray, progress
+#+END_SRC
+- Declaring multiple variable on a single line saves us a bit of space.
+- Within the =onload= function, we now want to work out the percentage of badges you're received and then change the width of the =progressBarFill=. Edit your function so that it looks like the one below. 
+#+BEGIN_SRC javascript
+  window.onload = function()
+  {
+      imageArray = document.getElementById('badges1').getElementsByTagName('img');
+      var textCount = document.getElementById('textCount');
+      textCount.innerHTML = 'Total Badges gained = ' + imageArray.length;
+      progress = imageArray.length/6*100;
+      document.getElementById('progressBarFill').style.width = progress + '%';
+  };
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your code.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Run it in the browser and check that it works.
+- Try removing some of the image tags from the html file and see whether the progress bar changes in size.
+* Animating the fill
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- We're now going to animate the fill bar.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The basic concept is going to be to increase the width of the fill bar by 1% every 20 milliseconds.
+- We'll start by using a function to handle the timing.
+- At the top of your .js file declare a new variable called =fillPercent=
+- Now, at the bottom of the .js file let's make a new function called =timer()=
+#+BEGIN_SRC javascript
+function timer()
+{
+
+};
+#+END_SRC
+- Inside the =timer()= function we're going to want to assign the variable fillPercent the value 0, as the bar will start off with a width of 0.
+#+BEGIN_SRC javascript
+fillPercent = 0
+#+END_SRC
+- Next we need a timing event inside the function. We'll use the timing event to call a function that we haven't written yet.
+#+BEGIN_SRC javascript
+setInterval(function(){fillIt()},20;
+#+END_SRC
+- You'll finish the rest of this off in the Badge It section
+* Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Task
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+To earn your final *Blue JavaScript Badge*, complete the tasks below. Once you have finished, ask your teacher to check your code to make sure it runs correctly.
+- Create a new function called fillIt()
+- Inside the function the first thing that should happen is fillPercent is incremented up by 1 (++)
+- Next you'll need a conditional =if= but no =else=, that should check that fillPercent is less than progress.
+- If the condition is true then you'll need the line:
+#+BEGIN_SRC javascript
+  document.getElementById('progressBarFill').style.width = fillPercent+'%';
+#+END_SRC
+- Lastly, delete the line in the onload() function that fills the progress bar.
+- Check that it's all working, and ask your teacher for your final badge.
+
+

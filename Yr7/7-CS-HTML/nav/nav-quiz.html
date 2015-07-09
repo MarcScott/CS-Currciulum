@@ -1,0 +1,122 @@
+<html>
+<head>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script type = "text/javascript">
+
+
+var allQuestions = [{
+    question: "href stands for?",
+    choices: ["Hyper reference.", "  Hypertext reference.", "Hyper resource file."],
+    correctAnswer: 1
+}, {
+    question: "To create a link to Google, you need to use which tag",
+    choices: ["&lt;ref&gt;and &lt;/ref&gt;", "&lt;link&gt;and &lt;/link&gt;", "&lt;a&gt;and &lt;/a&gt;"],
+    correctAnswer: 2
+}, {
+    question: "The attribute <em>href </em>is used to...",
+    choices: ["provide the linked web site or web page address", "provide the hyper text you want to make;", "provide the linked text shown on a web page"],
+    correctAnswer: 0
+}, {
+    question: 'Take look at the following code, which text will show on a web page as a link to BBC?<br><br><span class="code">&lt;a href="http://www.bbc.co/uk"&gt;BBC&lt;/a&gt;</span><br>',
+    choices: ["BBC", "http://www.bbc.co.uk", 'href="http://bbc.co.uk"'],
+    correctAnswer: 0
+}];
+
+//
+
+var questionCount = 0;
+var score = 0;
+
+// Set header and answer choices dynamically
+
+
+function setHeader(questionNum) {
+    var questionHeaderEl = document.getElementById("questionHeader");
+    questionHeaderEl.innerHTML = questionNum+1 + ". " + allQuestions[questionNum].question + '<br>';
+}
+
+function setAnswer(idEl, questionNum, choiceNum) {
+    var choiceEl = document.getElementById(idEl);
+    choiceEl.innerHTML = '<span class="callouttext">' + allQuestions[questionNum].choices[choiceNum] + '</span>';
+}
+
+function showQuestion() {
+    setHeader(questionCount);
+    setAnswer("answ1", questionCount, 0);
+    setAnswer("answ2", questionCount, 1);
+    setAnswer("answ3", questionCount, 2);
+}
+
+function updateScore() {
+    var rightAnswer = allQuestions[questionCount].correctAnswer;
+    var chosenAnswer = document.getElementById("choice" + (rightAnswer + 1));
+    if (chosenAnswer.checked) {
+        score++;
+    }
+}
+
+function showScore() {
+    if (questionCount >= allQuestions.length) {
+        document.body.innerHTML = '<html><head><link rel="stylesheet" href="../CSS/style.css" type="text/css"><title>Learn to Create Web pages - BGS KS3 Computing</title><author>Mrs.Ellis</author></head><body><div id="container"><div id="h3bar"><h1>Learn to create your own webpages</h1></div><div id="topnav"><ul id="navbar"><li><a href="../index.html">HTML Basics</a></li><li><a class="z" href="navigation.html">Navigation Among Pages</a></li><li><a href="../style/style.html">Layout and Style</a></li><li><a href="../elements/elem.html">Images and More</a></li><li><a href="../advstyle/style14.html">Advanced Layout</a></li></ul></div><div id="left"><a class="nav" href="nav-quiz.html"><< Restart Quiz</a></div><div id="clear"></div><div id="contentarea"><p class="callouttext">' + " Your score is " + score + " out of " + questionCount + '</p><p><a class="nav" href="nav-quiz.html">Retake</a></p><p><a class="nav" href="../style/style.html">I am ready! Take me to the next section. </a><p></div></div></body></html>';
+    }
+}
+
+function nextQuestion() {
+    updateScore();
+    questionCount++;
+    showScore();
+    showQuestion();
+}
+
+// add event listener
+
+var nextButton = document.getElementById("next");
+nextButton.addEventListener("click", nextQuestion, false);
+
+// play!
+//showQuestion();
+</script>
+
+</head>
+<body onload="showQuestion()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a class="z" href="navigation.html">Navigation Among Pages</a></li>
+<li><a href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="nav-quiz.html"><< Restart Quiz</a> 
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+<h3 id="questionHeader"></h3>
+
+<input type="radio" name="choice" value="0" id="choice1">
+<label id="answ1"></label>
+<br>
+<input type="radio" name="choice" value="1" id="choice2">
+<label id="answ2"></label>
+<br>
+<input type="radio" name="choice" value="2" id="choice3">
+<label id="answ3"></label>
+<br><br><br>
+<button id="next" onclick="nextQuestion()">Next Question</button>
+
+</div>
+</div>
+</body>
+</html>

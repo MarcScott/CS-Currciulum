@@ -1,0 +1,237 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Touring Turing
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-Turing">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* More Conditionals
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There's actually a lot more that we can do with Conditional Selection.
+- There is another keyword called =elif= that means /else if/
+- This is useful if we are testing for multiple conditions.
+- In lesson 3 we used an example of it being cold outside. But *cold* or *not cold* is a =binary= choice, meaning there are only two choices.
+- We could have a range of descriptions of the temperature outside - *cold*, *mild*, *warm* or *hot* for example.
+- /if/ it's cold you'll need a coat, /else if/ it's mild you go out, /else if/ it's warm you take off your jumper, /else/ you put on some shorts.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's try and code that up.
+- Create a new script called =weatherChecker.py=
+#+begin_src python
+  temperature = input('What is it like outside? ')
+  if temperature == 'cold':
+      print('Better take a coat')
+  elif temperature == 'mild':
+      print('You can just go out')
+  elif temperature == 'warm':
+      print('You had better take off your jumper')
+  else:
+      print('You had better put on some shorts')
+#+end_src
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Can you extend the script for more temperature options - *freezing*, *chilly*, *tropical* for instance?
+- Try adding on a another block of conditional selection that asks about the time of day - *morning*, *afternoon*, *evening* perhaps, and advises on whether the user has eaten their *breakfast*, *lunch* or *tea* before they go out.
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Choose 4 friends in the class.
+- Create a script that asks for the user to type in their name.
+- If the name provided matches one of your friend's names then it should give a nice response.
+- If it does not match your friend's names then it should produce a *mild* insult.
+* More Operators
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- You already know that a double equals is used to test for =equality=, whether something is equal or not.
+- There are other tests we can perform though.
+- Look at the table below.
+| Comparison Operator | Description                                              | Example                              |
+|---------------------+----------------------------------------------------------+--------------------------------------|
+| ==                  | Tests if two things are equal                            | 6 == 6 is True                       |
+| !=                  | Tests if two things are *not* equal                      | 4 != 6 is True                       |
+| <                   | Tests if one thing is less than another                  | 3 <  10 is True                      |
+| >                   | Tests if one thing is greater than another               | 10 > 3 is True                       |
+| <=                  | Tests if one thing is less than *or* equal to another    | 10 <= 10 is True and 9 <= 10 is True |
+| >=                  | Tests if one thing is greater than *or* equal to another | 5 >= 5 is True and 5 >= 3 is True    |
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- So how can we use this?
+- Let's try and make a little script that insults people based on their age.
+- Make a new script (=Ctrl+n=) and call it =ageist.py=
+#+begin_src python
+  age = int(input('How old are you? '))
+  if age <= 10:
+      print('You are just a tiny baby.')
+  elif age <= 12:
+      print('You are cool')
+  elif age <= 30:
+      print('You are getting on a bit')
+  else:
+      print('Oh no, sorry but you are ancient')
+#+end_src
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+1. Write a script that asks the user when Alan Turing dies. If they get it right, it should congratulate them. If they're too early or late, it should tell them.
+2. Write a script that asks the user for the to calculate the sum of two numbers, and tells them if they're too high, too low or correct.
+3. Write a script that asks the user where Alan Turing worked during World War II. If they /don't/ get it right it should tell them so. Otherwise it should congratulate them.
+* Nesting Conditionals
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Sometimes in our scripts, we want to be able to make multiple branches.
+- If an outcome depends on two different conditions we can /nest/ our if statements.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The script below makes a start at producing an automatic horoscope predictor.
+- Your star sign depends on both the month and day you were born, so we need to use nested =if= statements.
+#+begin_src python
+  month = input('What month were you born in? ')
+  day = int(input('What day of the month were you born? '))
+  if month == 'January':
+      if day > 19:
+          print('You are an Aquarius')
+          print('You will live a long life')
+      else:
+          print('You are a Capricorn')
+          print('You will live a long life')
+  elif month == 'February':
+      if day > 19:
+          print('You are a Pisces')
+          print('You will live a long life')
+      else:
+          print('You are an Aquarius')
+          print('You will live a long life')
+          
+#+end_src
+- Finish of the script so that it works for any day of the year.
+-[[http://entertainment.howstuffworks.com/horoscopes-astrology/horoscope3.html][ This website might help]]
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There's no reason why you can't have further nesting if you need it.
+- However, the more nesting you have, the more difficult your script will be to read and debug if you have an error.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- The lessons you go to each day are dependent on three variables.
+  - The Current Week (Week 1 or Week 2)
+  - The Current Day (Monday - Friday)
+  - The Current Period (1-5)
+- Create a script that will report back which lesson you should be in, dependent on how you answer three questions regarding the Week, Day and Period.
+

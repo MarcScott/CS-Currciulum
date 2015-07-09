@@ -1,0 +1,183 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.11 Software Development Life Cycle
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+
+* What is the development life cycle?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The Software Development Life Cycle is comprised of two parts.
+  1. A description of the phases of development
+  2. The order in which the phases are carried out.
+- There are a number of different models of software development, and you are required to learn them, compare them and discuss the advantages and disadvantages.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The general model of software development can be split into 5 distinct phases.
+  1. Specification Requirements
+  2. Design
+  3. Implementation
+  4. Testing
+  5. Evolution
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+1. Specification Requirements
+   [[file:img/what-the-customer-wanted.jpg]]
+   - The Specification requirements are an essential step in the development cycle.
+   - At this stage, all parties should be involved (Designers, Users and Programmers).
+   - At the end of this stage in the cycle, everyone should be aware of
+     - What functions the software will perform.
+     - What the User Experience (UX) will be like.
+     - What data the software will produce, access and store.
+     - How the data will be processed.
+   - By the end of this phase, a specification document will be drawn up, that can be referred to throughout the rest of the development.
+2. Software Design
+   - The design stage is usually carried out by software architects.
+   - This is often accomplished using flowcharts to detail, the flow of data through the software.
+   - At this stage, mock-ups of the User Interface (UI) are often created.
+3. Implementation
+   - At this stage the code is written.
+   - The programmer(s) will accomplish this using the design that was provided by the architect.
+4. Testing
+   - During this stage the software is tested against the Specification.
+   - Unit tests are used to test individual elements of the software.
+   - Software tests are used to test the software as a whole.
+5. Evolution
+   - At this stage, software is upgraded. This can happen for a number of reasons.
+     - Flaws (bugs) in the original software are discovered.
+     - Security updates are carried out due to previously unknown threats.
+     - Customer requirements change.
+     - Hardware changes
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- There are many different models of Software Development.
+- One is the =Waterfall Model=.
+- Read [[https://en.wikipedia.org/wiki/Waterfall_model][this Wikipedia article]] on the Waterfall Model.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Draw a diagram of the Waterfall model of software development.
+- Compose a bulleted list of the advantages of the Waterfall Model.
+- Compose a bulleted list of the disadvantages of the Waterfall Model.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Another model is is the =Incremental Model=.
+- Read [[https://en.wikipedia.org/wiki/Incremental_build_model][this Wikipedia article]] on the Incremental Model.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Draw a diagram of the Incremental model of software development.
+- Compose a bulleted list of the advantages of the Incremental Model.
+- Compose a bulleted list of the disadvantages of the Incremental Model.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Another model you need to understand is the =Spiral Model=.
+- Read[[http://istqbexamcertification.com/what-is-spiral-model-advantages-disadvantages-and-when-to-use-it/][ this article]] on the Spiral Model.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Draw a diagram of the Spiral model of software development.
+- Compose a bulleted list of the advantages of the Spiral Model.
+- Compose a bulleted list of the disadvantages of the Spiral Model.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- The final model you need to understand is the =V-shaped Model=.
+- Read[[http://istqbexamcertification.com/what-is-v-model-advantages-disadvantages-and-when-to-use-it/][ this article]] on the V-shaped Model.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Draw a diagram of the V-shaped model of software development.
+- Compose a bulleted list of the advantages of the V-shaped Model.
+- Compose a bulleted list of the disadvantages of the V-shaped Model.

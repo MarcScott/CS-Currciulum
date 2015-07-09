@@ -1,0 +1,155 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: A Virtual LOLcat in Scratch
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-lolcats">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* An introduction to Scratch
+[[file:img/GUI.png]]
+Scratch is a programming language that can be used to make small programs and games. Above is the Graphical User Interface (GUI) for Scratch. A GUI is how the a user interacts with software.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The Scratch GUI is split into 4 sections
+- These are listed below
+[[file:img/KEY.png]]
+- The key areas are:
+ 1. The Blocks Palette
+ 2. The Scripts Area
+ 3. The Stage
+ 4. The Sprite List
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+If you've used Scratch before and already have an account, then you can skip this section.
+- Goto [[http://scratch.mit.edu][THIS LINK to the Scratch website]]
+- Click on the =Join Scratch= button in the menu bar.
+[[file:img/join.png]]
+- Fill in the details required. Be sure to pick a username and password you will remember.
+- You might need to use your teacher's email address when you register.
+- Once you are logged in, click on the =Create= button in the menu bar.
+[[file:img/create.png]]
+- Now we can name our file. Call it =Practice Scripts=
+[[file:img/title.png]]
+- Scratch works by dragging blocks of code from the blocks palate into the script area. These blocks then can be stacked to create scripts.
+- Let's make a simple Script. From the Blocks Palate, choose =Events=
+[[file:img/Scripts_menu.png]]
+- Now, click and drag the following block on to the Scripts Area.
+[[file:img/Green_flag.png]]
+- Next choose the =Looks= scripts from the menu.
+- Click and drag the =say Hello! for 2 secs= block and snap it to the =When flag clicked= block.
+[[file:img/Hello.png]] 
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- To run our Scratch script, you just need to click on the =Green Flag= in the Stage area.
+[[file:img/Hello2.png]]
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Try changing what the cat says and how long it says it for.
+[[file:img/Happeh.png]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now let's try something a little more complicated.
+- Delete your current script by picking it up and dragging it back to the Blocks Pallette.
+- We're going to make the cat grow. You'll need to search through the Blocks Pallette to find the appropriate blocks, and build the script as it's shown below.
+[[file:img/GROWIN.png]]
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Click on the =Green Flag= in the Stage area.
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Try to change the script so that after the cat has grown, it says "IM SHRINKIN" and then returns to it's regular size.
+- HINT: You can use negative numbers in Scratch.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Try an experiment with getting the cat to move around.
+- To get your platinum badge you need to make the cat move around in a large circle.
+- You'll probably want to look into using a loop to achieve this.

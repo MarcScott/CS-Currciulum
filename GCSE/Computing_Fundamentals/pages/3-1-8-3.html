@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>The CPU</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">The CPU</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. The CPU</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Research It</a></li>
+<li><a href="#sec-1-3">Document It</a></li>
+<li><a href="#sec-1-4">Learn It</a></li>
+<li><a href="#sec-1-5">Research It</a></li>
+<li><a href="#sec-1-6">Document It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Multiple Cores</a>
+<ul>
+<li><a href="#sec-2-1">Research It</a></li>
+<li><a href="#sec-2-2">Learn It</a></li>
+<li><a href="#sec-2-3">Research It</a></li>
+<li><a href="#sec-2-4">Document It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Graphics Processing Unit</a>
+<ul>
+<li><a href="#sec-3-1">Learn It</a></li>
+<li><a href="#sec-3-2">Research It</a></li>
+<li><a href="#sec-3-3">Document It</a></li>
+<li><a href="#sec-3-4">Research It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> The CPU</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The CPU lies at the heart of any Computer System, and is analogous to the brain in a human.
+There are many processors in a modern computer, but there is only one CPU.
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>A CPU is an integrated circuit that is responsible for performing arithmetic, logical and I/O operations.
+</li>
+<li>CPUs perform these operations as instructed by a computer program.
+</li>
+<li>A CPU is generally made up of two components
+<ul class="org-ul">
+<li>An arithmetic logic unit (ALU)
+</li>
+<li>A control unit (CU)
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 research">
+<h3 id="sec-1-2">Research It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Find out the <span class="underline">basic</span> functions of the <i>arithmetic logic unit</i> and the <i>control unit</i>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 document">
+<h3 id="sec-1-3">Document It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Using no more than two sentences for each, describe the functions of the <b>ALU</b> and <b>CU</b>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 learn">
+<h3 id="sec-1-4">Learn It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>A CPU works in 4 steps.
+<ul class="org-ul">
+<li>Fetch - Instructions are <i>fetched</i> from the program in memory.
+</li>
+<li>Decode - Instructions are broken up for assignment to parts of the CPU
+</li>
+<li>Execute - Calculations and Logical operations are performed (such as addition)
+</li>
+<li>Writeback - Results of calculations are written back to memory.
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 research">
+<h3 id="sec-1-5">Research It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>What is meant by a CPU's <i>clock speed</i>?
+</li>
+<li>What are the units of clock speed?
+</li>
+<li>What are the advantages and disadvantages of having a high clock speed?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 document">
+<h3 id="sec-1-6">Document It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>Make notes on the <i>Fetch - Execute</i> Cycle and CPU Clock Speed.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Multiple Cores</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Processors have, in general, been getting faster and faster since their invention in the 1970s
+</p>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 research">
+<h3 id="sec-2-1">Research It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Find out what is meant by <i>Moore's Law</i>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 learn">
+<h3 id="sec-2-2">Learn It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Even with exceedingly fast processors, they are still limited by the fetch - execute cycle.
+</li>
+<li>If you want to browse a web-page while listening to some music, a single processor would have to work on one task, and then switch to the next task, doing so thousands, millions or billions of times a second.
+</li>
+<li>By using multicore processors, the CPU acts as several independent processors.
+</li>
+<li>This means that one core can dedicate itself to your media player, while the other dedicates itself to the web-browser.
+</li>
+<li><i>Having multicore processors does not increase performance when working on a single task</i> A 2.4GHz single core processor will be able to perform a single task (such as rendering a web-page) as quickly as a 2.4GHz quad core processor.
+</li>
+<li>Programmers are, however, beginning to utilise multicore processors in single applications, by dividing up tasks between cores.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 research">
+<h3 id="sec-2-3">Research It</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>Find out about the specialisations of processors that are used in mobile devices.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3 document">
+<h3 id="sec-2-4">Document It</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Ensure your notes contain information on Moore's Law, Multicore processors and mobile processors.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Graphics Processing Unit</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+In many modern computer systems, the task of rendering graphics is handled by the Graphics Card, which has it's own processor called a GPU.
+</p>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>GPUs are very specialised processors, designed to render graphics to a screen.
+</li>
+<li>A Graphics Card will contain, not only a GPU, but also its own dedicated RAM, that can hold a complete screen image.
+</li>
+<li>In many machines, the Graphics card is a separate device that is plugged into the Motherboard, but in laptops and mobile devices, it is often integrated with the Motherboard and so can't be upgraded.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 research">
+<h3 id="sec-3-2">Research It</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Watch the video on what a GPU does.
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qyXKedcx6Iw" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 document">
+<h3 id="sec-3-3">Document It</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<ul class="org-ul">
+<li>Ensure your notes contain basic information about Graphics Cards and what the roll of the GPU is in Computer systems.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3 research">
+<h3 id="sec-3-4">Research It</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>GPUs are now often used in <i>Altcoin</i> mining, such as <i>Bitcoin</i>
+</li>
+<li>Do some research to find out about how most crypto-currencies are mined, and why GPUs are more appropriate to this task than CPUs.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

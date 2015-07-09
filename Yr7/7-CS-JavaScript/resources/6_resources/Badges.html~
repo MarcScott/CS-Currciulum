@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Badges</title>
+    <link type="text/css" rel="stylesheet" href="css/badges.css">
+  </head>
+  <body>
+    <div id="topBar">
+      <h1>My Computing Badges</h1>
+    </div>
+    <div id="container">
+      <div id="badges1">
+	<h3>JavaScript Badges</h3>
+	<img src="badges/placeholder.png">
+	<img src="badges/placeholder.png">
+	<img src="badges/placeholder.png">
+	<img src="badges/placeholder.png">
+      </div>
+      <input type="button" value="Calculate Progress" id='calcProgress'>
+      <div id="progressSection">
+	<div id="textCount"></div>
+	<div id="progressBar">
+	  <div id="progressBarFill"></div>
+	</div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

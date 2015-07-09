@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Sonic Pi</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/navbar.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Sonic Pi</h1>
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-SonicPi">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+    </ul>
+  </div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Music with Code</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Sonic Pi is an application that allows you to create music using code.
+</li>
+<li>In this project you'll learn how to use the techniques you have learned in Computer Science to generate music.
+</li>
+<li>If you want to access these resources from home and your have a Raspberry Pi, you'll find Sonic Pi is already installed. If you're on Windows or OSX then you can download and install Sonic Pi <a href="http://sonic-pi.net/">here</a>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Try It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Open up Sonic Pi.
+</li>
+<li>You should see a screen that looks something like this.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="http://www.sean.co.uk/books/raspberry-pi-for-dummies/gfx/sonic-pi.gif" alt="sonic-pi.gif" />
+</p>
+</div>
+<ul class="org-ul">
+<li>You can write your code in <code>Workspace 1</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 code">
+<h3 id="sec-1-3">Code It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Try typing the following line.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">play 48
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now press <code>Alt</code> and the <code>r</code> key to run the code and make sure you have your headphones on.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 code">
+<h3 id="sec-1-4">Code It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>So that was a single note. Let's try playing some more.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">play 48
+play 52
+play 55
+</pre>
+</div>
+<ul class="org-ul">
+<li>You'll notice that when you hit <code>Alt+r</code> this time, that the three notes play simultaneously.
+</li>
+<li>If we don't want that, and instead want to put a break in between the notes being played, we need to use the <code>sleep</code> function. This takes a time in seconds as an argument.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">play 48
+sleep 0.6
+play 52
+sleep 0.6
+play 55
+sleep 0.6
+play 55
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 code">
+<h3 id="sec-1-5">Code It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Does that sound a little familiar?
+</li>
+<li>Let's add some simultaneous notes into it. As you saw earlier, if we don't use the <code>sleep</code> function then notes are played at the same time.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python">play 48
+sleep 0.4
+play 52
+sleep 0.4
+play 55
+sleep 0.4
+play 55
+play 48
+sleep 0.4
+play 52
+play 55
+sleep 0.4
+play 52
+play 55
+play 64
+play 67
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 code">
+<h3 id="sec-1-6">Code It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>Sounding good?
+</li>
+<li>Let's finish off the first bar of the the first four bars of The Blue Danube.
+</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ryyL6l2aGk0" frameborder="0" allowfullscreen></iframe>
+<div class="org-src-container">
+
+<pre class="src src-python">play 48
+sleep 0.4
+play 52
+sleep 0.4
+play 55
+sleep 0.4
+play 55
+play 48
+sleep 0.4
+play 52
+play 55
+sleep 0.4
+play 52
+play 55
+play 64
+play 67
+sleep 0.4
+play 48
+play 64
+play 67
+sleep 0.4
+play 52
+play 55
+sleep 0.4
+play 52
+play 55
+play 67
+play 64
+sleep 0.4
+play 67
+play 64
+play 45
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 try">
+<h3 id="sec-1-7">Try It</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Now try and play the second 4 bars
+</li>
+<li>Here's the sheet music
+</li>
+</ul>
+<iframe src="https://docs.google.com/gview?url=http://makingmusicfun.net/pdf/sheet_music/blue-danube-piano.pdf&embedded=true" style="width:600px; height:700px;" frameborder="0"></iframe>
+<ul class="org-ul">
+<li>Here's a guide for which notes or which
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="http://mag.pianotut.ru/i/mag.pianotut.ru/ipi/32ef44be07737fdbe431c8c40f330a33.jpg" alt="32ef44be07737fdbe431c8c40f330a33.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>And here's a table showing the <code>play</code> arguments for the notes.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Name</th>
+<th scope="col" class="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Bass C</td>
+<td class="right">48</td>
+</tr>
+
+<tr>
+<td class="left">Bass D</td>
+<td class="right">50</td>
+</tr>
+
+<tr>
+<td class="left">Bass E</td>
+<td class="right">52</td>
+</tr>
+
+<tr>
+<td class="left">Bass F</td>
+<td class="right">53</td>
+</tr>
+
+<tr>
+<td class="left">Bass G</td>
+<td class="right">55</td>
+</tr>
+
+<tr>
+<td class="left">A</td>
+<td class="right">57</td>
+</tr>
+
+<tr>
+<td class="left">B</td>
+<td class="right">59</td>
+</tr>
+
+<tr>
+<td class="left">C</td>
+<td class="right">60</td>
+</tr>
+
+<tr>
+<td class="left">D</td>
+<td class="right">62</td>
+</tr>
+
+<tr>
+<td class="left">E</td>
+<td class="right">64</td>
+</tr>
+
+<tr>
+<td class="left">F</td>
+<td class="right">65</td>
+</tr>
+
+<tr>
+<td class="left">G</td>
+<td class="right">67</td>
+</tr>
+
+<tr>
+<td class="left">Treble A</td>
+<td class="right">69</td>
+</tr>
+
+<tr>
+<td class="left">Treble B</td>
+<td class="right">71</td>
+</tr>
+
+<tr>
+<td class="left">Treble C</td>
+<td class="right">72</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 badge">
+<h3 id="sec-1-8">Badge It</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>Choose a simple tune or create your own short composition using Sonic Pi.
+</li>
+<li>Use the <code>Rec</code> button to record it playing and save it as a .wav file.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

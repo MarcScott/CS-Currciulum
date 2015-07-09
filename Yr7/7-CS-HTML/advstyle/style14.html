@@ -1,0 +1,67 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a class="z" href="style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="right">
+ <a class="nav" href="style15.html">Next >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Advanced Layout and Style</p>
+	<ol>
+	<span class="bigtext">
+
+<p>After you have done everything so far, you should see something similar to the following image when you open your <strong><em>index.html</strong></em> in a browser:</p>
+<p><img src="../images/page-8.png" width=620 height=360><p>
+<p>There are several things we can do to improve this page:
+<ul>
+	<li>Leave some space between the boxes</li>
+	<li>Leave some space between the text and image from the border of the two boxes</li>
+	<li>Add an image to fill the blank space in the topbox</li>
+	<li>Make the heading "My Dog Jack" bigger</li>
+	<li>Change the page's background colour from white to something more interesting</li>
+</ul>
+</p>
+<p><img src="../images/page-finish.png" width=620 height=360><p>
+<div id="right">
+ <a class="nav" href="style15.html">Next >></a>
+</div>
+
+
+</div>
+</body>
+
+
+</html>

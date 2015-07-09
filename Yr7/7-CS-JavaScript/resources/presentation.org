@@ -1,0 +1,33 @@
+#+REVEAL_ROOT: file:reveal.js
+#+REVEAL_THEME: Year7
+#+OPTIONS: num:nil
+
+#+AUTHOR: Marc Scott
+#+EMAIL:
+#+TITLE: An Introduction to JavaScript
+
+* Lesson 1
+** Message Boxes
+*** Alert
+Alerts can contain strings or variables or a mix of both
+#+BEGIN_SRC javascript
+window.alert('A message goes here')
+window.alert(anyVariableName)
+window.alert('You can mix text and ' + variableNames)
+#+END_SRC
+*** Prompt
+Prompts will ask the user for a response. Remember to store a prompt as a variable, and that it will always be a string.
+#+BEGIN_SRC javascript
+myVar = window.prompt('This allows the user to type in a string')
+myNum = window.prompt("Even if they type numbers, they'll still be strings")
+#+END_SRC
+*** Confirms
+Confirms will give the user a choice between OK and Cancel. These are then stored as a Boolean (see later on)
+#+BEGIN_SRC javascript
+choice = window.confirm('Choose OK or Cancel')
+#+END_SRC
+** Variables
+** Strings
+** Numbers
+** Booleans
+

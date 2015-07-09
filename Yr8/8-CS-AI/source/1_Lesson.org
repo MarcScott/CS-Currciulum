@@ -1,0 +1,180 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Artificial Intelligence
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-AI">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* What is AI?
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Kempelen_chess1.jpg/562px-Kempelen_chess1.jpg]]
+- In 1770, at Schönbrunn Palace, the world was introduced to the first Artificially Intelligent machine.
+- Called /The Mechanical Turk/ the clockwork machine was able to play chess, and was able to beat all the human opponents pitted against it that day, typically in under half and hour.
+- There was one problem with the /The Mechanical Turk/, it was a *hoax*.
+- Inside the mechanism was space for a human to sit, and from where he could operate the machinery.
+- It would be over 200 years before a computer was able to convincingly beat a human at chess, when in 1997, Deep Blue beat the World Champion -Gary Kasparov in a 6 game match. 
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- Artificial intelligence (AI) is the intelligence exhibited by machines or software.
+- As you will learn, we are already surrounded by AI, whether that be the route finding software in the maps app on your mobile phone, that enemy combatant in your FPS console game or the recommendation software used to suggest products to you based on your previous purchases.
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- There are a few basic goals of AI research. These are to produce machines or software that are capable of:
+  1. reasoning (making decisions)
+  2. representing knowledge
+  3. forward planning
+  4. learning
+  5. natural language processing (communication)
+  6. perception (sensing an environment)
+  7. move and manipulate objects
+- Watch the following videos and decide which (if any) of the goals listed above have been achieved by the AIs shown.
+#+begin_html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cNZPRsrwumQ" frameborder="0" allowfullscreen></iframe>
+#+end_html
+#+begin_html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WnzlbyTZsQY" frameborder="0" allowfullscreen></iframe>
+#+end_html
+#+begin_html
+<iframe width="420" height="315" src="https://www.youtube.com/embed/51b10w3nTS4" frameborder="0" allowfullscreen></iframe>
+#+end_html
+- Use ticks and crosses in the table below.
+| AI          | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|-------------+---+---+---+---+---+---+---|
+| Big Dog     |   |   |   |   |   |   |   |
+| Chat Bots   |   |   |   |   |   |   |   |
+| Robot Chess |   |   |   |   |   |   |   |
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- As you have no doubt gathered, the concept of AI is fairly broad.
+- Download and run[[file:doc/chatterbot.py][ this little Python Script]] by[[http://rodic.fr/][ Mathieu Rodic]]
+- Have a (fairly boring conversation) with the bot.
+- Close the program and restart it.
+- Have another conversation.
+- Are there any differences the second time around?
+- How about a third time?
+- How about when you have a go with a friend's chatbot?
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- To what extent do you feel that the chatbot displays any of the goals of AI, as listed in the Silver Task?
+- How do you think this chatbot works?
+- Does looking at the source code for the bot (in IDLE) help at all?
+
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Deciding what qualifies as AI and what doesn't is not easy.
+- Something is /Artificial/ if it is not naturally occurring - i.e. man-made.
+- What do we mean by /Intelligence/ though?
+- Do animals display intelligence? How about fish? Insects? Worms?
+- The 17th century philosopher and mathematician, Rene Descartes, went as far as to suggest that all animals were nothing more than /automata/ (machines made of muscle and bone) and incapable of true thought.
+- Others have suggested that we can see evidence of Intelligence in organisms as simple as protozoa or algae.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- In your own words, try to define what you think it means to be intelligent.
+- If you were going to devise a test, that could classify a machine as intelligent or not, what type of test would it be?
+#  LocalWords:  allowfullscreen Mathieu Rodic

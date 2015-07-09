@@ -1,0 +1,85 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a href="../style/style.html">Layout and Style</a></li>
+<li><a class="z" href="elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="elem3.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="elem5.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Create a List - a description list of hyperlinks</p>
+	<ul>
+	<span class="bigtext">
+In the leftbox of our design, there is a list of hyperlinks.  We can add some descriptions under each hyperlink to give more information as what each link is about.
+<ol>
+	<li class="bigtext">The &lt;dt&gt; (defines a term) tag will be used to define a hyperlink and the &lt;dd&gt; (describes a term) will be the description for that hyperlink:
+		<table border=1 width=640 align=center>
+		<tr><td>
+		<span class="code">
+			A description list code <br>
+		&lt;dl&gt; <br>
+		&nbsp;&lt;dt&gt;&lt;a href="mySecondPage.html"&gt;Photo Gallery&lt;/a&gt;&nbsp;&lt;/dt&gt; <br>
+		&nbsp;&lt;dd&gt; - A collection of photos of Jack from 4 weeks to present&gt&lt;dd&gt; <br>
+		&lt;/dl&gt; 
+		</span>
+		</td>
+	<td>
+		
+			 What you see in a browser<br>
+		<dl> 
+		 <dt><a class="nav" href="../mySecondPage.html">Photo Gallery</a> </dt> 
+		 <dd> - A collection of photos of Jack from 4 weeks to present<dd> 
+		</dl>
+		</td></tr>
+		</table>
+	</li>
+<li  class="bigtext"><img src="../images/we_can_do_it.jpg" width=80 height=80>&nbsp;&nbsp;Can you independently add the rest of your hyperlinks to the description list and then to the leftbox?</li><br>
+	<br>
+	<p>I tried and it did not work. Please <button class="help">help me!</button></p>
+	<p class="img"><img src="../images/html-body-4.png" width=640 height=320></p>
+<div id="left">
+<a class="nav" href="elem3.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="elem5.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: 3.1.15 Database concepts
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+#+END_HTML
+[[file:img/Chuck.jpg]]
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* What is a Database
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- A database is a method of storing data.
+- The advantage of a database over another data structure (such as a csv text file) is that the data is quick and easy to sort and search.
+- There are many different types of database software that each have their own advantages and disadvantages.
+- Databases store data in tables.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Let's take some simple data and see how it would be organised in a database table.
+The Way of the Dragon, Colt
+Lone Wolf McQuade, Ranger J.J. McQuade
+The Delta Force, Major Scott McCoy
+The Expendables 2, Booker
+- First we'll put it in a =Table= - /A two dimensional structure used to store data/
+- Each 'cell' in the database table is called a =Field=
+| <c>                   | <c>                 |
+| The Way of the Dragon | Colt                |
+| Lone Wolf McQuade     | Ranger J.J. McQuade |
+| The Delta Force       | Major Scott McCoy   |
+| The Expendables 2     | Booker              |
+
+- Although [[http://dba.stackexchange.com/questions/31805/what-is-the-difference-between-a-record-and-a-row-in-sql-server][there is some debate]] on the issue, each row of the table tends to be called a =Record=
+- The table needs a name, so we'll call this one CN-FILMOGRAPHY
+- Each =Column= of the table needs a title.
+
+| <c>                   | <c>                 |
+| Film                  | Role                |
+|-----------------------+---------------------|
+| The Way of the Dragon | Colt                |
+| Lone Wolf McQuade     | Ranger J.J. McQuade |
+| The Delta Force       | Major Scott McCoy   |
+| The Expendables 2     | Booker              |
+
+- To prevent replication of data, make searching easier and to build relationships between tables, each =record= in our table needs a unique identifier. This is called a =Primary Key=.
+| <c>                   | <c>                 | <c>    |
+| Film                  | Role                | Key    |
+|-----------------------+---------------------+--------|
+| The Way of the Dragon | Colt                | CN-001 |
+| Lone Wolf McQuade     | Ranger J.J. McQuade | CN-002 |
+| The Delta Force       | Major Scott McCoy   | CN-003 |
+| The Expendables 2     | Booker              | CN-004 |
+- A =Primary Key= _must_ be unique for each =record=. No two records can share a =Primary Key=.
+-  Normally we'd get the software to generate the =primary key= for us. We could have used the /Film/ as the =primary key= but it's possible for . [[http://www.andsoitbeginsfilms.com/2013/07/top-15-movies-with-same-title.html][two different films to have the same title]]. It's certainly possible for Chuck Norris to have made more than one film in a year, and he's played the same role in numerous films as well. So the =primary key= is better off being assigned by software to ensure it is unique.
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- For your notes - write down definitions for the following terms
+  1. Table
+  2. Field
+  3. Record
+  4. Primary key
+
+* Flat File and Relational Databases
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We can keep adding data into our table and it would end up being quite large
+- This is called a =Flat File Database=
+- Suppose we want more information though. Suppose we want to store data about other aspects of Chuck Norris' films.
+- Let's create a new table called FILMS
+| <c>                   | <c>           | <c>  | <c>                   | <c>    |
+| Film                  | Director      | Year | Rotten-Tomatoes-Score | Key    |
+|-----------------------+---------------+------+-----------------------+--------|
+| The Way of the Dragon | Bruce Lee     | 1972 | 100                   | FM-001 |
+| Lone Wolf McQuade     | Steve Carver  | 1983 | 67                    | FM-002 |
+| The Delta Force       | Menahem Golan | 1986 | 20                    | FM-003 |
+| The Expendables 2     | Simon West    | 2012 | 65                    | FM-004 |
+- This table has a primary key as well.
+- Now that we have our two table, we might want to =Query= the data. A =query= is basically a question that you ask, getting data from the table back as an answer.
+- You might want to know "In which year did Chuck Norris play the character Colt?" for instance.
+- To answer this question, the tables need to be linked. The simplest way to do this is by using the =Primary Key= from the FILMS table as a =Foreign Key= in the CN-FILMOGRAPHY table.
+| <c>    | <c>                 | <c>    |
+| Film   | Role                | Key    |
+|--------+---------------------+--------|
+| FM-001 | Colt                | CN-001 |
+| FM-002 | Ranger J.J. McQuade | CN-002 |
+| FM-004 | Major Scott McCoy   | CN-003 |
+| FM-003 | Booker              | CN-004 |
+- Now when we want to ask "In which year did Chuck Norris play the character Colt?", our database software can look up Colt from the CN-FILMOGRAPHY table in the =column= Role, find the Film =foreign key= in the =column= film and then use this to find the Year from the FILMS =table=.
+- We now have a =Relational Database= as the two tables are linked.
+ 
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+- You're going to need to know about =indexing= in databases.
+- Use online resources to look up what a Database =index= is and make notes.

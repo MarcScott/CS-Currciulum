@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Touring Turing</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/navbar.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Touring Turing</h1>
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-Turing">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> More Conditionals</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>There's actually a lot more that we can do with Conditional Selection.
+</li>
+<li>There is another keyword called <code>elif</code> that means <i>else if</i>
+</li>
+<li>This is useful if we are testing for multiple conditions.
+</li>
+<li>In lesson 3 we used an example of it being cold outside. But <b>cold</b> or <b>not cold</b> is a <code>binary</code> choice, meaning there are only two choices.
+</li>
+<li>We could have a range of descriptions of the temperature outside - <b>cold</b>, <b>mild</b>, <b>warm</b> or <b>hot</b> for example.
+</li>
+<li><i>if</i> it's cold you'll need a coat, <i>else if</i> it's mild you go out, <i>else if</i> it's warm you take off your jumper, <i>else</i> you put on some shorts.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 code">
+<h3 id="sec-1-2">Code It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Let's try and code that up.
+</li>
+<li>Create a new script called <code>weatherChecker.py</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">temperature</span> = <span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'What is it like outside? '</span>)
+<span style="color: #859900;">if</span> temperature == <span style="color: #2aa198;">'cold'</span>:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'Better take a coat'</span>)
+<span style="color: #859900;">elif</span> temperature == <span style="color: #2aa198;">'mild'</span>:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You can just go out'</span>)
+<span style="color: #859900;">elif</span> temperature == <span style="color: #2aa198;">'warm'</span>:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You had better take off your jumper'</span>)
+<span style="color: #859900;">else</span>:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You had better put on some shorts'</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 try">
+<h3 id="sec-1-3">Try It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Can you extend the script for more temperature options - <b>freezing</b>, <b>chilly</b>, <b>tropical</b> for instance?
+</li>
+<li>Try adding on a another block of conditional selection that asks about the time of day - <b>morning</b>, <b>afternoon</b>, <b>evening</b> perhaps, and advises on whether the user has eaten their <b>breakfast</b>, <b>lunch</b> or <b>tea</b> before they go out.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 badge">
+<h3 id="sec-1-4">Badge It - Silver</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Choose 4 friends in the class.
+</li>
+<li>Create a script that asks for the user to type in their name.
+</li>
+<li>If the name provided matches one of your friend's names then it should give a nice response.
+</li>
+<li>If it does not match your friend's names then it should produce a <b>mild</b> insult.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> More Operators</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>You already know that a double equals is used to test for <code>equality</code>, whether something is equal or not.
+</li>
+<li>There are other tests we can perform though.
+</li>
+<li>Look at the table below.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Comparison Operator</th>
+<th scope="col" class="left">Description</th>
+<th scope="col" class="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">==</td>
+<td class="left">Tests if two things are equal</td>
+<td class="left">6 == 6 is True</td>
+</tr>
+
+<tr>
+<td class="left">!=</td>
+<td class="left">Tests if two things are <b>not</b> equal</td>
+<td class="left">4 != 6 is True</td>
+</tr>
+
+<tr>
+<td class="left">&lt;</td>
+<td class="left">Tests if one thing is less than another</td>
+<td class="left">3 &lt;  10 is True</td>
+</tr>
+
+<tr>
+<td class="left">&gt;</td>
+<td class="left">Tests if one thing is greater than another</td>
+<td class="left">10 &gt; 3 is True</td>
+</tr>
+
+<tr>
+<td class="left">&lt;=</td>
+<td class="left">Tests if one thing is less than <b>or</b> equal to another</td>
+<td class="left">10 &lt;= 10 is True and 9 &lt;= 10 is True</td>
+</tr>
+
+<tr>
+<td class="left">&gt;=</td>
+<td class="left">Tests if one thing is greater than <b>or</b> equal to another</td>
+<td class="left">5 &gt;= 5 is True and 5 &gt;= 3 is True</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3 code">
+<h3 id="sec-2-2">Code It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>So how can we use this?
+</li>
+<li>Let's try and make a little script that insults people based on their age.
+</li>
+<li>Make a new script (<code>Ctrl+n</code>) and call it <code>ageist.py</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">age</span> = <span style="color: #6c71c4;">int</span>(<span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'How old are you? '</span>))
+<span style="color: #859900;">if</span> age &lt;= 10:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You are just a tiny baby.'</span>)
+<span style="color: #859900;">elif</span> age &lt;= 12:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You are cool'</span>)
+<span style="color: #859900;">elif</span> age &lt;= 30:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You are getting on a bit'</span>)
+<span style="color: #859900;">else</span>:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'Oh no, sorry but you are ancient'</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 badge">
+<h3 id="sec-2-3">Badge It - Gold</h3>
+<div class="outline-text-3" id="text-2-3">
+<ol class="org-ol">
+<li>Write a script that asks the user when Alan Turing dies. If they get it right, it should congratulate them. If they're too early or late, it should tell them.
+</li>
+<li>Write a script that asks the user for the to calculate the sum of two numbers, and tells them if they're too high, too low or correct.
+</li>
+<li>Write a script that asks the user where Alan Turing worked during World War II. If they <i>don't</i> get it right it should tell them so. Otherwise it should congratulate them.
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Nesting Conditionals</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Sometimes in our scripts, we want to be able to make multiple branches.
+</li>
+<li>If an outcome depends on two different conditions we can <i>nest</i> our if statements.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 code">
+<h3 id="sec-3-2">Code It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>The script below makes a start at producing an automatic horoscope predictor.
+</li>
+<li>Your star sign depends on both the month and day you were born, so we need to use nested <code>if</code> statements.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">month</span> = <span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'What month were you born in? '</span>)
+<span style="color: #6c71c4;">day</span> = <span style="color: #6c71c4;">int</span>(<span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'What day of the month were you born? '</span>))
+<span style="color: #859900;">if</span> month == <span style="color: #2aa198;">'January'</span>:
+    <span style="color: #859900;">if</span> day &gt; 19:
+        <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You are an Aquarius'</span>)
+        <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You will live a long life'</span>)
+    <span style="color: #859900;">else</span>:
+        <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You are a Capricorn'</span>)
+        <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You will live a long life'</span>)
+<span style="color: #859900;">elif</span> month == <span style="color: #2aa198;">'February'</span>:
+    <span style="color: #859900;">if</span> day &gt; 19:
+        <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You are a Pisces'</span>)
+        <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You will live a long life'</span>)
+    <span style="color: #859900;">else</span>:
+        <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You are an Aquarius'</span>)
+        <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You will live a long life'</span>)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Finish of the script so that it works for any day of the year.
+</li>
+</ul>
+<p>
+-<a href="http://entertainment.howstuffworks.com/horoscopes-astrology/horoscope3.html"> This website might help</a>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 learn">
+<h3 id="sec-3-3">Learn It</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>There's no reason why you can't have further nesting if you need it.
+</li>
+<li>However, the more nesting you have, the more difficult your script will be to read and debug if you have an error.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3 badge">
+<h3 id="sec-3-4">Badge It - Platinum</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>The lessons you go to each day are dependent on three variables.
+<ul class="org-ul">
+<li>The Current Week (Week 1 or Week 2)
+</li>
+<li>The Current Day (Monday - Friday)
+</li>
+<li>The Current Period (1-5)
+</li>
+</ul>
+</li>
+<li>Create a script that will report back which lesson you should be in, dependent on how you answer three questions regarding the Week, Day and Period.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

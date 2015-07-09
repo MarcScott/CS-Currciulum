@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>A Virtual LOLcat in Scratch</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">A Virtual LOLcat in Scratch</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Customising your Virtual Pet</a>
+<ul>
+<li><a href="#sec-1-1">Try It</a></li>
+<li><a href="#sec-1-2">Run It</a></li>
+<li><a href="#sec-1-3">Test It</a></li>
+<li><a href="#sec-1-4">Badge It - Silver</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Getting the Pet to talk with an Infinite loop and Conditionals</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+<li><a href="#sec-2-2">Learn It</a></li>
+<li><a href="#sec-2-3">Code It</a></li>
+<li><a href="#sec-2-4">Run It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Adding some more things to say</a>
+<ul>
+<li><a href="#sec-3-1">Learn It</a></li>
+<li><a href="#sec-3-2">Code It</a></li>
+<li><a href="#sec-3-3">Code It</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Choosing from the list randomly</a>
+<ul>
+<li><a href="#sec-4-1">Learn It</a></li>
+<li><a href="#sec-4-2">Code It</a></li>
+<li><a href="#sec-4-3">Run It</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Doing it again and again and again</a>
+<ul>
+<li><a href="#sec-5-1">Badge It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-lolcats">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Customising your Virtual Pet</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+At the moment your Virtual Pet is probably a little dull.
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 try">
+<h3 id="sec-1-1">Try It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>You're going to need to experiment a little now.
+</li>
+<li>Try changing the starting values of the variables and the time it takes for the variables to change.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 run">
+<h3 id="sec-1-2">Run It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Run your code and see whether the values you have chosen seem sensible
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 test">
+<h3 id="sec-1-3">Test It</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 badge">
+<h3 id="sec-1-4">Badge It - Silver</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Have a friend try your Virtual Pet and give you some feedback.
+</li>
+<li>Have them email you their feedback.
+</li>
+<li>Write down the changes you will make in response to their feedback.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Getting the Pet to talk with an Infinite loop and Conditionals</h2>
+<div class="outline-text-2" id="text-2">
+
+<div class="figure">
+<p><img src="img/Cheezburger.jpg" alt="Cheezburger.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>At the moment a user of the Virtual Pet only knows when the pet is hungry by watching the variable value change.
+</li>
+<li>From a User Experience (UX) point of view, this isn't great, so let's make the pet speak to us and tell us when it is hungry.
+</li>
+<li>We'll start off with a simple interaction, and then make it more 
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Sometimes in our programmes we want an infinite loop.
+</li>
+<li>An infinite loop is one that goes on forever (or until the program is quit).
+</li>
+<li>We can do this by using a <code>forever</code> loop in Scratch.
+</li>
+<li>The code in a <code>forever</code> loop will run until the program ends.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 learn">
+<h3 id="sec-2-2">Learn It</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<ul class="org-ul">
+<li>Conditional statements are very important in programming.
+</li>
+<li>Conditional statements are like branches in the program. If a condition is true then one branch is taken, and if the condition is false another branch is taken.
+</li>
+<li>For instance, if you want to go to the shops then you might use the following conditional statement to make a decision on how to get there.
+</li>
+</ul>
+<pre class="example">
+if the distance to the shops is less than a mile then
+    walk
+else
+    take the bus
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 code">
+<h3 id="sec-2-3">Code It</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<ul class="org-ul">
+<li>We'll need a whole new script for this part, so create a new script on the Pet Sprite.
+</li>
+<li>Use the following code, and pay attention to the indentation, as this will help you with the nesting of the blocks.
+</li>
+</ul>
+<pre class="example">
+when green flag clicked
+forever
+    if PetHunger &gt; 80 then
+        say "I CAN HAZ CHEEZBURGER?" for 2 secs
+</pre>
+<ul class="org-ul">
+<li>If you struggle with the code, you can look at an example by <a href="Example_2.html">clicking here</a>, but have a go on your own first.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3 run">
+<h3 id="sec-2-4">Run It</h3>
+<div class="outline-text-3" id="text-2-4">
+
+<ul class="org-ul">
+<li>Run your code and make sure the Pet speaks when it get's too hungry and needs feeding.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Adding some more things to say</h2>
+<div class="outline-text-2" id="text-3">
+
+<div class="figure">
+<p><img src="img/Confused_Cat.jpg" alt="Confused_Cat.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>At the moment all the Pet says is "I CAN HAZ CHEEZBURGER?"
+</li>
+<li>Let's give it a few more things to say, and then choose what is spoken.
+</li>
+<li>To do this we'll need to use a list.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul class="org-ul">
+<li>A list is a <i>data structure</i>.
+</li>
+<li>Data structures are a way of storing lots of data.
+</li>
+<li>You probably use lists all the time. Your planner probably contains lists of homeworks you have to do each day.
+</li>
+<li>We're going to create a list and fill it with items that the Pet can say.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 code">
+<h3 id="sec-3-2">Code It</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<ol class="org-ol">
+<li>Click on the <code>Data</code> Palatte
+</li>
+<li>Click on <code>Make a List</code>
+</li>
+<li>Call the list <code>HungryTalk</code>
+</li>
+<li>Click <code>OK</code>
+</li>
+</ol>
+<p>
+<img src="img/HungryTalk.png" alt="HungryTalk.png" />
+You should now see a list on the Stage.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 code">
+<h3 id="sec-3-3">Code It</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<ol class="org-ol">
+<li>Click on the <code>+</code> symbol
+</li>
+<li>You can now add things for the Pet to say when it is hungry
+</li>
+<li>Add at least five things for the Pet to say, to tell the user that it is hungry.
+</li>
+<li>If you want to use LOLSPEAK, then<a href="http://speaklolcat.com"> this website might help you translate.</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Choosing from the list randomly</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 learn">
+<h3 id="sec-4-1">Learn It</h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul class="org-ul">
+<li>We want to use a random number generator to choose what the Pet is going to say.
+</li>
+<li>Randomness and computers don't really work. Computers are really just a bunch of tiny switches and a data store, and making switches turn off and on randomly is something that is really tricky.
+</li>
+<li>We tend to call random numbers generated by a computer <b>pseudo-random</b>. This means <i>pretend</i> random. The numbers might appear to be random to humans, but in reality they have been chosen by the computer based on some form of input (often using the inbuilt clock that all computers have).
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3 code">
+<h3 id="sec-4-2">Code It</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<ul class="org-ul">
+<li>We're now going to change our script a little to use a random number to speak from the list.
+</li>
+<li>Change this script;
+</li>
+</ul>
+<pre class="example">
+when green flag clicked
+forever
+    if PetHunger &gt; 80 then
+        say "I CAN HAZ CHEEZBURGER?" for 2 secs
+</pre>
+<p>
+-So it looks like this
+</p>
+<pre class="example">
+when green flag clicked
+forever
+    if PetHunger &gt; 80 then
+        say (item (pick random 1 to (length of HungryTalk)) of HungryTalk) for 2 secs
+</pre>
+<ul class="org-ul">
+<li>I've used brackets to indicate the nesting of blocks, but if you get stuck then you can see an <a href="Example_3.html">example here</a>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3 run">
+<h3 id="sec-4-3">Run It</h3>
+<div class="outline-text-3" id="text-4-3">
+
+
+<ul class="org-ul">
+<li>Run your code and make sure that it works; picking a random element from your list each time.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2 activity">
+<h2 id="sec-5"><span class="section-number-2">5</span> Doing it again and again and again</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-sec-5-1" class="outline-3 badge">
+<h3 id="sec-5-1">Badge It</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>To earn your next badge you need to set it all up for Tiredness, Happiness and Thirst.
+</li>
+<li>Make sure that you create lists for each of the different variables, so the pet can tell the user what is wrong.
+</li>
+<li>Make sure you have at least five elements in each list.
+</li>
+<li>You'll receive a Silver, Gold or Platinum badge, depending on how many of the scripts you manage to set up.
+</li>
+<li>Take a screenshot of your scripts when you have completed them.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

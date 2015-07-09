@@ -1,0 +1,350 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Touring Turing
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-Turing">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Scripting in Python
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Up until now you have been coding in the =INTERPRETER=
+- When Turing came up with the concept of his /Turing Machine/ he imagined that cards would be used where instructions could be written for the machine to act upon, depending upon what was written on the tape.
+- We want to use the Python equivalent of these cards.
+- We call these programs or scripts
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Find and open IDLE again.
+- Now using your keyboard, hit =Ctrl= + =n= to make a new file.
+- A second window should open up that looks like this.
+[[file:img/script.png]]
+- At the moment it is /Untitled/ so we had best give it a name.
+- Hit =Ctrl= + =s= on your keyboard to save the file.
+- Give it the name =firstScript.py=
+- *Make sure you save it in a new directory, and not in the default chosen by IDLE.*
+- The =.py= file extension is important. It lets the Operating System know that the file needs to be run with Python, and not another application like Notepad.
+- With the =.py= extension, you'll also get help with the language syntax as key words will be coloured.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's write a simple script in our new window. If you see the keyword =SCRIPT= in this resource you know you should be writing in this window. If you see the keyword =INTERPRETER= you know you should be writing in the interpreter window.
+#+begin_src python
+foo = 10
+bar = 12
+baz = foo + bar
+#+end_src
+- You need to save your file again =Ctrl= + =s= and then use the =F5= key to run the program.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- You'll have noticed that nothing appears to happen.
+- Your program has actually run though, and your variables are stored in RAM.
+- Flick over into your =INTERPRETER= and try querying the variables.
+#+begin_src python
+foo
+bar
+baz
+#+end_src
+- You'll see the values displayed in the interpreter.
+* Printing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- It's going to be annoying if we have to constantly jump into the interpreter to see what the values of our variables are.
+- To display data, most programming languages have a method of outputting data. In Python we use an inbuilt function called =print()=.
+- Make a second script called =secondScript.py= (=Ctrl+n= then =Ctrl+s=)
+- Write this in your =SCRIPT=
+#+begin_src python
+print(Hello World!)
+#+end_src
+- Run the script and see what happens.
+- We get a =syntax error= because the Python Interpreter thinks that Hello is some sort of variable that we haven't created.
+- We need to make sure that it realises we're either printing strings, numbers or the values of variables
+- Try this instead
+#+begin_src python
+print('Hello World!')
+#+end_src
+- Now we've put quotes around the words, we can run our script.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We can print almost anything we like. Try out the following little scripts.
+#+begin_src python
+foo = 'Hi I am foo'
+print(foo)
+#+end_src
+#+begin_src python
+bar = 6
+baz = 8
+print(baz-bar)
+#+end_src
+#+begin_src python
+qux = 100
+print("Now that's a lot of qux"*qux)
+#+end_src
+#+begin_src python
+foo = 'Hello'
+bar = ' '
+baz = 'World!'
+print(foo+bar+baz)
+#+end_src
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Using only the variables provided in each of the scripts below, create print statements that produce the displayed output.
+*** Set A
+#+begin_src python
+foo = 10
+bar = 5
+baz = 12 
+#+end_src
+*** Output 1
+#+begin_src python
+50
+#+end_src
+*** Output 2
+#+begin_src python
+6
+#+end_src
+*** Output 3
+#+begin_src python
+238
+#+end_src
+*** Set B
+#+begin_src python
+foo = 'Ba '
+bar = 'Black Sheep '
+baz = 10
+#+end_src
+*** Output 1
+#+begin_src python
+Ba Ba
+#+end_src
+*** Output 2
+#+begin_src python
+Ba Ba Black Sheep
+#+end_src
+*** Output 3
+#+begin_src python
+Ba Ba Black Sheep Ba Ba Black Sheep Ba Ba Black Sheep Ba Ba Black Sheep Ba Ba Black Sheep Ba Ba Black Sheep Ba Ba Black Sheep Ba Ba Black Sheep Ba Ba Black Sheep Ba Ba Black Sheep 
+#+end_src
+* Getting Input
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Now that you've got the idea of printing, let's have a look at user input.
+- Sometime we'll want the user of our program to be able to set variable values. This is handled using the inbuilt =input()= function.
+- Here's an example of the use of =input()=
+#+begin_src python
+name = input('What is your name?)
+#+end_src
+- It is made up of three parts
+  1. The variable identifier. This is how the user input is stored.
+  2. The function's name. This is always =input=.
+  3. A prompt. This can be any string you like.
+[[file:img/input.png]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's try a few uses of =input()=
+- We'll make a simple 6 line script.
+- Computers are pretty strict about the order in which they execute instructions, so they'll always start at the first line and run the lines in order.
+#+begin_src python
+name = input('What is your name? ')
+print('Hi there ' + name)
+pet = input('What type of pet do you have? ')
+print('Oh, I love ' + pet + 's')
+place = input('Where do you live? ')
+print("I've heard that " + place + ' is a horrible place to have ' + pet + 's')
+#+end_src
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Create a new script called =conversation.py=
+- Try to write your own script that let's you have a bit of a conversation with the computer
+- Try to use at least three or four =input()= and =print()= statements
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Sometimes we want the user to enter numbers instead of strings.
+- With number we can do some calculations.
+- Let's write some code that doesn't quite work.
+- Create a new script called =Calc.py=
+#+begin_src python
+print('I am the Amazing Calculator, that can add any two numbers in an instant')
+firstNum = input('Give me my first number puny mortal ')
+secondNum = input('Now give me my second number, you fool ')
+answer = firstNum + secondNum
+print('The answer to your easy question is ' + answer)
+#+end_src
+- Run your code and see what happens.
+* Converting Types
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The /Amazing Calculator/ messed up the calculations
+- So what went wrong.
+- =input()= always turns what ever the user types in, into a string.
+- Just try the following in your =INTERPRETER=
+#+begin_src python
+10 + 10
+'10' + '10'
+#+end_src
+- When you tell the computer to add integers, it adds them together as you would expect.
+- If you tell the computer to add together strings (like '10') it =concatenates= them. This is a fancy word for joining together.
+- Now say the phrase =concatenation means joining together= twenty times to yourself, because it's going to come up a lot in the future.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- What we need to do is find a way to convert our strings to integers.
+- When we convert one type to another, it is called =Type Casting=
+- This is easy to do with some more inbuilt functions. In this case we're going to use the =int()= inbuilt function.
+- Try the following in the =INTERPRETER=
+#+begin_src python
+int('10') + int('10')
+#+end_src
+- Using =int()= we convert the string to an integer.
+- We can easily convert variables as well.
+#+begin_src python
+foo = '10'
+bar = '5'
+int(foo) + int(bar)
+#+end_src
+- Using this we can convert a users input, before it is even stored as a variable value.
+#+begin_src python
+num = int(input('Give me a number '))
+#+end_src
+- If we want to concatenate numbers onto string we have a problem though.
+#+begin_src python
+answer = 5
+print('The answer is ' + answer)
+#+end_src
+- If you try to run this, you'll get an error as we can't concatenate strings and integers.
+- We need to type cast the =int= to a =str= first.
+#+begin_src python
+answer = 5
+print('The answer is ' + str(answer))
+#+end_src
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Use what you have learned to fix the 'Amazing Calculator'
+- You'll need to type cast the user input to ints, then type cast the answer back to a string.
+- Can you make another script that asks the user for 5 numbers and calculates the mean average of the numbers?
+
+#  LocalWords:  firstScript secondScript Calc firstNum secondNum

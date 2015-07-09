@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Representing Sound Digitally</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Representing Sound Digitally</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. What is sound?</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Research It</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Physical to Electrical</a>
+<ul>
+<li><a href="#sec-2-1">Learn It</a></li>
+<li><a href="#sec-2-2">Research It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Sampling</a>
+<ul>
+<li><a href="#sec-3-1">Learn It</a></li>
+<li><a href="#sec-3-2">Research It</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Compression</a>
+<ul>
+<li><a href="#sec-4-1">Learn It</a></li>
+<li><a href="#sec-4-2">Research It</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CSE">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> What is sound?</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>A <i>sound</i> is literally a vibration that travels through a medium than can be heard when it reaches an ear.
+</li>
+<li>Normally that medium would be air.
+</li>
+<li>The compression and rareification of air can be represented graphically as shown below.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/sound.jpg" alt="sound.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The image from the oscilloscope shows a sound wave with varying amplitudes and frequencies.
+</li>
+<li>If we were to look at the <i>y</i> values, then we would see that the sound wave is fundamentally analogue in nature.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 research">
+<h3 id="sec-1-2">Research It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>When we talk about sound, we often use the terms <i>volume</i> and <i>pitch</i>.
+</li>
+<li>What do these terms actually mean with reference to a sound wave?
+</li>
+<li>Why would it be problematic to store analogue representations of sound on a computer?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Physical to Electrical</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 learn">
+<h3 id="sec-2-1">Learn It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>In order to store sound in a digital format, there are a few steps that need to be followed.
+</li>
+
+<li>The sound must first be captured with an input device.
+</li>
+<li>The sound is converted to an analogue electrical signal.
+</li>
+<li>The electrical signal needs to be sampled.
+</li>
+<li>The digital data can then be stored.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3 research">
+<h3 id="sec-2-2">Research It</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<ul class="org-ul">
+<li>Use online resources to find out how a microphone can capture vibrations in the air and convert them to an analogue electrical signal.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Sampling</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 learn">
+<h3 id="sec-3-1">Learn It</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul class="org-ul">
+<li>Sampling is the process of turning an electrical analogue stream of data, into a digital stream of data.
+</li>
+<li>The process involves recording the amplitude of an electrical signal at set intervals, rounding the value and converting it to binary (typically 16 or 32 bits for sound).
+</li>
+<li>For sound, this sampling normally occurs 44100 times per second. We call this the <i>Sample Rate</i> and it is normally expressed as 44.1kHz.
+</li>
+<li>The number of bits we use to store the data is known as the <i>Sample Depth</i>.
+</li>
+<li>Obviously, the higher the <i>Sample Rate</i> and the larger the <i>bit depth</i>, the higher the quality of the resulting audio.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/PCM.png" alt="PCM.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The image above is a graphical representation of how an analogue electrical signal can be sampled and converted to an integer, ready for storing as a binary integer.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 research">
+<h3 id="sec-3-2">Research It</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<ul class="org-ul">
+<li>There is a good reason that we tend not to sample sounds at a higher sample rate than 48kHz. It is to do with Nyquist's Theorem.
+</li>
+<li>Use online resources to make notes on what is stated in Nyquist's Theorem.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Compression</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 learn">
+<h3 id="sec-4-1">Learn It</h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ul class="org-ul">
+<li>Even when digitised, an audio track can have a huge file size, that makes it impractical to use.
+</li>
+<li>For this reason we use compression, to reduce the file sizes.
+</li>
+<li>There are two types of compression:
+<ul class="org-ul">
+<li>Lossless e.g. Dolby TrueHD
+</li>
+<li>Lossy e.g. MP3
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3 research">
+<h3 id="sec-4-2">Research It</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<ul class="org-ul">
+<li>Find out what the difference between lossless and lossy compression are.
+</li>
+<li>Find out what the percentage compression can be achieved with audio files.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

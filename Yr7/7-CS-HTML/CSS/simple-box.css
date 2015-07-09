@@ -1,0 +1,44 @@
+body {
+  background: #FFFFFF; 
+  margin: 0 0 60px 0;
+  text-align: center;
+  color: #FFFFFF;
+  font-family: arial,helvetica,sans serif; 
+  }
+  
+  
+  
+/* ------------------------------- Page Layout ------------------------ */
+  
+#container {
+  width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0;
+  }
+/* top box */
+
+#top {
+  background: yellow; 
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 800px;
+  height: 100px;
+  float: center;
+}
+/* left box */  
+  
+#left {
+  background: green; 
+  width: 30%;
+  height: 400px;
+  float: left;
+  }
+  /* right box */  
+  
+#right {
+  background: orange; 
+  width: 70%;
+  height: 400px;
+  float: right;
+  }

@@ -1,0 +1,139 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: A Virtual LOLcat in Scratch
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-lolcats">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Feeding the pet
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Hungry_Cat.jpg]]
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- At the moment, all we have is a script that kills the pet when it's hunger reaches 100.
+- We need a way to feed the pet, so that we can reset it's hunger back to 0
+- To do this, we'll need a new sprite. Either draw or find a picture of some food that is appropriate to feed your pet with.
+- I'm going to use this one.
+[[file:img/fish.png]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We need to import our image into Scratch next, so that we can use it as a Sprite.
+- In the Sprites panel, click on the upload button and choose your image of the pet food.
+[[file:img/Upload.png]]
+- You might need to edit the size of your Sprite using the Costumes tab, and then position it somewhere sensible on the stage
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+- Now we have a new sprite, we have a new place to add code.
+- Click on your food sprite, and you should see a blank scripts area.
+- To get back to the scripts you have written previously, you can click on your pet sprite.
+- *The following code goes with the PetFood Sprite /not/ the Pet Sprite*
+#+BEGIN_EXAMPLE
+when this sprite clicked
+set PetHunger to 0
+#+END_EXAMPLE
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+- Run your programme.
+- The PetHunger variable should increase, but be reset to 0 whenever the PetFood Sprite is clicked.
+- If it doesn't work then read back over the instructions, ask a friend and finally ask your teacher.
+* Tiredness, Happiness and Thirst
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+In the previous lesson you made variables for =PetTiredness=, =PetThirst= and =PetHappiness=. To get your badge for this lesson you need to complete the following tasks. Complete all three and you'll get a platinum badge.
+- Silver
+[[file:img/Drinking_Cat.jpeg]]
+  1. Find or make an image to represent a drink for your pet. PetThirst should increase gradually increase and then be reset to 0 when the drink sprite is clicked. If it reaches 100, the pet should die.
+- Gold
+[[file:img/Sleepy_Cat.gif]]
+  2. Find or make an image to represent a bed for your pet. PetTiredness should increase gradually and then be reset to 0 when the bed sprite is clicked. If it reaches 100 the pet should die.
+- Platinum
+[[file:img/Needy_Cat.jpg]]
+  3. PetHappiness should start at 100 and gradually decrease until it hits 0, at which point the pet should die. If the pet sprite is clicked (representing stroking the pet), then it's happiness should be reset to 100.
+

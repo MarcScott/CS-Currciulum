@@ -1,0 +1,197 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+#+OPTIONS: ^:nil
+
+#+TITLE: Sonic Pi
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-SonicPi">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Samples and Loops
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- As well as playing single notes, we can also play pre-recorded sounds using Sonic Pi.
+- These are called =samples= and there are plenty to choose from.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's play a sample.
+#+begin_src python
+sample :drum_snare_hard
+#+end_src
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The sample function takes the name of the sample as an argument, but it can take other argument as well.
+- We can change the length of time it plays for using =rate=
+#+begin_src python
+sample :drum_snare_hard, rate: 0.5
+#+end_src
+- This doubles the time the sample plays for.
+- We can also change the volume of the sample.
+#+begin_src python
+sample :drum_snare_hard, rate: 0.5, amp: 3
+#+end_src
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Play around with =rate= and =amp=
+- Can you make a sound like thunder?
+- Can you make a sound like a gentle tap on a window?
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Have a play around with some other samples.
+- When you start typing =sample := into the workspace you'll be presented with all the sample available.
+- Have a go at these:
+  - sample :ambi_choir
+  - sample :ambi_glass_hum
+  - sample :guit_e_fifths
+- Change the =amp= and =rate= of the samples you choose to see how they are altered.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- In music, drumming tends to be fairly repetitive.
+- We'll rarely want to play just a single drum beat. More likely, we'll want to play the beat 50 times or more.
+- We could do this by simply repeating the same function calls, over and over again.
+#+begin_src python
+sample :drum_snare_hard
+sleep 0.5
+sample :drum_snare_hard
+sleep 0.5
+sample :drum_snare_hard
+sleep 0.5
+sample :drum_snare_hard
+#+end_src
+- But as you've learned previously, when coding, if we want to do something multiple times, it's easiest to use a loop.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Try the following.
+#+begin_src python
+  4.times do
+      sample :drum_snare_hard
+      sleep 0.5
+  end
+#+end_src
+- The indentation is optional, but helps you see which elements of the code are within the loop.
+- Play this and see what happens.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Now try playing with the =amp= and =rate= of the sample along with the length of =sleep=
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We can also nest loops within loops.
+#+begin_src python
+4.times do
+    sample :drum_snare_hard, rate: 0.5, amp: 2
+    3.times do
+        sample :drum_snare_hard, rate: 1.5
+    end
+end
+#+end_src
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Create a cool bass line using samples and loops.
+- Make sure you're experimenting with different samples and their =rate= and =amp= arguments.

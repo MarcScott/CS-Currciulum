@@ -1,0 +1,322 @@
+
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
+
+#+TITLE: Cryptography
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-Cryptography">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Implementing public key cryptography in Python
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Last lesson you learned a little about public key cryptography
+- To recap, public key cryptography involves two keys - a public and a private key.
+- Anyone can encrypt a message using the public key.
+- Only the holder of the private key can decrypt the message.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Public Key cryptography relies on prime numbers.
+- Prime numbers are numbers that are only divisible by 1 and themselves.
+- So the first few primes are 2,3,5,7,11.
+- And [[http://primes.utm.edu/lists/small/1000.txt][here is a list of the first 1000 primes]]
+- We're going to implement a _very poor_ version of the RSA encryption algorithm.
+- It would not be a good idea to encrypt data that you really wanted to keep secret using our implementation.
+- You have learned [[http://lmgtfy.com/?q=What+is+the+answer+to+Life%2C+the+Universe+and+Everything][The answer to Life, the Universe and Everything]] and naturally you want to tell a few close friends, but you don't want everyone to know the answer.
+- You're going to write a script that will enable your friends to get their very own private keys. You can then encrypt /The Answer/ with their public key, so only they can see it.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The first thing we need to do i pick two prime numbers and a third that is smaller than the other two.
+#+begin_src python
+#Choose three primes
+prime1 =
+prime2 =
+prime3 =
+#+end_src
+- Use the list linked above to choose any three primes _below 100_
+- Now we need to generate a public key. This is actually really easy.
+- It's just the product of the first two primes, and the third prime.
+#+begin_src python
+#Create the public key
+publicKey = (prime1*prime2,prime3)
+print('Your public key is', publicKey,'.You can share this with your friends')
+#+end_src
+- Of course, we'll also need to generate a private key. This is a little trickier.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We're going to need to get into some fairly tricky maths now.
+- We'll start by learning about the /modulo/ operator in maths.
+- If you were asked what is =5/2= then you'd probably come up with the answer =2.5=
+- When we first learn to divide though, we often talk about remainders.
+- So =2/5= is equal to =2= with a remainder of =1=
+- The /modulo/ operator will tell you the remainder when two integers are divided.
+- In Python we use the =%= symbol.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Try typing the following into the interpreter
+#+begin_src python
+15%5
+15%7
+15%13
+15%4
+15%11
+#+end_src
+- Each one gives the remainder of the division.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The next stage is to find what is known as the totient function of each prime.
+- /Coprime/ numbers are pairs of numbers where _both_ numbers can only be exactly divided by 1.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Lets look at the number 10.
+- To calculate the totient function of the number 10, first list all the numbers below it.
+  - =9,8,7,6,5,4,3,2,1=
+- For each number, see if it is coprime with 10. Have a go at filling in the question marks.
+  - =9 and 10= can both only be divide by 1.
+  - =8 and 10= can be divided by ?
+  - =7 and 10= can only be divided by 1.
+  - =6 and 10= can be divided by ?
+  - =5 and 10= can be divided by ?
+  - =4 and 10= can be divided by ?
+  - =3 and 10= can only be divided by 1
+  - =2 and 10= can be divided ?
+  - =1 and 10= can only be divided by 1
+- So counting up we have 4 coprimes, so the totient function of 10 is 4
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Calculate the totient function of the following numbers.
+  1. 7
+  2. 12
+  3. 13
+  4. 23
+- Both 13 and 23 are prime numbers. Look carefully at the totient values you calculated.
+- What do you think the totient of the following primes would be?
+  1. 43
+  2. 107
+  3. 7919
+- Write down the rule for calculating the totient function of prime numbers.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now let's add in our totient function
+#+begin_src python
+phi1 = prime1 - 1
+phi2 = prime2 - 1
+#+end_src
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Now we need to find a magic number (called =d=).
+- d is a number such that when it is /multiplied/ by our third prime and then /divided/ by the product of our two totient functions, the remainder will be exactly 1.
+#+BEGIN_HTML
+<div>
+<math xmlns='http://www.w3.org/1998/Math/MathML' display='block'>
+<mfrac>
+<mrow>
+<mi>d</mi>
+<mo>x</mo>
+<mi>prime3</mi>
+</mrow>
+<mrow>
+<mi>phi1</mi>
+<mo>x</mo>
+<mi>phi2</mi>
+</mrow>
+</mfrac>
+<mo>=</mo>
+<mn>1</mn>
+</math>
+</div>
+#+END_HTML
+- There are various ways to calculate =d=, but we're going to go for the simplest solution.
+- We'll just test every value from 1 upwards until we hit a value for d.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's start by creating a for loop that counts from d up to the product of our two totient.
+#+begin_src python
+  for d in range(phi1*phi2):
+      print(d)
+#+end_src
+- What's the first number in the list of printed numbers?
+- Why might this be a problem? (What does division by 0 give you?)
+- Let's fix the code then and give our for loop a starting point.
+#+begin_src python
+  for d in range(1,phi1*phi2):
+      print(d)
+#+end_src
+- Does that fix the issue?
+- Now we need to test the equation written above.
+#+begin_src python
+  for d in range(1,phi1*phi2):
+      if (d * prime3)%(phi1 * phi2) == 1:
+          print(d)
+#+end_src
+- The number (or first of the numbers) listed is the value we want for d.
+- So if d is found, we should stop the loop.
+#+begin_src python
+  for d in range(1,phi1*phi2):
+      if (d * prime3)%(phi1 * phi2) == 1:
+          print(d)
+          break
+#+end_src
+- Let's make sure that we save the value of d along with the product of our original primes, as this will be our private key.
+#+begin_src python
+  for d in range(1,phi1*phi2):
+      if (d * prime3)%(phi1 * phi2) == 1:
+          privateKey = prime1*prime2,d
+          break
+  print('Your private key is',privateKey)
+#+end_src
+- So now we have both public and private keys.
+- Try running your program and then typing =publicKey= into the interpreter. Then try =privateKey=.
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Now we have the public and private keys, we can encrypt and decrypt numbers.
+- The algorithm for encryption is as follows.
+  1. Take the secret number you want to encrypt (42)
+  2. Raise it to the power of the second part of your public key
+  3. Calculate the remainder when the result is divided by the first part of your public key
+- The algorithm for decryption is as follows.
+  1. Take the encrypted secret number.
+  2. Raise it to the power of the second part of your private key
+  3. Calculate the remainder when the result is divided by the first part of your public key.
+- Try and write two lines of code that will encrypt the number (and save it as =cipherText=) then decrypt =cipherText= and save it as =plainText=.
+- Hints
+  1. To raise one number to the power of another use =**=
+     - 6**2 = 36
+     - 10**5 = 100000
+  2. To get the first element of publicKey use =publicKey[0]=, to get the second element use =publicKey[1]=
+     - =publicKey =(187,7)=
+     - =publicKey[0] = 187=
+     - =publicKey[1] = 7=
+  3. Use modulo =%= to get the remainder of the division.
+- Test your code when you are finished by printing =cipherText= and =plainText=
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+- Our algorithm is actually pretty poor, and should never be used for real cryptography.
+- While it might encrypt the number 42 well enough, try it with a much larger number.
+- What happens?
+- Try increasing the size of your prime numbers, using the linked list we used at the start.
+- What happens when you use three large primes?
+- Real cryptography uses extremely large primes. Why would this be a problem for our algorithm.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Generate a public and private key (Don't use large prime numbers).
+- Write down your public key on a bit of paper and give it to your teacher.
+- Your teacher is then going to write you a short message, using numbers.
+- Decrypt each number using your private key, then translate it back into text as follows.
+- A = 1 up to Z = 26

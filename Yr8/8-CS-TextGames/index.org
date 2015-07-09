@@ -1,0 +1,47 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="pages/css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil  toc:nil
+#+TITLE: Text Based Games
+#+AUTHOR: Marc Scott
+
+
+#+BEGIN_HTML
+<div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+        <a href="https://github.com/MarcScott/8-CS-TextGames">Fork me on GitHub</a>
+    </div>
+</div>
+#+END_HTML
+* [[file:pages/1_Lesson.html][Week 1 - An introduction to text-based games]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/2_Lesson.html][Week 2 - NIM part I - The 100 Game ]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/3_Lesson.html][Week 3 - Rock, Paper, Scissors ]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:      
+* [[file:pages/4_Lesson.html][Week 4 - Hangman]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:      
+* [[file:pages/5_Lesson.html][Week 5 - Adventure Games Part I ]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:    
+* [[file:pages/6_Lesson.html][Week 6 - Adventure Games Part II ]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/assessment.html][Assessment]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:
+* [[file:pages/resources.html][Resources]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: link-heading
+:END:

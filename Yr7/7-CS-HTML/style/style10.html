@@ -1,0 +1,96 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a class="z" href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a href="../advstyle/style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="style9.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style11.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Layout and Style</p>
+	<ol>
+	<span class="bigtext">
+
+<li class="step" value="7">
+Create the layout using box model- add the left box inside the container.
+</li>
+<p>Let's <button>check our design sketch</button> again to see where the left box should go. Click the green button again to hide the sketch and read on.</p>
+<p class="img"><img src="../images/sketch.png" width=400 height=240></p>
+
+<p>We have created a container to hold the two side-by-side boxes. The container has a height of 800px and width of 800px. The two boxes inside it have the same height as the container but with different width. We will give the <strong><em>left box</em></strong> a width of 160px and the <strong><em>right box</em></strong>  a wdith of 640px to start with. 160px+640px=800px which means those two boxes take up all the width of the container.</p>
+<p>Since the two boxes are nested inside the container, we need to put the left box definition nested inside the <strong><em>container</em></strong> box. </p>
+
+<table border=1 width=400>
+<tr><td>
+<span class="code">
+&lt;div id="container"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="leftbox"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;  <br>
+&lt;/div&gt;  <br>
+</span>
+</td></tr>
+</table>
+<p>Now let's add style attributes to the left box. You know how to define a box's height, width and background colour. To put the box in the left side of the container, we need a new attribute <strong><em>float</strong></em> with value <strong><em>left</strong></em>. </p>
+<table border=1 width=400>
+<tr><td>
+<span class="code">
+#leftbox { <br>
+width: 160px;    <br>
+height: 800px;   <br>
+float: left;   <br>
+}<br>
+</span>
+</td></tr>
+</table><br>
+
+<p>Save your <strong><em>index.html</strong></em> file and open it with a browser or refresh your browser if you have it open already to see the effects.</p>
+
+
+<div id="left">
+<a class="nav" href="style9.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style11.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+
+
+</html>

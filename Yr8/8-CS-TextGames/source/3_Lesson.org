@@ -1,0 +1,271 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
+
+#+TITLE: Text Based Games
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-TextGames">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Rock, Paper, Scissors
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Rock, Paper, Scissors is a simple enough game to create in Python, although it's a little difficult to tell if the computer is cheating or not, as the player always goes first.
+- In the real game, each player (on the count of three) calls out either Rock, Paper or Scissors (with the appropriate hand gesture).
+- The rules are:
+  1. Rock crushes Scissors.
+  2. Scissors cuts Paper
+  3. Paper wraps Rock
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We're going to need to use a couple of data structures to accomplish this game.
+- The first are lists.
+- In Python a list is an ordered collection of elements. They can be integers, floats, strings, variables or even other lists.
+- We create a list, by giving it a name and then placing our elements inside of square brackets =[ ]= with commas separating each element.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's create a list and see what we can do with it.
+- Write the following into your =INTERPRETER=
+#+begin_src python
+  people = ['Niall','Zayn','Liam','Harry','Louis']
+#+end_src
+- We can access any element of the list, using it's index.
+- Try typing the following.
+#+begin_src python
+people[0]
+people[3]
+people[-1]
+people[5]
+#+end_src
+- Pay careful attention to the error you received in the last example. This is one you're sure to meet again, and means you've tried to access an element that is beyond the range of the list.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- If we want the computer to pick a random name from our group of people, we're going to need an additional library.
+- The random module allows us to use random number generators.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Type the following into your =INTERPRETER=
+#+begin_src python
+import random
+#+end_src
+- Now try typing the following (you might have to put them in more than once, to see what is happening)
+#+begin_src python
+random.random()
+random.randrange(0,10)
+random.randrange(0,1)
+random.randrange(0,2)
+random.randrange(0,10,2)
+#+end_src
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- So using what we have now learned, we could write some code to choose a random person from our list.
+#+begin_src python
+  people = ['Niall','Zayn','Liam','Harry','Louis']
+  randomNumber = random.randrange(0,5)
+  randomPerson = people[randomNumber]
+  print(randomPerson)
+#+end_src
+- We could condense this down a little though.
+#+begin_src python
+  people = ['Niall','Zayn','Liam','Harry','Louis']
+  randomPerson = people[random.randrange(0,5)]
+  print(randomPerson)
+#+end_src
+- And there's an even easier way of choosing a random element from a list, if you'd like to go and try and discover it on the web.
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Using what you have learned so far.
+  1. Create a list called =choices= that contains the words - rock, paper and scissors.
+  2. Set a variable called =computerChoice= that gets set to a random element from the list.
+  3. Set a variable called =playerChoice= that lets the user choose from rock, paper or scissors, by asking for some =input=
+  4. Print out the computer and player's choice on a single line (remember string formatting from last lesson (%s))
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Next we need a way for the computer to understand the rules of Rock, Paper, Scissors.
+- For this we'll need a knew data structure called a dictionary.
+- A dictionary is a collection of =key= and =value= pairs.
+- Dictionaries are surrounded by curly brackets ={ }=
+- The easiest way for you to understand dictionaries, is to create one.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's use the people from the last section and try to classify them.
+#+begin_src python
+people = {'Harry':'Cute','Zayne':'Mysterious','Liam':'Sensible','Harry':'Charming','Louis':'Funny'}
+#+end_src
+- Each of the names in the dictionary is known as a =key=, while each of the descriptions are known as =values=.
+- We can query the dictionary and get returned the value of any given key.
+#+begin_src python
+  people['Liam']
+  people['Louis']
+  people['Zayne']=='Mysterious'
+  people['Harry']=='Funny'
+#+end_src
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We can now use the dictionary to create a little guessing game.
+- Copy and paste the code below into a new file and then run it.
+#+begin_src python
+import random
+people = ['Niall','Zayn','Liam','Harry','Louis']
+descriptions = {'Harry':'Cute','Zayn':'Mysterious','Liam':'Sensible','Niall':'Charming','Louis':'Funny'}
+person = random.choice(people)
+guess = input('Guess what %s is described as '%(person))
+if descriptions[person] == guess:
+    print('You are correct')
+else:
+    print('You are wrong')
+#+end_src
+- Once you've played a couple of times, make sure you have a good look at the code and that you understand what is going on.
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+ - Let's use a dictionary to build up the rules of Rock, Paper, Scissors.
+ - Create a dictionary where the =keys= are 'rock', 'paper' and 'scissors', and the values are the item that each one beats.
+- For instance:
+#+begin_src python
+'rock':'scissors'
+#+end_src
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- We can now add a few more lines to the code, to decide who wins.
+- You should know enough about conditional selection to do this yourself (=if=, =elif= and =else=)
+  1. =if= the =playerChoice= and =computerChoice= are equal, then the program should =print= 'Draw'
+  2. =if= the =playerChoice= is looked up in the dictionary, and its =value= is equal to the =computerChoice=, then the program should =print= 'You win'
+  3. Otherwise the program should =print= 'I win'
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Dictionaries can contain more than just strings.
+- Here we have a dictionary that contains lists.
+#+begin_src python
+  compounds = {'Water':['H','O'],'Carbon dioxide':['C','O'],'Ammonia':['N','H'],'Salt':['Na','Cl']}
+#+end_src
+- We can use this to query which elements are in any given compound.
+#+begin_src python
+  compounds['Water']
+  'C' in compounds['Carbon dioxide']
+  'Na' in compounds['Ammonia']
+#+end_src
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Watch this video carefully.
+- It might be useful to have a pen and paper ready - to write down the rules
+#+begin_html
+<iframe width="420" height="315" src="https://www.youtube.com/embed/Kov2G0GouBw" frameborder="0" allowfullscreen></iframe>
+#+end_html
+- Using what you know about dictionaries of lists, alter your code so that you can play Rock, Paper, Scissors, Lizard, Spock with the computer.
+  

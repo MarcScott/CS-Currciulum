@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>onload</title>
+    
+    <style type="text/css">
+    
+    </style>
+    
+    <script type="text/javascript">
+     
+     //Set some initial variable
+     var count = 0
+     var seconds = 0
+     
+     //Load in the HTML elements and intitialise them
+     window.onload = function()
+     {
+       setInterval(function(){calcTime()}, 1000);
+       var theCountDisplay = document.getElementById('theCountDisplay');
+       theCountDisplay.innerHTML = '<h1>Go</h1>';
+       var theTimerDisplay = document.getElementById('theTimerDisplay');
+       theTimerDisplay.innerHTML = '<h1>'+seconds+'</h2>';
+       var theButton = document.getElementById('theButton');
+       theButton.onclick=function(){addToCount()};
+     };
+
+     //Increment count when the button is pushed, so long as time is less than 5
+     function addToCount()
+     {
+       if (seconds <= 5)
+       {
+	 theCountDisplay.innerHTML = '<h1>'+count+'</h1>';
+         count++;
+       }
+       else
+       {
+	 var score = count;
+	 theCountDisplay.innerHTML = '<h1> You scored '+score+'</h1>';
+       };
+     };
+     
+     //Display the time, while it is less than 5 seconds
+     function calcTime()
+     {
+       if (seconds <=5)
+       {
+	 theTimerDisplay.innerHTML = '<h1>'+seconds+'</h2>';
+	 seconds++;
+       }
+       else
+       {
+	 theTimerDisplay.innerHTML = "<h1>TIME'S UP</h1>";
+       };
+     };
+     
+     //Call the display time function every 1 second.
+    
+     
+    </script>
+  </head>
+
+  <body>
+    <p>How many times can you push the button in 5 seconds?</p>
+    <input type="button" value="Click me" id='theButton'>
+    <div id='theCountDisplay'></div>
+    <div id='theTimerDisplay'></div>
+  </body>
+
+</html>

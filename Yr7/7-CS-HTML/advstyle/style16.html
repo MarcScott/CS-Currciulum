@@ -1,0 +1,90 @@
+<html>
+<head>
+	<script src="../jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p.img").toggle();
+  });
+});
+
+function hideImage() {
+     $("p.img").hide();
+}
+</script>
+</head>
+<body onload="hideImage()">
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a class="z" href="style14.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+ <a class="nav" href="style15.html"><< Back</a>
+</div>
+<div id="right">
+ <a class="nav" href="style17.html">Next >></a>
+</div>
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Advanced Layout and Style</p>
+	<ol>
+	<span class="bigtext">
+<li class="step" value="2">
+Space between boxes - add space between the left and the right boxes
+</li>
+<p>If we add margin using the right box, we will use its left margin; if we add margin using the left box, we use its right margin. </p><p><strong><u><em>Important note:</strong></u></em> if we add margin to a box, it will move to make room for the added margin. For example: if we add 10px of margin-left to the right box, it will move 10px to the right. This may result in the right box moving outside the big container and mess up our layout! To solve this problem, we need to decrease the width of the right box by 10px so that it will remain inside the container.</p>
+<div id="cols">
+	<div id="leftcol">
+		Before adding the margin:<br><br>
+		<span class="code">#rightbox {<br>
+		width: 640px;<br>
+		height: 600px;<br>
+		background-color: grey;<br>
+		float: right;<br>
+		}
+	
+	</div>
+<div id="rightcol">
+After adding the margin:<br><br>
+	<span class="code">#rightbox {<br>
+	<u><em>width: 630px;</em></u><br>
+	height: 600px;<br>
+	background-color: grey;<br>
+	float: right;<br>
+	<u><em>margin-left; 10px;</em></u><br>
+}
+
+
+</div>
+</div>
+<p><img src="../images/we_can_do_it.jpg" width=80 height=80><p>
+<p>Can you work out what changes made and why?  If your image is out of place, can you fix it independently?</p>
+<div id="left">
+ <a class="nav" href="style15.html"><< Back</a>
+</div>
+<div id="right">
+ <a class="nav" href="style17.html">Next >></a>
+</div>
+
+</div>
+</div>
+</div>
+</body>
+
+
+</html>

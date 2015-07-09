@@ -1,0 +1,245 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+#+OPTIONS: ^:nil
+
+#+TITLE: Sonic Pi
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-SonicPi">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Synths
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Synths is short for Synthesizers.
+- Where as the samples you were using in the previous lesson were prerecorded sounds, synths are algorithmically generated sounds.
+- This means that synths can be of any pitch, and we can then play around with their parameters as much as we like.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Try this:
+#+begin_src python
+use_synth :dark_ambience
+play 60
+#+end_src
+- So that is middle C, played with the synth =dark_ambience=
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Synths have lots of parameters we can use.
+- For instance, =pan:= will control which speaker the sound comes from. -1 is the left speaker and 1 is the right speaker
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Try this:
+#+begin_src python
+use_synth :dark_ambience
+play 60, pan: -1
+sleep 0.5
+play 60, pan: 0
+sleep 0.5
+play 50, pan: 1
+#+end_src
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There are many other parameters that we can use with the synths.
+  - =Attack=
+  - =Sustain=
+  - =Release=
+- The default duration of a synth is 1 beat (which is 1 second at the moment)
+- The =Attack= parameter decides how long it takes for the synth to reach it's normal volume.
+- The =Sustain= parameter decides how long the note will last.
+- The =Release= parameter decides how long the note will take to reach a zero volume.
+[[file:img/envelope.png]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Try this - it will play the synth for 3 seconds.
+#+begin_src python
+use_synth :dark_ambience
+play 60, sustain: 3
+#+end_src
+- Now this - it will now play the synth for 6 seconds.
+#+begin_src python
+use_synth :dark_ambience
+play 60, attack: 3, sustain: 3
+#+end_src
+- This will play the synth for a total of 9 seconds
+#+begin_src python
+use_synth :dark_ambience
+play 60, attack: 3, sustain: 3, release: 3
+#+end_src
+* Threads
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- In the previous lesson you made a bass line.
+- What if we want to play a bass line and then have synths playing over the top?
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Copy and paste this into the Sonic Pi window.
+#+begin_src python
+use_synth :fm
+16.times do
+  sample :drum_bass_hard, amp: 0.8
+  sleep 0.25
+  play :e2, release: 0.2
+  sample :elec_cymbal, rate: 12, amp: 0.6
+  sleep 0.25
+end
+#+end_src
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Now let's create a melody to be played over the top of the bass line, using synths.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Add this onto the end of your code.
+#+begin_src python
+use_synth :tb303
+64.times do
+  play chord(:e3, :minor).choose, amp: 0.25
+  sleep 0.125
+end
+#+end_src
+- Listen to the track you've made.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The melody track you've created doesn't start playing until after the bass track has finished.
+- We want the two to play simultaneously.
+- That's where =threads= come to the rescue.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Modify your code so it looks like this:
+#+begin_src python
+in_thread do
+  use_synth :fm
+  16.times do
+    sample :drum_bass_hard, amp: 0.8
+    sleep 0.25
+    play :e2, release: 0.2
+    sample :elec_cymbal, rate: 12, amp: 0.6
+    sleep 0.25
+  end
+  sleep 4
+end
+
+use_synth :tb303
+64.times do
+  play chord(:e3, :minor).choose, amp: 0.25
+  sleep 0.125
+end
+#+end_src
+- Now we can see that the bass track plays along with the melody track.
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Using threads, produce a piece of music with bass and melody tracks.

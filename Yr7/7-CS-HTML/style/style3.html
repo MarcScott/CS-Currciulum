@@ -1,0 +1,85 @@
+<html>
+<head>
+	<script src="jQuery.js"></script>
+<link rel="stylesheet" href="../CSS/style.css" type="text/css">
+<title>Learn to Create Web pages - BGS KS3 Computing</title>
+<author>Mrs.Ellis</author>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("img").toggle();
+  });
+});
+
+function hideImage() {
+     $("img").hide();
+}
+</script>
+</head>
+<body>
+<div id="container">
+<div id="h3bar">
+<h1>Learn to create your own webpages</h1>
+</div>
+<div id="topnav">
+
+<ul id="navbar">
+<li><a href="../index.html">HTML Basics</a></li>
+<li><a href="../nav/navigation.html">Navigation Among Pages</a></li>
+<li><a class="z" href="../style/style.html">Layout and Style</a></li>
+<li><a href="../elements/elem.html">Images and More</a></li>
+<li><a href="layout.html">Advanced Layout</a></li>
+</ul>
+</div>
+
+<div id="left">
+<a class="nav" href="style2.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style4.html">NEXT >></a>
+</div>
+
+<div id="clear"></div>
+
+<div id="contentarea">
+	<p class="callouthead">Introducing the box model web page design.</p>
+	<ol>
+<span class="bigtext">
+
+<p>Web pages are made of different areas. Some headers to say what the page is about. Some links to take users to different pages. The main area will be the place for the main content for that page. You can say web pages are made of different shapes and sizes of boxes! And you are absolutely right. In this section, we are going to learn the box model of web design.</p>
+<div id="cols">
+<div id="leftcol">
+	<p class="descrp">All HTML elements can be considered as boxes.The box model allows us to place a border around elements and space elements in relation to other elements.
+
+The image below illustrates the box model:</p>
+<p class="img"><img src="../images/box-model.gif" width=300 height=200></p>
+</div>
+<div id="rightcol">
+<p> Box explained:</p>
+<ul>
+	<li>
+<strong>Margin</strong> - Clears an area around the border. The margin does not have a background color, it is completely transparent</li><li>
+<strong>Border</strong> - A border that goes around the padding and content. </li><li>
+<strong>Padding</strong> - Clears an area around the content. </li><li>
+<strong>Content</strong> - The content of the box, where text and images appear</li><li>
+<strong>Size</strong> - The size of the box can be defined by width and height in unit of number of pixels.The following shows a box with the size of 100x100 pixels as displayed in your browser.</li>
+<img src="../images/100pixels.jpg" width=100 height=100>
+</ul>
+</div>
+</div>
+</span>	
+</ol>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="left">
+<a class="nav" href="style2.html"><< BACK</a> 
+</div>
+<div id="right">
+ <a class="nav" href="style4.html">NEXT >></a>
+</div>
+
+</div>
+</div>
+</body>
+
+
+</html>

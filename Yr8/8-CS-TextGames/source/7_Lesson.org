@@ -1,0 +1,297 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil
+
+#+TITLE: Text Based Games
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-TextGames">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Nim - the full game
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- Nim is generally considered to be the first computer game ever created.
+- In the 1950s a specialist computer called NIMROD was designed and built just to play the game of Nim.
+[[https://www.wired.com/images_blogs/gamelife/2010/06/nimrod.jpg]]
+- This was the Xbox of the 50s.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Nim is a fairly simple game. Two players take it in turns to remove counters from one of three (or more) heaps.
+- The person who removes the last counter is considered the winner (in normal play).
+- A typical game of Nim would look something like this...
+#+begin_src
+|Heap 1|Heap 2|Heap 3|       Move
+ 
+   3      4      5           Bob   takes 2 from A
+   1      4      5           Alice takes 3 from C
+   1      4      2           Bob   takes 1 from B
+   1      3      2           Alice takes 1 from B
+   1      2      2           Bob   takes entire A heap, leaving two 2s.
+   0      2      2           Alice takes 1 from B
+   0      1      2           Bob   takes 1 from C leaving two 1s.
+   0      1      1           Alice takes 1 from B
+   0      0      1           Bob   takes entire C heap and wins.
+#+End_src
+- You're going to code a 2 player game of Nim using Python.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- The first couple of lines of code you should be able to handle yourself.
+- Use a print statement to tell the players the rules of the game.
+- It should read as follows
+#+begin_src
+Choose a number to move and a heap to move it from, seperated by a space
+#+end_src
+- Then print an empty line, followed by a third print statement for the heaps.
+#+begin_src
+|Heap 1|Heap 2|Heap 3|Move
+#+end_src
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now we're going to need a way of storing the number of counters in each heap.
+- A sensible data structure to use would be a list.
+#+begin_src python
+heaps = [6,7,8]
+#+end_src
+- The numbers you use for each heap don't really matter to start off with.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We want the game to run until there are no counter left in any of the heaps.
+- A =while= loop would be a sensible loop to choose.
+- The while loop would keep running (and so the game keeps running) until the heaps list looks like this =[0,0,0]=
+#+begin_src python
+  while (heaps[0] + heaps[1] + heaps[2]) > 0:
+      print(heaps)
+#+end_src
+- The print is just there so that we can test the code (ctrl-c) should quit your running program.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- There is a simpler way of getting python to find the =sum= of the contents of a list.
+- Do a little research and see if you can find out how.
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- A nice edition to the game, might be to make the numbers in each heap random.
+- You've used[[https://bournetocode.com/projects/8-CS-Cryptography/pages/3_Lesson.html][ Python to generate random numbers before]].
+- This is a little different though, and will require some research.
+- See if set up the code so that each heap has a random number of counters between 1 and 10.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- If you look above at the example of the Nim game, you see that we want to not only print out the contents of each heap, but also the players' moves.
+- To print this nicely, you're going to need to learn to use =string formating=
+- String formating allows us to print the value of a variable or variables within a string.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Open up an =interpreter= so we can practice some string formatting.
+- Try and write the following lines of code.
+#+begin_src python
+  print('One Direction are the %s band ever'%('best'))
+#+end_src
+- You should see that the where you wrote =%s=, it has been replaced by the word =best=
+- We can use variables instead of strings as well. Try this, again using the =interpreter=.
+#+begin_src python
+  quality = 'worst'
+  print('One Direction are the %s band ever'%(quality))
+#+end_src
+- =%s= is a shorthand notation for =string=. Try this.
+#+begin_src python
+  number = 1
+  print("I am One Direction's number %s fan"%(number))
+#+end_src
+- We can see that this throws an error.
+- If we want to use string formatting with integers, we need to use the =%i= shorthand.
+#+begin_src python
+  number = 7000000000
+  print("I am One Direction's number %i fan"%(number))
+#+end_src
+- We can use string formatting with many different variables. Try this, and alter the variables as you see fit.
+#+begin_src python
+band = 'Nirvana'
+fan = 1
+quality = 'best'
+print('%s are the %s band in the world, and I am their number %i fan.'%(band,quality,fan))
+#+end_src
+- Lastly, we can use string formatting with =input= as well as =print=
+#+begin_src python
+band = 'Nirvana'
+fan = 1
+quality = 'best'
+answer = input('So you agree that %s are the %s band in the world, and that I am their number %i fan .'%(band,quality,fan))
+#+end_src
+- This will print our the statement and then wait for the user to give an answer.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Now you know how to use string formating, we can move on with the game.
+- We want the program to print out the number of counters in each heap, as well as the move that has just been made.
+- The heaps have already been taken care of, but we'll need a variable to store the last move.
+- Just beneath your assigned =heaps= variable, assign a new variable called =move=
+#+begin_src python
+move = 'No move yet '
+#+end_src
+- Now we'll add some code into the while loop.
+- To start off with, we want to use string formatting to print out a line that looks like this
+#+begin_src
+|  6  |  7  |  8  |   No move yet
+#+end_src
+- Where the numbers are obviously the numbers you have stored in each of your heaps.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Try and use string formatingto print the line.
+- Remember =%i= for integers and =%s= for strings.
+- Remember you can access a particular element of a list using =listname[index]= (=heaps[1]= for instance.
+- You can force a loop to exit by using the =break= command after the print statement.
+- Have a go at printing the line and get your teacher to check your work if you are not sure, before you continue.
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+

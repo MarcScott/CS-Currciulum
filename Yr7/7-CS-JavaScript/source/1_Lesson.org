@@ -1,0 +1,322 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/main.css"/>
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil html-style:nil 
+#+TITLE: JavaScript Basics
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-WD-JS">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+* Introduction
+[[file:https:/upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: intro
+:END:
+** What is JavaScript?
+JavaScript is a programming language used by web browsers to interact with the user, and alter the contents of web-pages.
+JavaScript is present on almost every modern web-page.
+Recently, people have started to use JavaScript outside of web-browsers, using platforms like Node.js
+** Where do I write JavaScript?
+Like any other programming language, JavaScript is nothing more than text.
+You can write JavaScript using any text editor and save it as either a .js file or a .html file.
+For now we're going to write JavaScript inside an HTML file. This will make it easy for us to see what is going on.
+* Setting up an HTML page.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Open up a text editor.
+- Type in the following lines of code.
+
+#+BEGIN_SRC html
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+<!--DELETE THIS ENTIRE LINE AND AND YOUR CODE HERE IN THE NEXT SECTION-->
+</script>
+</head>
+<body>
+</body>
+</html>
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Create a new directory to save your work in. Call it JavaScript.
+- Save your file as FirstJS.html
+- Don't forget the =.html= ending, or you won't be able to view the file.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Find your file using your document browser.
+- Open the file in a web browser.
+- You should be presented with a blank screen.
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Can you remember how to give you web-page a =<title>=? Give it a go using the =<title>= tag in the =<head>= of your page.
+* Your first line of JavaScript
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Make sure all your code goes in-between the script tags. You'll need to delete the comment line that begins =<!--=
+#+BEGIN_SRC html
+<script type="text/javascript"> 
+<!--DELETE THIS ENTIRE LINE AND YOUR CODE HERE IN THE NEXT SECTION-->
+</script>
+#+END_SRC
+- Now add the following line of code, so that your file looks like this...
+#+BEGIN_SRC javascript
+<script type="text/javascript">
+window.alert('Losers Click OK');
+</script>
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Now save your file
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- What happens now when you view your web-page in a browser?
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Can you make the Alert Box say something else?
+* Variables
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- JavaScript uses variables to store data. To get ready to create some variables, delete the line of code you wrote between the =<script>= tags. (You'll be deleting a lot of code in this module, don't worry about it.)
+- Now we'll declare a new variable. Type this code in between your script tags.
+#+BEGIN_SRC html
+var myPet;
+#+END_SRC
+- Now that we have declared a variable, we have to assign it to some data. The Internet is full of cats, so let's choose a cat's name. Add this line _below_ the variable declaration.
+#+BEGIN_SRC html
+myPet = 'Tiddles';
+#+END_SRC
+- You'll have probably noticed that each line seems to end with a =;=. The semi-colon is a way of telling the browser that you have finished with that instruction, and to move onto the next instruction. Now declare a new variable called =yourPet= and give it a name.
+- We can now use our alert command from earlier. Add this line to your code.
+#+BEGIN_SRC html
+window.alert(myPet);
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your file.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+Open your web-page in a web browser. What happens?
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Can you declare a new variable called  =yourPet=?
+- Give =yourPet= a name and use a =window.alert()= instruction to display the name on the screen.
+- Can you change the order that =myPet= and =yourPet= are displayed.
+* Strings
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Strings are sequences of characters, such as 'Cat' or "Lisa" or '123'. They are always surrounded by quotes. Edit your code from between your =<script>= tags so that it looks like the code below.
+#+BEGIN_SRC html
+var yourPet;
+yourPet = window.prompt('What type of pet do you have');
+window.alert("That's nice, I also have a " + yourPet);
+#+END_SRC
+- Can you explain why we have to use double quotes on the =That's nice, I also have a...= sentence?
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+- Save your file.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- What happens?
+- How did you join the two strings =That's nice, I also have a= and the string stored in =yourPet=.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Can you make a second =prompt= box that asks for the pet's name? /(hint: you'll need another variable for this.)/
+- Can you make a second =alert= box that uses the pet's name?
+* Numbers
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Numbers can be used in calculations. Look at the example below. *THIS IS NOT CODE TO TYPE IN.* Try and work out what the answers to the questions are going to be..
+#+BEGIN_SRC html
+"10"+"5" = "105"
+10 + 5 = 15
+100 + 20 =
+"100" + "20" =
+50 + 50 = 
+"50" + "50" =
+#+END_SRC
+- Remove your existing code and then type in the code shown below, between your =<script>= tags.
+#+BEGIN_SRC html
+var myNum = 6;
+yourNum = window.prompt('Give me a number');
+window.alert(myNum + yourNum);
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Load up your html file.
+- Does the answer look correct to you?
+- Can you explain what has happened.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We need to change the /String/ that the user inputs into a /Number/. This is called /Type Conversion/. This is easy to do in JavaScript. Modify your code so it is the same as the code below.
+#+BEGIN_SRC html
+var myNum = 6;
+yourNum = window.prompt('Give me a number');
+yourNum = Number(yourNum);
+window.alert(myNum + yourNum);
+#+END_SRC
+- the line =yourNum = Number(yourNum)= converts the string to a number.
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Load up your html file. Is it adding numbers correctly now?
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Can you write a short program that does the following:
+  - Ask for a number
+  - Ask for a second number
+  - Display the result of the two numbers added together.
+- Can you modify the program so that it subtracts numbers, multiplies them, divides them?
+* Booleans
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Booleans can either be =true= or =false=. They don't have quotes around them.
+- Once again you'll want to delete your code from within the =<script>= tags. Then type in the lines of code below.
+#+BEGIN_SRC javascript
+var choice = window.confirm("Do you want to continue?");
+window.alert(choice);
+#+END_SRC
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+- Open your file in a web browser. What happens when you choose =OK=? How about when you choose =Cancel=?
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- In the above example we used the =window.confirm()= message box to set the =var choice= to either True or False. You can do this yourself easily enough. Delete your code between the =<script>= tags and then type in the following lines
+#+BEGIN_SRC javascript
+  var hasPet = window.confirm("Do you have a pet? Click OK if you do");
+  if (hasPet == true)
+  {
+      window.alert("That's nice.");
+  }
+  else
+  {
+      window.alert("Do you want to buy a dog?");
+  };
+#+END_SRC
+- /Don't worry if you're not sure about the if... else and all the {}. This will all be explained in Activity 2/
+** Try It:
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Can you add to the code that you have just written, so that if the user of the application has a pet, it will ask what the name of the pet is?
+* Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Task
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+To earn your first *Blue JavaScript Badge*, complete the tasks below. Once you have finished, ask your teacher to check your app to make sure it runs correctly.
+- Create a new file called Greeter.html
+- Add in the standard html code that you need to start writing javascript. Next write code to do the following:
+- Welcome the user to the app, using a =window.alert()= message box.
+- Ask the user for their name using a =window.prompt()= message box and store the name as a variable.
+- Output a message using =window.alert()= that says "Hey, my name is XXXXXXX too".
+- Use a =window.prompt()= message box to ask the user how old they are and store their age as a variable.
+- Convert the variable to a =number=
+- Use a =window.alert()= box to display the message 'That means you will be 100 in the year ####' (/HINT: the calculation is 100 - age + current year/)
+- Use a =window.confirm()= box to ask if the user would like to continue.

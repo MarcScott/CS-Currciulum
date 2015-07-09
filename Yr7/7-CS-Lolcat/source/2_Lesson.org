@@ -1,0 +1,182 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: A Virtual LOLcat in Scratch
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-lolcats">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+* Virtual Pets
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+[[file:img/Tamagotchi.jpg]]
+- Virtual pets were very common and popular a few years ago.
+- Pets such as the [[http:http://en.wikipedia.org/wiki/Tamagotchi][Tamagotchi]] were tiny computers with software on them that simulated a pet.
+- The owner of the pet had to feed it and pet it otherwise the pet would die.
+- You're going to be making your own virtual pet in Scratch.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Use the web to find out some of the features that were common to most virtual pet games. A list has been started for you below:
+  - Feeding
+  - Petting
+  - Scolding
+* Killing our pet
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/Dead_cat.jpg]]
+- Create a new Scratch project called =Virtual_LOL_Cat=
+- No matter how good a gamer you are, your character always dies in the end. So that's the first thing we'll be setting up.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- We'll need a couple of images to begin with.
+  - One to represent the living pet.
+  - One to represent the dead pet.
+- Here are the ones I'll be using, but you can make your own or go online and find ones that appeal to you.
+[[file:img/Pet.svg]]
+[[file:img/DeadPet.svg]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+Our first script is going to kill the pet, whenever the space bar is pressed. Killing the pet will actually just be a case of changing the sprite's costume.
+1. Click on the Sprite1 costume.
+2. Click on the Costumes tab
+3. Delete the costumes you don't need.
+4. Use the Upload button to add in the costumes for both you alive and dead pet.
+[[file:img/Costume_1.png]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+Now we just need to make sure everything has a sensible name
+1. Name *both* costumes
+2. Name your Sprite
+[[file:img/Costume_2.png]]
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+We now need to write a little script to kill the pet.
+Look at the code below and see if you can assemble the script.
+#+BEGIN_EXAMPLE
+when space key is pressed
+say "You let me die!!!"
+switch to DeadPet
+wait 2 secs
+stop all
+#+END_EXAMPLE
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+- Run your script.
+- When you hit the space key, the pet should die.
+- The problem is that the pet stays dead.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- We need a way of resetting the script.
+- Try to code the following.
+#+BEGIN_EXAMPLE
+    When 'Green Flag' clicked
+    Switch to Costume "AlivePet"
+    Goto position x:0 y:-125               
+#+END_EXAMPLE
+- You might need to adjust the =y:= coordinate, depending on the size of the sprite you are using.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+- Test your script to make sure it runs.
+- Your pet should die when the space key is pressed, and then reset when you click the green flag
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+- The current pet death is a little undramatic.
+- Try to make it a little bit more interesting.
+- Could you add a little bit of animation into it?
+- Could you add some sound effects?
+- Could you have multiple costume changes?

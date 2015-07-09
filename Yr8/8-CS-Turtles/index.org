@@ -1,0 +1,38 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+BEGIN_COMMENT
+#+STYLE: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+STYLE: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+END_COMMENT
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+
+#+TITLE: Turtle Power
+#+AUTHOR: Stephen Brown
+#+OPTIONS: toc:nil f:nil author:nil num:nil creator:nil timestamp:nil 
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/stsb11/turtle">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* [[file:step_1.html][Lesson 1 - Getting to know you]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+* [[file:step_2.html][Lesson 2 - Loopy Patterns]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+* [[file:step_3.html][Lesson 3 - Getting Func-ky]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+* [[file:step_4.html][Lesson 4 - Better Functions]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+* [[./assess.html][Achievements - the Badges]]
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:

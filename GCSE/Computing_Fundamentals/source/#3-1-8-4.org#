@@ -1,0 +1,206 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: Memory
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+#+END_HTML
+There are many classes of memory in a modern computer system.
+Memory is needed to store data and instructions for the processor
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+* ROM
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- In modern computers the term /Read Only Memory/ is somewhat of a misnomer.
+- ROM refers to a class of memory where the data is hardwired and therefore can not be changed. In reality, modern ROM can be altered, but not within the normal operations of the computer system.
+- ROM is classed as non-volatile memory.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Find out what the difference is between volatile and non-volatile memory.
+- Find a picture of a modern ROM chip for your notes.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- The main set of instructions stored on ROM is the BIOS.
+- BIOS stands for /Basic Input/Output System/.
+- The BIOS provides instructions for the processor allowing it to interact with the Hard Disk and therefore boor the Operating System.
+- Without the BIOS, the Operating System could not be booted.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Find out some of the other tasks that the BIOS enables in a computer system.
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+- Make sure your notes contain information of ROM and the BIOS.
+* Cache
+There are many types of /cache/ in computer systems, but here we are focusing on CPU cache.
+CPU cache is volatile memory.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Cache is required because processors are so fast, that if they had to retrieve all data and instructions from RAM, they would spend a long time waiting. Cache memory is much faster than RAM
+- In general there are three levels of CPU cache.
+  - L1 Cache is built into the processor, with a typical size of 64Kb. This cache is small but exceptionally fast.
+  - L2 Cache was originally separate to the CPU, but in modern computers it is integrated. L2 Cache is slower than L1, but generally larger in size - up to 2Mb.
+  - L3 Cache is memory that is situated on the motherboard. It is slower than the others but has a larger size - up to 8Mb.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+- Watch this exciting and interesting video explaining the different types of CPU cache.
+#+BEGIN_HTML
+<iframe width="420" height="315" src="https://www.youtube.com/embed/PIXJM6fCG30" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Make notes on the information provided in the video.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There are three principles involved in deciding what data is stored in Cache.
+  - /Temporal locality/ - CPU has accessed some data and is likely to need the same data again soon.
+  - /Spatial locality/ - CPU has accessed some data and is likely to need data stored close by.
+  - /Sequential locality/ - CPU has accessed some data and is likely that it will need data stored in the next location.
+* RAM
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+[[file:img/RAM.jpg]]
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- RAM stands for /Random Access Memory/
+- Normal RAM is actually called DRAM - /Dynamic RAM/
+- RAM is volatile memory.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Use [[http://computer.howstuffworks.com/ram.htm][this article]] and other resources to find out as much information as you can about RAM.
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+- Make sure you can answer the following questions:
+  - Why is RAM used to store programs?
+  - What is the difference between RAM and DRAM?
+  - What is meant by the term /bus width/?
+  - What is meant by the term /latency/, with regard to RAM?
+  - What is virtual RAM and why is it needed?
+* Hard disks
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+Hard disks will be covered in greater detail in the section on Secondary Storage.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- Hard disks are a class of non-volatile memory.
+- In most computers, the HD is used to store the operating system, applications and user data.
+- Hard disks are mechanical in nature, and this is one of the reasons they are so slow.
+- Hard disks can store vast quantities of data, and 2+ Tb drives are not unusual.
+* Summary
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+[[file:img/computer-memory-pyramid.gif]]
+- The above diagram shows the hierarchy of how a CPU accesses storage locations when operating.
+- Copy the image to your notes.
+- Write a couple of paragraphs, that would be sufficient in explaining the diagram to a layperson.

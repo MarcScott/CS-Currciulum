@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>JavaScript Basics</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">JavaScript Basics</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Introduction</a>
+<ul>
+<li><a href="#sec-1-1">What is JavaScript?</a></li>
+<li><a href="#sec-1-2">Where do I write JavaScript?</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Setting up an HTML page.</a>
+<ul>
+<li><a href="#sec-2-1">Code It</a></li>
+<li><a href="#sec-2-2">Save It</a></li>
+<li><a href="#sec-2-3">Run It</a></li>
+<li><a href="#sec-2-4">Try It</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Your first line of JavaScript</a>
+<ul>
+<li><a href="#sec-3-1">Code It</a></li>
+<li><a href="#sec-3-2">Save It</a></li>
+<li><a href="#sec-3-3">Run It</a></li>
+<li><a href="#sec-3-4">Try It</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Variables</a>
+<ul>
+<li><a href="#sec-4-1">Code It</a></li>
+<li><a href="#sec-4-2">Save It</a></li>
+<li><a href="#sec-4-3">Run It</a></li>
+<li><a href="#sec-4-4">Try It</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Strings</a>
+<ul>
+<li><a href="#sec-5-1">Code It</a></li>
+<li><a href="#sec-5-2">Save It</a></li>
+<li><a href="#sec-5-3">Run It</a></li>
+<li><a href="#sec-5-4">Try It</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Numbers</a>
+<ul>
+<li><a href="#sec-6-1">Code It</a></li>
+<li><a href="#sec-6-2">Save It</a></li>
+<li><a href="#sec-6-3">Run It</a></li>
+<li><a href="#sec-6-4">Code It</a></li>
+<li><a href="#sec-6-5">Save It</a></li>
+<li><a href="#sec-6-6">Run It</a></li>
+<li><a href="#sec-6-7">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Booleans</a>
+<ul>
+<li><a href="#sec-7-1">Code It</a></li>
+<li><a href="#sec-7-2">Save It</a></li>
+<li><a href="#sec-7-3">Run It</a></li>
+<li><a href="#sec-7-4">Code It</a></li>
+<li><a href="#sec-7-5">Try It:</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Badge It</a>
+<ul>
+<li><a href="#sec-8-1">Task</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-WD-JS">Fork me on GitHub</a>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2 intro">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="https:/upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="1200px-Unofficial_JavaScript_logo_2.svg.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">What is JavaScript?</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+JavaScript is a programming language used by web browsers to interact with the user, and alter the contents of web-pages.
+JavaScript is present on almost every modern web-page.
+Recently, people have started to use JavaScript outside of web-browsers, using platforms like Node.js
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">Where do I write JavaScript?</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Like any other programming language, JavaScript is nothing more than text.
+You can write JavaScript using any text editor and save it as either a .js file or a .html file.
+For now we're going to write JavaScript inside an HTML file. This will make it easy for us to see what is going on.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2 activity">
+<h2 id="sec-2"><span class="section-number-2">2</span> Setting up an HTML page.</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3 code">
+<h3 id="sec-2-1">Code It</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Open up a text editor.
+</li>
+<li>Type in the following lines of code.
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--DELETE THIS ENTIRE LINE AND AND YOUR CODE HERE IN THE NEXT SECTION--&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3 save">
+<h3 id="sec-2-2">Save It</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Create a new directory to save your work in. Call it JavaScript.
+</li>
+<li>Save your file as FirstJS.html
+</li>
+<li>Don't forget the <code>.html</code> ending, or you won't be able to view the file.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3 run">
+<h3 id="sec-2-3">Run It</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>Find your file using your document browser.
+</li>
+<li>Open the file in a web browser.
+</li>
+<li>You should be presented with a blank screen.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3 try">
+<h3 id="sec-2-4">Try It</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Can you remember how to give you web-page a <code>&lt;title&gt;</code>? Give it a go using the <code>&lt;title&gt;</code> tag in the <code>&lt;head&gt;</code> of your page.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2 activity">
+<h2 id="sec-3"><span class="section-number-2">3</span> Your first line of JavaScript</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3 code">
+<h3 id="sec-3-1">Code It</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Make sure all your code goes in-between the script tags. You'll need to delete the comment line that begins <code>&lt;!--</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;script type="text/javascript"&gt; 
+&lt;!--DELETE THIS ENTIRE LINE AND YOUR CODE HERE IN THE NEXT SECTION--&gt;
+&lt;/script&gt;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now add the following line of code, so that your file looks like this&#x2026;
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">&lt;script type="text/javascript"&gt;
+window.alert('Losers Click OK');
+&lt;/script&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3 save">
+<h3 id="sec-3-2">Save It</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Now save your file
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3 run">
+<h3 id="sec-3-3">Run It</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>What happens now when you view your web-page in a browser?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3 try">
+<h3 id="sec-3-4">Try It</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Can you make the Alert Box say something else?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2 activity">
+<h2 id="sec-4"><span class="section-number-2">4</span> Variables</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3 code">
+<h3 id="sec-4-1">Code It</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>JavaScript uses variables to store data. To get ready to create some variables, delete the line of code you wrote between the <code>&lt;script&gt;</code> tags. (You'll be deleting a lot of code in this module, don't worry about it.)
+</li>
+<li>Now we'll declare a new variable. Type this code in between your script tags.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">var myPet;
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now that we have declared a variable, we have to assign it to some data. The Internet is full of cats, so let's choose a cat's name. Add this line <span class="underline">below</span> the variable declaration.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">myPet = 'Tiddles';
+</pre>
+</div>
+<ul class="org-ul">
+<li>You'll have probably noticed that each line seems to end with a <code>;</code>. The semi-colon is a way of telling the browser that you have finished with that instruction, and to move onto the next instruction. Now declare a new variable called <code>yourPet</code> and give it a name.
+</li>
+<li>We can now use our alert command from earlier. Add this line to your code.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">window.alert(myPet);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3 save">
+<h3 id="sec-4-2">Save It</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Save your file.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3 run">
+<h3 id="sec-4-3">Run It</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Open your web-page in a web browser. What happens?
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-4" class="outline-3 try">
+<h3 id="sec-4-4">Try It</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>Can you declare a new variable called  <code>yourPet</code>?
+</li>
+<li>Give <code>yourPet</code> a name and use a <code>window.alert()</code> instruction to display the name on the screen.
+</li>
+<li>Can you change the order that <code>myPet</code> and <code>yourPet</code> are displayed.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2 activity">
+<h2 id="sec-5"><span class="section-number-2">5</span> Strings</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-sec-5-1" class="outline-3 code">
+<h3 id="sec-5-1">Code It</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Strings are sequences of characters, such as 'Cat' or "Lisa" or '123'. They are always surrounded by quotes. Edit your code from between your <code>&lt;script&gt;</code> tags so that it looks like the code below.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">var yourPet;
+yourPet = window.prompt('What type of pet do you have');
+window.alert("That's nice, I also have a " + yourPet);
+</pre>
+</div>
+<ul class="org-ul">
+<li>Can you explain why we have to use double quotes on the <code>That's nice, I also have a...</code> sentence?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3 save">
+<h3 id="sec-5-2">Save It</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Save your file.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-3" class="outline-3 run">
+<h3 id="sec-5-3">Run It</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>What happens?
+</li>
+<li>How did you join the two strings <code>That's nice, I also have a</code> and the string stored in <code>yourPet</code>.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-4" class="outline-3 try">
+<h3 id="sec-5-4">Try It</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>Can you make a second <code>prompt</code> box that asks for the pet's name? <i>(hint: you'll need another variable for this.)</i>
+</li>
+<li>Can you make a second <code>alert</code> box that uses the pet's name?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2 activity">
+<h2 id="sec-6"><span class="section-number-2">6</span> Numbers</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-sec-6-1" class="outline-3 code">
+<h3 id="sec-6-1">Code It</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Numbers can be used in calculations. Look at the example below. <b>THIS IS NOT CODE TO TYPE IN.</b> Try and work out what the answers to the questions are going to be..
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">"10"+"5" = "105"
+10 + 5 = 15
+100 + 20 =
+"100" + "20" =
+50 + 50 = 
+"50" + "50" =
+</pre>
+</div>
+<ul class="org-ul">
+<li>Remove your existing code and then type in the code shown below, between your <code>&lt;script&gt;</code> tags.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">var myNum = 6;
+yourNum = window.prompt('Give me a number');
+window.alert(myNum + yourNum);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-2" class="outline-3 save">
+<h3 id="sec-6-2">Save It</h3>
+<div class="outline-text-3" id="text-6-2">
+</div>
+</div>
+<div id="outline-container-sec-6-3" class="outline-3 run">
+<h3 id="sec-6-3">Run It</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>Load up your html file.
+</li>
+<li>Does the answer look correct to you?
+</li>
+<li>Can you explain what has happened.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-4" class="outline-3 code">
+<h3 id="sec-6-4">Code It</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>We need to change the <i>String</i> that the user inputs into a <i>Number</i>. This is called <i>Type Conversion</i>. This is easy to do in JavaScript. Modify your code so it is the same as the code below.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-html">var myNum = 6;
+yourNum = window.prompt('Give me a number');
+yourNum = Number(yourNum);
+window.alert(myNum + yourNum);
+</pre>
+</div>
+<ul class="org-ul">
+<li>the line <code>yourNum = Number(yourNum)</code> converts the string to a number.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-5" class="outline-3 save">
+<h3 id="sec-6-5">Save It</h3>
+<div class="outline-text-3" id="text-6-5">
+</div>
+</div>
+<div id="outline-container-sec-6-6" class="outline-3 run">
+<h3 id="sec-6-6">Run It</h3>
+<div class="outline-text-3" id="text-6-6">
+<ul class="org-ul">
+<li>Load up your html file. Is it adding numbers correctly now?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-7" class="outline-3 try">
+<h3 id="sec-6-7">Try It:</h3>
+<div class="outline-text-3" id="text-6-7">
+<ul class="org-ul">
+<li>Can you write a short program that does the following:
+<ul class="org-ul">
+<li>Ask for a number
+</li>
+<li>Ask for a second number
+</li>
+<li>Display the result of the two numbers added together.
+</li>
+</ul>
+</li>
+<li>Can you modify the program so that it subtracts numbers, multiplies them, divides them?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2 activity">
+<h2 id="sec-7"><span class="section-number-2">7</span> Booleans</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-sec-7-1" class="outline-3 code">
+<h3 id="sec-7-1">Code It</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>Booleans can either be <code>true</code> or <code>false</code>. They don't have quotes around them.
+</li>
+<li>Once again you'll want to delete your code from within the <code>&lt;script&gt;</code> tags. Then type in the lines of code below.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var choice = window.confirm("Do you want to continue?");
+window.alert(choice);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7-2" class="outline-3 save">
+<h3 id="sec-7-2">Save It</h3>
+<div class="outline-text-3" id="text-7-2">
+</div>
+</div>
+<div id="outline-container-sec-7-3" class="outline-3 run">
+<h3 id="sec-7-3">Run It</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>Open your file in a web browser. What happens when you choose <code>OK</code>? How about when you choose <code>Cancel</code>?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-4" class="outline-3 code">
+<h3 id="sec-7-4">Code It</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li>In the above example we used the <code>window.confirm()</code> message box to set the <code>var choice</code> to either True or False. You can do this yourself easily enough. Delete your code between the <code>&lt;script&gt;</code> tags and then type in the following lines
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">var hasPet = window.confirm("Do you have a pet? Click OK if you do");
+if (hasPet == true)
+{
+    window.alert("That's nice.");
+}
+else
+{
+    window.alert("Do you want to buy a dog?");
+};
+</pre>
+</div>
+<ul class="org-ul">
+<li><i>Don't worry if you're not sure about the if&#x2026; else and all the {}. This will all be explained in Activity 2</i>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-5" class="outline-3 try">
+<h3 id="sec-7-5">Try It:</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li>Can you add to the code that you have just written, so that if the user of the application has a pet, it will ask what the name of the pet is?
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2 activity">
+<h2 id="sec-8"><span class="section-number-2">8</span> Badge It</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-sec-8-1" class="outline-3 badge">
+<h3 id="sec-8-1">Task</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+To earn your first <b>Blue JavaScript Badge</b>, complete the tasks below. Once you have finished, ask your teacher to check your app to make sure it runs correctly.
+</p>
+<ul class="org-ul">
+<li>Create a new file called Greeter.html
+</li>
+<li>Add in the standard html code that you need to start writing javascript. Next write code to do the following:
+</li>
+<li>Welcome the user to the app, using a <code>window.alert()</code> message box.
+</li>
+<li>Ask the user for their name using a <code>window.prompt()</code> message box and store the name as a variable.
+</li>
+<li>Output a message using <code>window.alert()</code> that says "Hey, my name is XXXXXXX too".
+</li>
+<li>Use a <code>window.prompt()</code> message box to ask the user how old they are and store their age as a variable.
+</li>
+<li>Convert the variable to a <code>number</code>
+</li>
+<li>Use a <code>window.alert()</code> box to display the message 'That means you will be 100 in the year ####' (<i>HINT: the calculation is 100 - age + current year</i>)
+</li>
+<li>Use a <code>window.confirm()</code> box to ask if the user would like to continue.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

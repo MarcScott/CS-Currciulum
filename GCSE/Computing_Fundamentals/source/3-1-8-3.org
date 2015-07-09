@@ -1,0 +1,185 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: The CPU
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE-CS">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* The CPU
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+The CPU lies at the heart of any Computer System, and is analogous to the brain in a human.
+There are many processors in a modern computer, but there is only one CPU.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- A CPU is an integrated circuit that is responsible for performing arithmetic, logical and I/O operations.
+- CPUs perform these operations as instructed by a computer program.
+- A CPU is generally made up of two components
+  - An arithmetic logic unit (ALU)
+  - A control unit (CU)
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Find out the _basic_ functions of the /arithmetic logic unit/ and the /control unit/.
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Using no more than two sentences for each, describe the functions of the *ALU* and *CU*
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- A CPU works in 4 steps.
+  - Fetch - Instructions are /fetched/ from the program in memory.
+  - Decode - Instructions are broken up for assignment to parts of the CPU
+  - Execute - Calculations and Logical operations are performed (such as addition)
+  - Writeback - Results of calculations are written back to memory.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- What is meant by a CPU's /clock speed/?
+- What are the units of clock speed?
+- What are the advantages and disadvantages of having a high clock speed?
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Make notes on the /Fetch - Execute/ Cycle and CPU Clock Speed.
+* Multiple Cores
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+Processors have, in general, been getting faster and faster since their invention in the 1970s
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Find out what is meant by /Moore's Law/.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Even with exceedingly fast processors, they are still limited by the fetch - execute cycle.
+- If you want to browse a web-page while listening to some music, a single processor would have to work on one task, and then switch to the next task, doing so thousands, millions or billions of times a second.
+- By using multicore processors, the CPU acts as several independent processors.
+- This means that one core can dedicate itself to your media player, while the other dedicates itself to the web-browser.
+- /Having multicore processors does not increase performance when working on a single task/ A 2.4GHz single core processor will be able to perform a single task (such as rendering a web-page) as quickly as a 2.4GHz quad core processor.
+- Programmers are, however, beginning to utilise multicore processors in single applications, by dividing up tasks between cores.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- Find out about the specialisations of processors that are used in mobile devices.
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Ensure your notes contain information on Moore's Law, Multicore processors and mobile processors.
+* Graphics Processing Unit
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+In many modern computer systems, the task of rendering graphics is handled by the Graphics Card, which has it's own processor called a GPU.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- GPUs are very specialised processors, designed to render graphics to a screen.
+- A Graphics Card will contain, not only a GPU, but also its own dedicated RAM, that can hold a complete screen image.
+- In many machines, the Graphics card is a separate device that is plugged into the Motherboard, but in laptops and mobile devices, it is often integrated with the Motherboard and so can't be upgraded.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+Watch the video on what a GPU does.
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qyXKedcx6Iw" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+- Ensure your notes contain basic information about Graphics Cards and what the roll of the GPU is in Computer systems.
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- GPUs are now often used in /Altcoin/ mining, such as /Bitcoin/
+- Do some research to find out about how most crypto-currencies are mined, and why GPUs are more appropriate to this task than CPUs.

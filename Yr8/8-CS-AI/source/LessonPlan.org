@@ -1,0 +1,65 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Artificial Intelligence
+#+AUTHOR: Marc Scott
+* Lesson Plan - Week 5
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Context and Students
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- 8G Computing - AI
+- Students have been learning about the past, present and future state of Artificial Intelligence.
+- This lesson is based upon a student's question regarding ethical choices Google's self-driving cars may have to make.
+| Boys  |                                  15 |
+| Girls |                                  15 |
+| SEN   | Tom(Hearing Impaired), Ali(STT Inv) |
+** Starter - 5 Minutes
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Students can log-on and access bournetolearn to review previous assessments.
+- Each students has a mini whiteboard.
+- [[file:threeQs.html][Display three questions on board]] - students to note down their opinions.
+** The Trolley Problem and Self Driving Cars - 15 minutes
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Show the students[[file:3Laws.html][ Asimov's three laws of robotics]].
+- They can then have a couple of minutes to decide if these are enough to protect humans from AIs or if other laws need adding.
+- Talk through the ethical dilemma of[[file:trolley.html][ /The Trolley Problem/.]]
+- Students can then write down on their whiteboards what choice they would make - give time to discuss as a class.
+- Talk through the alternate Trolley problems, then discuss what an AI should do if given the choice - what should it's programming dictate.
+- Talk through issues with 'Protecting Humanity and the greater good'
+- Students complete Silver Task
+** Killer Robots - 15 minutes
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Discuss why planes have guided missiles and why the United States uses remote controlled unmanned drones.
+- [[file:sentry.html][Talk about and show image of South Korea's Sentry Gun]] - explain the term autonomous.
+- Is it right to create machines that are designed to take human life?
+- Is it better to risk a few million pounds worth of equipment rather than putting the life of a soldier at risk?
+- Students complete Gold Task
+** Robot Rights - 15 minutes
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Discuss Animal rights historically - 
+- [[https://www.youtube.com/watch?v%3D01MUrNMJmqQ&feature%3Dyoutu.be][Show the video of Kara]] if there is enough time.
+- Discuss the possibility of a needed charter on Robot rights.
+- Students complete Platinum Task
+** Plenary
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Display the[[file:threeQs.html][ three questions again]]
+- Have any of the students changed their minds?
+- Do any of them have doubts about their earlier decisions.

@@ -1,0 +1,348 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: Modelling a DNS
+#+AUTHOR: Marc Scott
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
+</div>
+#+END_HTML
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Modelling a DNS table
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Go to [[http://mit.scratch.edu][The MIT Scratch website]]
+- Create a new project
+- Name it DNS model
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- A Domain Name Server has a table stored on it, that will look something like this:
+| Domain Name |     IP Address |
+|-------------+----------------|
+| google.com  | 74.125.239.116 |
+| bbc.co.uk   |  212.58.246.90 |
+
+A quick note. Not everything explained in this presentation is true. Some of it is a [[http://en.wikipedia.org/wiki/Lie-to-children][simplification]] to make things easier to understand
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We're going to have to build a DNS Table to begin with. This is going to be made up of two lists.
+- In Scratch, create a new list called =Domain Names= and then another list called =IP Addresses=
+[[file:img/Create_Lists_1.png]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We're going to need a few Domain names and IP Addresses to populate our table. About 1000 of each should do the trick.
+- This would take ages by hand, but luckily Scratch allows us to import text files.
+- Download this text file - [[file:../resources/domains.txt][Domains.txt]] and this text file - [[file:../resources/IPs.txt][IPs.txt]]
+- Now right click on the gray box that represents the Domain Names list and choose import from the context menu.
+- You can then direct your file browser to the downloaded file.
+[[file:img/Create_Lists_2.png]]
+- Do the same for the IP Addresses list and you should end up with something that looks like this.
+[[file:img/Create_Lists_3.png]]
+* Linear Search
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+- When you type in a URL into a web-browser address bar, your computer consults the DNS server, to find the IP address.
+- The DNS server has to look up the domain name and find the corresponding IP address
+- To do this the server needs to use a searching algorithm.
+----
+On the image below you're presented with an Identity Parade Lineup. You need to find this face:
+[[file:img/Face.jpg]]
+
+#+BEGIN_HTML
+	    <canvas id="myCanvas" width="960" height="600"></canvas>
+	    <script> //Some seriously ugly js here. Come back and fix.
+	     var canvas = document.getElementById('myCanvas');
+	     var context = canvas.getContext('2d');
+	     var UsualBkg = new Image();
+	     var blank_face = new Image();
+	     var image1Vis = true;
+	     var image2Vis = true;
+	     var image3Vis = true;
+	     var image4Vis = true;
+	     var image5Vis = true;
+	     var faceSize = 100
+	     var x;
+	     var y;
+	     
+
+	     function getMousePos(canvas, evt) 
+	     {
+	       var rect = canvas.getBoundingClientRect();
+	       return {
+		 x: evt.clientX - rect.left,
+		 y: evt.clientY - rect.top
+	       };
+	     }
+
+
+	     canvas.addEventListener('mousedown', function(evt) 
+				     {
+		 var mousePos = getMousePos(canvas, evt);
+
+		 if (mousePos.x>100 && mousePos.x<200 && mousePos.y>130 && mousePos.y<230)
+		 {
+		   image1Vis = false
+		 }
+		 if (mousePos.x>240 && mousePos.x<340 && mousePos.y>90 && mousePos.y<190)
+		 {
+		   image2Vis = false
+		 }
+		 if (mousePos.x>435 && mousePos.x<535 && mousePos.y>75 && mousePos.y<1750)
+		 {
+		   image3Vis = false
+		 }
+		 if (mousePos.x>585 && mousePos.x<685 && mousePos.y>90 && mousePos.y<190)
+		 {
+		   image4Vis = false
+		 }
+		 if (mousePos.x>760 && mousePos.x<860 && mousePos.y>100 && mousePos.y<200)
+		 {
+		   image5Vis = false
+		 }
+		 context.drawImage(UsualBkg, 0, 0, 960, 600);
+		 if (image1Vis == true) 
+		 {
+		   context.drawImage(blank_face, 100, 120, 100, 100);
+		 }
+		 if (image2Vis == true) 
+		 {
+		   context.drawImage(blank_face, 240, 90, 100, 100);
+		 }
+		 if (image3Vis == true) 
+		 {
+		   context.drawImage(blank_face, 435, 75, 100, 100);
+		 }
+		 if (image4Vis == true) 
+		 {
+		   context.drawImage(blank_face, 585, 90, 100, 100);
+		 }
+		 if (image5Vis == true) 
+		 {
+		   context.drawImage(blank_face, 760, 100, 100, 100);
+		 }
+	       }, false);
+
+	     UsualBkg.onload = function() {
+	       context.drawImage(UsualBkg, 0, 0, 960, 600);
+	       context.drawImage(blank_face, 100, 130, 100, 100);
+	       context.drawImage(blank_face, 240, 90, 100, 100);
+	       context.drawImage(blank_face, 435, 75, 100, 100);
+	       context.drawImage(blank_face, 585, 90, 100, 100);
+	       context.drawImage(blank_face, 760, 100, 100, 100);
+	     };
+	     UsualBkg.src = 'img/The_Usual_Suspects.jpg';
+	     blank_face.src = 'img/blank_face.gif';
+	    </script>
+#+END_HTML
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Explain how you choose to find the correct face from the line up.
+- Try and explain how you think a computer might have done it.
+- How long do you think it would take you to find the IP address of a domain name in the list of 1001 you now have in Scratch?
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- A linear search is a method of going through a list of items, one by one, and checking each item. 
+- Imagine we had a list of 'things'
+=[cat,dog,horse,mouse,rabbit,parrot,elephant]=
+- If we wanted a computer to program to find the position of the element
+=parrot= it would check from left to right
+- The program would check what was at position 1, see if it was parrot and if it wasn't it would move onto position 2, and so on.
+- Luckily, computers can do this exceptionally quickly.
+* Indexing a list
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- As a computer reads through a list, it needs to keep track of where it is. This is what an index is for.
+- Imagine we have the following two lists:
+#+BEGIN_EXAMPLE
+    OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
+    Rating = ['4/5','2/5','4/5','3/5','5/5']
+#+END_EXAMPLE
+- The items in the first list are Operating systems.
+- The items in the second list give a user rating out of 5.
+- Imagine we wanted to find out the rating out of 5 for Android.
+- We could step through the list of operating systems until we found Android.
+- This would not tell us where to find the rating out of five in the second list though. It would just tell us that Android exists in the first list.
+#+BEGIN_EXAMPLE
+    OperatingSystems = ['Mac OSX','Windows 8','Android','iOS','Ubuntu']
+    Rating = ['4/5','2/5','4/5','3/5','5/5']                 
+#+END_EXAMPLE
+- As we move through (iterate) the first list searching for 'Android', we keep a count of our position. The position is called the /index/ of the list.
+- The algorithm looks something like this:
+#+BEGIN_EXAMPLE
+1. index = 1
+2. Is Android at index (position 1)
+3. No, so add 1 to index
+4. Is Android at index (position 2)
+5. No, so add 1 to index.
+6. Is Android at index (position 3)
+7. Yes. So look up index of the second list
+8. index (position 3) of the second list is 4/5
+9. So Android has a rating of 4/5
+#+END_EXAMPLE
+* Using a linear search in our DNS.
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+- In our Scratch program so far we have a list of domain names and a list of IP addresses.
+- We need to be able to conduct a linear search on the list of domain names to find the index of any given name.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Start by adding in a When =green flag= clicked block
+[[file:img/Linear_Search_1.png]]
+- Now we'll ask the user for the domain name they're looking for.
+[[file:img/Linear_Search_2.png]]
+- Next you'll need a couple of variables:
+  - Create a variable called =domain=
+  - Create a variable called =index=
+[[file:img/Linear_Search_3.png]]
+- You should set the domain to be the answer of the =ask= block and the index to be the integer =1=
+[[file:img/Linear_search_4.png]]
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Our linear search algorithm could possibly need to search right to the end of the list. So we'll need to use a loop that keeps going until the index is at 1001.
+[[file:img/Linear_Search_5.png]]
+- Currently =index= is =1=. So the algorithm needs to check the 1st item in domain names, and see if it matches the domain that the user is looking for. We can do this with a conditional =if/else= inside the =repeat until= loop.
+[[file:img/Linear_Search_6.png]]
+- If the domain names do not match, then we want =index= to become =2=, and the algorithm to go back to the start of the loop.
+[[file:img/Linear_Search_7.png]]
+- If however there is a match, then we know that the index of the IPs list will contain the IP address we're looking for.
+[[file:img/Linear_Search_8.png]]
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+- Pick some random domain names from the list and use your algorithm to search for their IP addresses.
+- Once you have an IP address you can copy and paste it into your browser's URL bar, and you should get directed to the site
+[[file:img/Linear_Search_9.png]]
+- Not all of them will work however, as some sites use redirects and other trickery that will fool your browser.
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+- Use screen shots and some text to try to explain how your Linear Search algorithm works.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+Here's a quick recap of what you've covered so far.
+- Domain names are easy for humans to read and remember.
+- Each domain name links to an IP address that computers use to send messages to each other.
+- A Domain Name Server (DNS) stores a table of domain names and IP addresses.
+- When you type in a URL, your computer asks the DNS what the IP address is for the domain name.
+- An item in a list can be referenced by its position, which is called it's index.
+- Linear search is one method of finding an element in a list.
+
+* A Linear Search Project
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+- You're going to try an implement your own Linear Search program now.
+- Create a Scratch program that:
+   -  Uses two lists, one to store a Subject Name (e.g. Science) and the other to store a teacher's name.
+   -  Allows a user to search for a Subject Name and returns the teacher of that subject
+- Use any sprites you like.
+- Make it return 'Not found" if a subject that doesn't exist is asked for.
+

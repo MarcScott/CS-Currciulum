@@ -1,0 +1,266 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Touring Turing
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/7-CS-Turing">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="7_Lesson.html">Week7</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Looping
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- At the moment our scripts have run in one direction - /Top/ to /Bottom/.
+- Even though we've used branches (with =if=, =elif= and =else=), the branches still run from top to bottom.
+- When Turing devised his /Turing Machine/ he imagined that the machine would be able to move forwards and backwards along the tape.
+- This would mean that the machine could end up reading the same section of tape, multiple times. This would be a loop.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- In Python we can use what is known as a =while= loop.
+- Thinking back to our earlier examples of deciding what to do depending upon the weather is like outside; you might say something along the lines of...
+#+begin_quote
+While it is raining outside, I am staying indoor.
+#+end_quote
+- In Python this would look something like;
+#+begin_src python
+  while raining == True:
+      print('I am staying indoors')
+#+end_src
+- Notice that we need to use that same =:= on the end of the condition.
+- We also need that /significant whitespace/ before any code that is supposed to run /inside/ the loop.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Let's start by trying a version of the example above, but add a little user input into the code.
+#+begin_src python
+  raining = input('Is it raining outside ')
+  while raining == 'yes':
+      print('You had best stay indoors')
+  print('You can go outside')
+#+end_src
+- Run your code and see what happens, when you type 'no'
+- As =raining= does not equal 'yes', the computer does not enter the while loop, so the lines are skipped to the next line with no whitespace.
+- Run it again, and this time type 'yes'.
+- Is there a problem?
+- You can quit a running program by using the shortcut =Ctrl+c=
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- You've just experienced your first infinite loop.
+- This is when a program runs and runs and never ends.
+- The problem was that once we had set the variable =raining= to 'yes' there was no way to change it. =raining= was always going to be 'yes.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We can alter our code to allow changing of the variable though.
+#+begin_src python
+  raining = input('Is it raining outside ')
+  while raining == 'yes':
+      print('You had best stay indoors')
+      raining = input('Is it raining outside ')
+  print('You can go outside')
+#+end_src
+- Now run the code and see what happens.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We can use the same /Comparison Operators/ for a =while= loop that we used for conditionals.
+| Comparison Operator | Description                                              | Example                              |
+|---------------------+----------------------------------------------------------+--------------------------------------|
+| ==                  | Tests if two things are equal                            | 6 == 6 is True                       |
+| !=                  | Tests if two things are *not* equal                      | 4 != 6 is True                       |
+| <                   | Tests if one thing is less than another                  | 3 <  10 is True                      |
+| >                   | Tests if one thing is greater than another               | 10 > 3 is True                       |
+| <=                  | Tests if one thing is less than *or* equal to another    | 10 <= 10 is True and 9 <= 10 is True |
+| >=                  | Tests if one thing is greater than *or* equal to another | 5 >= 5 is True and 5 >= 3 is True    |
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- We can use a =while= loop to make a password authentication program.
+- This time we'll use the ==!= comparison (not equal to)
+#+begin_src python
+  password = 'correct horse battery staple'
+  attempt = input('Please enter a password ')
+  while attempt != password:
+      print('Access denied')
+      attempt = input('Please enter a password ')
+  print('Access granted.)
+#+end_src
+** Badge It - Silver
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Try and write a script that asks the user to answer a simple sum.
+- If they get it right, they should be congratulated
+- If they get it wrong they should be asked the question again.
+- Don't forget to type cast the user input.
+* Counting
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- One of the simplest tasks we can get a computer to do is to count.
+- When you count to 100, you start at 1 and then keep adding on 1 until you get to 100.
+- Let's code this with a =while= loop.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+#+begin_src python
+  count = 1
+  while count <= 100:
+      print(count)
+      count = count + 1
+#+end_src
+- Can you alter the code so that the computer counts to 10000
+- Alter it so that it counts in 2s, then 10s
+** Badge It - Gold
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Create a while loop that counts down from 100 to 0.
+- Create a while loop that prints out 1, and then doubles it, printing out the answer each time until it reaches 1,000,000
+- Create a while loop that prints out *Computing is Grrrreat* a thousand times.
+* Singing
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- There are lots of counting songs that children use to learn to count:
+  - 5 Little Ducks went swimming one day
+  - 5 Currant Buns in a baker's shop
+  - 5 Little Speckled Frogs
+  - 5 Little Monkeys
+  - 5 Red Apples
+- If you don't know the lyrics, you can listen to some of them[[http://www.bbc.co.uk/schoolradio/subjects/mathematics/countingsongs][ here]].
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Writing out the lyrics to a simple counting song wouldn't take too long.
+- You could probably write out the lyrics to 10 Green Bottles fairly quickly
+#+begin_html
+<iframe width="420" height="315" src="https://www.youtube.com/embed/Ak7kedzR8bg" frameborder="0" allowfullscreen></iframe>
+#+end_html
+- But what if I asked you to write out the lyrics to 1000 green bottles.
+- Have a look at the script below.
+#+begin_src python
+bottles = 1000
+while bottles > 0:
+    print(str(bottles) + ' green bottles sitting on the wall')
+    print(str(bottles) + ' green bottles sitting on the wall')
+    print('And if one green bottle should accidently fall')
+    bottles = bottles -1
+    print("There'll be " + str(bottles) + ' green bottles, sitting on the wall')
+#+end_src
+- Copy and paste the code into a new script and run it. You can change the bottles variable to anything you like.
+** Badge It - Platinum
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- Try and create a script to write out the lyrics of one of the songs listed above.
+- Use a variable to keep track of the numbers of Frogs, Buns or Ducks, and a while loop to change them.
+

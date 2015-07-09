@@ -1,0 +1,170 @@
+import random
+import os
+import sys
+os.environ['LINES'] = '40'
+os.environ['COLUMNS']= '80'
+
+
+##HERE IS THE BOARD - YOU CAN EDIT IT TO CHANGE THE LAYOUT OF THE ROOMS, POSITIONS OF MONSTERS AND POSITIONS OF HEALING SHRINES
+layout='''___________________________________________________________________________
+|XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
+|XXXX      XXXXXXXXXXXXX      A        XXXXXXXXXXXXX       ?    X      XXX|
+|XXXX   O  XXXXXXXXXXXXX               XXXXXXXXXXXXX  XXXXXXXX  X  B   XXX|
+|XXXX                                  XXXXXXXXXX      XXXXXXX         XXX|
+|XXXX      XXXXXXXXXXXXX                               XXXXXXXXXXXXXXXXXXX|
+|XXXXXXXXXXXXXXXXXXXXXXX               XXXXXXXXXX   C  XXXXXXXXXXXXXXXXXXX|
+|XXXXXXXXXXXXXXXXXXXXXXXXXXXXX  XXXXXXXXXXXXXXXXXXXXXXXXXXXXX        XXXXX|
+|XXXXXX                 XXXXXX  XXXXXXXXXXXXXXXXXXXXXXXXXXXXX   ?    XXXXX|
+|XXXXXX  XXXXX  XXXX    XXXXXX  XXXXXXXXXXXXXXXXX      XXXXXX        XXXXX|
+|XXXXXX  XXXXX  XXXXXXXXXXXXXX  XXXXXXXXXXXXXXXXX  D   XXXXXXXXXXXX  XXXXX|
+|XXXXXX  XXXXX                                         XXXX          XXXXX|
+|XXXXXX  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX      XXXX     XXXXXXXXXX|
+|XXXXXX  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXX|
+|XXXXXX       E       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXX|
+|XXXXXXXXXXXXXX   F                                             XXXXXXXXXX|
+|XXXXXXXXXXXXXX       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
+|XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
+|-------------------------------------------------------------------------|
+'''
+
+## THESE GLOBAL VARIABLE DECIDE THE MONSTER AND PLAYER HIT POINTS
+playerHP = 20
+A = 20
+B = 20
+C = 20
+D = 20
+E = 20
+F = 20
+
+
+def genBoard():
+    '''This function generates the board - do not change it'''
+    board = []
+    row = []
+    for i in layout:
+        row.append(i)
+        if i == '\n':
+            board.append(row)
+            row = []
+    return board
+
+def printBoard(board):
+    '''This function prints the board - do not change it'''
+    for row in board:
+        for character in row:
+            print(character, end=" ")
+
+def playerTurn(board):
+    '''This function decides on players actions - you could potentially add more actions in here'''
+    action = input('What do you want to do')
+    if action in ['w','a','s','d']:
+        board = move(board,'O',action)
+    return board
+
+def move(board,object,direction):
+    '''This function moves the player to a new square'''
+    oldPosition = getObjectPosition(board,object)
+    newPosition = oldPosition[:]
+    if direction == 'w':
+        newPosition[0] -= 1
+    elif direction == 's':
+        newPosition[0] += 1
+    elif direction == 'a':
+        newPosition[1] -=1
+    else:
+        newPosition[1] +=1
+    square = checkSquare(board,newPosition)
+    if square == ' ':
+        board = setObjectPosition(board,object,newPosition,oldPosition)
+    elif square == 'X':
+        pass
+    elif square == '?':
+        playerHP = 100
+        board[newPosition[0]][newPosition[1]] = ' '
+    else:
+        board = fightMonster(board,square,newPosition)
+    return board
+
+def moveMonsters(board):
+    '''This function moves monsters around the board'''
+    monsters = ['A','B','C','D','E','F','G']
+    ##Find positions of object within the board
+    for y,row in enumerate(board):
+        for x, thing in enumerate(row):
+            if thing in monsters:
+                newx = x+random.randrange(-1,2)
+                newy = y+random.randrange(-1,2)
+                if checkSquare(board,[newy,newx]) == ' ':
+                    board[newy][newx]=thing
+                    board[y][x]= ' '
+    return board
+
+    
+def getObjectPosition(board,object):
+    '''Finds specific objects on the board'''
+    for y,row in enumerate(board):
+        for x, thing in enumerate(row):
+            if thing == object:
+                print(thing)
+                position = [y,x]
+    return position
+
+def setObjectPosition(board,object,newPosition,oldPosition):
+    '''sets a new position for an object'''
+    board[oldPosition[0]][oldPosition[1]] = ' '
+    board[newPosition[0]][newPosition[1]] = object
+    return board
+
+def checkSquare(board,newPosition):
+    'checks what is in a square'''
+    square = board[newPosition[0]][newPosition[1]]
+    return(square)
+
+def fightMonster(board,monster,newPosition):
+    '''when players and monsters fight - the hitpoints are subtracted'''
+    global playerHP,A,B,C,D,E,F,G
+    playerHP -= random.randrange(0,10)
+    if monster == 'A':
+        A -= random.randrange(0,10)
+        if A < 0:
+            board[newPosition[0]][newPosition[1]] = ' '
+    elif monster == 'B':
+        B -= random.randrange(0,10)
+        if B < 0:
+            board[newPosition[0]][newPosition[1]] = ' '
+    elif monster == 'C':
+        C -= random.randrange(0,10)
+        if C < 0:
+            board[newPosition[0]][newPosition[1]] = ' '
+    elif monster == 'D':
+        D -= random.randrange(0,10)
+        if D < 0:
+            board[newPosition[0]][newPosition[1]] = ' '
+    elif monster == 'E':
+        E -= random.randrange(0,10)
+        if E < 0:
+            board[newPosition[0]][newPosition[1]] = ' '
+    elif monster == 'F':
+        F -= random.randrange(0,10)
+        if F < 0:
+            board[newPosition[0]][newPosition[1]] = ' '
+    elif monster == 'G':
+        G -= random.randrange(0,10)
+        if G < 0:
+            board[newPosition[0]][newPosition[1]] = ' '
+    if playerHP == 0:
+        print('You Died')
+        quit()
+    return board
+
+def mainLoop():
+    '''Runs the game'''
+    while True:
+        board = board1
+        printBoard(board)
+        board = playerTurn(board)
+        board = moveMonsters(board)
+        print('\n'*100)
+        
+board1 = genBoard()
+mainLoop()

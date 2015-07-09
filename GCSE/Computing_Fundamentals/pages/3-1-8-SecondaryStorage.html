@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>3.1.8 Secondary Storage</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">3.1.8 Secondary Storage</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Secondary Storage</a>
+<ul>
+<li><a href="#sec-1-1">Learn It</a></li>
+<li><a href="#sec-1-2">Learn It</a></li>
+<li><a href="#sec-1-3">Learn It</a>
+<ul>
+<li><a href="#sec-1-3-1">Magnetic Storage</a></li>
+<li><a href="#sec-1-3-2">Optical Storage</a></li>
+<li><a href="#sec-1-3-3">Solid State Storage</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">Try It</a>
+<ul>
+<li><a href="#sec-1-4-1">Advantages</a></li>
+<li><a href="#sec-1-4-2">Disadvantages</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">Learn It</a></li>
+<li><a href="#sec-1-6">Try It</a>
+<ul>
+<li><a href="#sec-1-6-1">Answer the following questions:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class=ribbon>
+<a href="GITHUB URL HERE">Fork me on GitHub</a>
+</div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> Secondary Storage</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Unlike RAM, secondary storage is a more permanent way of storing data.
+</li>
+<li>Secondary storage can be internal - such as a computer hard drive, or external - such as a memory stick.
+</li>
+<li>Internal storage is used to store a computer's operating system, software and user files.
+</li>
+<li>External storage is used for backing up data, transferring files, transporting files or as an extension to internal storage.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 learn">
+<h3 id="sec-1-2">Learn It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>There are three classes of secondary storage - Magnetic, Optical and Solid-State.
+</li>
+<li>Secondary storage sizes are measured in bytes.
+</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Bytes</th>
+<th scope="col" class="left">Name</th>
+<th scope="col" class="left">Abbreviation</th>
+</tr>
+
+<tr>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">1,000</td>
+<td class="left">Kilo</td>
+<td class="left">1kB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000</td>
+<td class="left">Mega</td>
+<td class="left">1MB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000</td>
+<td class="left">Giga</td>
+<td class="left">1GB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000,000</td>
+<td class="left">Tera</td>
+<td class="left">1TB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000,000,000</td>
+<td class="left">Peta</td>
+<td class="left">1PB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000,000,000,000</td>
+<td class="left">Exa</td>
+<td class="left">1EB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000,000,000,000,000</td>
+<td class="left">Zetta</td>
+<td class="left">1ZB</td>
+</tr>
+
+<tr>
+<td class="left">1,000,000,000,000,000,000,000,000</td>
+<td class="left">Yota</td>
+<td class="left">1YB</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 learn">
+<h3 id="sec-1-3">Learn It</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">Magnetic Storage</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>A disk that contains iron particles.
+</li>
+<li>Particles can be arranged in one of two directions - representing 1 or 0
+</li>
+<li>The drive contains a <i>head</i> that can read the direction of the particles and change the direction of the particles using an electromagnetic field.
+</li>
+<li>The disk is spun rapidly, and the head moves back and forth, reading different parts of the disk.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2">Optical Storage</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>A disc that contains dents (pits) and flat spots (lands)
+</li>
+<li>A laser shone on the disc will not be reflected it if hits a pit. This represents a 0.
+</li>
+<li>The laser will reflect when it hits a land. This represents a 1.
+</li>
+<li>The disc is spun rapidly and the laser guided over different parts of the disc.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3">Solid State Storage</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<ul class="org-ul">
+<li>These disks contain billions of transistors arranged to make memory cells.
+</li>
+<li>The cells can be set to allow current to flow (1) or not to flow (0)
+</li>
+<li>By detecting if current is flowing or not flowing through a particular cell, the 1 or 0 can be read. 
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 try">
+<h3 id="sec-1-4">Try It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Arrange the following advantages and disadvantages into the tables below.
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1">Advantages</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>Fairly quick
+</li>
+<li>Easy to carry around
+</li>
+<li>Extremely fast read and write speeds
+</li>
+<li>Easy to use
+</li>
+<li>Large capacity
+</li>
+<li>Easily replaced or upgraded
+</li>
+<li>Can be used in many types of devices (not just computers)
+</li>
+<li>Long lasting (if cared for)
+</li>
+<li>No mechanical requirements
+</li>
+<li>Silent when used
+</li>
+<li>Very cheap per MB of data
+</li>
+<li>Light weight and small
+</li>
+<li>Use very little power
+</li>
+<li>Very cheap, and disposable
+</li>
+<li>Very durable even if dropped or knocked around
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2">Disadvantages</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>Contains moving parts that will eventually fail
+</li>
+<li>Limited storage capacity
+</li>
+<li>Can be noisy
+</li>
+<li>Easily broken if not protected
+</li>
+<li>Use a large amount of power
+</li>
+<li>Have read/write limits - a few 100000 times before cells become corrupt
+</li>
+<li>Require special drives to read
+</li>
+<li>Very expensive per MB of data
+</li>
+<li>Can be easily damaged if dropped or knocked around
+</li>
+<li>Fairly expensive per GB although price is rapidly dropping
+</li>
+<li>Easily damaged by scratching, heat and light
+</li>
+<li>Write speeds are slow, compared to read speeds.
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Magnetic Advantages</th>
+<th scope="col" class="left">Magnetic Disadvantages</th>
+<th scope="col" class="left">Optical Advantages</th>
+<th scope="col" class="left">Optical Disadvantages</th>
+<th scope="col" class="left">Solid State Advantages</th>
+<th scope="col" class="left">Solid State Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3 learn">
+<h3 id="sec-1-5">Learn It</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Magnetic Storage is used in Hard Drives and tape drives. Tape drives are often used for backing up large volumes of data.
+</li>
+<li>Optical Storage is used in CDs, DVDs and Blu-Ray.
+</li>
+<li>Solid State is used in Hard Drives, Memory Sticks and Flash memory cards.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 try">
+<h3 id="sec-1-6">Try It</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-sec-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1">Answer the following questions:</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ol class="org-ol">
+<li>Explain how data can be read or written with a magnetic disk. (5 marks)
+</li>
+<li>Explain why digital video cameras are now more likely to use solid state storage rather than magnetic tape storage. (4 marks)
+</li>
+<li>Discuss three advantages and/or disadvantages of using cloud storage over a memory stick to transfer files between computers. (6 marks)
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

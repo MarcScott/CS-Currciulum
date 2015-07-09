@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Text Based Games</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/navbar.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Text Based Games</h1>
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/MarcScott/8-CS-TextGames">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week1</a></li>
+      <li><a href="2_Lesson.html">Week2</a></li>
+      <li><a href="3_Lesson.html">Week3</a></li>
+      <li><a href="4_Lesson.html">Week4</a></li>
+      <li><a href="5_Lesson.html">Week5</a></li>
+      <li><a href="6_Lesson.html">Week6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+
+    </ul>
+  </div>
+<div id="outline-container-sec-1" class="outline-2 activity">
+<h2 id="sec-1"><span class="section-number-2">1</span> NIM</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Nim was one of the earliest Computer Games ever created.
+</li>
+<li>In fact, a special computer called the <a href="http://en.wikipedia.org/wiki/Nimrod_%2528computing%2529">NIMROD</a> was created for the sole purpose of playing the game.
+</li>
+<li>There are numerous variants of the game, so we'll start off with one of the simplest - <a href="http://en.wikipedia.org/wiki/Nim#The_100_game">The 100 game</a>
+</li>
+<li>Have a read of the rules, so you understand the game
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3 code">
+<h3 id="sec-1-2">Code It</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Let's start with some basics. Create a new Python file called The-100-Game.py
+</li>
+<li>If we're going to have a two player game, we'd best let our players state their names and save these values using variables.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">playerOne</span> = <span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'What is the name of Player One? '</span>)
+<span style="color: #6c71c4;">playerTwo</span> = <span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'What is the name of Player Two? '</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 run">
+<h3 id="sec-1-3">Run It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Run your code (<code>Ctrl+s</code> then <code>F5</code>)
+</li>
+<li>Once you've typed in some test names, make sure it's all working fine by getting the <code>interpreter</code> to print the names.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">print</span>(playerOne)
+<span style="color: #859900;">print</span>(playerTwo)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 code">
+<h3 id="sec-1-4">Code It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Now let's give the players some instructions.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">print</span>(<span style="color: #2aa198;">'Welcome to The 100 Game.'</span>)
+<span style="color: #859900;">print</span>(<span style="color: #2aa198;">'You will each take turns to choose a number between 1 and 10.'</span>)
+<span style="color: #859900;">print</span>(<span style="color: #2aa198;">'The first person to reach 100 is the winner'</span>)
+</pre>
+</div>
+<ul class="org-ul">
+<li>It would be nice if we could personalise this output a little, by using the players names.
+</li>
+<li>In python, you can <code>string formatting syntax</code> to print variable values within your strings.
+</li>
+<li>Try replacing the first <code>print</code> line with the following
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">print</span>(<span style="color: #2aa198;">'Welcome to The 100 Game %s and %s'</span>%(playerOne,playerTwo))
+</pre>
+</div>
+<ul class="org-ul">
+<li>The <code>%s</code> within the print statements are placeholders, where the variable values will be placed. The <code>s</code> indicates that the value will be a <code>string</code>.
+</li>
+<li>At the end of the print statement (but inside the brackets), we place the variable names, whose values we want in the string.
+</li>
+<li>Notice that the variable names have brackets around them as well - in Python, when we place items in brackets like this, it is called a tuple.
+</li>
+<li>e.g <code>(1,2,3,4)</code> or <code>('abc','def','ghi')</code> or <code>(foo,bar,baz)</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3 badge">
+<h3 id="sec-1-5">Badge It - Silver</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Try and add another <code>print</code> statement using string formatting that tells playerOne that they will go first and that playerTwo will go second.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3 learn">
+<h3 id="sec-1-6">Learn It</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>For the game to work, we're going to need to keep asking each player for a number, and keep track of the total, until it reaches 100, at which point the game should end.
+</li>
+<li>This looks like a job for a <code>while loop</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3 code">
+<h3 id="sec-1-7">Code It</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>Save your original <code>The-100-Game.py</code> file.
+</li>
+<li>Create a new file called <code>whileLoops.py</code>
+</li>
+<li>A <code>while</code> loop will keep running until a given condition is met.
+</li>
+<li>The basic structure is&#x2026;
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #859900;">while</span> something:
+    do something
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3 badge">
+<h3 id="sec-1-8">Badge It - Gold (Part I)</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>Try each of the following while loops - <b>One at a time</b>
+</li>
+<li>Write down what each of the loops does using comments in the code..
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #93a1a1; font-style: italic;">##</span><span style="color: #93a1a1; font-style: italic;">This loop ....</span>
+<span style="color: #859900;">while</span> <span style="color: #268bd2;">True</span>:
+    <span style="color: #859900;">print</span>(<span style="color: #2aa198;">'Computer Science is the best'</span>)
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #93a1a1; font-style: italic;">##</span><span style="color: #93a1a1; font-style: italic;">This loop ....</span>
+<span style="color: #6c71c4;">foo</span> = 0
+<span style="color: #859900;">while</span> foo &lt; 10:
+    <span style="color: #859900;">print</span>(foo)
+    <span style="color: #6c71c4;">foo</span> += 1
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #93a1a1; font-style: italic;">##</span><span style="color: #93a1a1; font-style: italic;">This loop ....</span>
+<span style="color: #6c71c4;">answer</span> = <span style="color: #2aa198;">'yes'</span>
+<span style="color: #859900;">while</span> answer == <span style="color: #2aa198;">'yes'</span>:
+    <span style="color: #6c71c4;">answer</span> = <span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'Shall I continue? '</span>)
+<span style="color: #859900;">print</span>(<span style="color: #2aa198;">'I have stopped'</span>)
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #93a1a1; font-style: italic;">##</span><span style="color: #93a1a1; font-style: italic;">This loop ....</span>
+<span style="color: #6c71c4;">answer</span> = <span style="color: #2aa198;">'yes'</span>
+<span style="color: #859900;">while</span> answer != <span style="color: #2aa198;">'no'</span>:
+    <span style="color: #6c71c4;">answer</span> = <span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'Shall I continue? '</span>)
+<span style="color: #859900;">print</span>(<span style="color: #2aa198;">'I have stopped'</span>)
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #93a1a1; font-style: italic;">##</span><span style="color: #93a1a1; font-style: italic;">This loop ....</span>
+<span style="color: #6c71c4;">x</span> = 1
+<span style="color: #859900;">while</span> x &lt; 1000:
+    <span style="color: #859900;">print</span>(x)
+    <span style="color: #6c71c4;">x</span> += x
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #93a1a1; font-style: italic;">##</span><span style="color: #93a1a1; font-style: italic;">This loop ....</span>
+<span style="color: #6c71c4;">x</span> = 0
+<span style="color: #6c71c4;">y</span> = 1
+<span style="color: #859900;">while</span> x &lt; 100:
+    <span style="color: #6c71c4;">x</span> = x + y
+    <span style="color: #6c71c4;">y</span> = x - y
+    <span style="color: #859900;">print</span>(x)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-9" class="outline-3 badge">
+<h3 id="sec-1-9">Badge It - Gold (Part II)</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>Create a while loop that asks for user input and then prints out that user input until the user types exit.
+</li>
+<li>Create a while loop that prints out all the <a href="http://www.mathsisfun.com/algebra/triangular-numbers.html">triangle numbers</a> up to 100
+</li>
+<li>Create a while loop that asks the user to enter a number, and tells them to keep guessing until they choose the number 7.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-10" class="outline-3 code">
+<h3 id="sec-1-10">Code It</h3>
+<div class="outline-text-3" id="text-1-10">
+<ul class="org-ul">
+<li>Open up your The-100-Game.py file again.
+</li>
+<li>Our <code>while</code> loop will need to keep going until the players have a number totaling 100, so we'll need a variable to store the total number in.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">total</span> = 0
+<span style="color: #859900;">while</span> total &lt; 100:
+</pre>
+</div>
+<ul class="org-ul">
+<li>Let's start off simply and just ask for a number between 1 and 10, within the loop, and then add the answer onto total.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">total</span> = 0
+<span style="color: #859900;">while</span> total &lt; 100:
+    <span style="color: #6c71c4;">answer</span> = <span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'Give me a number between 1 and 10'</span>)
+    <span style="color: #6c71c4;">total</span> = total + answer
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-11" class="outline-3 run">
+<h3 id="sec-1-11">Run It</h3>
+<div class="outline-text-3" id="text-1-11">
+<ul class="org-ul">
+<li>Run your code and note any errors you get.
+</li>
+<li>What do you think the problems might be?
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-12" class="outline-3 code">
+<h3 id="sec-1-12">Code It</h3>
+<div class="outline-text-3" id="text-1-12">
+<ul class="org-ul">
+<li>You assigned the variable <code>total</code> a value of <code>0</code>
+</li>
+<li>Then, within your <code>while</code> loop, you're trying to add on the user input.
+</li>
+<li>Let's see what the problem might be.
+</li>
+<li>Type this into your interpreter.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">total</span> = 0
+<span style="color: #6c71c4;">type</span>(total)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Now try this
+</li>
+</ul>
+<p>
+#+being<sub>src</sub> python
+answer = input('Give me a number')
+#+end<sub>src</sub>
+</p>
+<ul class="org-ul">
+<li>Now give the interpreter a number, and then type:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">type</span>(answer)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-13" class="outline-3 learn">
+<h3 id="sec-1-13">Learn It</h3>
+<div class="outline-text-3" id="text-1-13">
+<ul class="org-ul">
+<li><code>input()</code> always returns a string.
+</li>
+<li>Even when a number is typed in, it is interpreted as a string.
+</li>
+<li>You can't add strings to integers (in Python), so we need to convert the string into an integer before we add it on.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-14" class="outline-3 code">
+<h3 id="sec-1-14">Code It</h3>
+<div class="outline-text-3" id="text-1-14">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">total</span> = 0
+<span style="color: #859900;">while</span> total &lt; 100:
+    <span style="color: #6c71c4;">answer</span> = <span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'Give me a number between 1 and 10'</span>)
+    <span style="color: #6c71c4;">answer</span> = <span style="color: #6c71c4;">int</span>(answer)
+    <span style="color: #6c71c4;">total</span> = total + answer
+</pre>
+</div>
+<ul class="org-ul">
+<li>While this code works well, and is easy to understand, it can easily be condensed.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">total</span> = 0
+<span style="color: #859900;">while</span> total &lt; 100:
+    <span style="color: #6c71c4;">total</span> += <span style="color: #6c71c4;">int</span>( <span style="color: #6c71c4;">input</span>(<span style="color: #2aa198;">'Give me a number between 1 and 10'</span>))
+</pre>
+</div>
+<ul class="org-ul">
+<li>If you completely understand the second version, then use it. Otherwise, stick with the first.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-15" class="outline-3 run">
+<h3 id="sec-1-15">Run It</h3>
+<div class="outline-text-3" id="text-1-15">
+<ul class="org-ul">
+<li>Run your game.
+</li>
+<li>It should allow you to type in numbers, and then stop when the total reaches 100, but there's very little feedback from the computer.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-16" class="outline-3 code">
+<h3 id="sec-1-16">Code It</h3>
+<div class="outline-text-3" id="text-1-16">
+<ul class="org-ul">
+<li>Add in a print statement so that you can see what the total is each time.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-17" class="outline-3 badge">
+<h3 id="sec-1-17">Badge It - Platinum</h3>
+<div class="outline-text-3" id="text-1-17">
+<ul class="org-ul">
+<li>To get your platinum badge, you're going to need to give a little more feedback to the user.
+</li>
+<li>You'll need to use all the following lines of code, and put them in the correct place (and order) in your script, to get it working
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #6c71c4;">playerOneTurn</span>=<span style="color: #268bd2;">True</span>
+<span style="color: #859900;">print</span>(<span style="color: #2aa198;">'%s WINS'</span>%(playerTwo))
+<span style="color: #859900;">print</span>(<span style="color: #2aa198;">'%s WINS'</span>%(playerOne))
+<span style="color: #859900;">print</span>(<span style="color: #2aa198;">'%s - pick a number from one to ten'</span>%(playerTwo))    
+<span style="color: #859900;">print</span>(<span style="color: #2aa198;">'%s - pick a number from one to ten'</span>%(playerOne))
+<span style="color: #859900;">if</span> playerOneTurn == <span style="color: #268bd2;">True</span>:
+<span style="color: #859900;">if</span> playerOneTurn == <span style="color: #268bd2;">False</span>:
+<span style="color: #859900;">else</span>:
+<span style="color: #859900;">else</span>:
+<span style="color: #6c71c4;">playerOneTurn</span> = <span style="color: #859900;">not</span> playerOneTurn
+</pre>
+</div>
+<ul class="org-ul">
+<li>The game should keep track of who is the current player, prompt each player by name to make their turn, and congratulate the winner of the game at the end.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

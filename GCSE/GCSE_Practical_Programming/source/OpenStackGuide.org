@@ -1,0 +1,205 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil 
+#+TITLE: OpenStack Cheat Sheat
+#+AUTHOR: Marc Scott
+
+#+BEGIN_HTML
+<div class=ribbon>
+<a href="https://github.com/MarcScott/GCSE_Practical_Programming">Fork me on GitHub</a>
+</div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Using OpenStack
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Step 1 - Create and Instance
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Go to http://cloud.bourne-grammar.lincs.sch.uk/horizon/
+- Log in using your school credentials.
+- On the left hand side of the screen you should see a menu where you can access your instances.
+  [[file:img/instance.png]]
+- Click on the button to launch a new instance
+file:img/launch.png
+- Use the form to setup your instance settings. Give your instance a sensible name of your own though.
+[[file:img/instanceSettings.png]]
+- Click on the Post-Creation tab
+[[file:img/createScript.png]]
+- Copy and paste the following code into Customization-Script box.
+#+BEGIN_EXAMPLE
+#cloud-config
+password: mysecret
+chpasswd: { expire: False }
+ssh_pwauth: True
+#+END_EXAMPLE
+- Then click the Launch button
+** Step 2 - Setup using the Cloud-Console
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+- After a minute or two your instance will be ready to use
+[[file:img/creating.png]]
+- Click on the blue hyperlink to view your instance.
+[[file:img/details.png]]
+- From here you can access your instance via the terminal.
+[[file:img/terminal.png]]
+- If you can't seem to type in the terminal, click on the grey area of the screen.
+- Your username will be =ubuntu= and your password will be =mysecret=
+file:img/login.png
+[[file:img/loggedin.png]]
+** Step 2 - Settin up your account
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+
+- You probably don't want the username =ubuntu= so let's add a new user account.
+- Replace newUser with the username you want to use
+#+BEGIN_SRC sh
+sudo adduser newUser
+#+END_SRC
+- You'll be prompted to give the user a UNIX password and enter some information.
+- Next you'll want the new user to have sudo privaledges
+#+BEGIN_SRC sh
+sudo adduser newUser sudo
+#+END_SRC
+- We can now switch to that user
+#+BEGIN_SRC sh
+exit
+#+END_SRC- Next you'll want the new user to have sudo privaledges
+- Now login as your newUser
+- And navigate to your new =home=
+#+BEGIN_SRC sh
+cd ~/
+#+END_SRC
+- Let's delete the old user now, to lock down our instance a little.
+#+BEGIN_SRC sh
+sudo userdel -r ubuntu
+#+END_SRC
+** Step 2 - Setting up your software
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+
+- First update and upgrade your instance
+#+BEGIN_SRC sh
+sudo apt-get update
+sudo apt-get upgrade
+#+END_SRC
+- Now we'll need a few packages. Emacs for writing text, cifs-utils for mounting windows drives and git for version control.
+#+BEGIN_SRC sh
+sudo apt-get install emacs24 cifs-utils git
+#+END_SRC
+- This one might take some time.
+** Step 2 - Mounting Windows folders
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+
+- You'll want to mount your Windows Home Folder securely.
+- First we'll need to create a mount point
+#+BEGIN_SRC sh
+sudo mkdir /media/windows
+#+END_SRC
+- First let's create a file to save your username and password.
+#+BEGIN_SRC sh
+emacs ~/.smbcredentials
+#+END_SRC
+- This file will need two lines where myUserName and myPassword are your passwords to the *Windows Network*
+#+BEGIN_SRC sh
+username=myUserName
+password=myPassword
+#+END_SRC
+- Save the file (=C-x C-s=) and quit Emacs (=C-x X-c=)
+- Next we'll need to change the permissions on the file we've just created, so only you can see it.
+#+BEGIN_SRC sh
+chmod 600 ~/.smbcredentials
+#+END_SRC
+- And next we'll need to edit a file called /etc/fstab so it knows where the *Windows Share* is
+- Open it in emacs
+#+BEGIN_SRC sh
+sudo emacs /etc/fstab
+#+END_SRC
+- Add this line to the bottom of the file
+- Note the difference between your Linux and Windows username. Also note that you need a $ at the end of your Windows username.
+#+BEGIN_SRC sh
+//brgras005/WindowsUserName$ /media/windows cifs credentials=/home/LinuxUserName/.smbcredentials,iocharset=utf8,sec=ntlm 0 0
+#+END_SRC
+- Let's make a symlink to the /media/window folder
+#+BEGIN_SRC sh
+ln -s /media/windows ~/windows
+#+END_SRC
+- And now mount the drive
+#+BEGIN_SRC sh
+sudo mount -a
+#+END_SRC
